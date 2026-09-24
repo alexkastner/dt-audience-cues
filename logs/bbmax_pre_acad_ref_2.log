@@ -1,3 +1,6 @@
-5 prompts x 1 models x n=30 -> 150 calls to make (0 already done)
-  [10/150] 958s  last: claude-fable-5-1 BB__P_newcomb__pre_acad_ref_2__plain#18 -> unparsed
-  [20/150] 1810s  last: claude-fable-5-1 BB__P_newcomb__pre_acad_ref_2__plain#8 -> unparsed
+5 prompts x 1 models x n=30 -> 119 calls to make (31 already done)
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/119] 330s  last: claude-fable-5-1 BB__P_twinpd__pre_acad_ref_2__plain#8 -> unparsed
+  [20/119] 400s  last: claude-fable-5-1 BB__P_twinpd__pre_acad_ref_2__hook#6 -> unparsed
+  [30/119] 476s  last: claude-fable-5-1 BB__P_twinpd__pre_acad_ref_2__plain#11 -> unparsed
+  [40/119] 505s  last: claude-fable-5-1 BB__P_twinpd__pre_acad_ref_2__hook#0 -> unparsed

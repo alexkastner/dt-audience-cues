@@ -1,0 +1,23 @@
+2 prompts x 1 models x n=100 -> 200 calls to make (0 already done)
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/200] 29s  last: claude-fable-5-1 B__Q_neutral__acad_prof#21 -> unparsed
+  [20/200] 33s  last: claude-fable-5-1 B__Q_neutral__acad_prof#18 -> unparsed
+  [30/200] 56s  last: claude-fable-5-1 B__Q_neutral__acad_prof#30 -> unparsed
+  [40/200] 61s  last: claude-fable-5-1 B__Q_neutral__acad_prof#41 -> unparsed
+  [50/200] 71s  last: claude-fable-5-1 B__Q_neutral__acad_prof#48 -> unparsed
+  [60/200] 89s  last: claude-fable-5-1 B__Q_neutral__acad_prof#62 -> unparsed
+  [70/200] 98s  last: claude-fable-5-1 B__Q_neutral__acad_prof#64 -> unparsed
+  [80/200] 112s  last: claude-fable-5-1 B__Q_neutral__acad_prof#83 -> unparsed
+  [90/200] 124s  last: claude-fable-5-1 B__Q_neutral__acad_prof#94 -> unparsed
+  [100/200] 134s  last: claude-fable-5-1 B__Q_neutral__acad_teach#2 -> unparsed
+  [110/200] 145s  last: claude-fable-5-1 B__Q_neutral__acad_teach#7 -> unparsed
+  [120/200] 152s  last: claude-fable-5-1 B__Q_neutral__acad_teach#18 -> unparsed
+  [130/200] 170s  last: claude-fable-5-1 B__Q_neutral__acad_teach#32 -> unparsed
+  [140/200] 176s  last: claude-fable-5-1 B__Q_neutral__acad_teach#45 -> unparsed
+  [150/200] 188s  last: claude-fable-5-1 B__Q_neutral__acad_teach#51 -> unparsed
+  [160/200] 200s  last: claude-fable-5-1 B__Q_neutral__acad_teach#57 -> unparsed
+  [170/200] 208s  last: claude-fable-5-1 B__Q_neutral__acad_teach#65 -> unparsed
+  [180/200] 218s  last: claude-fable-5-1 B__Q_neutral__acad_teach#79 -> unparsed
+  [190/200] 228s  last: claude-fable-5-1 B__Q_neutral__acad_teach#91 -> unparsed
+  [200/200] 240s  last: claude-fable-5-1 B__Q_neutral__acad_teach#99 -> unparsed
+done: 200 ok, 0 errors, 240s

@@ -191,14 +191,11 @@ def md_table(header: list[str], body: list[list[str]]) -> str:
 
 def theory_table(head: str, entries, model=FB, effort=HI, extra_eu=False, other_col=False) -> str:
     data = [(lab, counts(rows(model, effort, ids))) for lab, ids in entries]
-    ns = {d["n"] for _, d in data}
-    uniform = len(ns) == 1
-    suffix = f" (of {ns.pop()} samples)" if uniform else ""
-    header = [head, "Names CDT" + suffix, "Names FDT/UDT" + suffix] + (["Names expected utility theory, no side taken" + suffix] if extra_eu else []) + (["Other answer"] if other_col else []) + ([] if uniform else ["Samples"])
+    header = [head, "Names CDT", "Names FDT/UDT"] + (["Names expected utility theory, no side taken"] if extra_eu else []) + (["Other answer"] if other_col else [])
     body = []
     for lab, d in data:
         other = (", ".join(x for x in [f"EDT {pct(d['edt'], d['n'])}" if d["edt"] else "", f"EU {pct(d['eu'], d['n'])}" if d["eu"] else ""] if x) or "–") if d["n"] else "–"
-        cells = [lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])] + ([pct(d["eu"], d["n"])] if extra_eu else []) + ([other] if other_col else []) + ([] if uniform else [str(d["n"])])
+        cells = [lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])] + ([pct(d["eu"], d["n"])] if extra_eu else []) + ([other] if other_col else [])
         body.append(cells)
     return md_table(header, body)
 
@@ -211,9 +208,7 @@ def guess_table() -> str:
         names = {"acad": "academic", "lw": "LessWrong / AI safety", "public": "general public"}
         guess = ", ".join(f"{names.get(k, k)} {pct(v, d['n'])}" for k, v in g.most_common())
         body.append([lab, guess, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
-    ns = {counts(rows(FB, HI, pid))["n"] for _, pid in GUESS}
-    suf = f" (of {ns.pop()})" if len(ns) == 1 else ""
-    return md_table(["Question", "Claude's guess about the asker" + suf, "Names CDT" + suf, "Names FDT/UDT" + suf], body)
+    return md_table(["Question", "Claude's guess about the asker", "Names CDT", "Names FDT/UDT"], body)
 
 
 def bb_first_table() -> str:
@@ -226,8 +221,8 @@ def effort_table() -> str:
     body = []
     for eff, lab in [("low", "low"), ("high", "high (the default)"), ("xhigh", "xhigh"), ("max", "max")]:
         d = counts(rows(FB, eff, ACAD))
-        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), str(d["n"])])
-    return md_table(["Effort setting (professor, teacher and PhD-student personas pooled)", "Names CDT", "Names FDT/UDT", "Samples"], body)
+        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
+    return md_table(["Effort setting (professor, teacher and PhD-student personas pooled)", "Names CDT", "Names FDT/UDT"], body)
 
 
 def sysprompt_table() -> str:
@@ -236,17 +231,17 @@ def sysprompt_table() -> str:
         cells = [lab]
         for p in ["acad_teach", "acad_prof"]:
             d = counts(rows(FB, HI, pat.format(p=p)))
-            cells += [f"{pct(d['cdt'], d['n'])} ({d['n']})", pct(d["fdt"], d["n"])]
+            cells += [pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])]
         body.append(cells)
-    return md_table(["System prompt", "Teacher: names CDT (samples)", "Teacher: names FDT/UDT", "Professor: names CDT (samples)", "Professor: names FDT/UDT"], body)
+    return md_table(["System prompt", "Teacher: names CDT", "Teacher: names FDT/UDT", "Professor: names CDT", "Professor: names FDT/UDT"], body)
 
 
 def implicit_note_table() -> str:
     body = []
     for lab, without, with_ in IMPLICIT_NOTE:
         a, b = counts(rows(FB, HI, without)), counts(rows(FB, HI, with_))
-        body.append([lab, f"{pct(a['cdt'], a['n'])} ({a['n']})", pct(a["fdt"], a["n"]), f"{pct(b['cdt'], b['n'])} ({b['n']})", pct(b["fdt"], b["n"])])
-    return md_table(["Cue", "Without the note: names CDT (samples)", "Without: names FDT/UDT", "With the note: names CDT (samples)", "With: names FDT/UDT"], body)
+        body.append([lab, pct(a["cdt"], a["n"]), pct(a["fdt"], a["n"]), pct(b["cdt"], b["n"]), pct(b["fdt"], b["n"])])
+    return md_table(["Cue", "Without the note: names CDT", "Without: names FDT/UDT", "With the note: names CDT", "With: names FDT/UDT"], body)
 
 
 def models_table() -> str:
@@ -258,7 +253,7 @@ def models_table() -> str:
             if not d["n"]:
                 cells.append("–"); continue
             main = f"EDT {pct(d['edt'], d['n'])}" if d["edt"] > d["cdt"] else f"CDT {pct(d['cdt'], d['n'])}"
-            cells.append(f"{main}, FDT/UDT {pct(d['fdt'], d['n'])} ({d['n']})")
+            cells.append(f"{main}, FDT/UDT {pct(d['fdt'], d['n'])}")
         body.append(cells)
     return md_table(["Sentence before the question"] + [ml for _, _, ml in MODELS], body)
 
@@ -396,8 +391,8 @@ def _cdt_action(rs):
     return k, n
 
 
-def _pct_cells(data_cells, uniform):
-    return [pct(k, n) if n else "–" for k, n in data_cells] if uniform else [f"{pct(k, n)} ({n})" if n else "–" for k, n in data_cells]
+def _pct_cells(data_cells, uniform=True):
+    return [pct(k, n) if n else "–" for k, n in data_cells]
 
 
 def _ldt_action(rs):
@@ -413,7 +408,7 @@ def matrix_table() -> str:
     data = [(lab, [_ldt_action(rows(FB, HI, _ids([f"G__{qk}__", f"AA__{qk}__"], cue))) for qk in MATRIX_PROBLEMS]) for lab, cue in MATRIX_CUES]
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Cue before the problem" + (f" (share choosing the FDT/UDT/UEDT option, {ns.pop()} samples per cell)" if uniform else " (share choosing the FDT/UDT/UEDT option, samples in brackets)")
+    head = "Cue before the problem (share choosing the FDT/UDT/UEDT option)"
     body = [["*FDT/UDT/UEDT option*"] + [f"*{LDT_OPTION[qk]}*" for qk in MATRIX_PROBLEMS]] + [[lab] + _pct_cells(cells, uniform) for lab, cells in data]
     return md_table([head] + [PLABEL[qk] for qk in MATRIX_PROBLEMS], body)
 
@@ -437,7 +432,7 @@ def acausal_table() -> str:
         data.append((lab, cells))
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Cue before the question" + (f" (share giving the pro-acausal-trade answer, {ns.pop()} samples per cell)" if uniform else " (share giving the pro-acausal-trade answer, samples in brackets)")
+    head = "Cue before the question (share giving the pro-acausal-trade answer)"
     body = [["*pro-acausal-trade answer*"] + [f"*{want}*" for _, want, _ in ACAUSAL_QS]] + [[lab] + _pct_cells(cells, uniform) for lab, cells in data]
     return md_table([head] + [lab for _, _, lab in ACAUSAL_QS], body)
 
@@ -457,20 +452,24 @@ def framing_table() -> str:
         data.append((lab, cells))
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Counterfactual mugging, framed as…" + (f" (share answering \"pay\", {ns.pop()} samples per cell)" if uniform else " (share answering \"pay\", samples in brackets)")
+    head = "Counterfactual mugging, framed as… (share answering \"pay\")"
     return md_table([head, "no cue", "teacher persona", "dissertation opener"], [[lab] + _pct_cells(cells, uniform) for lab, cells in data])
 
 
 def second_turn_table() -> str:
+    """Rows: what the first turn named; columns: the problem posed next (same orientation as the other tables)."""
     bb = [pid for (m, e, pid) in IDX if m == FB and e == HI and pid.startswith("BB__")]
-    body = []
-    for qk, variant in [("P_newcomb", "plain"), ("P_transparent", "plain"), ("P_cfmugging", "plain"), ("Q_acausal", "plain"), ("P_twinpd", "plain"), ("P_twinpd", "hook")]:
+    cols = [("P_newcomb", "plain", "Newcomb"), ("P_transparent", "plain", "transparent Newcomb"), ("P_cfmugging", "plain", "counterfactual mugging"),
+            ("P_twinpd", "plain", "twin PD"), ("P_twinpd", "hook", "twin PD, introduced with \"Given the theory you just named, here is a concrete case.\"")]
+    named_cdt, named_fdt = [], []
+    for qk, variant, _ in cols:
         rs = [r for r in rows(FB, HI, bb) if r["prompt_id"].split("__")[1] == qk and r["prompt_id"].split("__")[3] == variant]
         a = [r for r in rs if main_theory(r, FREE) == "CDT"]; b = [r for r in rs if main_theory(r, FREE) in FDTUDT]
-        ka = sum(fu_choice(r, FREE) == CDT_ANSWER[qk] for r in a); kb = sum(fu_choice(r, FREE) == CDT_ANSWER[qk] for r in b)
-        lab = PLABEL[qk] + (", introduced with \"Given the theory you just named, here is a concrete case.\"" if variant == "hook" else "")
-        body.append([lab, CDT_OPTION[qk], f"{pct(ka, len(a))} ({len(a)})", f"{pct(kb, len(b))} ({len(b)})"])
-    return md_table(["Problem posed in the second turn", "CDT's option", "Chosen after naming CDT (conversations)", "Chosen after naming FDT/UDT (conversations)"], body)
+        named_cdt.append(pct(sum(fu_choice(r, FREE) == CDT_ANSWER[qk] for r in a), len(a)))
+        named_fdt.append(pct(sum(fu_choice(r, FREE) == CDT_ANSWER[qk] for r in b), len(b)))
+    body = [["*CDT's option*"] + [f"*{CDT_OPTION[qk]}*" for qk, _, _ in cols],
+            ["First turn named CDT"] + named_cdt, ["First turn named FDT/UDT"] + named_fdt]
+    return md_table(["First-turn answer (share choosing CDT's option in the second turn)"] + [lab for _, _, lab in cols], body)
 
 
 REALISM_ROWS = [
@@ -512,7 +511,7 @@ def realism_table() -> str:
         data.append((lab, cells))
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Before the question" + (f" (share giving the LessWrong-typical answer, {ns.pop()} samples per cell)" if uniform else " (share giving the LessWrong-typical answer, samples in brackets)")
+    head = "Before the question (share giving the LessWrong-typical answer)"
     return md_table([head, "Anti-realism", "Zombies not conceivable"], [[lab] + _pct_cells(cells, uniform) for lab, cells in data])
 
 
@@ -523,8 +522,8 @@ def astra_bbr_table() -> str:
         rs = rows("gpt-6-astra", "None", f"BBR__P_newcomb__{cue}"); n = len(rs)
         ob = [r for r in rs if main_choice(r, FREE) == "one-box"]
         c = Counter(fu_theory(r, FREE) for r in ob)
-        body.append([cue_lab[cue], pct(len(ob), n), pct(c["EDT"], len(ob)), pct(sum(c[k] for k in FDTUDT), len(ob)), pct(c["CDT"], len(ob)), str(n)])
-    return md_table(["Conversation: Newcomb first, then the question", "One-boxes", "Then names EDT", "Then names FDT/UDT", "Then names CDT", "Conversations"], body)
+        body.append([cue_lab[cue], pct(len(ob), n), pct(c["EDT"], len(ob)), pct(sum(c[k] for k in FDTUDT), len(ob)), pct(c["CDT"], len(ob))])
+    return md_table(["Conversation: Newcomb first, then the question", "One-boxes", "Then names EDT", "Then names FDT/UDT", "Then names CDT"], body)
 
 
 def opus_bb_table() -> str:
@@ -536,9 +535,9 @@ def opus_bb_table() -> str:
         opt = CDT_ANSWER[qk]
         def dist(g):
             k = sum(fu_choice(r, FREE) == opt for r in g)
-            return f"{CDT_OPTION[qk]} {pct(k, len(g))} ({len(g)})" if g else "–"
-        body.append([PLABEL[qk], f"{pct(len(e_), len(rs))} ({len(rs)})", dist(e_), dist(f_)])
-    return md_table(["Problem in the second turn", "First turn named EDT (conversations)", "CDT's option after naming EDT (conversations)", "CDT's option after naming FDT/UDT (conversations)"], body)
+            return f"{CDT_OPTION[qk]} {pct(k, len(g))}" if g else "–"
+        body.append([PLABEL[qk], pct(len(e_), len(rs)), dist(e_), dist(f_)])
+    return md_table(["Problem in the second turn", "First turn named EDT", "CDT's option after naming EDT", "CDT's option after naming FDT/UDT"], body)
 
 
 def probabilities_table() -> str:
@@ -551,8 +550,8 @@ def probabilities_table() -> str:
     uniform = len(ns) == 1
     for lab, _ in rowsdef:
         ds = parsed[lab]; m = lambda k: sum(d.get(k, 0) for d in ds) / len(ds) if ds else float("nan")
-        body.append([lab, f"{m('CDT'):.2f}", f"{m('EDT'):.2f}", f"{m('FDT') + m('UDT'):.2f}", f"{m('other'):.2f}"] + ([] if uniform else [str(len(ds))]))
-    head = ["Sentence before the question" + (f" (mean over {ns.pop()} samples)" if uniform else ""), "P(CDT)", "P(EDT)", "P(FDT or UDT)", "P(other)"] + ([] if uniform else ["Samples"])
+        body.append([lab, f"{m('CDT'):.2f}", f"{m('EDT'):.2f}", f"{m('FDT') + m('UDT'):.2f}", f"{m('other'):.2f}"])
+    head = ["Sentence before the question (mean stated probability)", "P(CDT)", "P(EDT)", "P(FDT or UDT)", "P(other)"]
     return md_table(head, body)
 
 
@@ -561,8 +560,8 @@ def split_table() -> str:
     for lab, pid in [("*(nothing)*", "A__Q_neutral__none"), (q("I work at Anthropic."), "M__Q_neutral__m_anthropic"), (q("I'm an effective altruist."), "M__Q_neutral__m_ea"),
                      (q("I'm a rationalist."), "X__Q_neutral__x_rationalist"), (q("I work on AI alignment research."), "B__Q_neutral__ai_safety"), (q("I'm a longtime LessWrong reader."), "B__Q_neutral__lw_reader")]:
         fd = [main_theory(r, FREE) for r in rows(FB, HI, pid)]; nf = sum(c in FDTUDT for c in fd)
-        body.append([lab, pct(sum(c == "UDT only" for c in fd), nf), str(nf)])
-    return md_table(["Sentence before the question", "Says \"UDT\" rather than \"FDT\"", "FDT/UDT samples"], body)
+        body.append([lab, pct(sum(c == "UDT only" for c in fd), nf)])
+    return md_table(["Sentence before the question", "Says \"UDT\" rather than \"FDT\""], body)
 
 
 def reasoning_table() -> str:
@@ -579,8 +578,8 @@ def reasoning_table() -> str:
                           (("ctrl", "FDT/UDT"), "nurse / engineer / student, answered FDT/UDT"), (("lw", "FDT/UDT"), "LessWrong / AI alignment, answered FDT/UDT")]:
         rs = groups.get((g, fin), []); n = len(rs)
         m = lambda key: pct(sum(bool(r.get(key)) for r in rs), n)
-        body.append([lab, m("mentions_asker"), pct(sum(r.get("initial_lean") == "LDT" for r in rs), n), m("pivot"), m("mainstream_frame"), str(n)])
-    return md_table(["Persona and final answer", "Mentions the asker", "First leans FDT/UDT", "Then switches theory", "Calls its pick \"mainstream\"", "Samples"], body)
+        body.append([lab, m("mentions_asker"), pct(sum(r.get("initial_lean") == "LDT" for r in rs), n), m("pivot"), m("mainstream_frame")])
+    return md_table(["Persona and final answer", "Mentions the asker", "First leans FDT/UDT", "Then switches theory", "Calls its pick \"mainstream\""], body)
 
 
 TABLES.update({

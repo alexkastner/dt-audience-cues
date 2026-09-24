@@ -12,7 +12,7 @@ import anthropic
 import openai
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)  # the key in .env must win over any ANTHROPIC_API_KEY already in the shell environment (e.g. the one Claude Code runs with)
 
 CLAUDE_EFFORTS = ("low", "medium", "high", "xhigh", "max")
 DEFAULT_CLAUDE_MODELS = ["claude-fable-5-1"]
@@ -43,6 +43,7 @@ class Anthropic:
     def __init__(self):
         if not os.environ.get("ANTHROPIC_API_KEY"):
             raise RuntimeError("ANTHROPIC_API_KEY is empty - add it to .env")
+        print(f"[providers] Anthropic key in use ends with …{os.environ['ANTHROPIC_API_KEY'][-4:]} (from .env)", flush=True)
         self.client = anthropic.AsyncAnthropic(max_retries=6, timeout=1500)
 
     async def complete(self, model: str, user_text: str | list, *, system: str | None = None,
