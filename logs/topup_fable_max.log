@@ -1,0 +1,35 @@
+top-up to 100: 6 prompts x 1 models -> 328 calls to make
+  [10/328] 422s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1003 -> FDT
+  [20/328] 630s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1010 -> FDT
+  [30/328] 789s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1022 -> FDT
+  [40/328] 1009s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1033 -> FDT
+  [50/328] 1242s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1040 -> UDT
+  [60/328] 1412s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1050 -> FDT
+  [70/328] 1611s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1060 -> UDT
+  [80/328] 1795s  last: claude-fable-5-1 B__Q_neutral__ai_safety#1073 -> FDT
+  [90/328] 1972s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1001 -> FDT
+  [100/328] 2140s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1011 -> FDT
+  [110/328] 2292s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1023 -> FDT
+  [120/328] 2461s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1029 -> FDT
+  [130/328] 2591s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1043 -> FDT
+  [140/328] 2709s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1049 -> FDT
+  [150/328] 2923s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1063 -> FDT
+  [160/328] 3068s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1072 -> FDT
+  [170/328] 3210s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1003 -> FDT
+  [180/328] 3339s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1008 -> FDT
+  [190/328] 3474s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1022 -> FDT
+  [200/328] 3612s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1034 -> FDT
+  [210/328] 3702s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1040 -> FDT
+  [220/328] 3843s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1052 -> FDT
+  [230/328] 3971s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1063 -> FDT
+  [240/328] 4087s  last: claude-fable-5-1 B__Q_neutral__ctrl_student#1073 -> FDT
+  [250/328] 4266s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1001 -> FDT
+  [260/328] 4379s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1010 -> FDT
+  [270/328] 4611s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1023 -> FDT
+  [280/328] 4738s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1026 -> FDT
+  [290/328] 4915s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1045 -> FDT
+  [300/328] 5061s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1053 -> FDT
+  [310/328] 5206s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1060 -> FDT
+  [320/328] 5362s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1072 -> FDT
+  [328/328] 5502s  last: claude-fable-5-1 B__Q_neutral__ctrl_nurse#1079 -> FDT
+done: 328 ok, 0 errors, 5502s

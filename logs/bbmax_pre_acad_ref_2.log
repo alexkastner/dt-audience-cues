@@ -1,0 +1,3 @@
+5 prompts x 1 models x n=30 -> 150 calls to make (0 already done)
+  [10/150] 958s  last: claude-fable-5-1 BB__P_newcomb__pre_acad_ref_2__plain#18 -> unparsed
+  [20/150] 1810s  last: claude-fable-5-1 BB__P_newcomb__pre_acad_ref_2__plain#8 -> unparsed

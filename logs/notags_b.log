@@ -1,0 +1,22 @@
+5 prompts x 1 models x n=40 -> 200 calls to make (0 already done)
+  [10/200] 46s  last: claude-fable-5-1 B__Q_neutral__lw_reader#9 -> unparsed
+  [20/200] 72s  last: claude-fable-5-1 B__Q_neutral__lw_reader#19 -> unparsed
+  [30/200] 103s  last: claude-fable-5-1 B__Q_neutral__lw_reader#29 -> unparsed
+  [40/200] 132s  last: claude-fable-5-1 B__Q_neutral__lw_reader#39 -> unparsed
+  [50/200] 164s  last: claude-fable-5-1 B__Q_neutral__ai_safety#7 -> unparsed
+  [60/200] 191s  last: claude-fable-5-1 B__Q_neutral__ai_safety#20 -> unparsed
+  [70/200] 226s  last: claude-fable-5-1 B__Q_neutral__ai_safety#29 -> unparsed
+  [80/200] 252s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#0 -> unparsed
+  [90/200] 275s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#6 -> unparsed
+  [100/200] 297s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#20 -> unparsed
+  [110/200] 323s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#29 -> unparsed
+  [120/200] 353s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#39 -> unparsed
+  [130/200] 388s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#10 -> unparsed
+  [140/200] 417s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#17 -> unparsed
+  [150/200] 452s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#29 -> unparsed
+  [160/200] 485s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#39 -> unparsed
+  [170/200] 516s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#7 -> unparsed
+  [180/200] 550s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#20 -> unparsed
+  [190/200] 584s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#30 -> unparsed
+  [200/200] 617s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#39 -> unparsed
+done: 200 ok, 0 errors, 617s

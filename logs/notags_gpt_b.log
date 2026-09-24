@@ -1,0 +1,10 @@
+4 prompts x 1 models x n=20 -> 80 calls to make (0 already done)
+  [10/80] 18s  last: gpt-6-astra B__Q_neutral__lw_reader#9 -> unparsed
+  [20/80] 28s  last: gpt-6-astra B__Q_neutral__ai_safety#0 -> unparsed
+  [30/80] 38s  last: gpt-6-astra B__Q_neutral__ai_safety#8 -> unparsed
+  [40/80] 48s  last: gpt-6-astra B__Q_neutral__ai_safety#18 -> unparsed
+  [50/80] 65s  last: gpt-6-astra W__Q_neutral__lw_reader__w_generic#10 -> unparsed
+  [60/80] 78s  last: gpt-6-astra W__Q_neutral__lw_reader__w_generic#19 -> unparsed
+  [70/80] 90s  last: gpt-6-astra W__Q_neutral__ai_safety__w_generic#9 -> unparsed
+  [80/80] 105s  last: gpt-6-astra W__Q_neutral__ai_safety__w_generic#18 -> unparsed
+done: 80 ok, 0 errors, 105s

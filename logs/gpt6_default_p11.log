@@ -1,0 +1,8 @@
+3 prompts x 1 models x n=20 -> 60 calls to make (0 already done)
+  [10/60] 8s  last: gpt-6-astra W__Q_neutral__none__w_generic#9 -> CDT
+  [20/60] 13s  last: gpt-6-astra W__Q_neutral__none__w_generic#18 -> FDT
+  [30/60] 17s  last: gpt-6-astra W__Q_neutral__acad_teach__w_generic#8 -> CDT
+  [40/60] 24s  last: gpt-6-astra W__Q_neutral__acad_teach__w_generic#17 -> CDT
+  [50/60] 30s  last: gpt-6-astra W__Q_neutral__acad_prof__w_generic#11 -> FDT
+  [60/60] 38s  last: gpt-6-astra W__Q_neutral__acad_prof__w_generic#19 -> FDT
+done: 60 ok, 0 errors, 38s

@@ -1,0 +1,26 @@
+3 prompts x 1 models x n=80 -> 240 calls to make (0 already done)
+  [10/240] 23s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#0 -> FDT
+  [20/240] 48s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#19 -> FDT
+  [30/240] 73s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#29 -> FDT
+  [40/240] 94s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#38 -> FDT
+  [50/240] 117s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#49 -> FDT
+  [60/240] 139s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#60 -> FDT
+  [70/240] 161s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#70 -> FDT
+  [80/240] 179s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#79 -> FDT
+  [90/240] 207s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#11 -> FDT
+  [100/240] 231s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#20 -> FDT
+  [110/240] 256s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#29 -> CDT
+  [120/240] 280s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#41 -> FDT
+  [130/240] 304s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#49 -> FDT
+  [140/240] 326s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#59 -> FDT
+  [150/240] 354s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#71 -> FDT
+  [160/240] 376s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#0 -> FDT
+  [170/240] 403s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#8 -> FDT
+  [180/240] 429s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#19 -> FDT
+  [190/240] 457s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#27 -> CDT
+  [200/240] 483s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#39 -> FDT
+  [210/240] 511s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#48 -> FDT
+  [220/240] 538s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#58 -> FDT
+  [230/240] 564s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#69 -> CDT
+  [240/240] 596s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#78 -> FDT
+done: 240 ok, 0 errors, 596s

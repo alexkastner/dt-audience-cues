@@ -1,0 +1,12 @@
+5 prompts x 1 models x n=20 -> 100 calls to make (0 already done)
+  [10/100] 18s  last: gpt-6-astra B__Q_neutral__acad_teach#9 -> unparsed
+  [20/100] 30s  last: gpt-6-astra B__Q_neutral__acad_teach#16 -> unparsed
+  [30/100] 42s  last: gpt-6-astra B__Q_neutral__ctrl_student#8 -> unparsed
+  [40/100] 52s  last: gpt-6-astra B__Q_neutral__ctrl_student#19 -> unparsed
+  [50/100] 69s  last: gpt-6-astra B__Q_neutral__ctrl_nurse#9 -> unparsed
+  [60/100] 80s  last: gpt-6-astra B__Q_neutral__ctrl_nurse#19 -> unparsed
+  [70/100] 93s  last: gpt-6-astra W__Q_neutral__acad_teach__w_generic#11 -> unparsed
+  [80/100] 105s  last: gpt-6-astra W__Q_neutral__acad_teach__w_generic#18 -> unparsed
+  [90/100] 113s  last: gpt-6-astra AA__P_newcomb__acad_teach__action#8 -> unparsed
+  [100/100] 128s  last: gpt-6-astra AA__P_newcomb__acad_teach__action#19 -> unparsed
+done: 100 ok, 0 errors, 128s

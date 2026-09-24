@@ -1,0 +1,22 @@
+top-up to 100: 2 prompts x 1 models -> 198 calls to make
+  [10/198] 174s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1013 -> unparsed
+  [20/198] 320s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1017 -> unparsed
+  [30/198] 447s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1029 -> unparsed
+  [40/198] 514s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1035 -> unparsed
+  [50/198] 655s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1048 -> unparsed
+  [60/198] 809s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1059 -> unparsed
+  [70/198] 853s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1068 -> unparsed
+  [80/198] 988s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1077 -> unparsed
+  [90/198] 1125s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1086 -> unparsed
+  [100/198] 1172s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1094 -> unparsed
+  [110/198] 1223s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1012 -> unparsed
+  [120/198] 1274s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1021 -> unparsed
+  [130/198] 1308s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1030 -> unparsed
+  [140/198] 1372s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1043 -> unparsed
+  [150/198] 1408s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1050 -> unparsed
+  [160/198] 1470s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1062 -> unparsed
+  [170/198] 1523s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1073 -> unparsed
+  [180/198] 1555s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1081 -> unparsed
+  [190/198] 1612s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1090 -> unparsed
+  [198/198] 1664s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1099 -> unparsed
+done: 198 ok, 0 errors, 1664s

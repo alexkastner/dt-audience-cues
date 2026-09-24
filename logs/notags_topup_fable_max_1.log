@@ -1,0 +1,23 @@
+top-up to 100: 3 prompts x 1 models -> 203 calls to make
+  [10/203] 268s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1001 -> unparsed
+  [20/203] 448s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1013 -> unparsed
+  [30/203] 646s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1027 -> unparsed
+  [40/203] 827s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1036 -> unparsed
+  [50/203] 990s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1049 -> unparsed
+  [60/203] 1166s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1056 -> unparsed
+  [70/203] 1385s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1062 -> unparsed
+  [80/203] 1515s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1078 -> unparsed
+  [90/203] 1710s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1090 -> unparsed
+  [100/203] 1793s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1000 -> unparsed
+  [110/203] 1914s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1009 -> unparsed
+  [120/203] 2018s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1015 -> unparsed
+  [130/203] 2099s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1031 -> unparsed
+  [140/203] 2219s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1037 -> unparsed
+  [150/203] 2310s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1047 -> unparsed
+  [160/203] 2425s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1057 -> unparsed
+  [170/203] 2523s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1067 -> unparsed
+  [180/203] 2630s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1081 -> unparsed
+  [190/203] 2762s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1083 -> unparsed
+  [200/203] 2861s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1099 -> unparsed
+  [203/203] 2891s  last: claude-fable-5-1 B__Q_neutral__ctrl_swe#1093 -> unparsed
+done: 203 ok, 0 errors, 2891s

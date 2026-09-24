@@ -1,0 +1,35 @@
+top-up to 100: 9 prompts x 1 models -> 843 calls to make
+  [10/843] 135s  last: claude-fable-5-1 A__Q_neutral__none#1015 -> unparsed
+  [20/843] 205s  last: claude-fable-5-1 A__Q_neutral__none#1022 -> unparsed
+  [30/843] 283s  last: claude-fable-5-1 A__Q_neutral__none#1029 -> unparsed
+  [40/843] 380s  last: claude-fable-5-1 A__Q_neutral__none#1038 -> unparsed
+  [50/843] 455s  last: claude-fable-5-1 A__Q_neutral__none#1051 -> unparsed
+  [60/843] 548s  last: claude-fable-5-1 A__Q_neutral__none#1060 -> unparsed
+  [70/843] 621s  last: claude-fable-5-1 A__Q_neutral__none#1069 -> unparsed
+  [80/843] 744s  last: claude-fable-5-1 A__Q_neutral__none#1082 -> unparsed
+  [90/843] 845s  last: claude-fable-5-1 A__Q_neutral__none#1093 -> unparsed
+  [100/843] 931s  last: claude-fable-5-1 A__Q_neutral__none#1096 -> unparsed
+  [110/843] 1302s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1013 -> unparsed
+  [120/843] 1634s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1017 -> unparsed
+  [130/843] 1904s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1028 -> unparsed
+  [140/843] 2228s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1035 -> unparsed
+  [150/843] 2524s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1049 -> unparsed
+  [160/843] 2807s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1059 -> unparsed
+  [170/843] 3050s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1070 -> unparsed
+  [180/843] 3307s  last: claude-fable-5-1 B__Q_neutral__acad_prof#1076 -> unparsed
+  [190/843] 3488s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1012 -> unparsed
+  [200/843] 3684s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1020 -> unparsed
+  [210/843] 3861s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1030 -> unparsed
+  [220/843] 4091s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1034 -> unparsed
+  [230/843] 4313s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1050 -> unparsed
+  [240/843] 4464s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1059 -> unparsed
+  [250/843] 4685s  last: claude-fable-5-1 B__Q_neutral__acad_teach#1068 -> unparsed
+  [260/843] 4894s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1002 -> unparsed
+  [270/843] 5219s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1004 -> unparsed
+  [280/843] 5534s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1019 -> unparsed
+  [290/843] 5745s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1033 -> unparsed
+  [300/843] 6007s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1044 -> unparsed
+  ERR claude-fable-5-1 B__Q_neutral__acad_grad#1051: InternalServerError: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'Internal server error'}, 'request_id': 'req_011CfNtPfrr58oEfzagrhj7a'}
+  [320/843] 6491s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1056 -> unparsed
+  [330/843] 6863s  last: claude-fable-5-1 B__Q_neutral__acad_grad#1064 -> unparsed
+  [340/843] 7134s  last: claude-fable-5-1 B__Q_neutral__lw_reader#1001 -> unparsed

@@ -1,0 +1,12 @@
+5 prompts x 1 models x n=30 -> 150 calls to make (0 already done)
+  [10/150] 309s  last: claude-fable-5-1 BB__P_newcomb__acad_teach__plain#11 -> unparsed
+  [20/150] 554s  last: claude-fable-5-1 BB__P_newcomb__acad_teach__plain#24 -> unparsed
+  [30/150] 739s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__plain#1 -> unparsed
+  [40/150] 930s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__plain#10 -> unparsed
+  [50/150] 1237s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__plain#23 -> unparsed
+  [60/150] 1417s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__plain#29 -> unparsed
+  [70/150] 1626s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__hook#9 -> unparsed
+  [80/150] 1840s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__hook#16 -> unparsed
+  [90/150] 2068s  last: claude-fable-5-1 BB__P_twinpd__acad_teach__hook#29 -> unparsed
+  [100/150] 2333s  last: claude-fable-5-1 BB__P_cfmugging__acad_teach__plain#9 -> unparsed
+  [110/150] 2535s  last: claude-fable-5-1 BB__P_cfmugging__acad_teach__plain#21 -> unparsed

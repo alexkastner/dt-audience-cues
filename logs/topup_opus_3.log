@@ -1,0 +1,26 @@
+top-up to 100: 3 prompts x 1 models -> 240 calls to make
+  [10/240] 67s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1010 -> unparsed
+  [20/240] 128s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1018 -> unparsed
+  [30/240] 178s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1031 -> unparsed
+  [40/240] 222s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1040 -> unparsed
+  [50/240] 264s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1052 -> unparsed
+  [60/240] 325s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1059 -> unparsed
+  [70/240] 354s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1069 -> unparsed
+  [80/240] 430s  last: claude-opus-5 BB__P_cfmugging__acad_teach__plain#1077 -> unparsed
+  [90/240] 587s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1009 -> unparsed
+  [100/240] 740s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1018 -> unparsed
+  [110/240] 919s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1033 -> unparsed
+  [120/240] 1000s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1040 -> unparsed
+  [130/240] 1152s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1049 -> unparsed
+  [140/240] 1296s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1062 -> unparsed
+  [150/240] 1389s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1067 -> unparsed
+  [160/240] 1505s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1077 -> unparsed
+  [170/240] 1565s  last: claude-opus-5 BB__P_cfmugging__conv_acad_task__plain#1079 -> unparsed
+  [180/240] 1604s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1020 -> unparsed
+  [190/240] 1646s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1027 -> unparsed
+  [200/240] 1696s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1039 -> unparsed
+  [210/240] 1756s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1052 -> unparsed
+  [220/240] 1790s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1059 -> unparsed
+  [230/240] 1843s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1073 -> unparsed
+  [240/240] 1905s  last: claude-opus-5 BB__P_transparent__lw_reader__plain#1079 -> unparsed
+done: 240 ok, 0 errors, 1905s

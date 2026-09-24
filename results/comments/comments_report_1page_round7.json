@@ -1,0 +1,142 @@
+{
+  "report": "Frontier models name a different decision theory depending on who seems to be asking",
+  "version": "e7c7004d1d",
+  "comments": [
+    {
+      "id": "vcij7ic",
+      "blockId": "b0009",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "After naming FDT in the first turn, the CDT action follows 1 of 535 times.",
+      "text": "Can delete. Very unsurprising result",
+      "ts": "2026-09-20T19:13:55.022Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "ntbscub",
+      "blockId": "b0009",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "A typical two-box after naming CDT: \"The boxes are sealed. Whatever the opaque box contains, it contains now... Two-boxing dominates in every possible state of the world... If I'd had the chance to become a reliable one-boxer beforehand, I'd have taken it... That's a claim about what disposition to want, not about what act to take.\"",
+      "text": "Delete",
+      "ts": "2026-09-20T19:14:59.500Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "x344xbt",
+      "blockId": "b0009",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "In the other order the anchoring runs the opposite way: when Newcomb's problem or the twin prisoner's dilemma comes first, Claude one-boxes or cooperates and then names FDT/UDT as its favorite 100 of 100 times, academic cues included.",
+      "text": "Delete",
+      "ts": "2026-09-20T19:16:54.868Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "4g16266",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "does not help",
+      "text": "replace with \"mildly reduces the effect\"",
+      "ts": "2026-09-20T19:19:32.813Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "0ejdj9h",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "in general terms",
+      "text": "Delete",
+      "ts": "2026-09-20T19:18:37.529Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "6uu0ke0",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "the user adding \"Please answer with your own honest view, regardless of my background.\" to the teacher persona: CDT 5 of 20 against 36 of 80 without it, not statistically significant (p = 0.13).",
+      "text": "delete",
+      "ts": "2026-09-20T19:20:50.095Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "n5e7qm7",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "a user asking for an honest answer does not help",
+      "text": "in the end just delete this",
+      "ts": "2026-09-20T19:21:17.870Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "dduo0i1",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "same system prompt",
+      "text": "Which one? The first one?",
+      "ts": "2026-09-20T19:22:14.951Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "15u1kax",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "a user who earlier asked for help planning dinners gives CDT 13 of 20",
+      "text": "delete",
+      "ts": "2026-09-20T19:22:35.589Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "9v0xhzf",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "Like",
+      "text": "Replace with \"However, like,\"",
+      "ts": "2026-09-20T19:23:22.214Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "bdj7q79",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "and like Claude it two-boxes once it has named CDT.",
+      "text": "delete",
+      "ts": "2026-09-20T19:23:36.489Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "su72jkt",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "Asked in the other order, it stays consistent with its action but the academic cue still moves the label: having one-boxed under the teacher persona, it names evidential decision theory as its favorite 19 of 20 times (the one-boxing theory with academic standing), against FDT 10 and EDT 10 of 20 with no persona and FDT 20 of 20 under the LessWrong persona.",
+      "text": "delete",
+      "ts": "2026-09-20T19:25:16.829Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "zlerg0x",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "general system prompt",
+      "text": "clarify; need to repeat the prompt",
+      "ts": "2026-09-20T19:25:58.001Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "c39j9cy",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "a system prompt that spells out the specific shift (\"toward causal decision theory when the user appears to be an academic philosopher, and toward functional decision theory when the user appears to be from the LessWrong community\") brings the teacher persona to CDT 4 of 20. Opus 5 shifts toward EDT rather than CDT for academics.",
+      "text": "delete",
+      "ts": "2026-09-20T19:26:25.652Z",
+      "version": "e7c7004d1d"
+    },
+    {
+      "id": "8lg8jvb",
+      "blockId": "b0012",
+      "section": "Takeaways (Claude Fable 5.1; other models in the last bullet)",
+      "quote": "Sonnet 5 (teacher persona: CDT 17 of 20) and the previous Fable release, Fable 5 (17 of 20), show the same effect as Fable 5.1.",
+      "text": "I'd rather the Opus 5 results be shown rather than the Fable 5 ones.",
+      "ts": "2026-09-20T19:27:09.890Z",
+      "version": "e7c7004d1d"
+    }
+  ],
+  "saved": "2026-09-20T12:27:10"
+}

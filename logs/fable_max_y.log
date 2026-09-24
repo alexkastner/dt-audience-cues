@@ -1,0 +1,22 @@
+5 prompts x 1 models x n=40 -> 200 calls to make (0 already done)
+  [10/200] 147s  last: claude-fable-5-1 A__Q_neutral__none#10 -> FDT
+  [20/200] 284s  last: claude-fable-5-1 A__Q_neutral__none#21 -> FDT
+  [30/200] 403s  last: claude-fable-5-1 A__Q_neutral__none#32 -> FDT
+  [40/200] 535s  last: claude-fable-5-1 A__Q_neutral__none#38 -> FDT
+  [50/200] 1038s  last: claude-fable-5-1 B__Q_neutral__acad_prof#7 -> UDT
+  [60/200] 1339s  last: claude-fable-5-1 B__Q_neutral__acad_prof#19 -> FDT
+  [70/200] 1699s  last: claude-fable-5-1 B__Q_neutral__acad_prof#31 -> CDT
+  [80/200] 2179s  last: claude-fable-5-1 B__Q_neutral__acad_teach#0 -> FDT
+  [90/200] 2464s  last: claude-fable-5-1 B__Q_neutral__acad_teach#8 -> FDT
+  [100/200] 2723s  last: claude-fable-5-1 B__Q_neutral__acad_teach#15 -> FDT
+  [110/200] 2935s  last: claude-fable-5-1 B__Q_neutral__acad_teach#28 -> FDT
+  [120/200] 3154s  last: claude-fable-5-1 B__Q_neutral__acad_teach#39 -> FDT
+  [130/200] 3581s  last: claude-fable-5-1 B__Q_neutral__acad_grad#10 -> FDT
+  [140/200] 4036s  last: claude-fable-5-1 B__Q_neutral__acad_grad#16 -> CDT
+  [150/200] 4379s  last: claude-fable-5-1 B__Q_neutral__acad_grad#31 -> FDT
+  [160/200] 4688s  last: claude-fable-5-1 B__Q_neutral__lw_reader#0 -> UDT
+  [170/200] 4876s  last: claude-fable-5-1 B__Q_neutral__lw_reader#9 -> FDT
+  [180/200] 5100s  last: claude-fable-5-1 B__Q_neutral__lw_reader#17 -> UDT
+  [190/200] 5335s  last: claude-fable-5-1 B__Q_neutral__lw_reader#31 -> UDT
+  [200/200] 5472s  last: claude-fable-5-1 B__Q_neutral__lw_reader#36 -> UDT
+done: 200 ok, 0 errors, 5472s

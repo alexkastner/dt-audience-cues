@@ -1,0 +1,18 @@
+top-up to 100: 2 prompts x 1 models -> 160 calls to make
+  [10/160] 48s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1009 -> unparsed
+  [20/160] 92s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1019 -> unparsed
+  [30/160] 128s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1030 -> unparsed
+  [40/160] 149s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1036 -> unparsed
+  [50/160] 189s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1048 -> unparsed
+  [60/160] 228s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1056 -> unparsed
+  [70/160] 256s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1069 -> unparsed
+  [80/160] 291s  last: claude-fable-5-1 BB__Q_acausal__pre_acad_ref_2__plain#1079 -> unparsed
+  [90/160] 384s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1012 -> unparsed
+  [100/160] 474s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1021 -> unparsed
+  [110/160] 552s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1028 -> unparsed
+  [120/160] 590s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1039 -> unparsed
+  [130/160] 679s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1046 -> unparsed
+  [140/160] 761s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1058 -> unparsed
+  [150/160] 801s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1069 -> unparsed
+  [160/160] 895s  last: claude-fable-5-1 BB__Q_acausal__conv_acad_task__plain#1077 -> unparsed
+done: 160 ok, 0 errors, 895s

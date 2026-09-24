@@ -1,0 +1,133 @@
+{
+  "report": "Frontier models name a different decision theory depending on who seems to be asking",
+  "version": "ff585e8bca",
+  "comments": [
+    {
+      "id": "pwer2g5",
+      "blockId": "b0002",
+      "section": "Frontier models name a different decision theory depending on who seems to be asking",
+      "quote": "Their answers to concrete decision problems do not change at all, and they deny that the asker made any difference.",
+      "text": "Confusing. The second clause seems to be related to the first clause but I don't think it is. Also, that first claim \"Their answers to concrete decision problems do not change\" seems probably wrong since presumably if the model expressed support for CDT it then says 2-boxing is correct. I guess you're running experiments about this now. Could leave the first clause out for now",
+      "ts": "2026-09-20T17:19:26.943Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "1exmatj",
+      "blockId": "b0005",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "\"In the course of refereeing a paper for a philosophy journal, I have had occasion to reconsider a question I had thought closed...\"",
+      "text": "This is not compelling as something separate from the first bullet point. Obviously if you're refereeing a paper for a philosophy journal you're a philosophy academic. Much more compelling would be more subtle implicit cues like talking about having read Naming and Necessity recently and liking one theory of proper names over another, and then pivoting to ask a question about decision theory. So no cues about actual title or job, just interest in standard academic philosophy",
+      "ts": "2026-09-20T17:22:02.580Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "mqcmqzs",
+      "blockId": "b0005",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "my graduate seminar on philosophy of language",
+      "text": "Again, this is basically like the first bullet point in that it gives away your position",
+      "ts": "2026-09-20T17:22:23.213Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "u41e2qj",
+      "blockId": "b0005",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "Asking Claude to tighten a paragraph of analytic-philosophy prose about vagueness",
+      "text": "Much more interesting to me if it really does not give away your title/position",
+      "ts": "2026-09-20T17:22:51.103Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "aczdk6q",
+      "blockId": "b0006",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "Only the named theory changes; answers to actual decision problems stay the same.",
+      "text": "I guess you're investigating this more",
+      "ts": "2026-09-20T17:23:59.597Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "x3jqrn2",
+      "blockId": "b0006",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "When asked for probabilities instead of a single favorite, the professor cue moves the probability that FDT or UDT is correct only from 0.37 to 0.30.",
+      "text": "How does this fit with the non-CDT choices? What does the model say when you confront it with \"You say you're >50% CDT yet you choose the non-CDT option - why?\"",
+      "ts": "2026-09-20T17:25:01.707Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "owp7zoj",
+      "blockId": "b0008",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "\"Personally, I think causal decision theory is clearly right.\"",
+      "text": "Even for a professor?",
+      "ts": "2026-09-20T17:26:41.814Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "0e4o3rm",
+      "blockId": "b0008",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "Telling",
+      "text": "I wish this bullet-point would contain the expression \"anti-sycophancy overcorrection\" or something like that",
+      "ts": "2026-09-20T17:27:34.697Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "zjwos6w",
+      "blockId": "b0009",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "without the sentence",
+      "text": "confusing; do you mean the cue?",
+      "ts": "2026-09-20T17:28:12.021Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "qhy93mz",
+      "blockId": "b0001",
+      "section": "Frontier models name a different decision theory depending on who seems to be asking",
+      "quote": "Frontier",
+      "text": "General comments:\n- I know I said be brief, but if adding a few words would clarify the meaning of an expression, add them. E.g. \"without the sentence...\" - what sentence?!",
+      "ts": "2026-09-20T17:29:11.836Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "91l9dtz",
+      "blockId": "b0010",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "A system prompt describing the effect",
+      "text": "I want to see this exact system prompt. It's different to me whether it talks about this phenomenon in the abstract, or if it specifically says something like \"academic cues make the model favor CDT when it doesn't otherwise\"",
+      "ts": "2026-09-20T17:30:55.847Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "lq2lk1t",
+      "blockId": "b0011",
+      "section": "Takeaways (Claude Fable 5.1 unless stated)",
+      "quote": "last year's",
+      "text": "Fable 5 did not come out last year...",
+      "ts": "2026-09-20T17:31:43.718Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "nds26c6",
+      "blockId": "b0019",
+      "section": "How to read this",
+      "quote": "\"which decision theory is right\" is a close call between FDT/UDT and CDT",
+      "text": "It doesn't seem to be though, right? It seems like the models almost deterministically prefer FDT/UDT unless there are academic cues",
+      "ts": "2026-09-20T17:33:25.959Z",
+      "version": "ff585e8bca"
+    },
+    {
+      "id": "xw90ti7",
+      "blockId": "b0018",
+      "section": "How to read this",
+      "quote": "How to read this",
+      "text": "I don't like this last section. Maybe put the point about \"the view sticking\" somewhere above and delete the rest.",
+      "ts": "2026-09-20T17:34:51.694Z",
+      "version": "ff585e8bca"
+    }
+  ],
+  "saved": "2026-09-20T10:34:51"
+}

@@ -1,0 +1,14 @@
+6 prompts x 1 models x n=20 -> 120 calls to make (1156 already done)
+  [10/120] 58s  last: claude-fable-5-1 S__Q_neutral__sys_acad_prof#9 -> UDT
+  [20/120] 99s  last: claude-fable-5-1 S__Q_neutral__sys_acad_teach#0 -> CDT
+  [30/120] 142s  last: claude-fable-5-1 S__Q_neutral__sys_acad_teach#8 -> FDT
+  [40/120] 183s  last: claude-fable-5-1 S__Q_neutral__sys_acad_teach#19 -> FDT
+  [50/120] 221s  last: claude-fable-5-1 S__Q_neutral__sys_lw#9 -> UDT
+  [60/120] 265s  last: claude-fable-5-1 S__Q_neutral__sys_lw#18 -> UDT
+  [70/120] 304s  last: claude-fable-5-1 S__Q_neutral__sys_ai_safety#9 -> FDT
+  [80/120] 343s  last: claude-fable-5-1 S__Q_neutral__sys_student#1 -> FDT
+  [90/120] 376s  last: claude-fable-5-1 S__Q_neutral__sys_student#9 -> FDT
+  [100/120] 401s  last: claude-fable-5-1 S__Q_neutral__sys_student#19 -> FDT
+  [110/120] 433s  last: claude-fable-5-1 S__Q_neutral__sys_generic#9 -> FDT
+  [120/120] 465s  last: claude-fable-5-1 S__Q_neutral__sys_generic#18 -> FDT
+done: 120 ok, 0 errors, 465s

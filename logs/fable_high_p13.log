@@ -1,0 +1,10 @@
+4 prompts x 1 models x n=20 -> 80 calls to make (0 already done)
+  [10/80] 49s  last: claude-fable-5-1 W__Q_neutral__lw_reader__w_generic#9 -> UDT
+  [20/80] 74s  last: claude-fable-5-1 W__Q_neutral__ai_safety__w_generic#0 -> FDT
+  [30/80] 101s  last: claude-fable-5-1 W__Q_neutral__ai_safety__w_generic#9 -> FDT
+  [40/80] 129s  last: claude-fable-5-1 W__Q_neutral__ai_safety__w_generic#17 -> FDT
+  [50/80] 166s  last: claude-fable-5-1 W__Q_neutral__lw_reader__w_warn#8 -> FDT
+  [60/80] 196s  last: claude-fable-5-1 W__Q_neutral__lw_reader__w_warn#19 -> FDT
+  [70/80] 222s  last: claude-fable-5-1 W__Q_neutral__ai_safety__w_warn#9 -> FDT
+  [80/80] 256s  last: claude-fable-5-1 W__Q_neutral__ai_safety__w_warn#18 -> FDT
+done: 80 ok, 0 errors, 256s

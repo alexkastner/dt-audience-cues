@@ -1,0 +1,22 @@
+2 prompts x 1 models x n=100 -> 200 calls to make (0 already done)
+  [10/200] 30s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#3 -> EU_generic
+  [20/200] 55s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#21 -> EU_generic
+  [30/200] 82s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#32 -> EU_generic
+  [40/200] 92s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#38 -> EU_generic
+  [50/200] 116s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#50 -> EU_generic
+  [60/200] 142s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#58 -> EU_generic
+  [70/200] 152s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#69 -> EU_generic
+  [80/200] 176s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#80 -> EU_generic
+  [90/200] 201s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#93 -> FDT
+  [100/200] 220s  last: claude-fable-5-1 J__Q_lwframe_ToRC__none#99 -> EU_generic
+  [110/200] 239s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#10 -> EU_generic
+  [120/200] 257s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#19 -> EU_generic
+  [130/200] 280s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#30 -> EU_generic
+  [140/200] 296s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#39 -> CDT
+  [150/200] 314s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#50 -> EU_generic
+  [160/200] 335s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#57 -> EU_generic
+  [170/200] 359s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#74 -> EU_generic
+  [180/200] 375s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#79 -> EU_generic
+  [190/200] 391s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#83 -> EU_generic
+  [200/200] 416s  last: claude-fable-5-1 J__Q_lwframe_acadNP__none#97 -> EU_generic
+done: 200 ok, 0 errors, 416s

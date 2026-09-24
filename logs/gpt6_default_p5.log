@@ -1,0 +1,12 @@
+5 prompts x 1 models x n=20 -> 100 calls to make (3020 already done)
+  [10/100] 11s  last: gpt-6-astra L2__Q_twoslot_rev__none__twoslot#13 -> UDT
+  [20/100] 21s  last: gpt-6-astra L2__Q_twoslot_rev__none__twoslot#16 -> CDT
+  [30/100] 26s  last: gpt-6-astra L2__Q_twoslot_rev__acad_prof__twoslot#0 -> LDT
+  [40/100] 39s  last: gpt-6-astra L2__Q_twoslot_rev__lw_reader__twoslot#0 -> FDT
+  [50/100] 46s  last: gpt-6-astra L2__Q_mention_acad__none#2 -> CDT
+  [60/100] 50s  last: gpt-6-astra L2__Q_twoslot_rev__lw_reader__twoslot#12 -> FDT
+  [70/100] 53s  last: gpt-6-astra L2__Q_mention_acad__none#13 -> CDT
+  [80/100] 55s  last: gpt-6-astra L2__Q_mention_acad__none#18 -> CDT
+  [90/100] 56s  last: gpt-6-astra L2__Q_mention_lw__none#0 -> FDT
+  [100/100] 58s  last: gpt-6-astra L2__Q_mention_lw__none#18 -> FDT
+done: 100 ok, 0 errors, 58s

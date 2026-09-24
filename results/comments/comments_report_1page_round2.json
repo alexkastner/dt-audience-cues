@@ -1,0 +1,88 @@
+{
+  "report": "Claude names a different decision theory depending on who seems to be asking",
+  "version": "124ba79473",
+  "comments": [
+    {
+      "id": "1707va6",
+      "blockId": "b0001",
+      "section": "Claude names a different decision theory depending on who seems to be asking",
+      "quote": "Claude",
+      "text": "I thought the results also held for GPT-6; this makes it seem like Claude is special",
+      "ts": "2026-09-20T16:56:08.988Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "4hcreq2",
+      "blockId": "b0002",
+      "section": "Claude names a different decision theory depending on who seems to be asking",
+      "quote": "Twenty samples per condition, 80 for the main cells; default thinking effort unless stated.",
+      "text": "Can delete",
+      "ts": "2026-09-20T16:56:46.372Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "22l0ih8",
+      "blockId": "b0004",
+      "section": "Key takeaways",
+      "quote": "asking about their own fields:",
+      "text": "I don't know what this means",
+      "ts": "2026-09-20T16:57:12.245Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "p1l0wbn",
+      "blockId": "b0004",
+      "section": "Key takeaways",
+      "quote": "cues",
+      "text": "\"cues\" is ambiguous; based on the next bullet point it looks like \"cue\" is pretty explicit in the first bullet point. An example would go a long way.",
+      "ts": "2026-09-20T16:58:24.398Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "2kkwzcq",
+      "blockId": "b0005",
+      "section": "Key takeaways",
+      "quote": "The cue need not be stated.",
+      "text": "I really wish all of these bolded takeaways were self-contained sentences...",
+      "ts": "2026-09-20T17:00:28.363Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "0beptab",
+      "blockId": "b0006",
+      "section": "Key takeaways",
+      "quote": "Credences move about 7 points. The forced single pick turns a near-tie into a categorical flip.",
+      "text": "I don't know what this means. Why do you keep writing things that a reader can't understand?",
+      "ts": "2026-09-20T17:01:25.170Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "o4x9sp3",
+      "blockId": "b0014",
+      "section": "What the private reasoning shows",
+      "quote": "What the private reasoning shows",
+      "text": "Interesting!",
+      "ts": "2026-09-20T17:03:04.746Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "d1w32rl",
+      "blockId": "b0003",
+      "section": "Key takeaways",
+      "quote": "takeaways",
+      "text": "A takeaway about other philosophy questions (moral realism, p-zombies) would also be good",
+      "ts": "2026-09-20T17:03:58.560Z",
+      "version": "124ba79473"
+    },
+    {
+      "id": "58o7drv",
+      "blockId": "b0018",
+      "section": "What it is, and is not",
+      "quote": "Fable's stated decision theory is a near-tie that context resolves: cues placing the asker inside academic philosophy resolve it toward CDT \"as the mainstream view\", everything else toward FDT. It is not flattery (Fable argues against professors who assert either view), not deference to the asker's field in general (seven other fields show nothing), and not present in its verdicts on cases. For measuring what a model believes, a forced single label is a poor instrument; cases, credences and order-randomized questions are stable, and self-report is uninformative.",
+      "text": "confusing",
+      "ts": "2026-09-20T17:04:58.164Z",
+      "version": "124ba79473"
+    }
+  ],
+  "saved": "2026-09-20T10:04:58"
+}
