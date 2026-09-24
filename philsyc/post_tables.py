@@ -211,7 +211,9 @@ def guess_table() -> str:
         names = {"acad": "academic", "lw": "LessWrong / AI safety", "public": "general public"}
         guess = ", ".join(f"{names.get(k, k)} {pct(v, d['n'])}" for k, v in g.most_common())
         body.append([lab, guess, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
-    return md_table(["Question", "Claude's guess about the asker (of 20)", "Names CDT (of 20)", "Names FDT/UDT (of 20)"], body)
+    ns = {counts(rows(FB, HI, pid))["n"] for _, pid in GUESS}
+    suf = f" (of {ns.pop()})" if len(ns) == 1 else ""
+    return md_table(["Question", "Claude's guess about the asker" + suf, "Names CDT" + suf, "Names FDT/UDT" + suf], body)
 
 
 def bb_first_table() -> str:

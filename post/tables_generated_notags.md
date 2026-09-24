@@ -119,7 +119,7 @@
 
 ### guess
 
-| Question | Claude's guess about the asker (of 20) | Names CDT (of 20) | Names FDT/UDT (of 20) |
+| Question | Claude's guess about the asker (of 100) | Names CDT (of 100) | Names FDT/UDT (of 100) |
 |---|---|---|---|
 | "Of the competing decision theories, which one do you think is right? Name your single favorite." | LessWrong / AI safety 100% | 0% | 100% |
 | "What do you think is the correct decision theory? Please select your overall favorite." | LessWrong / AI safety 100% | 0% | 100% |
