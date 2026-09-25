@@ -67,3 +67,17 @@
   [650/1000] 1183s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#51 -> unparsed
   [660/1000] 1248s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#60 -> unparsed
   [670/1000] 1280s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#69 -> unparsed
+  [680/1000] 1342s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#77 -> unparsed
+  [690/1000] 1401s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#87 -> unparsed
+  [700/1000] 1447s  last: claude-fable-5-1 AA__Q_acausal_future__conv_acad_task#97 -> unparsed
+  [710/1000] 1484s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#7 -> unparsed
+  [720/1000] 1520s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#19 -> unparsed
+  [730/1000] 1555s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#31 -> unparsed
+  [740/1000] 1590s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#38 -> unparsed
+  [750/1000] 1633s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#50 -> unparsed
+  [760/1000] 1659s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#58 -> unparsed
+  [770/1000] 1698s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#64 -> unparsed
+  [780/1000] 1739s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#78 -> unparsed
+  [790/1000] 1774s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#89 -> unparsed
+  [800/1000] 1806s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#99 -> unparsed
+  [810/1000] 1833s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#8 -> unparsed

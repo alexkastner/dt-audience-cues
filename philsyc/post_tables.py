@@ -597,6 +597,39 @@ TABLES.update({
 })
 
 
+
+# ============================================================================= reasoning: favourable mentions and pivots (tag-free B/A summaries)
+def reasoning_fav_table() -> str:
+    import hashlib
+    from .judge_thinking import _h as _th
+    fav = {_json.loads(l)["hash"]: _json.loads(l) for l in open(ROOT / "results" / "judge_fav.jsonl")} if (ROOT / "results" / "judge_fav.jsonl").exists() else {}
+    think = {_json.loads(l)["hash"]: _json.loads(l) for l in open(ROOT / "results" / "judge_thinking_notags.jsonl")}
+    hh = lambda t: hashlib.sha256(t.encode()).hexdigest()[:16]
+    conds = [("(a) academic persona, picks CDT", ["B__Q_neutral__acad_prof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_grad"], "CDT"),
+             ("(b) academic persona, picks FDT/UDT", ["B__Q_neutral__acad_prof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_grad"], "FDT/UDT"),
+             ("(c) nothing before the question, picks FDT/UDT", ["A__Q_neutral__none"], "FDT/UDT"),
+             ("(d) LessWrong / AI-alignment persona, picks FDT/UDT", ["B__Q_neutral__lw_reader", "B__Q_neutral__ai_safety"], "FDT/UDT")]
+    body = []
+    for lab, ids, grp in conds:
+        rs = [r for r in rows(FB, HI, ids) if r.get("thinking")]
+        sel = []
+        for r in rs:
+            code = main_theory(r, True)
+            g = "CDT" if code == "CDT" else "FDT/UDT" if code in FDTUDT else None
+            if g == grp:
+                sel.append((r, code))
+        n = len(sel)
+        f_fav = sum(bool(fav.get(hh(r["thinking"]), {}).get("fdt_favorable")) for r, _ in sel)
+        c_fav = sum(bool(fav.get(hh(r["thinking"]), {}).get("cdt_favorable")) for r, _ in sel)
+        other = "LDT" if grp == "CDT" else "CDT"
+        piv = sum(1 for r, code in sel if (lambda t: bool(t.get("pivot")) and t.get("initial_lean") == other)(think.get(_th(r["thinking"], {"FDT only": "FDT", "UDT only": "UDT", "FDT+UDT both": "FDT+UDT"}.get(code, code)), {})))
+        body.append([lab, pct(f_fav, n), pct(c_fav, n), pct(piv, n)])
+    return md_table(["Condition", "Speaks favourably of FDT/UDT", "Speaks favourably of CDT", "Leans toward the other theory first, then pivots"], body)
+
+
+TABLES["reasoning_fav"] = ("Condition", reasoning_fav_table)
+
+
 if __name__ == "__main__":
     out = ["# Generated tables for the LessWrong post (percent of samples; the draft's copies are spliced between <!-- table:key --> markers)\n"]
     for key, (_, fn) in TABLES.items():
