@@ -797,6 +797,8 @@ def build_prompts() -> list[PromptSpec]:
         specs.append(PromptSpec(id=f"AA__{q}__conv_lw_task", set="AA", question=q, persona="none", fmt=f, prior_turns=tuple(U1_TASKS["lw_task"]["turns"])))
         specs.append(PromptSpec(id=f"AA__{q}__sys_acad_prof", set="AA", question=q, persona="none", fmt=f, system=SYSTEM_PERSONAS["sys_acad_prof"]["text"]))
 
+    # the professor persona on transparent Newcomb (the one empty cell in the post's problems table; added 2026-09-24)
+    specs.append(PromptSpec(id="AA__P_transparent__acad_prof__action", set="AA", question="P_transparent", persona="acad_prof", fmt="action"))
     # BB: espouse (turn 1: cue + neutral favorite question), then act (turn 2: problem), plain or with a consistency hook.
     BB_CUES = {
         "none": dict(persona="none"), "acad_teach": dict(persona="acad_teach"), "lw_reader": dict(persona="lw_reader"),
