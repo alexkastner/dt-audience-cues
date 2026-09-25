@@ -460,7 +460,8 @@ def second_turn_table() -> str:
     """Rows: what the first turn named; columns: the problem posed next (same orientation as the other tables)."""
     bb = [pid for (m, e, pid) in IDX if m == FB and e == HI and pid.startswith("BB__")]
     cols = [("P_newcomb", "plain", "Newcomb"), ("P_transparent", "plain", "transparent Newcomb"), ("P_cfmugging", "plain", "counterfactual mugging"),
-            ("P_twinpd", "plain", "twin PD"), ("P_twinpd", "hook", "twin PD, introduced with \"Given the theory you just named, here is a concrete case.\"")]
+            ("P_twinpd", "plain", "twin PD"), ("P_twinpd", "hook", "twin PD, introduced with \"Given the theory you just named, here is a concrete case.\""),
+            ("Q_acausal", "plain", "acausal trade")]
     named_cdt, named_fdt = [], []
     for qk, variant, _ in cols:
         rs = [r for r in rows(FB, HI, bb) if r["prompt_id"].split("__")[1] == qk and r["prompt_id"].split("__")[3] == variant]

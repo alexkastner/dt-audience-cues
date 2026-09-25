@@ -262,11 +262,11 @@
 
 ### second_turn
 
-| First-turn answer (share choosing CDT's option in the second turn) | Newcomb | transparent Newcomb | counterfactual mugging | twin PD | twin PD, introduced with "Given the theory you just named, here is a concrete case." |
-|---|---|---|---|---|---|
-| *CDT's option* | *two-box* | *two-box* | *don't pay* | *defect* | *defect* |
-| First turn named CDT | 99% | 100% | 100% | 83% | 99% |
-| First turn named FDT/UDT | 0% | 0% | 0% | 0% | 0% |
+| First-turn answer (share choosing CDT's option in the second turn) | Newcomb | transparent Newcomb | counterfactual mugging | twin PD | twin PD, introduced with "Given the theory you just named, here is a concrete case." | acausal trade |
+|---|---|---|---|---|---|---|
+| *CDT's option* | *two-box* | *two-box* | *don't pay* | *defect* | *defect* | *no* |
+| First turn named CDT | 99% | 100% | 100% | 83% | 99% | 100% |
+| First turn named FDT/UDT | 0% | 0% | 0% | 0% | 0% | 0% |
 
 
 ### reasoning
