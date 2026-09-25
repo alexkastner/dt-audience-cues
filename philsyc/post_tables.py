@@ -641,9 +641,16 @@ OTHER_ROWS = [("*(nothing)*", "A__Q_neutral__none"), (q("I'm a longtime LessWron
               (q("I'm a philosophy professor who works on decision theory."), "B__Q_neutral__acad_prof"), (q("I'm a philosophy PhD student writing my dissertation on decision theory."), "B__Q_neutral__acad_grad")]
 
 
+ASTRA_KEYS = ["A__Q_neutral__none", "B__Q_neutral__lw_reader", "B__Q_neutral__ai_safety", "B__Q_neutral__ctrl_swe", "M__Q_neutral__m_physicist", "M__Q_neutral__m_mathematician",
+              "B__Q_neutral__ctrl_nurse", "M__Q_neutral__m_lawyer", "M__Q_neutral__m_journalist", "B__Q_neutral__ctrl_student", "M__Q_neutral__m_novice",
+              "M__Q_neutral__m_acad_econprof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_prof", "B__Q_neutral__acad_grad"]
+OPUS_KEYS = ["A__Q_neutral__none", "B__Q_neutral__lw_reader", "B__Q_neutral__ai_safety", "B__Q_neutral__ctrl_swe", "B__Q_neutral__ctrl_nurse", "B__Q_neutral__ctrl_student",
+             "M__Q_neutral__m_phil_undergrad", "M__Q_neutral__m_acad_econprof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_prof", "B__Q_neutral__acad_grad"]
+
+
 def astra_table() -> str:
     body = []
-    for lab, pid in OTHER_ROWS:
+    for lab, pid in [x for x in OTHER_ROWS if x[1] in ASTRA_KEYS]:
         d = counts(rows("gpt-6-astra", "None", pid))
         if d["n"]:
             body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
@@ -652,7 +659,7 @@ def astra_table() -> str:
 
 def opus_table() -> str:
     body = []
-    for lab, pid in OTHER_ROWS:
+    for lab, pid in [x for x in OTHER_ROWS if x[1] in OPUS_KEYS]:
         d = counts(rows("claude-opus-5", "high", pid))
         if d["n"]:
             body.append([lab, pct(d["edt"], d["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])

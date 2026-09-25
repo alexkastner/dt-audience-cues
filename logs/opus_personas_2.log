@@ -21,3 +21,13 @@ top-up to 100: 3 prompts x 1 models -> 300 calls to make
   [190/300] 379s  last: claude-opus-5 M__Q_neutral__m_retired#1086 -> unparsed
   [200/300] 399s  last: claude-opus-5 M__Q_neutral__m_retired#1099 -> unparsed
   [210/300] 429s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1010 -> unparsed
+  [220/300] 449s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1015 -> unparsed
+  [230/300] 471s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1031 -> unparsed
+  [240/300] 499s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1041 -> unparsed
+  [250/300] 515s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1051 -> unparsed
+  [260/300] 542s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1059 -> unparsed
+  [270/300] 563s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1060 -> unparsed
+  [280/300] 593s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1080 -> unparsed
+  [290/300] 614s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1089 -> unparsed
+  [300/300] 650s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1098 -> unparsed
+done: 300 ok, 0 errors, 650s

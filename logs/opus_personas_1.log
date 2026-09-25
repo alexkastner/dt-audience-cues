@@ -24,3 +24,10 @@ top-up to 100: 3 prompts x 1 models -> 300 calls to make
   [220/300] 392s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1020 -> unparsed
   [230/300] 415s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1031 -> unparsed
   [240/300] 444s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1034 -> unparsed
+  [250/300] 461s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1047 -> unparsed
+  [260/300] 486s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1059 -> unparsed
+  [270/300] 519s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1073 -> unparsed
+  [280/300] 534s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1084 -> unparsed
+  [290/300] 558s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1093 -> unparsed
+  [300/300] 592s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1099 -> unparsed
+done: 300 ok, 0 errors, 592s
