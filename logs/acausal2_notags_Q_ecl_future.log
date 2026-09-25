@@ -78,3 +78,26 @@
   [760/1000] 1772s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#56 -> unparsed
   [770/1000] 1810s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#69 -> unparsed
   [780/1000] 1835s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#79 -> unparsed
+  [790/1000] 1882s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#90 -> unparsed
+  [800/1000] 1917s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#1 -> unparsed
+  [810/1000] 1949s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#8 -> unparsed
+  [820/1000] 1973s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#18 -> unparsed
+  [830/1000] 2012s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#31 -> unparsed
+  [840/1000] 2040s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#41 -> unparsed
+  [850/1000] 2072s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#47 -> unparsed
+  [860/1000] 2100s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#59 -> unparsed
+  [870/1000] 2141s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#68 -> unparsed
+  [880/1000] 2168s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#79 -> unparsed
+  [890/1000] 2204s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#91 -> unparsed
+  [900/1000] 2227s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#1 -> unparsed
+  [910/1000] 2247s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#16 -> unparsed
+  [920/1000] 2261s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#18 -> unparsed
+  [930/1000] 2277s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#29 -> unparsed
+  [940/1000] 2294s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#37 -> unparsed
+  [950/1000] 2316s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#49 -> unparsed
+  [960/1000] 2337s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#58 -> unparsed
+  [970/1000] 2345s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#62 -> unparsed
+  [980/1000] 2365s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#82 -> unparsed
+  [990/1000] 2387s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#88 -> unparsed
+  [1000/1000] 2401s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#99 -> unparsed
+done: 1000 ok, 0 errors, 2401s

@@ -78,3 +78,26 @@
   [760/1000] 1755s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#57 -> no
   [770/1000] 1794s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#70 -> no
   [780/1000] 1827s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#79 -> no
+  [790/1000] 1870s  last: claude-fable-5-1 AA__Q_ecl_future__conv_dt_teacher#89 -> no
+  [800/1000] 1900s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#1 -> yes
+  [810/1000] 1932s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#10 -> yes
+  [820/1000] 1961s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#21 -> yes
+  [830/1000] 1991s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#30 -> yes
+  [840/1000] 2025s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#40 -> yes
+  [850/1000] 2051s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#45 -> yes
+  [860/1000] 2088s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#59 -> yes
+  [870/1000] 2119s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#66 -> yes
+  [880/1000] 2152s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#79 -> yes
+  [890/1000] 2177s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#88 -> yes
+  [900/1000] 2207s  last: claude-fable-5-1 AA__Q_ecl_future__conv_lw_task#99 -> yes
+  [910/1000] 2218s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#6 -> yes
+  [920/1000] 2238s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#20 -> yes
+  [930/1000] 2257s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#28 -> yes
+  [940/1000] 2275s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#41 -> yes
+  [950/1000] 2287s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#49 -> yes
+  [960/1000] 2306s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#58 -> yes
+  [970/1000] 2324s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#67 -> yes
+  [980/1000] 2346s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#85 -> yes
+  [990/1000] 2356s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#88 -> yes
+  [1000/1000] 2385s  last: claude-fable-5-1 AA__Q_ecl_future__sys_acad_prof#99 -> yes
+done: 1000 ok, 0 errors, 2385s

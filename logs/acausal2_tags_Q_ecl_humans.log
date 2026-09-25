@@ -74,3 +74,30 @@
   [720/1000] 1744s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#18 -> no
   [730/1000] 1777s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#30 -> no
   [740/1000] 1821s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#40 -> no
+  [750/1000] 1853s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#49 -> no
+  [760/1000] 1891s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#61 -> no
+  [770/1000] 1931s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#68 -> no
+  [780/1000] 1970s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#80 -> no
+  [790/1000] 2006s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#88 -> no
+  [800/1000] 2044s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_dt_teacher#99 -> no
+  [810/1000] 2072s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#9 -> no
+  [820/1000] 2110s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#20 -> no
+  [830/1000] 2148s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#30 -> no
+  [840/1000] 2193s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#40 -> no
+  [850/1000] 2214s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#47 -> no
+  [860/1000] 2254s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#60 -> no
+  [870/1000] 2286s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#69 -> no
+  [880/1000] 2322s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#79 -> no
+  [890/1000] 2356s  last: claude-fable-5-1 AA__Q_ecl_humans__conv_lw_task#88 -> no
+  [900/1000] 2383s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#1 -> no
+  [910/1000] 2404s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#11 -> no
+  [920/1000] 2424s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#19 -> no
+  [930/1000] 2445s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#29 -> no
+  [940/1000] 2465s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#38 -> no
+  [950/1000] 2488s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#46 -> no
+  [960/1000] 2508s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#62 -> no
+  [970/1000] 2532s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#72 -> no
+  [980/1000] 2545s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#77 -> yes
+  [990/1000] 2573s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#90 -> no
+  [1000/1000] 2595s  last: claude-fable-5-1 AA__Q_ecl_humans__sys_acad_prof#97 -> no
+done: 1000 ok, 0 errors, 2595s

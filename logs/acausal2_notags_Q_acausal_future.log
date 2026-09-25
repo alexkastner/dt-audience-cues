@@ -81,3 +81,23 @@
   [790/1000] 1774s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#89 -> unparsed
   [800/1000] 1806s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#99 -> unparsed
   [810/1000] 1833s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#8 -> unparsed
+  [820/1000] 1863s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#19 -> unparsed
+  [830/1000] 1893s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#29 -> unparsed
+  [840/1000] 1924s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#40 -> unparsed
+  [850/1000] 1954s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#44 -> unparsed
+  [860/1000] 1990s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#59 -> unparsed
+  [870/1000] 2015s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#66 -> unparsed
+  [880/1000] 2049s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#79 -> unparsed
+  [890/1000] 2076s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#90 -> unparsed
+  [900/1000] 2097s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#97 -> unparsed
+  [910/1000] 2112s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#9 -> unparsed
+  [920/1000] 2126s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#19 -> unparsed
+  [930/1000] 2142s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#29 -> unparsed
+  [940/1000] 2161s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#37 -> unparsed
+  [950/1000] 2177s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#49 -> unparsed
+  [960/1000] 2190s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#57 -> unparsed
+  [970/1000] 2207s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#66 -> unparsed
+  [980/1000] 2225s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#77 -> unparsed
+  [990/1000] 2239s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#91 -> unparsed
+  [1000/1000] 2256s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#95 -> unparsed
+done: 1000 ok, 0 errors, 2256s

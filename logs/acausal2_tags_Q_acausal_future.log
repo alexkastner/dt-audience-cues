@@ -80,3 +80,24 @@
   [780/1000] 1741s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#75 -> yes
   [790/1000] 1782s  last: claude-fable-5-1 AA__Q_acausal_future__conv_dt_teacher#91 -> yes
   [800/1000] 1816s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#1 -> yes
+  [810/1000] 1845s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#8 -> yes
+  [820/1000] 1872s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#21 -> yes
+  [830/1000] 1900s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#27 -> yes
+  [840/1000] 1933s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#40 -> yes
+  [850/1000] 1958s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#48 -> yes
+  [860/1000] 1990s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#60 -> yes
+  [870/1000] 2023s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#67 -> yes
+  [880/1000] 2057s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#79 -> yes
+  [890/1000] 2080s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#88 -> yes
+  [900/1000] 2105s  last: claude-fable-5-1 AA__Q_acausal_future__conv_lw_task#96 -> yes
+  [910/1000] 2119s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#10 -> yes
+  [920/1000] 2133s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#16 -> yes
+  [930/1000] 2150s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#26 -> yes
+  [940/1000] 2166s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#40 -> yes
+  [950/1000] 2183s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#50 -> yes
+  [960/1000] 2197s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#61 -> yes
+  [970/1000] 2211s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#68 -> yes
+  [980/1000] 2228s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#78 -> yes
+  [990/1000] 2244s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#89 -> yes
+  [1000/1000] 2264s  last: claude-fable-5-1 AA__Q_acausal_future__sys_acad_prof#99 -> yes
+done: 1000 ok, 0 errors, 2264s
