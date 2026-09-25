@@ -1,0 +1,21 @@
+top-up to 100: 2 prompts x 1 models -> 180 calls to make
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/180] 44s  last: claude-opus-5 M__Q_neutral__m_physicist#1003 -> unparsed
+  [20/180] 51s  last: claude-opus-5 M__Q_neutral__m_physicist#1008 -> unparsed
+  [30/180] 86s  last: claude-opus-5 M__Q_neutral__m_physicist#1031 -> unparsed
+  [40/180] 102s  last: claude-opus-5 M__Q_neutral__m_physicist#1039 -> unparsed
+  [50/180] 127s  last: claude-opus-5 M__Q_neutral__m_physicist#1046 -> unparsed
+  [60/180] 159s  last: claude-opus-5 M__Q_neutral__m_physicist#1061 -> unparsed
+  [70/180] 174s  last: claude-opus-5 M__Q_neutral__m_physicist#1075 -> unparsed
+  [80/180] 193s  last: claude-opus-5 M__Q_neutral__m_journalist#1006 -> unparsed
+  [90/180] 209s  last: claude-opus-5 M__Q_neutral__m_journalist#1013 -> unparsed
+  [100/180] 231s  last: claude-opus-5 M__Q_neutral__m_journalist#1017 -> unparsed
+  [110/180] 247s  last: claude-opus-5 M__Q_neutral__m_journalist#1029 -> unparsed
+  [120/180] 269s  last: claude-opus-5 M__Q_neutral__m_journalist#1040 -> unparsed
+  [130/180] 280s  last: claude-opus-5 M__Q_neutral__m_journalist#1047 -> unparsed
+  [140/180] 305s  last: claude-opus-5 M__Q_neutral__m_journalist#1054 -> unparsed
+  [150/180] 318s  last: claude-opus-5 M__Q_neutral__m_journalist#1070 -> unparsed
+  [160/180] 338s  last: claude-opus-5 M__Q_neutral__m_journalist#1078 -> unparsed
+  [170/180] 355s  last: claude-opus-5 M__Q_neutral__m_journalist#1086 -> unparsed
+  [180/180] 377s  last: claude-opus-5 M__Q_neutral__m_journalist#1099 -> unparsed
+done: 180 ok, 0 errors, 377s

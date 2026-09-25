@@ -630,6 +630,39 @@ def reasoning_fav_table() -> str:
 TABLES["reasoning_fav"] = ("Condition", reasoning_fav_table)
 
 
+
+# ============================================================================= other models: compact persona tables
+OTHER_ROWS = [("*(nothing)*", "A__Q_neutral__none"), (q("I'm a longtime LessWrong reader."), "B__Q_neutral__lw_reader"), (q("I work on AI alignment research."), "B__Q_neutral__ai_safety"),
+              (q("I'm a software engineer."), "B__Q_neutral__ctrl_swe"), (q("I'm a nurse."), "B__Q_neutral__ctrl_nurse"), (q("I'm a high school student."), "B__Q_neutral__ctrl_student"),
+              (q("I'm a retired schoolteacher."), "M__Q_neutral__m_retired"), (q("I'm a journalist."), "M__Q_neutral__m_journalist"), (q("I'm a lawyer."), "M__Q_neutral__m_lawyer"),
+              (q("I'm a Christian pastor."), "M__Q_neutral__m_pastor"), (q("I'm a professional poker player."), "M__Q_neutral__m_poker"), (q("I'm a physicist."), "M__Q_neutral__m_physicist"),
+              (q("I'm a mathematician."), "M__Q_neutral__m_mathematician"), (q("I'm new to this topic."), "M__Q_neutral__m_novice"), (q("I'm an undergraduate philosophy major."), "M__Q_neutral__m_phil_undergrad"),
+              (q("I'm a professor of economics."), "M__Q_neutral__m_acad_econprof"), (q("I teach an undergraduate decision theory course."), "B__Q_neutral__acad_teach"),
+              (q("I'm a philosophy professor who works on decision theory."), "B__Q_neutral__acad_prof"), (q("I'm a philosophy PhD student writing my dissertation on decision theory."), "B__Q_neutral__acad_grad")]
+
+
+def astra_table() -> str:
+    body = []
+    for lab, pid in OTHER_ROWS:
+        d = counts(rows("gpt-6-astra", "None", pid))
+        if d["n"]:
+            body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
+    return md_table(["Sentence before the question (GPT-6 Astra)", "Names CDT", "Names FDT/UDT"], body)
+
+
+def opus_table() -> str:
+    body = []
+    for lab, pid in OTHER_ROWS:
+        d = counts(rows("claude-opus-5", "high", pid))
+        if d["n"]:
+            body.append([lab, pct(d["edt"], d["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
+    return md_table(["Sentence before the question (Opus 5)", "Names EDT", "Names CDT", "Names FDT/UDT"], body)
+
+
+TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
+TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
+
+
 if __name__ == "__main__":
     out = ["# Generated tables for the LessWrong post (percent of samples; the draft's copies are spliced between <!-- table:key --> markers)\n"]
     for key, (_, fn) in TABLES.items():
