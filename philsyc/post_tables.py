@@ -512,8 +512,8 @@ def realism_table() -> str:
         data.append((lab, cells))
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Before the question (share giving the LessWrong-typical answer)"
-    return md_table([head, "Anti-realism", "Zombies not conceivable"], [[lab] + _pct_cells(cells, uniform) for lab, cells in data])
+    head = "Before the question"  # column titles as Alex set them (2026-09-24); cells = share of the LessWrong-typical answer (anti-realism / not conceivable)
+    return md_table([head, "Moral realism", "p-zombies conceivable"], [[lab] + _pct_cells(cells, uniform) for lab, cells in data])
 
 
 def astra_bbr_table() -> str:

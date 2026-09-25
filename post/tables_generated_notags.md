@@ -281,7 +281,7 @@
 
 ### realism
 
-| Before the question (share giving the LessWrong-typical answer) | Anti-realism | Zombies not conceivable |
+| Before the question | Moral realism | p-zombies conceivable |
 |---|---|---|
 | *(nothing)* | 0% | 0% |
 | "I'm a philosophy professor." | 0% | 0% |
