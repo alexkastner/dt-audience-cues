@@ -16,3 +16,5 @@ top-up to 100: 2 prompts x 1 models -> 200 calls to make
   [140/200] 363s  last: claude-opus-5 M__Q_neutral__m_lawyer#1037 -> unparsed
   [150/200] 376s  last: claude-opus-5 M__Q_neutral__m_lawyer#1052 -> unparsed
   [160/200] 401s  last: claude-opus-5 M__Q_neutral__m_lawyer#1057 -> unparsed
+  [170/200] 412s  last: claude-opus-5 M__Q_neutral__m_lawyer#1073 -> unparsed
+  [180/200] 437s  last: claude-opus-5 M__Q_neutral__m_lawyer#1083 -> unparsed

@@ -91,3 +91,10 @@ top-up to 100: 10 prompts x 1 models -> 1000 calls to make
   [900/1000] 466s  last: gpt-6-astra M__Q_neutral__m_phil_undergrad#1097 -> unparsed
   [910/1000] 470s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1004 -> unparsed
   [920/1000] 476s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1014 -> unparsed
+  [930/1000] 483s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1032 -> unparsed
+  [940/1000] 487s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1039 -> unparsed
+  [950/1000] 492s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1047 -> unparsed
+  [960/1000] 496s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1063 -> unparsed
+  [970/1000] 503s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1068 -> unparsed
+  [980/1000] 506s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1082 -> unparsed
+  [990/1000] 513s  last: gpt-6-astra M__Q_neutral__m_acad_econprof#1086 -> unparsed

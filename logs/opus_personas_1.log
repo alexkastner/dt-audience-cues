@@ -22,3 +22,5 @@ top-up to 100: 3 prompts x 1 models -> 300 calls to make
   [200/300] 348s  last: claude-opus-5 M__Q_neutral__m_novice#1098 -> unparsed
   [210/300] 371s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1008 -> unparsed
   [220/300] 392s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1020 -> unparsed
+  [230/300] 415s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1031 -> unparsed
+  [240/300] 444s  last: claude-opus-5 M__Q_neutral__m_phil_undergrad#1034 -> unparsed

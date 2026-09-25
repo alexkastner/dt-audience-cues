@@ -20,3 +20,4 @@ top-up to 100: 3 prompts x 1 models -> 300 calls to make
   [180/300] 361s  last: claude-opus-5 M__Q_neutral__m_retired#1080 -> unparsed
   [190/300] 379s  last: claude-opus-5 M__Q_neutral__m_retired#1086 -> unparsed
   [200/300] 399s  last: claude-opus-5 M__Q_neutral__m_retired#1099 -> unparsed
+  [210/300] 429s  last: claude-opus-5 M__Q_neutral__m_acad_econprof#1010 -> unparsed
