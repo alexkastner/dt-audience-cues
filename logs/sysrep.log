@@ -33,3 +33,11 @@
   [310/400] 431s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#7 -> unparsed
   [320/400] 443s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#18 -> unparsed
   [330/400] 460s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#24 -> unparsed
+  [340/400] 471s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#41 -> unparsed
+  [350/400] 487s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#47 -> unparsed
+  [360/400] 497s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#61 -> unparsed
+  [370/400] 511s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#68 -> unparsed
+  [380/400] 525s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#84 -> unparsed
+  [390/400] 540s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#89 -> unparsed
+  [400/400] 550s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#99 -> unparsed
+done: 400 ok, 0 errors, 550s
