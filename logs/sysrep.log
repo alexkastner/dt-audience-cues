@@ -1,0 +1,35 @@
+4 prompts x 1 models x n=100 -> 400 calls to make (0 already done)
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/400] 25s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#11 -> unparsed
+  [20/400] 33s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#8 -> unparsed
+  [30/400] 51s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#35 -> unparsed
+  [40/400] 64s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#43 -> unparsed
+  [50/400] 77s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#50 -> unparsed
+  [60/400] 86s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#59 -> unparsed
+  [70/400] 104s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#68 -> unparsed
+  [80/400] 110s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#78 -> unparsed
+  [90/400] 128s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#91 -> unparsed
+  [100/400] 136s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#92 -> unparsed
+  [110/400] 159s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#10 -> unparsed
+  [120/400] 172s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#21 -> unparsed
+  [130/400] 188s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#31 -> unparsed
+  [140/400] 198s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#39 -> unparsed
+  [150/400] 214s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#47 -> unparsed
+  [160/400] 225s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#61 -> unparsed
+  [170/400] 241s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#71 -> unparsed
+  [180/400] 255s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#80 -> unparsed
+  [190/400] 269s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#90 -> unparsed
+  [200/400] 281s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#98 -> unparsed
+  [210/400] 291s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#8 -> unparsed
+  [220/400] 312s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#20 -> unparsed
+  [230/400] 319s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#31 -> unparsed
+  [240/400] 338s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#38 -> unparsed
+  [250/400] 348s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#47 -> unparsed
+  [260/400] 365s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#62 -> unparsed
+  [270/400] 376s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#68 -> unparsed
+  [280/400] 392s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#81 -> unparsed
+  [290/400] 401s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#84 -> unparsed
+  [300/400] 418s  last: claude-fable-5-1 WR__Q_neutral__acad_teach__w_para#98 -> unparsed
+  [310/400] 431s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#7 -> unparsed
+  [320/400] 443s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#18 -> unparsed
+  [330/400] 460s  last: claude-fable-5-1 WR__Q_neutral__acad_prof__w_para#24 -> unparsed
