@@ -670,6 +670,42 @@ TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_
 TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 
 
+
+# ============================================================================= system prompts: full wording comparison (2026-09-27)
+def _fresh_rows(pid):
+    """the fresh replication samples of the two original prompts (results/raw_..._notags_sysrep.jsonl)"""
+    f = ROOT / "results" / "raw_claude-fable-5-1_high_notags_sysrep.jsonl"
+    out = []
+    if f.exists():
+        for l in f.open():
+            r = _json.loads(l)
+            if r["prompt_id"] == pid and not r.get("error"):
+                out.append(r)
+    return out[:CAP]
+
+
+def sysprompt_cross_table() -> str:
+    R = P.REMEDIATION_SYSTEMS
+    spec = [("*(none)*", lambda p: rows(FB, HI, f"B__Q_neutral__{p}")),
+            (q(R["w_generic"]), lambda p: _fresh_rows(f"W__Q_neutral__{p}__w_generic")),
+            (q(R["w_minimal"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_minimal")),
+            (q(R["w_p1g2"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_p1g2")),
+            (q(R["w_para"]), lambda p: _fresh_rows(f"WR__Q_neutral__{p}__w_para")),
+            (q(R["w_g1p2"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_g1p2")),
+            (q(R["w_placebo"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_placebo")),
+            ("The first note, placed in the user turn instead of the system prompt", lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__user_generic"))]
+    body = []
+    for lab, get in spec:
+        cells = [lab]
+        for p in ["acad_teach", "acad_prof"]:
+            d = counts(get(p)); cells += [pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])]
+        body.append(cells)
+    return md_table(["System prompt", "Teacher: names CDT", "Teacher: names FDT/UDT", "Professor: names CDT", "Professor: names FDT/UDT"], body)
+
+
+TABLES["sysprompts2"] = ("System prompt", sysprompt_cross_table)
+
+
 if __name__ == "__main__":
     out = ["# Generated tables for the LessWrong post (percent of samples; the draft's copies are spliced between <!-- table:key --> markers)\n"]
     for key, (_, fn) in TABLES.items():
