@@ -11054,3 +11054,457 @@ TypeError: argument of type 'HTTPStatus' is not iterable
 27/Sep/2026 18:04:53 - "GET /api/post_mtime HTTP/1.1" 200 -
 27/Sep/2026 18:04:55 - "GET /api/post_mtime HTTP/1.1" 200 -
 27/Sep/2026 18:04:56 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:04:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53310)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53311)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:04:59 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:02 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:04 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:05 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:07 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:08 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:10 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:11 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:13 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:16 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:17 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:19 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:20 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:22 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:23 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:25 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:26 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53343)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53344)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:05:28 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:29 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53349)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53350)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:05:31 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:32 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53360)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53361)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:05:34 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:35 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:37 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:38 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:40 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:41 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:43 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:44 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:46 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:47 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:49 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:50 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53378)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53379)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:05:52 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:53 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:55 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:56 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:05:59 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:02 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:04 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:05 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:07 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:08 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:10 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:11 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:13 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:16 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:06:17 - "GET /api/post_mtime HTTP/1.1" 200 -
