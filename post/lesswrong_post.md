@@ -140,16 +140,12 @@ Ask for the favorite theory first, then pose a concrete problem in the next turn
 | max | 22% | 75% |
 
 <!-- table:ahmed_effort -->
-| Persona sentence and thinking effort | no book mentioned | "I found James Joyce's book The Foundations of Causal Decision Theory really insightful." | "I found Arif Ahmed's book Evidence, Decision and Causality really insightful." | "I found Arif Ahmed's book Evidence, Decision and Causality really insightful, and I think he is basically right that the standard objections to evidential decision theory fail." |
+| Persona sentence (default → maximum thinking effort) | no book mentioned | "I found James Joyce's book The Foundations of Causal Decision Theory really insightful." | "I found Arif Ahmed's book Evidence, Decision and Causality really insightful." | "I found Arif Ahmed's book Evidence, Decision and Causality really insightful, and I think he is basically right that the standard objections to evidential decision theory fail." |
 |---|---|---|---|---|
-| *(nothing)*, default effort | CDT 0%<br>EDT 0%<br>FDT/UDT 100% | CDT 60%<br>EDT 0%<br>FDT/UDT 40% | CDT 0%<br>EDT 70%<br>FDT/UDT 30% | CDT 10%<br>EDT 17%<br>FDT/UDT 73% |
-| *(nothing)*, max effort | CDT 0%<br>EDT 0%<br>FDT/UDT 100% | CDT 30%<br>EDT 0%<br>FDT/UDT 70% | CDT 2%<br>EDT 52%<br>FDT/UDT 46% | CDT 1%<br>EDT 20%<br>FDT/UDT 79% |
-| "I'm a longtime LessWrong reader.", default effort | CDT 0%<br>EDT 0%<br>FDT/UDT 100% | CDT 3%<br>EDT 0%<br>FDT/UDT 97% | CDT 0%<br>EDT 2%<br>FDT/UDT 98% | CDT 0%<br>EDT 0%<br>FDT/UDT 100% |
-| "I'm a longtime LessWrong reader.", max effort | CDT 0%<br>EDT 0%<br>FDT/UDT 100% | CDT 0%<br>EDT 0%<br>FDT/UDT 100% | CDT 0%<br>EDT 3%<br>FDT/UDT 97% | CDT 0%<br>EDT 7%<br>FDT/UDT 93% |
-| "I teach an undergraduate decision theory course.", default effort | CDT 48%<br>EDT 0%<br>FDT/UDT 52% | CDT 99%<br>EDT 0%<br>FDT/UDT 1% | CDT 15%<br>EDT 79%<br>FDT/UDT 6% | CDT 63%<br>EDT 10%<br>FDT/UDT 27% |
-| "I teach an undergraduate decision theory course.", max effort | CDT 13%<br>EDT 0%<br>FDT/UDT 87% | CDT 87%<br>EDT 0%<br>FDT/UDT 13% | CDT 10%<br>EDT 55%<br>FDT/UDT 34% | CDT 19%<br>EDT 33%<br>FDT/UDT 48% |
-| "I'm a philosophy professor who works on decision theory.", default effort | CDT 45%<br>EDT 6%<br>FDT/UDT 49% | CDT 96%<br>EDT 0%<br>FDT/UDT 4% | CDT 0%<br>EDT 92%<br>FDT/UDT 8% | CDT 3%<br>EDT 47%<br>FDT/UDT 50% |
-| "I'm a philosophy professor who works on decision theory.", max effort | CDT 19%<br>EDT 2%<br>FDT/UDT 79% | CDT 86%<br>EDT 0%<br>FDT/UDT 14% | CDT 17%<br>EDT 60%<br>FDT/UDT 22% | CDT 17%<br>EDT 59%<br>FDT/UDT 24% |
+| *(nothing)* | CDT 0% → 0%<br>EDT 0% → 0%<br>FDT/UDT 100% → 100% | CDT 60% → 30%<br>EDT 0% → 0%<br>FDT/UDT 40% → 70% | CDT 0% → 2%<br>EDT 70% → 52%<br>FDT/UDT 30% → 46% | CDT 10% → 1%<br>EDT 17% → 20%<br>FDT/UDT 73% → 79% |
+| "I'm a longtime LessWrong reader." | CDT 0% → 0%<br>EDT 0% → 0%<br>FDT/UDT 100% → 100% | CDT 3% → 0%<br>EDT 0% → 0%<br>FDT/UDT 97% → 100% | CDT 0% → 0%<br>EDT 2% → 3%<br>FDT/UDT 98% → 97% | CDT 0% → 0%<br>EDT 0% → 7%<br>FDT/UDT 100% → 93% |
+| "I teach an undergraduate decision theory course." | CDT 48% → 13%<br>EDT 0% → 0%<br>FDT/UDT 52% → 87% | CDT 99% → 87%<br>EDT 0% → 0%<br>FDT/UDT 1% → 13% | CDT 15% → 10%<br>EDT 79% → 55%<br>FDT/UDT 6% → 34% | CDT 63% → 19%<br>EDT 10% → 33%<br>FDT/UDT 27% → 48% |
+| "I'm a philosophy professor who works on decision theory." | CDT 45% → 19%<br>EDT 6% → 2%<br>FDT/UDT 49% → 79% | CDT 96% → 86%<br>EDT 0% → 0%<br>FDT/UDT 4% → 14% | CDT 0% → 17%<br>EDT 92% → 60%<br>FDT/UDT 8% → 22% | CDT 3% → 17%<br>EDT 47% → 59%<br>FDT/UDT 50% → 24% |
 <!-- /table -->
 
 ### Fable 5.1's reasoning summaries often lean toward FDT/UDT first even when it eventually chooses CDT

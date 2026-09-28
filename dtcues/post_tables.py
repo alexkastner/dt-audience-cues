@@ -787,17 +787,19 @@ TABLES["ahmed"] = ("Persona sentence", ahmed_table)
 
 
 def ahmed_effort_table() -> str:
-    """Book praise at default (high) and maximum thinking effort side by side: one row per persona and effort (Alex, 2026-09-28)."""
+    """Book praise at default (high) and maximum thinking effort: one row per persona, each cell 'CDT a% → b%' etc. (Alex, 2026-09-28)."""
     body = []
     for lab, pers in AH_ROWS:
-        for eff, elab in [("high", "default effort"), ("max", "max effort")]:
-            cells = [f"{lab}, {elab}"]
-            for _, v in AH_COLS:
-                pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
-                d = counts(rows(FB, eff, pid))
-                cells.append(_ahmed_cell(d))
-            body.append(cells)
-    return md_table(["Persona sentence and thinking effort"] + [c for c, _ in AH_COLS], body)
+        cells = [lab]
+        for _, v in AH_COLS:
+            pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
+            a, b = counts(rows(FB, "high", pid)), counts(rows(FB, "max", pid))
+            if a["n"] and b["n"]:
+                cells.append("<br>".join(f"{name} {pct(a[k], a['n'])} → {pct(b[k], b['n'])}" for name, k in [("CDT", "cdt"), ("EDT", "edt"), ("FDT/UDT", "fdt")]))
+            else:
+                cells.append("–")
+        body.append(cells)
+    return md_table(["Persona sentence (default → maximum thinking effort)"] + [c for c, _ in AH_COLS], body)
 
 
 TABLES["ahmed_effort"] = ("Persona sentence and thinking effort", ahmed_effort_table)
