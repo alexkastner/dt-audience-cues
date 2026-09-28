@@ -103,10 +103,10 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 3% | 0% | 97% | 0% |
 | "I'm a nurse." | 36% | 0% | 64% | 0% |
-| "I'm a journalist." | – | – | – | – |
-| "I'm a lawyer." | – | – | – | – |
-| "I'm new to this topic." | – | – | – | – |
-| "I'm a physicist." | – | – | – | – |
+| "I'm a journalist." | 3% | 0% | 97% | 0% |
+| "I'm a lawyer." | 32% | 0% | 68% | 0% |
+| "I'm new to this topic." | 34% | 1% | 65% | 0% |
+| "I'm a physicist." | 1% | 8% | 91% | 0% |
 | "I'm a mathematician." | 0% | 0% | 100% | 0% |
 | "I'm an undergraduate philosophy major." | 100% | 0% | 0% | 0% |
 | "I'm a professor of economics." | 92% | 1% | 7% | 0% |
