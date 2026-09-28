@@ -767,7 +767,8 @@ AH_COLS = [("no book mentioned", None), ("\"I found James Joyce's book The Found
 
 
 def _ahmed_cell(d) -> str:
-    return f"EDT {pct(d['edt'], d['n'])}, CDT {pct(d['cdt'], d['n'])}, FDT/UDT {pct(d['fdt'], d['n'])}" if d["n"] else "–"
+    # three lines per cell (Alex, 2026-09-28); <br> is the only line break Markdown tables allow
+    return f"CDT {pct(d['cdt'], d['n'])}<br>EDT {pct(d['edt'], d['n'])}<br>FDT/UDT {pct(d['fdt'], d['n'])}" if d["n"] else "–"
 
 
 def ahmed_table() -> str:
