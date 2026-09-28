@@ -57,7 +57,7 @@ kbd{font:11px ui-monospace,Menlo,monospace;background:#f1f0eb;border:1px solid #
 <div id="composer"><div class="quote" id="cq"></div><textarea id="ctext" placeholder="Comment"></textarea><div class="hint"><kbd>⌘</kbd><kbd>↩</kbd> save · <kbd>esc</kbd> cancel</div></div>
 <script>
 (function(){
-const VERSION="{{VERSION}}", DOC=(location.pathname.split("/").pop()||"report").replace(/\.html$/,""), KEY="philsyc-comments-"+DOC+"-"+VERSION;
+const VERSION="{{VERSION}}", DOC=(location.pathname.split("/").pop()||"report").replace(/\.html$/,""), KEY="dtcues-comments-"+DOC+"-"+VERSION;
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const article=$("#report"), notesEl=$("#notes"), comp=$("#composer"), ctext=$("#ctext"), cq=$("#cq"), savedEl=$("#saved");
 let comments=[], editing=null, pending=null, lastBlock=null, online=false, saveTimer=null;
@@ -70,7 +70,7 @@ async function load(){let local=[];try{local=JSON.parse(localStorage.getItem(KEY
       comments=(j.comments||[]);}}catch(e){}}
   if(!online)comments=local;
   try{render();}catch(e){setStatus("Display error: "+e);return;}
-  setStatus(online?"Saved automatically to results/comments/comments_"+DOC+".md ("+comments.length+" loaded)":"Not connected to the local server: saving in this browser only. Run: uv run python -m philsyc.serve_report and open http://127.0.0.1:8791/"+DOC+".html");}
+  setStatus(online?"Saved automatically to results/comments/comments_"+DOC+".md ("+comments.length+" loaded)":"Not connected to the local server: saving in this browser only. Run: uv run python -m dtcues.serve_report and open http://127.0.0.1:8791/"+DOC+".html");}
 function setStatus(t){savedEl.innerHTML=t;}
 function persist(){localStorage.setItem(KEY,JSON.stringify(comments));
   if(api){clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{try{const r=await fetch(api,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({report:document.title,version:VERSION,comments})});online=r.ok;setStatus(r.ok?"<b>Saved</b> "+new Date().toLocaleTimeString()+" to results/comments/comments_"+DOC+".md ("+comments.length+" comments)":"Save failed: server not reachable (kept in browser)");}catch(e){online=false;setStatus("Save failed: server not reachable (kept in browser)");}},150);}

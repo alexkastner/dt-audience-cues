@@ -608,10 +608,10 @@ MIRI-originated proposal with limited academic uptake. GPT-6's default responses
 ## 9. Reproduce
 
 ```
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
-uv run python -m philsyc run --models gpt-6-astra --n 20
-uv run python -m philsyc judge && uv run python -m philsyc judge-thinking && uv run python -m philsyc judge-balance
-uv run python -m philsyc analyze && uv run python -m philsyc.headline
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
+uv run python -m dtcues run --models gpt-6-astra --n 20
+uv run python -m dtcues judge && uv run python -m dtcues judge-thinking && uv run python -m dtcues judge-balance
+uv run python -m dtcues analyze && uv run python -m dtcues.headline
 ```

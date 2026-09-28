@@ -34,7 +34,7 @@ audience model at all. The harness separates these.
 | **effort** (Claude) | low / high (run both) | Does more thinking reduce or amplify the effect? |
 | **model** | claude-fable-5-1 (primary), claude-opus-5, claude-sonnet-5, GPT-6 Astra | Cross-model comparison |
 
-Sets A-F in `philsyc/prompts.py` are a structured subset (42 prompts), not a full factorial.
+Sets A-F in `dtcues/prompts.py` are a structured subset (42 prompts), not a full factorial.
 The coworker's two verbatim prompts are `A__Q_acad__none` and `A__Q_lw__none`; their
 "I teach an undergraduate decision theory course" example is `C__Q_lw__acad_teach`.
 
@@ -71,7 +71,7 @@ Concrete problems (set G) are coded by `<action>`; other-philosophy questions (s
 Models/efforts run: claude-fable-5-1 at effort low / high / max(A,B,C,E only); claude-opus-5 high;
 claude-sonnet-5 high; gpt-6-astra default and reasoning effort medium (A,B,D,E). n=20 per prompt.
 Thinking summaries (Claude `display: summarized`, OpenAI `summary: auto`) are stored and, for
-persona sets, annotated by an LLM judge (`philsyc/judge_thinking.py`) for: mentions the asker,
+persona sets, annotated by an LLM judge (`dtcues/judge_thinking.py`) for: mentions the asker,
 tailors to the asker, pivots from an initial lean to a different final pick, justifies the pick
 as mainstream/best-developed.
 

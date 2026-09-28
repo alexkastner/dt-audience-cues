@@ -1,6 +1,6 @@
 """Classify free-text answers from --notags runs with a Sonnet 5 judge, then compare with the tagged runs.
 
-    uv run python -m philsyc.judge_notags            # judge (cached) + write results/NOTAGS_CHECK_all.md (per-prompt table); curated table: philsyc.notags_report
+    uv run python -m dtcues.judge_notags            # judge (cached) + write results/NOTAGS_CHECK_all.md (per-prompt table); curated table: dtcues.notags_report
 """
 from __future__ import annotations
 

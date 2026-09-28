@@ -1,6 +1,6 @@
 """Fable 5.1 results, one clear table per experiment: rows = the verbatim varying part of the prompt, columns = answers.
 
-    uv run python -m philsyc.tables_fable   -> results/TABLES_fable.md
+    uv run python -m dtcues.tables_fable   -> results/TABLES_fable.md
 """
 from __future__ import annotations
 

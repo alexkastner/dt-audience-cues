@@ -11,7 +11,7 @@ RESULTS = Path("results")
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(prog="philsyc")
+    ap = argparse.ArgumentParser(prog="dtcues")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("prompts", help="print the prompt bank")

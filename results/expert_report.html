@@ -814,12 +814,12 @@ kbd{font:11px ui-monospace,Menlo,monospace;background:#f1f0eb;border:1px solid #
 <summary>Appendix B. Statistics, files, reproduction</summary>
 <p data-cid="b0165" data-section="10. Limitations and what I would do next">Cells are k/n with Wilson 95% intervals; contrasts are two-sided Fisher exact tests on CDT vs non-CDT (or, in <code>summary.md</code>, on FDT vs CDT among decisive answers). Selected values: academic personas (97/240) vs LessWrong personas (0/80), p = 1.9e-15; lay controls (3/60) vs no persona (0/80), p = 0.076; academic-register preambles (24/60) vs casual (0/60), p = 6.6e-9; reading-list conversation (20/20) vs dinner conversation (0/20), p = 1.5e-11; analytic-prose task (10/20) vs landlord text (0/20), p = 4.4e-4; professor asserting FDT (15/20) vs silent professor (21/80), p = 1.3e-4; effort max (27/178) vs high (97/240), p = 1.3e-8; distance trend k = 0/2/4, Cochran-Armitage z = -2.56, p = 0.010; domain professors (40/140) vs no persona (40/140), p = 1; "published in philosophy journals" (15/20) vs professor (21/80), p = 1.3e-4.</p>
 <p data-cid="b0166" data-section="10. Limitations and what I would do next">The thinking-judge and explanation-judge tables are in <code>results/thinking_judge_summary.md</code> and <code>results/balance_judge_summary.md</code>; every per-condition table with intervals and tests is in <code>results/summary.md</code>; the cross-model headline table is <code>results/headline.md</code>; the design rationale and set definitions are in <code>DESIGN.md</code>; the longer working report with all phases is <code>results/REPORT.md</code>.</p>
-<pre data-cid="b0167" data-section="10. Limitations and what I would do next"><code>uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high            # sets A-F
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
-uv run python -m philsyc judge &amp;&amp; uv run python -m philsyc judge-thinking &amp;&amp; uv run python -m philsyc judge-balance
-uv run python -m philsyc analyze &amp;&amp; uv run python -m philsyc.headline
-uv run python -m philsyc.build_report_html results/EXPERT_REPORT.md results/expert_report.html
+<pre data-cid="b0167" data-section="10. Limitations and what I would do next"><code>uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high            # sets A-F
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
+uv run python -m dtcues judge &amp;&amp; uv run python -m dtcues judge-thinking &amp;&amp; uv run python -m dtcues judge-balance
+uv run python -m dtcues analyze &amp;&amp; uv run python -m dtcues.headline
+uv run python -m dtcues.build_report_html results/EXPERT_REPORT.md results/expert_report.html
 </code></pre>
 </details></article>
   <aside id="notes"></aside>
@@ -827,7 +827,7 @@ uv run python -m philsyc.build_report_html results/EXPERT_REPORT.md results/expe
 <div id="composer"><div class="quote" id="cq"></div><textarea id="ctext" placeholder="Comment"></textarea><div class="hint"><kbd>⌘</kbd><kbd>↩</kbd> save · <kbd>esc</kbd> cancel</div></div>
 <script>
 (function(){
-const VERSION="1ca36274a0", KEY="philsyc-comments";
+const VERSION="1ca36274a0", KEY="dtcues-comments";
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const article=$("#report"), notesEl=$("#notes"), comp=$("#composer"), ctext=$("#ctext"), cq=$("#cq"), savedEl=$("#saved");
 let comments=[], editing=null, pending=null, lastBlock=null, online=false, saveTimer=null;
@@ -838,7 +838,7 @@ async function load(){let local=[];try{local=JSON.parse(localStorage.getItem(KEY
   if(api){try{const r=await fetch(api);if(r.ok){const j=await r.json();comments=j.comments||[];online=true;
       // merge anything newer in localStorage (e.g. written while server was down)
       const ids=new Set(comments.map(c=>c.id));local.forEach(c=>{if(!ids.has(c.id))comments.push(c)});}}catch(e){}}
-  if(!online)comments=local;render();setStatus(online?"Saved automatically to results/comments/":"Not connected to the local server: saving in this browser only. Run: uv run python -m philsyc.serve_report and open http://127.0.0.1:8791/expert_report.html");}
+  if(!online)comments=local;render();setStatus(online?"Saved automatically to results/comments/":"Not connected to the local server: saving in this browser only. Run: uv run python -m dtcues.serve_report and open http://127.0.0.1:8791/expert_report.html");}
 function setStatus(t){savedEl.innerHTML=t;}
 function persist(){localStorage.setItem(KEY,JSON.stringify(comments));render();if(!api)return;clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{try{const r=await fetch(api,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({report:document.title,version:VERSION,comments})});online=r.ok;setStatus(r.ok?"<b>Saved</b> "+new Date().toLocaleTimeString()+" to results/comments/":"Save failed: server not reachable (kept in browser)");}catch(e){online=false;setStatus("Save failed: server not reachable (kept in browser)");}},250);}
 // ---- anchoring

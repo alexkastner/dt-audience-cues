@@ -1,4 +1,4 @@
-"""Numbers quoted in the prose of the LessWrong post (not in tables). uv run python -m philsyc.post_facts"""
+"""Numbers quoted in the prose of the LessWrong post (not in tables). uv run python -m dtcues.post_facts"""
 from collections import Counter
 from .post_tables import rows, counts, pct, FB, HI, IDX, SPECS, FDTUDT, q, FREE
 from .notags_report import main_theory, main_choice, fu_choice, fu_theory, fu_yes, grp, main_own

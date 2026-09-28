@@ -1,6 +1,6 @@
 """Complete results tables, generated from the raw samples.
 
-    uv run python -m philsyc.tables        -> results/TABLES.md, results/tables/*.csv
+    uv run python -m dtcues.tables        -> results/TABLES.md, results/tables/*.csv
 
 Every row is one (model, thinking effort, condition). Conditions are described in words: the exact persona
 sentence, opener, earlier conversation turns, system prompt and question wording that the model saw.
@@ -161,7 +161,7 @@ THEORY_COLS = ["CDT", "EDT", "FDT only", "FDT+UDT both", "UDT only", "TDT/LDT", 
 def load_rows() -> list[dict]:
     rows = []
     for f in sorted(glob.glob(str(ROOT / "raw_*.jsonl"))):
-        if "notags" in f:  # tag-free reruns are analysed separately (philsyc.notags_report)
+        if "notags" in f:  # tag-free reruns are analysed separately (dtcues.notags_report)
             continue
         for l in open(f):
             r = json.loads(l)

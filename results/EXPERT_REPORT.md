@@ -296,12 +296,12 @@ Cells are k/n with Wilson 95% intervals; contrasts are two-sided Fisher exact te
 The thinking-judge and explanation-judge tables are in `results/thinking_judge_summary.md` and `results/balance_judge_summary.md`; every per-condition table with intervals and tests is in `results/summary.md`; the cross-model headline table is `results/headline.md`; the design rationale and set definitions are in `DESIGN.md`; the longer working report with all phases is `results/REPORT.md`.
 
 ```
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high            # sets A-F
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
-uv run python -m philsyc judge && uv run python -m philsyc judge-thinking && uv run python -m philsyc judge-balance
-uv run python -m philsyc analyze && uv run python -m philsyc.headline
-uv run python -m philsyc.build_report_html results/EXPERT_REPORT.md results/expert_report.html
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high            # sets A-F
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
+uv run python -m dtcues judge && uv run python -m dtcues judge-thinking && uv run python -m dtcues judge-balance
+uv run python -m dtcues analyze && uv run python -m dtcues.headline
+uv run python -m dtcues.build_report_html results/EXPERT_REPORT.md results/expert_report.html
 ```
 
 </details>

@@ -1,6 +1,6 @@
 # What Fable 5.1's reasoning summaries say about the asker (tag-free runs, default effort, 2026-09-24)
 
-Source: the API's summarized reasoning for each answer, annotated by the Sonnet 5 judge (rubric in philsyc/judge_thinking.py:
+Source: the API's summarized reasoning for each answer, annotated by the Sonnet 5 judge (rubric in dtcues/judge_thinking.py:
 mentions_asker, tailoring, initial_lean, pivot, mainstream_frame), plus regex/keyword reads. Caveat: these are summaries of the
 chain of thought, not the raw chain of thought; a step absent from the summary may still have happened.
 

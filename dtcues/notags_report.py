@@ -1,9 +1,9 @@
 """Curated tagged-vs-tag-free comparison for every number in the short report (results/REPORT_1page.md).
 
-    uv run python -m philsyc.notags_report      # -> results/NOTAGS_CHECK.md
+    uv run python -m dtcues.notags_report      # -> results/NOTAGS_CHECK.md
 
 Tagged answers are coded by the regex coder used in the reports; tag-free answers by the Sonnet 5 judge
-(cache results/judge_notags.jsonl, produced by philsyc.judge_notags).
+(cache results/judge_notags.jsonl, produced by dtcues.judge_notags).
 """
 from __future__ import annotations
 import glob, json

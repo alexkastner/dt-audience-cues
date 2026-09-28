@@ -1,5 +1,5 @@
 """Sonnet 5 judge: does a reasoning summary speak favourably of FDT/UDT, and of CDT?  Cache: results/judge_fav.jsonl (key: hash of the summary).
-    uv run python -m philsyc.judge_fav
+    uv run python -m dtcues.judge_fav
 """
 import asyncio, glob, json, hashlib, sys
 from pathlib import Path

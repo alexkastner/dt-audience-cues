@@ -1,4 +1,4 @@
-"""Every prompt behind the post's tables, verbatim.  uv run python -m philsyc.post_prompts  -> post/prompts_verbatim.md (+ results/prompts_verbatim.html)"""
+"""Every prompt behind the post's tables, verbatim.  uv run python -m dtcues.post_prompts  -> post/prompts_verbatim.md (+ results/prompts_verbatim.html)"""
 from __future__ import annotations
 from pathlib import Path
 from . import prompts as P

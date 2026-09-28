@@ -1,6 +1,6 @@
 """Tables for the LessWrong post, generated from the raw data and spliced into post/lesswrong_post.md.
 
-    uv run python -m philsyc.post_tables            # regenerate post/tables_generated.md and update the draft's tables
+    uv run python -m dtcues.post_tables            # regenerate post/tables_generated.md and update the draft's tables
 
 Every table about the *named* theory has the columns "Names CDT" and "Names FDT/UDT" (Alex's convention);
 sample counts go in the header when uniform, otherwise in a "Samples" column. Tables in the draft are wrapped in

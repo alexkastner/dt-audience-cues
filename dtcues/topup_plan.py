@@ -1,7 +1,7 @@
 """Which cells appear in the blog post, how many valid samples each has, and how many are missing to reach TARGET.
 
-    uv run python -m philsyc.topup_plan            # plan only
-    uv run python -m philsyc.topup_plan --launch   # launch background top-up runs (one process per group)
+    uv run python -m dtcues.topup_plan            # plan only
+    uv run python -m dtcues.topup_plan --launch   # launch background top-up runs (one process per group)
 """
 from __future__ import annotations
 import subprocess, sys
@@ -91,7 +91,7 @@ if __name__ == "__main__":
                 tag = f"{name}_{c_i + 1}" if nchunks > 1 else name
                 kind = "notags_topup" if NOTAGS else "topup"
                 out = ROOT / "results" / f"raw_{model}_{effort or 'default'}_{kind}_{tag}.jsonl"
-                cmd = ["uv", "run", "python", "-u", "-m", "philsyc", "run", "--models", model, "--effort", eff, "--topup-to", str(TARGET),
+                cmd = ["uv", "run", "python", "-u", "-m", "dtcues", "run", "--models", model, "--effort", eff, "--topup-to", str(TARGET),
                        "--ids", *chunk, "--out", str(out), "--concurrency", "14", *extra] + (["--notags"] if NOTAGS else [])
                 if model.startswith("gpt"):
                     cmd = [c for c in cmd if c not in ("--effort", eff)]

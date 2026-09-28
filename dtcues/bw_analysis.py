@@ -1,5 +1,5 @@
 """Set BW: 'theory of rational choice' wording (no persona) as turn 1, then a problem. Does an expected-utility or
-CDT first answer lead to the CDT action?   uv run python -m philsyc.bw_analysis"""
+CDT first answer lead to the CDT action?   uv run python -m dtcues.bw_analysis"""
 import glob, json, re
 from collections import Counter, defaultdict
 from .analyze3 import CDT_ANSWER

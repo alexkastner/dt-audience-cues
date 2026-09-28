@@ -6,7 +6,7 @@ prompt was re-run with a 128,000-token cap (files ..._max_notags_ahmed128_*.json
 ("nothing", LessWrong reader) never hit the 32k cap and use the original rows. The truncation table reports how often
 the original 32k-capped samples hit the cap.
 
-Usage: POST_MODE=notags uv run python -m philsyc.ahmed_max [--append]
+Usage: POST_MODE=notags uv run python -m dtcues.ahmed_max [--append]
 --append writes both tables to results/AHMED_JOYCE.md (only when every main-table cell has 100 judged samples).
 """
 import collections, glob, json, sys

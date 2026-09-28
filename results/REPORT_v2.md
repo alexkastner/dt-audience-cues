@@ -425,11 +425,11 @@ GPT-6's rule is insider vs outsider: anyone who sounds like a layperson gets CDT
 **Statistics.** Proportions with Wilson 95% intervals; contrasts by two-sided Fisher exact test on CDT vs not-CDT; the distance trend by Cochran-Armitage. Every per-condition table: `results/summary.md`; cross-model table: `results/headline.md`; reasoning annotations: `results/thinking_judge_summary.md`; raw samples with prompts, responses and reasoning summaries: `results/raw_*.jsonl`; set definitions: `DESIGN.md`.
 
 ```
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
-uv run python -m philsyc judge && uv run python -m philsyc judge-thinking && uv run python -m philsyc judge-balance
-uv run python -m philsyc analyze && uv run python -m philsyc.headline
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
+uv run python -m dtcues run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3
+uv run python -m dtcues judge && uv run python -m dtcues judge-thinking && uv run python -m dtcues judge-balance
+uv run python -m dtcues analyze && uv run python -m dtcues.headline
 ```
 
 </details>

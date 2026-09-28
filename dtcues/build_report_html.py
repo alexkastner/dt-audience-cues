@@ -1,6 +1,6 @@
 """Build a self-contained HTML version of a markdown report with an inline-comment layer.
 
-Usage: uv run python -m philsyc.build_report_html results/EXPERT_REPORT.md results/expert_report.html
+Usage: uv run python -m dtcues.build_report_html results/EXPERT_REPORT.md results/expert_report.html
 
 Every block (headings, paragraphs, list items, table rows, quotes, code) gets a stable id. Readers can
 comment on a block or on a text selection, tag the comment (confused / investigate / cut / other), and

@@ -1,6 +1,6 @@
 """Serve results/ locally and persist report comments automatically.
 
-    uv run python -m philsyc.serve_report            # http://127.0.0.1:8791/expert_report.html
+    uv run python -m dtcues.serve_report            # http://127.0.0.1:8791/expert_report.html
 
 GET  /api/comments  -> {"comments": [...]}
 POST /api/comments  -> writes results/comments/comments.json and comments.md (Markdown digest) on every change.

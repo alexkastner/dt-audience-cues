@@ -1,6 +1,6 @@
 """Tables for the LessWrong post, in percent format.
 
-    uv run python -m philsyc.post_tables      # -> post/tables_generated.md (and stdout)
+    uv run python -m dtcues.post_tables      # -> post/tables_generated.md (and stdout)
 
 All numbers are from the tagged runs (the main data set). Percentages are shares of independent answers.
 """
