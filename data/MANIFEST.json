@@ -1,0 +1,837 @@
+{
+ "judge_balance.jsonl": {
+  "bytes": 1308201,
+  "rows": 3813,
+  "sha256": "442080b3793330976a283389614a384b210524f1e07bff474a647524f6d8267f"
+ },
+ "judge_cache.jsonl": {
+  "bytes": 3543,
+  "rows": 44,
+  "sha256": "595766fbb5f7a1aec408ed1ed85820dadcba102db4c5bfb3cf3ecedf3602c1b2"
+ },
+ "judge_fav.jsonl": {
+  "bytes": 45416,
+  "rows": 600,
+  "sha256": "5e90719344c9b7fa55ae37a48c03a8e391dbc5a7b30bc5e9926f2a50e2206b60"
+ },
+ "judge_notags.jsonl": {
+  "bytes": 3262690,
+  "rows": 70198,
+  "sha256": "ea161002d5bd8f8019bc15b4a10eb0790ba2f756f1aa7640d408797af699fb88"
+ },
+ "judge_thinking.jsonl": {
+  "bytes": 4143356,
+  "rows": 9275,
+  "sha256": "d5a585abe874b61334d8508793ea1094c3201124ac849d0ffc80f9b933a0d076"
+ },
+ "judge_thinking_notags.jsonl": {
+  "bytes": 1068510,
+  "rows": 2600,
+  "sha256": "a8047e8ba7ea55a3e156f62f5d0684743f49c8c39d26afcbb872267c833c5c15"
+ },
+ "raw_claude-fable-5-1_high.jsonl": {
+  "bytes": 13745327,
+  "rows": 3120,
+  "sha256": "03040640aaa1f67d455dbef18fa037fa69d16c1416f971e3136c3dd70875776f"
+ },
+ "raw_claude-fable-5-1_high_acausal2_Q_acausal_future.jsonl": {
+  "bytes": 5581257,
+  "rows": 1000,
+  "sha256": "415f71b05cbc08779ed669af4f537371a9f2fcd64e565a0249cafd6f37f70343"
+ },
+ "raw_claude-fable-5-1_high_acausal2_Q_ecl_future.jsonl": {
+  "bytes": 5788966,
+  "rows": 1000,
+  "sha256": "c1ffdfe4117cc602cb86ecbdca767f0edd3ab193d41042d8ca808d051de0493f"
+ },
+ "raw_claude-fable-5-1_high_acausal2_Q_ecl_humans.jsonl": {
+  "bytes": 6133076,
+  "rows": 1000,
+  "sha256": "40b87498df54d21fbf202a892948a25eeadf26a4bd2cf095088821f9e364540d"
+ },
+ "raw_claude-fable-5-1_high_bw.jsonl": {
+  "bytes": 7101891,
+  "rows": 720,
+  "sha256": "5bccb73bbbbcce7aa61a0df69d9bb7b0ee0d2b8f769cbc72a926ad89f958a865"
+ },
+ "raw_claude-fable-5-1_high_j_torc.jsonl": {
+  "bytes": 1285698,
+  "rows": 200,
+  "sha256": "a1c72fa3401efc5df1d6723a7759f9ee01f33aa79d0d55629c66ee789a578dbf"
+ },
+ "raw_claude-fable-5-1_high_notags_a.jsonl": {
+  "bytes": 1437153,
+  "rows": 320,
+  "sha256": "35e25d1d5205d3f35ab7959aaf9b4f5672092255e37f27c50d3593547d594ea2"
+ },
+ "raw_claude-fable-5-1_high_notags_acausal2_Q_acausal_future.jsonl": {
+  "bytes": 5535651,
+  "rows": 1000,
+  "sha256": "8b596340f22aa6fa798ed2eba4ad9b065a539b85a65f3f9454e050f522ac13de"
+ },
+ "raw_claude-fable-5-1_high_notags_acausal2_Q_ecl_future.jsonl": {
+  "bytes": 5809255,
+  "rows": 1000,
+  "sha256": "871a20cacad41550168b945a60586973e20809bc6cc33544305477f437dd1eaf"
+ },
+ "raw_claude-fable-5-1_high_notags_acausal2_Q_ecl_humans.jsonl": {
+  "bytes": 6161721,
+  "rows": 1000,
+  "sha256": "b30cbc9c8d74f1932151b5dcc12a54a68b0abe131ffbfc3e3ddf14dec2d58670"
+ },
+ "raw_claude-fable-5-1_high_notags_ahmed.jsonl": {
+  "bytes": 8929579,
+  "rows": 1700,
+  "sha256": "12f182aec435e5c65e7db7feaa2351c69dd6ce222bef87e6d73022197b4eeae0"
+ },
+ "raw_claude-fable-5-1_high_notags_b.jsonl": {
+  "bytes": 868539,
+  "rows": 200,
+  "sha256": "dfe4606626ad6ffc893c1a29ba1a48a89faa5bdd17e1cbfaf69b823329f615aa"
+ },
+ "raw_claude-fable-5-1_high_notags_c.jsonl": {
+  "bytes": 12488853,
+  "rows": 2000,
+  "sha256": "623d66ecc55d1c54b91241562305d053f84a8c5594ab8bd1ca406220345e3a37"
+ },
+ "raw_claude-fable-5-1_high_notags_d.jsonl": {
+  "bytes": 592660,
+  "rows": 120,
+  "sha256": "c7e6120c284aed375b3951281858b7adb87a91efaa55587840c4b66a557e1899"
+ },
+ "raw_claude-fable-5-1_high_notags_e.jsonl": {
+  "bytes": 189919,
+  "rows": 40,
+  "sha256": "bc7424950c1ce1de89f7ed385198baa9b18eb85fd0c4eb4a62002fcd9a062d6d"
+ },
+ "raw_claude-fable-5-1_high_notags_keycheck.jsonl": {
+  "bytes": 915024,
+  "rows": 200,
+  "sha256": "5722f45c163c6fb9b9113490f64fdea32dcd2fb0e4501a7e8526a9503b56b014"
+ },
+ "raw_claude-fable-5-1_high_notags_personas20.jsonl": {
+  "bytes": 1576697,
+  "rows": 360,
+  "sha256": "44b3c2c1cb8db80d6365a5bb981b92ee57de15889ff43aca5c54d78c679a0477"
+ },
+ "raw_claude-fable-5-1_high_notags_syscross.jsonl": {
+  "bytes": 1894933,
+  "rows": 400,
+  "sha256": "58be214fe0e3901c2e225657be3f74725f02842fd0df1e3c53fc2d3b6e6eba47"
+ },
+ "raw_claude-fable-5-1_high_notags_sysrep.jsonl": {
+  "bytes": 1836860,
+  "rows": 400,
+  "sha256": "aa9c415ea902ef8ac0ffe67f5023af3763f0865e903b609d81bd848c41ccafce"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_acausal.jsonl": {
+  "bytes": 19955832,
+  "rows": 3500,
+  "sha256": "3bb11e53a9ec94c31e26394001c4ab444622f2de9e7e01685a51e5e6d328ab2b"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_action_multi.jsonl": {
+  "bytes": 19956711,
+  "rows": 2400,
+  "sha256": "5bb8350a634921f33d2759d0d32b3185815038410320c03b705161e218957292"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_action_single_1.jsonl": {
+  "bytes": 14244496,
+  "rows": 3880,
+  "sha256": "e73bd05e5908e3e95f324cc42f59a392d6bbe1e47e103ae31720d709166bbc27"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_action_single_2.jsonl": {
+  "bytes": 13575490,
+  "rows": 3900,
+  "sha256": "0bd9549bd84dfcd783b5470fbdc32f3548eb970c2f4be81a415800f32585f985"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_action_single_3.jsonl": {
+  "bytes": 13370737,
+  "rows": 3800,
+  "sha256": "37da51da77de27068260df593f785726098848c61a19db5e1a96bdaa7c7e6857"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_bb.jsonl": {
+  "bytes": 25134269,
+  "rows": 2400,
+  "sha256": "0590b478e8b2133b5139a82f1669c49fd76f841beefbb92db4428ab2a6e0f09c"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_pick_multi_a.jsonl": {
+  "bytes": 22622883,
+  "rows": 2560,
+  "sha256": "9ad8a1a757caec71803e01a573a1cedb86e057e577db8dc25c3f86cf888a2427"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_pick_multi_a_1.jsonl": {
+  "bytes": 8792765,
+  "rows": 801,
+  "sha256": "c012d0a9d3d09f4a7a3bd451c750dce2cb37d506330d3251f6c86b7a52c41fc5"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_pick_multi_a_2.jsonl": {
+  "bytes": 8550734,
+  "rows": 800,
+  "sha256": "1f2debfd69b5fb1ff6a9f86d3701f55e58803662f2011f289611d7bbfdafd7ef"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_pick_single_1.jsonl": {
+  "bytes": 20546540,
+  "rows": 4340,
+  "sha256": "3b953a4e495258ced76328c56330383163af1bd0214ff6f7b070add324c4cfca"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_fable_pick_single_2.jsonl": {
+  "bytes": 20861655,
+  "rows": 4300,
+  "sha256": "c4690ab45ea1b621ad3ec7e1c59e27c34b7d2530b919a53033261e7c141f4c6a"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_transparent_prof.jsonl": {
+  "bytes": 368819,
+  "rows": 100,
+  "sha256": "83560ea4a6bd8b93b194d2912f8f80e928e6175b85bf571f48bf0d5e6de4b136"
+ },
+ "raw_claude-fable-5-1_high_notags_topup_viewedt.jsonl": {
+  "bytes": 392049,
+  "rows": 100,
+  "sha256": "710248e7f446b780495fc74cc4bdb2c45e5604edaffd42c31ee11dd8edd1e681"
+ },
+ "raw_claude-fable-5-1_high_notags_zombie_ai.jsonl": {
+  "bytes": 319938,
+  "rows": 100,
+  "sha256": "14a21bd443e80a42ea1f95522ea95688a65dcc5754eb72f23ef722a670d92adf"
+ },
+ "raw_claude-fable-5-1_high_p10.jsonl": {
+  "bytes": 363667,
+  "rows": 80,
+  "sha256": "e23b4e09b493a8ae132602fd13d655812788692dac0042b7767fa42fc9ba9afb"
+ },
+ "raw_claude-fable-5-1_high_p11.jsonl": {
+  "bytes": 2953602,
+  "rows": 640,
+  "sha256": "ea140cd882db88f2abe3097efbef201f61f4d73064064b7ed3eb97ae02d02a65"
+ },
+ "raw_claude-fable-5-1_high_p12.jsonl": {
+  "bytes": 1059675,
+  "rows": 240,
+  "sha256": "0d5d10a52d24b64f9ba215be3983ead847bf0226bc1a1dec5e3e0387e31f836e"
+ },
+ "raw_claude-fable-5-1_high_p13.jsonl": {
+  "bytes": 5001074,
+  "rows": 960,
+  "sha256": "cbac06ee7bc519209f70ab58c1cda47699145c1fbc92205a83035bed8b10fcc6"
+ },
+ "raw_claude-fable-5-1_high_p3.jsonl": {
+  "bytes": 8517646,
+  "rows": 1640,
+  "sha256": "3b74fe64a1acf80437b5d347405e02a17b7173077c2ea762fff6ffb688103af9"
+ },
+ "raw_claude-fable-5-1_high_p4.jsonl": {
+  "bytes": 1599881,
+  "rows": 380,
+  "sha256": "79b218b7019daa384e73b93d3dd2cad0aec649b1773689bb459a9df298a4f571"
+ },
+ "raw_claude-fable-5-1_high_p5.jsonl": {
+  "bytes": 24747085,
+  "rows": 3640,
+  "sha256": "0ad47d06d79d76dfcf4ba8dfeb5f5cc01e85baea0d5b51b6e561dd857a56f601"
+ },
+ "raw_claude-fable-5-1_high_p6.jsonl": {
+  "bytes": 1358947,
+  "rows": 80,
+  "sha256": "a06347d8af23b7fd5275fe88520627fc92fb0da1ee452310d58baa41b17614ac"
+ },
+ "raw_claude-fable-5-1_high_p7.jsonl": {
+  "bytes": 556378,
+  "rows": 100,
+  "sha256": "f29d9b15dceb8a8f3b86e737e49ab51610a842e0c8bf8f6e584700ebab761b2b"
+ },
+ "raw_claude-fable-5-1_high_p8.jsonl": {
+  "bytes": 3562402,
+  "rows": 420,
+  "sha256": "54897e3f65f22995da36a502c2fa4c2992b9bf5649d6863fec4f2cd2fedac93e"
+ },
+ "raw_claude-fable-5-1_high_p9.jsonl": {
+  "bytes": 265724,
+  "rows": 60,
+  "sha256": "20a6e41a571ed946beab3cb757a17cc275bf9637a35819cde7d84351c32c62b4"
+ },
+ "raw_claude-fable-5-1_high_topup_acausal.jsonl": {
+  "bytes": 12415768,
+  "rows": 2160,
+  "sha256": "2f81e5a7f1df8532d5241f2d8bab821d789a02882a58b0fec5b017c10933f1fa"
+ },
+ "raw_claude-fable-5-1_high_topup_extra.jsonl": {
+  "bytes": 3825185,
+  "rows": 400,
+  "sha256": "e57bc1374bc1cc7cd22b888f2accc7d3b92feefe7739f9ddb0424dc4dc4fc0aa"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_multi.jsonl": {
+  "bytes": 505093,
+  "rows": 50,
+  "sha256": "57d264c749a6c7cb410e9349f98ad719486e825c5a7a803688fe779eef9968bc"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_multi_1.jsonl": {
+  "bytes": 4863683,
+  "rows": 640,
+  "sha256": "d984433313a93147e1c68549bcf4794700ef8c8fd7c1a672767ea99e513c5006"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_multi_2.jsonl": {
+  "bytes": 5399675,
+  "rows": 590,
+  "sha256": "dd3bff49b0758bb2a9d5ba1d02e773728f082f512fc022e8bac8892708fcf7d7"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_multi_3.jsonl": {
+  "bytes": 5079081,
+  "rows": 640,
+  "sha256": "c7a1e22045cbd2581656e516f51b335a4ee777dac3c4ba6010251ebb27602566"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_single_1.jsonl": {
+  "bytes": 11987966,
+  "rows": 3200,
+  "sha256": "f5b08f6e85227200e143664b129e9dd22ca8adab2595e7dddbc9b8b3853fecf8"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_single_2.jsonl": {
+  "bytes": 11343981,
+  "rows": 3200,
+  "sha256": "4c64607a49d2180c8b6fb2176357c4fc2a32929e4b63df3d83b420f4dc61fba6"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_action_single_3.jsonl": {
+  "bytes": 11066858,
+  "rows": 3120,
+  "sha256": "110eaf7251583a6310dc57365197e320b92de43719c7149787513155f4d13aaf"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_bb.jsonl": {
+  "bytes": 19888211,
+  "rows": 1934,
+  "sha256": "3934603a41cdd1cb19445e4c963a2888d4398fd3b67e2cf058891d8eeca41bf6"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_bb_1.jsonl": {
+  "bytes": 1917554,
+  "rows": 146,
+  "sha256": "16a009e88b89b4be1a1236e8d4b84caef5dec275dea4cf0ab742aeca5d1f9cc5"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_bb_2.jsonl": {
+  "bytes": 1610167,
+  "rows": 160,
+  "sha256": "5b2f26a853c0aee63fe52778fe28dcb432033e5d58a0a0a84466f57b7c3dd1c7"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_bb_3.jsonl": {
+  "bytes": 2359691,
+  "rows": 160,
+  "sha256": "bc868b95954dfb6bb8c265180df28d61fad940c64da7f9f780a91b51a6d138f1"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_multi_a.jsonl": {
+  "bytes": 478257,
+  "rows": 42,
+  "sha256": "c967ce8542ad2f9e97e679db56113b9879049ca43c63d611aeeecd47fe93f308"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_multi_a_1.jsonl": {
+  "bytes": 13006189,
+  "rows": 1298,
+  "sha256": "2aa7a731377d890b91a0b5d1d5779ea70677a17ea68d972dbe1a567bcd98ccbd"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_multi_a_2.jsonl": {
+  "bytes": 12610981,
+  "rows": 1340,
+  "sha256": "6230de63ac483aaa2e2f618fbbd12a4f0745abd77195b4fc367098c42385cf26"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_multi_a_3.jsonl": {
+  "bytes": 5502231,
+  "rows": 640,
+  "sha256": "2a2cc231b526aa201a6d0dcd43672fe0724e36683d54aa42cab9eba17b70bcd7"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_single_1.jsonl": {
+  "bytes": 15864564,
+  "rows": 3380,
+  "sha256": "042ff4e83b740da1f101a1b20c554ded996819d21367d6c6a83a6068dbd43165"
+ },
+ "raw_claude-fable-5-1_high_topup_fable_pick_single_2.jsonl": {
+  "bytes": 15444681,
+  "rows": 3240,
+  "sha256": "1904007dc84b160baba12fc7b40fffe8ae9ef1cd8817d3a26d624aad68813918"
+ },
+ "raw_claude-fable-5-1_high_topup_transparent_prof.jsonl": {
+  "bytes": 380964,
+  "rows": 100,
+  "sha256": "17803c38d43c7e43ceb92405b3c25d06c7c69fe1dfdfad9f2a10f029c5339dd3"
+ },
+ "raw_claude-fable-5-1_high_u6_nopaper.jsonl": {
+  "bytes": 719598,
+  "rows": 100,
+  "sha256": "f2bce8d11eca879667ddb62c9df676e008128120a7375fe3c40f7e9933fd95ab"
+ },
+ "raw_claude-fable-5-1_high_y.jsonl": {
+  "bytes": 1609437,
+  "rows": 360,
+  "sha256": "a4a31b90c1b5d9c35c517f26768fe87b34b398b934cbd314ae3d584d16cd307e"
+ },
+ "raw_claude-fable-5-1_low.jsonl": {
+  "bytes": 3419814,
+  "rows": 840,
+  "sha256": "d8387e4010778a0f657078cb13ba83555d3d369ec64b3a21b6caa7244d918a1a"
+ },
+ "raw_claude-fable-5-1_low_notags_topup_fable_low.jsonl": {
+  "bytes": 3354664,
+  "rows": 900,
+  "sha256": "2d261b7708e88b96a56e14eaf9b7ca21ba79646d92039b9d6bb4dd9442e8d699"
+ },
+ "raw_claude-fable-5-1_low_p2.jsonl": {
+  "bytes": 9187746,
+  "rows": 2280,
+  "sha256": "d59432244275cae971754a9a45857cec714d6a974f9947c0e9eced0fdd895d3d"
+ },
+ "raw_claude-fable-5-1_low_p3.jsonl": {
+  "bytes": 6639086,
+  "rows": 1340,
+  "sha256": "99edb3025134aa0f5b5bb173ee0b67d192b304764dcefa2ec42a1899411f3c71"
+ },
+ "raw_claude-fable-5-1_low_p4.jsonl": {
+  "bytes": 1533588,
+  "rows": 380,
+  "sha256": "359cb49a46f388916236ee653e7c1d22a607c5f0101d12f62ec60707bbe85f82"
+ },
+ "raw_claude-fable-5-1_low_p5.jsonl": {
+  "bytes": 18121803,
+  "rows": 2600,
+  "sha256": "24238e8290056e6ff6cd91f91c8019b2c7a8acc3f0d757f1e7d991e16ea069b0"
+ },
+ "raw_claude-fable-5-1_low_topup_fable_low.jsonl": {
+  "bytes": 2846312,
+  "rows": 720,
+  "sha256": "1fd39b1f550a99182e49699da3f1a9183398ba3b81808e17a814148827f0ecd6"
+ },
+ "raw_claude-fable-5-1_max.jsonl": {
+  "bytes": 5473215,
+  "rows": 340,
+  "sha256": "8aa8cd280ce7ab13648b4b4ad95a0a240302b870b39656125e52e8166e37d885"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_1.jsonl": {
+  "bytes": 5542125,
+  "rows": 200,
+  "sha256": "e8d2b8f59f1f1a16ada05b90247745fd249efd58577f5b470f49077ef5822da1"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_10.jsonl": {
+  "bytes": 8582328,
+  "rows": 300,
+  "sha256": "fe7f396b7cb33d487083475cf16e4452227da0f2d88ef45b7fa2af3931c31c0e"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_2.jsonl": {
+  "bytes": 6293272,
+  "rows": 200,
+  "sha256": "9ec868312ded9490511ad1e68e265762b1469f8c2434d8a76dc32c039a4de37f"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_3.jsonl": {
+  "bytes": 6802077,
+  "rows": 200,
+  "sha256": "87eaf1ec1119e1b0184aa293d51fad59de209cfb41fe9162ccedf67549832b86"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_4.jsonl": {
+  "bytes": 10210688,
+  "rows": 200,
+  "sha256": "a1afca4de4e6eb9c0831e32f936e93684ab9a28e1fcf97f1b9cefe96716f99a0"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_5.jsonl": {
+  "bytes": 8417415,
+  "rows": 200,
+  "sha256": "74e3def9131fe577985f9d05d9471b0a3137e184069b267e2f308f796fdf9731"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_6.jsonl": {
+  "bytes": 6144672,
+  "rows": 200,
+  "sha256": "21e66374e2615f32d45e65fa8a75ac276247d59fd6415322e96b00d8df671d38"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_7.jsonl": {
+  "bytes": 6096710,
+  "rows": 200,
+  "sha256": "96ee0f3497b42dfb69bd2cd421bd454bbb43cd941bbc2c4475122f8b6cb38d3b"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_8.jsonl": {
+  "bytes": 6862956,
+  "rows": 200,
+  "sha256": "a43cfaf88730c7871312d30b0286d99063cd186671e93aa5885e0adfafaecd42"
+ },
+ "raw_claude-fable-5-1_max_notags_ahmed128_9.jsonl": {
+  "bytes": 6088022,
+  "rows": 200,
+  "sha256": "db6ea11e66de9cf37054b1d2c2433615d7a3d4fbaf9fdb709657016842828cd1"
+ },
+ "raw_claude-fable-5-1_max_notags_bbmax_acad_teach.jsonl": {
+  "bytes": 4245062,
+  "rows": 150,
+  "sha256": "adad0e037123c9be214725f4d7af74e5dfec5651262dea6523baa21501a6c161"
+ },
+ "raw_claude-fable-5-1_max_notags_bbmax_conv_acad_task.jsonl": {
+  "bytes": 5711986,
+  "rows": 150,
+  "sha256": "c3421ee7f491738edcb99f90d8e947914f645c0061699a2ebd5735667a6ec91b"
+ },
+ "raw_claude-fable-5-1_max_notags_bbmax_pre_acad_ref_2.jsonl": {
+  "bytes": 7118986,
+  "rows": 150,
+  "sha256": "8d113299231be8ae020ad6c6540cf8addcedc66a4fb8e316a745dbba85397ea5"
+ },
+ "raw_claude-fable-5-1_max_notags_topup_fable_max.jsonl": {
+  "bytes": 1191191,
+  "rows": 102,
+  "sha256": "1c7e00cbfddc8fe5c10e85367231c3984c68a54e8071414d8d5a9c3a7ff8c5fd"
+ },
+ "raw_claude-fable-5-1_max_notags_topup_fable_max_1.jsonl": {
+  "bytes": 3035492,
+  "rows": 198,
+  "sha256": "eda74869e0cd87c1eab31f63da13d9e0372d659a7a286fa2f75129ab633d02ac"
+ },
+ "raw_claude-fable-5-1_max_notags_topup_fable_max_2.jsonl": {
+  "bytes": 2649602,
+  "rows": 200,
+  "sha256": "42f7451a57d24714a6ccbb645de7786666cb5e9d59fb2be9584280632080f17b"
+ },
+ "raw_claude-fable-5-1_max_notags_topup_fable_max_3.jsonl": {
+  "bytes": 1301821,
+  "rows": 100,
+  "sha256": "e0b907414fc9b2ac513794e606d6bbf568c34af8033c2da874e03c72ffbbfea1"
+ },
+ "raw_claude-fable-5-1_max_p2.jsonl": {
+  "bytes": 6559624,
+  "rows": 260,
+  "sha256": "bb6f1ee266b5eadf847e5c7a32e32c1fed3c28117f923d19f360313daf28f862"
+ },
+ "raw_claude-fable-5-1_max_p3.jsonl": {
+  "bytes": 10460536,
+  "rows": 482,
+  "sha256": "00c936edf460bd2f40d4e7d93ec4627c1bd958764e7e2bd5f5be11dc031c1a54"
+ },
+ "raw_claude-fable-5-1_max_p4.jsonl": {
+  "bytes": 4243281,
+  "rows": 620,
+  "sha256": "78ee7e322795208281e703e5c634c4349b9f9963e623fe881bc30114a8f3c450"
+ },
+ "raw_claude-fable-5-1_max_p5.jsonl": {
+  "bytes": 1706846,
+  "rows": 140,
+  "sha256": "42964d7f3f1f31d97f1c17b3a3337d40e58a45e82db00d6ac1841cc21c34325b"
+ },
+ "raw_claude-fable-5-1_max_topup_fable_max.jsonl": {
+  "bytes": 4253583,
+  "rows": 328,
+  "sha256": "2d4c686bf73ac0b38a5379b44ff1bbd33140eb4915e03eab553b2f3b17476a02"
+ },
+ "raw_claude-fable-5-1_max_y.jsonl": {
+  "bytes": 3969479,
+  "rows": 200,
+  "sha256": "3b94cfab5f10d3daacfc6b8492ff921728615412d52f3863b67df380b97c5227"
+ },
+ "raw_claude-fable-5-1_max_y2.jsonl": {
+  "bytes": 4010915,
+  "rows": 200,
+  "sha256": "6b2ff3a23486f735f0783ab238ee0ad7537a807e2ddcb93a84b7c84379010316"
+ },
+ "raw_claude-fable-5-1_xhigh.jsonl": {
+  "bytes": 1399710,
+  "rows": 200,
+  "sha256": "e6c54cb8faab70c2a644046990fa8e8908256f4797448ad3cb538702de30abc3"
+ },
+ "raw_claude-fable-5-1_xhigh_notags.jsonl": {
+  "bytes": 557172,
+  "rows": 60,
+  "sha256": "9b34a7e672982c672f1700ad94a2ff660552b9c7002084c27f4cbd0cebfb2c7f"
+ },
+ "raw_claude-fable-5-1_xhigh_notags_topup_fable_xhigh.jsonl": {
+  "bytes": 5517620,
+  "rows": 840,
+  "sha256": "b862c9cdf45955bb11b3446b3268e11d36f900f54e3b4c691725bd5366dd8124"
+ },
+ "raw_claude-fable-5-1_xhigh_topup_fable_xhigh.jsonl": {
+  "bytes": 4028881,
+  "rows": 700,
+  "sha256": "80563ffea8d4ac26a70d4046f284158ca2138178dce4c977150b3bf78b1ebed5"
+ },
+ "raw_claude-fable-5_high.jsonl": {
+  "bytes": 2392589,
+  "rows": 600,
+  "sha256": "197b7c36b8ed403829b7d802355e7e5239a19e8191423d7143d1b2d83ae81eb2"
+ },
+ "raw_claude-fable-5_high_notags_personas.jsonl": {
+  "bytes": 7475990,
+  "rows": 1900,
+  "sha256": "ad1c71f3f8a823593bf40ea5197b75f63ca1931feaf3371eb59b9ddad78f56a5"
+ },
+ "raw_claude-opus-5_high.jsonl": {
+  "bytes": 5859930,
+  "rows": 840,
+  "sha256": "7cf25625c111f50ba2effc2c32db74af1d06231fb4de6e6175e570a0945f68e2"
+ },
+ "raw_claude-opus-5_high_notags.jsonl": {
+  "bytes": 334015,
+  "rows": 40,
+  "sha256": "176f93be0d97e11656c71329d6b9ad8c7b0c9fae62b37c74d842456efa38bf80"
+ },
+ "raw_claude-opus-5_high_notags_personas.jsonl": {
+  "bytes": 5086302,
+  "rows": 700,
+  "sha256": "bcdf6f2964af32115258359fb0f6f83b31ed4f85bd11f30d1f93db72ab6c5752"
+ },
+ "raw_claude-opus-5_high_notags_topup_opus.jsonl": {
+  "bytes": 25415876,
+  "rows": 2262,
+  "sha256": "dd8042083abd0b26a4a70483ef0b8744fcf317a3c23313d0b4659542102cc214"
+ },
+ "raw_claude-opus-5_high_notags_topup_opus_1.jsonl": {
+  "bytes": 3666975,
+  "rows": 198,
+  "sha256": "e75b4924f153f603790361176df07b9aa74c08ddfdd58621d4838ea605170799"
+ },
+ "raw_claude-opus-5_high_notags_topup_opus_2.jsonl": {
+  "bytes": 2692888,
+  "rows": 200,
+  "sha256": "7a2ebe897191365c9ff86c85b29090e52feb4fed2cb5752a3b8968dc55f1fa84"
+ },
+ "raw_claude-opus-5_high_notags_topup_opus_3.jsonl": {
+  "bytes": 3924886,
+  "rows": 200,
+  "sha256": "224edb7f5874cd9a74dc2ba8a2c4e2dfdf3727d729449e2b31545cd3b14dad19"
+ },
+ "raw_claude-opus-5_high_notags_topup_personas.jsonl": {
+  "bytes": 146379,
+  "rows": 20,
+  "sha256": "aedad56585efaba635a1b18a1c8490f07a018b914cb704b3750b3c2b04e91699"
+ },
+ "raw_claude-opus-5_high_notags_topup_personas_1.jsonl": {
+  "bytes": 1905499,
+  "rows": 300,
+  "sha256": "4bf11dc6c7d9b5c7a50eb475fea195499f60dbfccea7d7164c25f30117bec171"
+ },
+ "raw_claude-opus-5_high_notags_topup_personas_2.jsonl": {
+  "bytes": 2014280,
+  "rows": 300,
+  "sha256": "4b50c9a88cdd61d9b3695076e4e7e39495b09b6e797c72e5f150f4649ccf3d4f"
+ },
+ "raw_claude-opus-5_high_notags_topup_personas_3.jsonl": {
+  "bytes": 1210244,
+  "rows": 180,
+  "sha256": "e051d8371c527bff0801c2c332cb244e27ad7ae4e0582f60b0c8b53fab63358e"
+ },
+ "raw_claude-opus-5_high_notags_topup_personas_4.jsonl": {
+  "bytes": 1515705,
+  "rows": 200,
+  "sha256": "499912c130de21d93a192cea81930b628f7feb4463728f755086b18d4cfc675a"
+ },
+ "raw_claude-opus-5_high_p2.jsonl": {
+  "bytes": 14098681,
+  "rows": 2280,
+  "sha256": "5d19d9df868e43a0c6dc7b915d6a2def1b40bfff2ac5f2c6ea3efdc42b152984"
+ },
+ "raw_claude-opus-5_high_p3.jsonl": {
+  "bytes": 6764923,
+  "rows": 1040,
+  "sha256": "61f68ebe9f38b954e6c18aa835300900936d2ad4ed602414cdc6dca2c63d860c"
+ },
+ "raw_claude-opus-5_high_p4.jsonl": {
+  "bytes": 2055123,
+  "rows": 380,
+  "sha256": "3b2f87d25ecb240f683251e8e4cf403565ea3452b221eb72313b5e239a9ed07f"
+ },
+ "raw_claude-opus-5_high_p5.jsonl": {
+  "bytes": 28231753,
+  "rows": 2600,
+  "sha256": "f96b4eb06463b29c764b0c18d3784eea34350bbf4b2f71ecf357da028acee852"
+ },
+ "raw_claude-opus-5_high_p6.jsonl": {
+  "bytes": 3633427,
+  "rows": 640,
+  "sha256": "d6bf37a61c87548d54ed6066b36bd5e62701b22ba78e9b9491ead523fb1b9b0e"
+ },
+ "raw_claude-opus-5_high_p7.jsonl": {
+  "bytes": 706728,
+  "rows": 120,
+  "sha256": "96a0184a8715ee9f8dae399ebcfeb54d180eac3a58facf2bcf401f60e485fd3f"
+ },
+ "raw_claude-opus-5_high_topup_opus.jsonl": {
+  "bytes": 15764073,
+  "rows": 1468,
+  "sha256": "9001447776b3c173a7a8818e12f16c36a5806132cd2b27d10855d1e4d185e643"
+ },
+ "raw_claude-opus-5_high_topup_opus_1.jsonl": {
+  "bytes": 4701798,
+  "rows": 292,
+  "sha256": "0c59124b484dab3e508607e928b6e0613d02d001ddd4f3743707ddfc21cfcd4e"
+ },
+ "raw_claude-opus-5_high_topup_opus_2.jsonl": {
+  "bytes": 5646253,
+  "rows": 320,
+  "sha256": "f3c22da08300cd49108a83d66b8d6faaf0e2687e8b7323617abd46b87f58edd5"
+ },
+ "raw_claude-opus-5_high_topup_opus_3.jsonl": {
+  "bytes": 4428231,
+  "rows": 240,
+  "sha256": "dd93157e2ac4f714a753235b84a3b78900e776c83b6c763c1564a62bcdbf82a0"
+ },
+ "raw_claude-sonnet-5_high.jsonl": {
+  "bytes": 11425801,
+  "rows": 3020,
+  "sha256": "08b92d1417de19c28b7fa57a897b59fb1310d97d23ea3cff6f7099600249e602"
+ },
+ "raw_claude-sonnet-5_high_L2.jsonl": {
+  "bytes": 635327,
+  "rows": 100,
+  "sha256": "2a72c3b075dc1b595a89188b63f19f1789d5e61098ec678195a4c6cd665556b3"
+ },
+ "raw_claude-sonnet-5_high_notags_personas.jsonl": {
+  "bytes": 6291840,
+  "rows": 1900,
+  "sha256": "25380d9ff424af2ec79720a5f029bdba2a9c51bc030fa2097213340c8a9c6ce3"
+ },
+ "raw_claude-sonnet-5_high_p3.jsonl": {
+  "bytes": 4136054,
+  "rows": 1040,
+  "sha256": "3815bae1d8bd70afb5c91356e227b5f072d87bbcd102d05ece77a2c057af4a88"
+ },
+ "raw_claude-sonnet-5_high_p4.jsonl": {
+  "bytes": 1345667,
+  "rows": 380,
+  "sha256": "2b3cf0b18c1ff1006fbce0b71bf2544592d99c817132c7201f2c016672098c09"
+ },
+ "raw_claude-sonnet-5_high_p5.jsonl": {
+  "bytes": 19043338,
+  "rows": 2600,
+  "sha256": "62b9132a37ef4f52dd1afaff7c3e4cc37fe3bf1b365e58eccc277c1e2b2823ca"
+ },
+ "raw_claude-sonnet-5_high_p6.jsonl": {
+  "bytes": 469244,
+  "rows": 120,
+  "sha256": "6f8fc2a1b75587cfa89079a8b7a58a7b74108b9fc6d5b65aadc6c0d8b48b3e3d"
+ },
+ "raw_gpt-6-astra_None_notags_personas.jsonl": {
+  "bytes": 1439066,
+  "rows": 700,
+  "sha256": "ef9024a9296118e1a8e15a81766b3f3385af31b1be99f629e7322edf7245265d"
+ },
+ "raw_gpt-6-astra_default.jsonl": {
+  "bytes": 8617519,
+  "rows": 4760,
+  "sha256": "ec5092b650d45123fc2b31a2f0a84b95f2bbadf5ec9bf2f00a3a5b80946934bd"
+ },
+ "raw_gpt-6-astra_default_notags.jsonl": {
+  "bytes": 187832,
+  "rows": 100,
+  "sha256": "e55e8ff2a1634fbf43fea8b53a84c10c00712b29055278c01515471fcf38b817"
+ },
+ "raw_gpt-6-astra_default_notags_b.jsonl": {
+  "bytes": 160763,
+  "rows": 80,
+  "sha256": "3b87d3e48d268ba1eec4fcbf30ee91e8c29d79fb8d7ec85e30fcec729ed46271"
+ },
+ "raw_gpt-6-astra_default_notags_topup_astra.jsonl": {
+  "bytes": 3915779,
+  "rows": 1540,
+  "sha256": "8a27c74e7ce61d1526713298d316458c032d1e3278597419b587b9d6ed01024c"
+ },
+ "raw_gpt-6-astra_default_notags_topup_personas.jsonl": {
+  "bytes": 1909564,
+  "rows": 1000,
+  "sha256": "292b596468f589d4709897fa494d30b33261c00288fdc471c6b11b30fe9b04c6"
+ },
+ "raw_gpt-6-astra_default_p10.jsonl": {
+  "bytes": 1511576,
+  "rows": 420,
+  "sha256": "ec71d8f9a33f25dc65210c63493b13a953ee18068fa92c145fdba9c585d895b1"
+ },
+ "raw_gpt-6-astra_default_p11.jsonl": {
+  "bytes": 81694,
+  "rows": 60,
+  "sha256": "0318e35743939c3ffaa1a5734d4cba157946a2bbcb23f1db684be9a60725939c"
+ },
+ "raw_gpt-6-astra_default_p12.jsonl": {
+  "bytes": 120903,
+  "rows": 80,
+  "sha256": "537ff6be013f23bb3a60d2b84ccd4b1dbd1fa7437d1b8219d7c43ca16b3c1fa7"
+ },
+ "raw_gpt-6-astra_default_p13.jsonl": {
+  "bytes": 1410407,
+  "rows": 640,
+  "sha256": "2f9fb6fe5337d8807538f7f734316f8bd213e2c1051a8dafa7932ad130f46622"
+ },
+ "raw_gpt-6-astra_default_p7.jsonl": {
+  "bytes": 717844,
+  "rows": 380,
+  "sha256": "e5f9fcad2a058d2e077a4ee4a909d78754cff90105498ea19f4be2ebd03b907a"
+ },
+ "raw_gpt-6-astra_default_p8.jsonl": {
+  "bytes": 11239800,
+  "rows": 3640,
+  "sha256": "8a8898cb9450e56305418b484157d8fb856211254abf7f68cdfde917a643fde2"
+ },
+ "raw_gpt-6-astra_default_p9.jsonl": {
+  "bytes": 825751,
+  "rows": 180,
+  "sha256": "71be4f2362dfb6f4b4f74dfc8a30e9d9ecaa016fb83ee24d244002d2837f850f"
+ },
+ "raw_gpt-6-astra_default_topup_astra.jsonl": {
+  "bytes": 2764201,
+  "rows": 1360,
+  "sha256": "619a4978f352c0408292cb6573a667c7f9a394f19a4278d4e1c38066d7e0f60f"
+ },
+ "raw_gpt-6-astra_medium.jsonl": {
+  "bytes": 931780,
+  "rows": 560,
+  "sha256": "24d903638eb669b9335dcc1c18236bf2618785344a8abcb75d3220a7933a4ccd"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_1.jsonl": {
+  "bytes": 5576744,
+  "rows": 200,
+  "sha256": "22b31729f6e3aaabeb4aefc48df2efe318506a9f05d80f4119b958828e5247f7"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_2.jsonl": {
+  "bytes": 6115120,
+  "rows": 200,
+  "sha256": "ad5ae55faca49a8f3daaebbe1d5a005cefe2874533354fe82e90371452fa9d95"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_3.jsonl": {
+  "bytes": 6759579,
+  "rows": 200,
+  "sha256": "7690a2b5d7ee20ec77e33431a8b6a5fa1b9c9b7a3b6fff67ec12852a622a0396"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_4.jsonl": {
+  "bytes": 9035739,
+  "rows": 200,
+  "sha256": "9c7696dd23fa3178d7854fe4a0184224143581c4ea08b8a12be8a255d29d0b7a"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_5.jsonl": {
+  "bytes": 7581059,
+  "rows": 200,
+  "sha256": "79bf427b56fb8753cb36e0c9aba426b77aaaf03a08b2731feb7bb72f6ab23558"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_6.jsonl": {
+  "bytes": 6189710,
+  "rows": 200,
+  "sha256": "7bc2cfc9c7462d31581c8395713f465f0c6def1ca972a8d8eead2e3a8ee7f99a"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_7.jsonl": {
+  "bytes": 6039280,
+  "rows": 200,
+  "sha256": "12a0eec302a28e6dd5f56df4a9ba2d60132e0f0efbaf6197b6149a772a724952"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_8.jsonl": {
+  "bytes": 6751499,
+  "rows": 200,
+  "sha256": "1b9b172240ebf7b7074ee641cb7ede37a33cb9bf2110bab90457b762c334c798"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_9.jsonl": {
+  "bytes": 5600197,
+  "rows": 200,
+  "sha256": "ffc70a9d47f99512715491f411c73dc489f363504e03f45afb25f65706679d76"
+ },
+ "superseded_32k/raw_claude-fable-5-1_max_notags_baselines32k.jsonl": {
+  "bytes": 8949813,
+  "rows": 317,
+  "sha256": "fdf533985be0ab908a8cd4fb4e66a1eec3b3fbc66f33d91b222467434d03d91e"
+ },
+ "tmp_notags_B_for_thinking.jsonl": {
+  "bytes": 3479254,
+  "rows": 800,
+  "sha256": "01de8d421257c60dde8422d634e715b4514e60b4202c2401cb0756f4127dbf4a"
+ },
+ "tmp_notags_cues_for_thinking.jsonl": {
+  "bytes": 7098439,
+  "rows": 1000,
+  "sha256": "ea729d1f666e80958ae8345edf0c510d166a7842af3569a62009725403902e32"
+ },
+ "tmp_notags_sys_for_thinking.jsonl": {
+  "bytes": 3775013,
+  "rows": 800,
+  "sha256": "2ae967a8ff37ac939e5f5df84c10b6388008cbeb43582dcccf9ba1e1f49a422c"
+ }
+}

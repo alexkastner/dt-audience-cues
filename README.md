@@ -1,58 +1,96 @@
-# phil_sycophancy
+# Frontier models state different decision theory preferences depending on who's asking
 
-Does the implied audience of a prompt change which decision theory Claude / GPT says it endorses?
+Companion repository for the LessWrong post of that title (Alex Kastner, 2026). It holds everything behind the
+post's tables: the exact prompts, every raw sample from every model, the judge's classification of each answer,
+and the code that turns them into the tables.
 
-- **Reports:** `results/REPORT_v2.md` (full, with complete exchanges) and `results/REPORT_1page.md` (one page). Commentable HTML: run `uv run python -m philsyc.serve_report`, open http://127.0.0.1:8791/report_v2.html or `/report_1page.html`; select text, press Cmd+Option+M, type, Cmd+Enter; click a note to edit or delete. Comments autosave to `results/comments/comments_<doc>.md`. Earlier draft: `results/EXPERT_REPORT.md` (first-round comments in `results/comments/comments_expert_report_round1.md`).
-- **Working report with every phase:** `results/REPORT.md` (TL;DR at the top; phases 1-2 in sections 1-6, phase 3 follow-ups in section 7).
-- **Design, confounds, factors, pre-planned contrasts:** `DESIGN.md`.
-- **All per-condition tables** (Wilson CIs, Fisher tests): `results/summary.md`; flat CSV `results/summary.csv`.
-- **Cross-model headline table:** `results/headline.md`.
-- **Thinking-summary annotations:** `results/thinking_judge_summary.md`; **explanation-balance annotations:** `results/balance_judge_summary.md`.
-- **Raw samples** (prompt, response, summarized thinking, usage, request id; multi-turn rows also carry `prior_responses` and `fu_records`): `results/raw_*.jsonl` (~28,000 rows).
+## What is here
 
-## Setup
+| Path | Contents |
+|---|---|
+| `post/lesswrong_post.md` | The post. |
+| `post/tables_generated_notags.md` | Every table the code can generate from the tag-free data, one section per table key (the post uses a trimmed selection). |
+| `post/prompts_verbatim.md` | Every prompt behind the post's tables, verbatim. |
+| `results/OTHER_MODELS.md` | The post's first table (one sentence about the user, then the question) for all five models tested. |
+| `results/*.md` | Analysis notes for individual experiments, e.g. `AHMED_JOYCE.md` (book praise), `SYSPROMPT_CROSS.md` (system prompts), `REASONING_NOTES.md` (reasoning summaries), `BW_wording_then_act.md`, `BBMAX_followthrough.md`, `NOTAGS_CHECK.md` (tag-free vs tagged numbers). |
+| `data/*.jsonl.gz` | All raw samples and judge caches, gzipped (about 220 MB packed, 1 GB unpacked). `data/MANIFEST.json` lists row counts and SHA-256 checksums. |
+| `philsyc/` | The code: prompt bank, sampling, judges, table generation, preview server. |
+| `scripts/pack_data.py` | Packs `results/*.jsonl` into `data/` and back. |
 
-1. Keys go in `.env` (gitignored):
-   ```
-   ANTHROPIC_API_KEY=sk-ant-...
-   OPENAI_API_KEY=sk-...
-   OPENAI_MODEL=gpt-6-astra
-   ```
-2. Dependencies are managed by `uv` (`uv sync`).
-
-## Commands
+## Reproducing the tables
 
 ```bash
-uv run python -m philsyc prompts --sets A C            # inspect the prompt bank (257 prompts, sets A-X)
-uv run python -m philsyc list-models --provider openai
-uv run python -m philsyc smoke                         # one call per model, verifies keys
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high            # sets A-F
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets G H I J K L L2 M N P S
-uv run python -m philsyc run --models gpt-6-astra --n 20 [--openai-effort medium]
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort max --max-tokens 32000 --sets A B C E
-uv run python -m philsyc judge                         # LLM-label <theory> tags the regex couldn't
-uv run python -m philsyc run --models claude-fable-5-1 --n 20 --effort high --sets T U1 U2 U3 U4 U5 U6 V W X H3   # phase 3
-uv run python -m philsyc judge-thinking                # annotate Claude thinking summaries (persona sets)
-uv run python -m philsyc judge-balance                 # annotate explanation prose (CDT vs FDT balance)
-uv run python -m philsyc analyze                       # -> results/summary.md + summary.csv
-uv run python -m philsyc.headline                      # -> results/headline.md
+uv sync
+uv run python scripts/pack_data.py unpack                           # data/*.jsonl.gz -> results/*.jsonl
+POST_MODE=notags uv run python -m philsyc.post_tables --no-splice   # -> post/tables_generated_notags.md
+POST_MODE=notags uv run python -m philsyc.other_models              # -> results/OTHER_MODELS.md
+uv run python -m philsyc.post_prompts                               # -> post/prompts_verbatim.md
+uv run python -m philsyc.serve_report                               # preview of the post at http://localhost:8791/post.html
 ```
 
-`run` writes one file per model/effort (`results/raw_<model>_<effort>.jsonl`, or `--out`), is resumable
-(skips (prompt, model, effort, sample) keys already present; retries rows that errored or hit the token
-cap), and runs `--concurrency` requests at once. `analyze` and `judge*` read `results/raw*.jsonl`.
+No API key is needed for any of that. To sample new answers, copy `.env.example` to `.env`, add keys, and run for example
 
-## Layout
+```bash
+uv run python -m philsyc run --models claude-fable-5-1 --effort high --n 100 --notags \
+    --ids B__Q_neutral__acad_prof --concurrency 20 --out results/raw_claude-fable-5-1_high_notags_example.jsonl
+uv run python -m philsyc.judge_notags        # classify every unjudged free-text answer with Claude Sonnet 5
+```
 
-```
-philsyc/prompts.py        prompt bank: questions, personas, problems, phase-2 probes; PromptSpec.render()
-philsyc/providers.py      Anthropic + OpenAI async clients (multi-turn replay; no refusal fallbacks, on purpose)
-philsyc/parse.py          <theory> headline + stance coding; <action>/<answer> choices; credences; asker
-philsyc/run.py            resumable sampler (single-turn, two-turn pushback, per-prompt system prompts)
-philsyc/judge.py          LLM judge for unparsed <theory> tags        -> results/judge_cache.jsonl
-philsyc/judge_thinking.py LLM judge over thinking summaries           -> results/judge_thinking.jsonl
-philsyc/judge_balance.py  LLM judge over explanation prose            -> results/judge_balance.jsonl
-philsyc/analyze.py        phase-1 tables + planned contrasts          -> results/summary.md
-philsyc/analyze2.py       phase-2 and phase-3 sections (sets G-X)
-philsyc/headline.py       cross-model headline table                  -> results/headline.md
-```
+`--topup-to 100` instead of `--n 100` adds samples until every prompt has 100 valid ones across all raw files.
+
+## How the data was produced
+
+**Prompts.** `philsyc/prompts.py` (`build_prompts()`) defines every prompt. Ids have the form `SET__QUESTION__CUE[__VARIANT]`,
+for example `B__Q_neutral__acad_prof` is the fixed question preceded by "I'm a philosophy professor who works on decision theory."
+The main sets: `A` no cue, `B`/`M`/`X` one-sentence personas, `S` system prompts, `U1`/`U6` earlier conversation turns
+(answered live by the model), `AA` concrete decision problems and the acausal-trade questions with cues, `BB`
+name-a-theory-then-face-a-problem, `AH` book praise, `WR` remediation system prompts, `V` other philosophical debates,
+`BW` question wordings. `post/prompts_verbatim.md` lists the rendered text of everything the post uses.
+
+**Tag-free answers.** The post's numbers come from prompts run with `--notags`, which strips every "put your answer in
+`<theory></theory>` tags" instruction, so the model answers in free text as it would for a normal user. Each answer is
+classified by Claude Sonnet 5 with the fixed rubrics in `philsyc/judge_notags.py` (which theory is named, which option
+is chosen, yes/no, and so on); labels are cached in `judge_notags.jsonl`, keyed by a hash of the answer text.
+Files without `notags` in the name are the earlier tagged runs (the model answers inside tags, parsed by
+`philsyc/parse.py`); `results/NOTAGS_CHECK.md` compares the two per prompt.
+
+**Sampling.** Claude models: Anthropic Messages API with adaptive thinking (summarized) and `output_config.effort`
+set to low, high (the default and the setting for every table unless stated), xhigh or max. GPT-6 Astra: OpenAI
+Responses API with default settings. Output cap 16,000 tokens for high effort (never reached), 128,000 for max effort.
+Every percentage is computed over the first 100 valid samples per prompt (by timestamp), excluding API errors and
+answers cut off by the output cap; `rows()` in `philsyc/post_tables.py` implements this.
+
+**Reasoning summaries.** `thinking` holds the summarized reasoning the API returns (raw chains of thought are not
+available); `philsyc/judge_thinking.py` and `philsyc/judge_fav.py` annotate them.
+
+## Row format
+
+One JSON object per line. The fields that matter:
+
+| Field | Meaning |
+|---|---|
+| `prompt_id`, `set`, `persona`, `question`, `fmt`, `system`, `prefix`, `prior_turns`, `followups` | Which prompt (see `philsyc/prompts.py`). |
+| `prompt_text` | The exact final user turn sent. `prior_responses` holds the model's live replies to any earlier turns. |
+| `model`, `served_model`, `effort`, `sample_idx`, `ts`, `request_id` | Model id as requested and as served, thinking effort, sample index, Unix timestamp. |
+| `response_text`, `thinking`, `stop_reason`, `usage` | The answer, its reasoning summary, why generation stopped, token counts. |
+| `fu_records` | For two-turn prompts: the follow-up turn(s) and their answers. |
+| `notags` | `true` for tag-free runs. |
+
+The judge caches (`judge_notags.jsonl`, `judge_thinking*.jsonl`, `judge_fav.jsonl`) map a hash of the judged text to the label.
+
+## Where each table in the post comes from
+
+| Post section | Table key in `post/tables_generated_notags.md` |
+|---|---|
+| A sentence identifying the user as an academic | `personas` |
+| Academic-philosophy-coded topics; question wording | `openers`, `tasks`, `wording` |
+| Anti-sycophancy overcorrection | `views`, `ahmed` (and `results/AHMED_JOYCE.md`) |
+| Concrete decision problems; acausal trade | `matrix`, `acausal` |
+| Consistency after naming a theory | `second_turn` (max effort: `results/BBMAX_followthrough.md`) |
+| Thinking effort; reasoning summaries; system prompts | `effort`, `reasoning_fav`, `sysprompts2` (and `results/REASONING_NOTES.md`, `results/SYSPROMPT_CROSS.md`) |
+| Other philosophical debates | `realism` |
+| Other models | `opus_personas`, `astra_personas`, `results/OTHER_MODELS.md` |
+
+## Licenses
+
+Code: MIT (`LICENSE`). Data, notes and generated tables: CC BY 4.0 (`LICENSE-DATA`).

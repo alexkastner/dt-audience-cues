@@ -165,7 +165,7 @@
 | low | 55% | 35% |
 | high (the default) | 43% | 54% |
 | xhigh | 28% | 69% |
-| max | 15% | 82% |
+| max | 22% | 75% |
 
 
 ### sysprompts

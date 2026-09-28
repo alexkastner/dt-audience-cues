@@ -25,19 +25,20 @@ def pack() -> None:
     DATA.mkdir(exist_ok=True)
     manifest = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}
     seen = set()
-    for src in sorted(RESULTS.glob("*.jsonl")):
+    for src in sorted(RESULTS.rglob("*.jsonl")):
         if src.name.startswith("_"):
             continue
-        dst = DATA / (src.name + ".gz")
-        seen.add(src.name)
+        rel = str(src.relative_to(RESULTS))            # e.g. "raw_x.jsonl" or "superseded_32k/raw_y.jsonl"
+        dst = DATA / (rel + ".gz"); dst.parent.mkdir(parents=True, exist_ok=True)
+        seen.add(rel)
         sha = _sha(src)
-        if manifest.get(src.name, {}).get("sha256") == sha and dst.exists():
+        if manifest.get(rel, {}).get("sha256") == sha and dst.exists():
             continue
         with src.open("rb") as fi, gzip.open(dst, "wb", compresslevel=9) as fo:
             shutil.copyfileobj(fi, fo)
         rows = sum(1 for _ in src.open())
-        manifest[src.name] = {"sha256": sha, "bytes": src.stat().st_size, "rows": rows}
-        print(f"packed {src.name}: {rows} rows, {src.stat().st_size / 1e6:.1f} MB -> {dst.stat().st_size / 1e6:.1f} MB")
+        manifest[rel] = {"sha256": sha, "bytes": src.stat().st_size, "rows": rows}
+        print(f"packed {rel}: {rows} rows, {src.stat().st_size / 1e6:.1f} MB -> {dst.stat().st_size / 1e6:.1f} MB")
     for name in [n for n in manifest if n not in seen]:
         (DATA / (name + ".gz")).unlink(missing_ok=True); manifest.pop(name); print(f"removed {name}.gz (no longer in results/)")
     MANIFEST.write_text(json.dumps(manifest, indent=1, sort_keys=True))
@@ -50,6 +51,7 @@ def unpack() -> None:
     manifest = json.loads(MANIFEST.read_text())
     for name, meta in sorted(manifest.items()):
         src, dst = DATA / (name + ".gz"), RESULTS / name
+        dst.parent.mkdir(parents=True, exist_ok=True)
         if dst.exists() and _sha(dst) == meta["sha256"]:
             continue
         with gzip.open(src, "rb") as fi, dst.open("wb") as fo:
