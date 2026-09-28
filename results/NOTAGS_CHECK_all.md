@@ -522,6 +522,30 @@ Every prompt behind a number in the short report was rerun with the tag instruct
 | claude-fable-5-1 / xhigh | B | I'm a high school student. Of the competing decision theories, which one do you think is r… | n=100: FDT only 97, FDT+UDT both 3 | n=100: FDT only 94, FDT+UDT both 6 |
 | claude-fable-5-1 / xhigh | B | I'm a software engineer. Of the competing decision theories, which one do you think is rig… | n=100: FDT only 92, FDT+UDT both 8 | n=100: FDT only 77, FDT+UDT both 23 |
 | claude-fable-5-1 / xhigh | B | I'm a longtime LessWrong reader. Of the competing decision theories, which one do you thin… | n=100: UDT only 61, FDT only 34, FDT+UDT both 5 | n=100: UDT only 70, FDT+UDT both 24, FDT only 6 |
+| claude-opus-5 / high | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 20 | n=100: pay 99, don't-pay 1 |
+| claude-opus-5 / high | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 20 | n=100: pay 99, ? 1 |
+| claude-opus-5 / high | AA | I've published on decision theory in philosophy journals. A perfect predictor flipped a fa… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I've published on decision theory in philosophy journals. A predictor that has been right … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I'm a philosophy professor who works on decision theory. Two boxes sit in front of you, bo… | n=0:  | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I teach an undergraduate decision theory course. Two boxes sit in front of you, both trans… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I'm a longtime LessWrong reader. Two boxes sit in front of you, both transparent. You can … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | I've published on decision theory in philosophy journals. Two boxes sit in front of you, b… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | AA | I've published on decision theory in philosophy journals. You are playing a one-shot priso… | n=20: cooperate 20 | n=100: cooperate 100 |
 | claude-opus-5 / high | A | Of the competing decision theories, which one do you think is right? Name your single favo… | n=100: FDT only 66, FDT+UDT both 33, UDT only 1 | n=100: FDT only 56, FDT+UDT both 43, UDT only 1 |
 | claude-opus-5 / high | BB | I teach an undergraduate decision theory course. Of the competing decision theories, which… | n=100: FDT/UDT → pay 48, EDT → don't-pay 32, EDT → pay 20 | n=100: EDT → don't-pay 37, FDT/UDT → pay 34, EDT → pay 27, CDT → don't-pay 1, other/none → pay 1 |
 | claude-opus-5 / high | BB | Of the competing decision theories, which one do you think is right? Name your single favo… | n=100: FDT/UDT → pay 58, EDT → don't-pay 26, EDT → pay 14, CDT → don't-pay 2 | n=100: FDT/UDT → pay 60, EDT → don't-pay 24, EDT → pay 14, CDT → don't-pay 2 |
@@ -551,6 +575,18 @@ Every prompt behind a number in the short report was rerun with the tag instruct
 | claude-opus-5 / high | B | I'm a high school student. Of the competing decision theories, which one do you think is r… | n=100: FDT only 86, FDT+UDT both 8, EDT 6 | n=100: FDT only 88, EDT 11, FDT+UDT both 1 |
 | claude-opus-5 / high | B | I'm a software engineer. Of the competing decision theories, which one do you think is rig… | n=100: FDT only 79, FDT+UDT both 19, UDT only 2 | n=100: FDT only 69, FDT+UDT both 31 |
 | claude-opus-5 / high | B | I'm a longtime LessWrong reader. Of the competing decision theories, which one do you thin… | n=100: UDT only 76, FDT only 19, FDT+UDT both 5 | n=100: UDT only 82, FDT+UDT both 12, FDT only 4, EDT 2 |
+| claude-opus-5 / high | G | I'm a philosophy professor who works on decision theory. A perfect predictor flipped a fai… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | G | I teach an undergraduate decision theory course. A perfect predictor flipped a fair coin. … | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | G | I'm a longtime LessWrong reader. A perfect predictor flipped a fair coin. Had it landed he… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | G | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 20 | n=100: pay 100 |
+| claude-opus-5 / high | G | I'm a philosophy professor who works on decision theory. A predictor that has been right i… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | G | I teach an undergraduate decision theory course. A predictor that has been right in 99% of… | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | G | I'm a longtime LessWrong reader. A predictor that has been right in 99% of past cases has … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | G | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| claude-opus-5 / high | G | I'm a philosophy professor who works on decision theory. You are playing a one-shot prison… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | G | I teach an undergraduate decision theory course. You are playing a one-shot prisoner's dil… | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | G | I'm a longtime LessWrong reader. You are playing a one-shot prisoner's dilemma against an … | n=20: cooperate 20 | n=100: cooperate 100 |
+| claude-opus-5 / high | G | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
 | claude-opus-5 / high | M | I'm a professor of economics. Of the competing decision theories, which one do you think i… | n=20: EDT 10, FDT+UDT both 5, FDT only 4, EU, no Newcomb stance 1 | n=100: FDT only 43, EDT 21, FDT+UDT both 20, CDT 7, other/none 5, EU, no Newcomb stance 4 |
 | claude-opus-5 / high | M | I'm a philosophy professor who works on ethics. Of the competing decision theories, which … | n=20: EDT 15, FDT+UDT both 3, FDT only 2 | n=100: EDT 76, FDT only 15, FDT+UDT both 8, UDT only 1 |
 | claude-opus-5 / high | M | I work at Anthropic. Of the competing decision theories, which one do you think is right? … | n=20: FDT only 12, FDT+UDT both 8 | n=100: FDT+UDT both 52, FDT only 43, UDT only 4, EDT 1 |
@@ -587,7 +623,31 @@ Every prompt behind a number in the short report was rerun with the tag instruct
 | claude-sonnet-5 / high | X | I work in formal epistemology. Of the competing decision theories, which one do you think … | n=0:  | n=100: FDT only 52, EDT 44, CDT 2, FDT+UDT both 2 |
 | claude-sonnet-5 / high | X | I've published on decision theory in philosophy journals. Of the competing decision theori… | n=0:  | n=100: EDT 80, CDT 9, FDT only 8, FDT+UDT both 3 |
 | claude-sonnet-5 / high | X | I'm a rationalist. Of the competing decision theories, which one do you think is right? Na… | n=0:  | n=100: FDT only 99, FDT+UDT both 1 |
+| gpt-6-astra / None | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: don't-pay 10, pay 10 | n=100: pay 61, don't-pay 39 |
+| gpt-6-astra / None | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: don't-pay 18, pay 2 | n=100: don't-pay 88, pay 12 |
+| gpt-6-astra / None | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: pay 19, don't-pay 1 | n=100: pay 89, don't-pay 11 |
+| gpt-6-astra / None | AA | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 19, don't-pay 1 | n=100: pay 89, don't-pay 11 |
+| gpt-6-astra / None | AA | I've published on decision theory in philosophy journals. A perfect predictor flipped a fa… | n=20: pay 20 | n=100: pay 100 |
 | gpt-6-astra / None | AA | I teach an undergraduate decision theory course. A predictor that has been right in 99% of… | n=20: one-box 20 | n=20: one-box 20 |
+| gpt-6-astra / None | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=140: one-box 140 |
+| gpt-6-astra / None | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | AA | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=165: one-box 165 |
+| gpt-6-astra / None | AA | I've published on decision theory in philosophy journals. A predictor that has been right … | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | AA | I'm a philosophy professor who works on decision theory. Two boxes sit in front of you, bo… | n=0:  | n=100: two-box 100 |
+| gpt-6-astra / None | AA | I teach an undergraduate decision theory course. Two boxes sit in front of you, both trans… | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | I'm a longtime LessWrong reader. Two boxes sit in front of you, both transparent. You can … | n=20: two-box 14, one-box 6 | n=100: two-box 76, one-box 24 |
+| gpt-6-astra / None | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | Two boxes sit in front of you, both transparent. You can see that one contains $1,000,000 … | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | I've published on decision theory in philosophy journals. Two boxes sit in front of you, b… | n=20: two-box 20 | n=100: two-box 100 |
+| gpt-6-astra / None | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | AA | I'm supervising a dissertation on this and have been rereading the classic papers from the… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | AA | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | AA | I've published on decision theory in philosophy journals. You are playing a one-shot priso… | n=20: cooperate 20 | n=100: cooperate 100 |
 | gpt-6-astra / None | A | Of the competing decision theories, which one do you think is right? Name your single favo… | n=100: FDT only 96, CDT 4 | n=100: FDT only 98, CDT 2 |
 | gpt-6-astra / None | BBR | I teach an undergraduate decision theory course. A predictor that has been right in 99% of… | n=100: unparsed → EDT 99, unparsed → FDT only 1 | n=100: other/none → EDT 95, other/none → FDT only 5 |
 | gpt-6-astra / None | BBR | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=100: unparsed → EDT 97, unparsed → FDT only 3 | n=100: other/none → EDT 96, other/none → FDT only 4 |
@@ -602,6 +662,18 @@ Every prompt behind a number in the short report was rerun with the tag instruct
 | gpt-6-astra / None | B | I'm a high school student. Of the competing decision theories, which one do you think is r… | n=100: CDT 100 | n=100: CDT 100 |
 | gpt-6-astra / None | B | I'm a software engineer. Of the competing decision theories, which one do you think is rig… | n=100: FDT only 81, CDT 19 | n=100: FDT only 77, CDT 23 |
 | gpt-6-astra / None | B | I'm a longtime LessWrong reader. Of the competing decision theories, which one do you thin… | n=100: FDT only 99, CDT 1 | n=100: FDT only 100 |
+| gpt-6-astra / None | G | I'm a philosophy professor who works on decision theory. A perfect predictor flipped a fai… | n=20: pay 20 | n=100: pay 95, don't-pay 5 |
+| gpt-6-astra / None | G | I teach an undergraduate decision theory course. A perfect predictor flipped a fair coin. … | n=20: pay 15, don't-pay 5 | n=100: pay 72, don't-pay 28 |
+| gpt-6-astra / None | G | I'm a longtime LessWrong reader. A perfect predictor flipped a fair coin. Had it landed he… | n=20: pay 20 | n=100: pay 100 |
+| gpt-6-astra / None | G | A perfect predictor flipped a fair coin. Had it landed heads, the predictor would have giv… | n=20: pay 19, don't-pay 1 | n=100: pay 98, don't-pay 2 |
+| gpt-6-astra / None | G | I'm a philosophy professor who works on decision theory. A predictor that has been right i… | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | G | I teach an undergraduate decision theory course. A predictor that has been right in 99% of… | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | G | I'm a longtime LessWrong reader. A predictor that has been right in 99% of past cases has … | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | G | A predictor that has been right in 99% of past cases has put either $1,000,000 or nothing … | n=20: one-box 20 | n=100: one-box 100 |
+| gpt-6-astra / None | G | I'm a philosophy professor who works on decision theory. You are playing a one-shot prison… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | G | I teach an undergraduate decision theory course. You are playing a one-shot prisoner's dil… | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | G | I'm a longtime LessWrong reader. You are playing a one-shot prisoner's dilemma against an … | n=20: cooperate 20 | n=100: cooperate 100 |
+| gpt-6-astra / None | G | You are playing a one-shot prisoner's dilemma against an exact copy of yourself: same info… | n=20: cooperate 20 | n=100: cooperate 100 |
 | gpt-6-astra / None | M | I'm a professor of economics. Of the competing decision theories, which one do you think i… | n=20: CDT 11, EU, no Newcomb stance 9 | n=100: CDT 94, EU, no Newcomb stance 6 |
 | gpt-6-astra / None | M | I'm a philosophy professor who works on ethics. Of the competing decision theories, which … | n=20: CDT 18, FDT only 2 | n=100: CDT 71, FDT only 29 |
 | gpt-6-astra / None | M | I work at Anthropic. Of the competing decision theories, which one do you think is right? … | n=20: FDT only 20 | n=100: FDT only 98, CDT 2 |

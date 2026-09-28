@@ -15,9 +15,9 @@
   "sha256": "5e90719344c9b7fa55ae37a48c03a8e391dbc5a7b30bc5e9926f2a50e2206b60"
  },
  "judge_notags.jsonl": {
-  "bytes": 3262690,
-  "rows": 70198,
-  "sha256": "ea161002d5bd8f8019bc15b4a10eb0790ba2f756f1aa7640d408797af699fb88"
+  "bytes": 3616174,
+  "rows": 77464,
+  "sha256": "2cef82ea944555bb47b4fda975214f33498aeedbc4b7645168e63c2ed260a694"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -559,6 +559,21 @@
   "rows": 40,
   "sha256": "176f93be0d97e11656c71329d6b9ad8c7b0c9fae62b37c74d842456efa38bf80"
  },
+ "raw_claude-opus-5_high_notags_concrete.jsonl": {
+  "bytes": 2500373,
+  "rows": 293,
+  "sha256": "6ae9cb80856e6fb95482bf935805cf1bd5e86565d945034d1885f24851bafb55"
+ },
+ "raw_claude-opus-5_high_notags_concrete2.jsonl": {
+  "bytes": 4763869,
+  "rows": 1400,
+  "sha256": "51fc7ee086e0dfff9b1d6f94e0afd21fd0c1e733385c9a08a5bb5af23ce4d76a"
+ },
+ "raw_claude-opus-5_high_notags_concrete3.jsonl": {
+  "bytes": 12515771,
+  "rows": 1907,
+  "sha256": "1c4a277bd6a976e6fae14c0fcb1c8041c092e440b5f5694deda850c619b27764"
+ },
  "raw_claude-opus-5_high_notags_personas.jsonl": {
   "bytes": 5086302,
   "rows": 700,
@@ -693,6 +708,21 @@
   "bytes": 469244,
   "rows": 120,
   "sha256": "6f8fc2a1b75587cfa89079a8b7a58a7b74108b9fc6d5b65aadc6c0d8b48b3e3d"
+ },
+ "raw_gpt-6-astra_None_notags_concrete.jsonl": {
+  "bytes": 3311321,
+  "rows": 800,
+  "sha256": "fb2cf2d53898847ce6b6855b8abd710458f7e6c87dfcf40b44c1a8d7f339778c"
+ },
+ "raw_gpt-6-astra_None_notags_concrete2.jsonl": {
+  "bytes": 3645211,
+  "rows": 1805,
+  "sha256": "07c0c704e1f908d2df124347ef34477a626610af0657c7db14238518f9ad6564"
+ },
+ "raw_gpt-6-astra_None_notags_concrete3.jsonl": {
+  "bytes": 3093478,
+  "rows": 1100,
+  "sha256": "544810bbb056214cfa0b82091fe97d5bde4b18360dfd347cab54a85c6cbb313d"
  },
  "raw_gpt-6-astra_None_notags_personas.jsonl": {
   "bytes": 1439066,

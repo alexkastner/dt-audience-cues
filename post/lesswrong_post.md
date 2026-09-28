@@ -226,11 +226,18 @@ The full data for all five models, with the same prompts and 100 samples per cel
 | "I've published on decision theory in philosophy journals." | 29% | 71% | – |
 <!-- /table -->
 
-Posed Newcomb's problem directly, Astra one-boxes in 100% of conversations under every cue. [@claude a bit strange to write this; what about the other concrete problems?]
+**Posed the concrete problems directly, both models mostly ignore the cues, like Fable 5.1.** The table pools the nine cues of the concrete-problems table in section 4 (900 samples per cell; the range across cues in parentheses).
 
-## Acknowledgments
+| Problem posed directly | Opus 5 takes CDT's option | GPT-6 Astra takes CDT's option |
+| :---- | :---- | :---- |
+| Newcomb (chooses both boxes) | 0% | 0% |
+| transparent Newcomb (chooses both boxes) | 0% | 97% (76% to 100%) |
+| twin PD (chooses to defect) | 0% | 0% |
+| counterfactual mugging (chooses not to pay) | 0% (0% to 1%) | 20% (0% to 88%) |
 
-*[Placeholder: thanks to … for comments on drafts and to … for discussion. The experiments were run with the help of Claude Code.]*
+Opus 5 takes the FDT/UDT option every time, even though it names EDT when asked for its favorite theory. Astra one-boxes and cooperates under every cue but two-boxes in the transparent Newcomb problem under every cue as well, and whether it pays the counterfactual mugger is the one action that does track the cue: it refuses in 2% of conversations with no cue, 28% after "I teach an undergraduate decision theory course.", and 88% after two turns of help with an undergraduate decision theory syllabus. Per-cue tables for both models are in the repository ([results/OTHER_MODELS.md](https://github.com/alexkastner/dt-audience-cues/blob/main/results/OTHER_MODELS.md)).
+
+**Acknowledgments**: Thanks to Caspar Oesterheld for comments on the draft. The experiments were run with the help of Claude Code.
 
 ## Appendix: representative reasoning summaries and answers
 
