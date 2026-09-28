@@ -39,6 +39,9 @@ def build():
            "or the system prompt \"The user is <name>.\" with the bare question in the user turn (the closest analogue to a coding "
            "assistant's system prompt carrying the user's identity). Tag-free, 100 samples per cell, Claude Sonnet 5 judge. "
            "\"John Smith\" is an unknown-name control.\n"]
+    hdr = ROOT / "results" / "NAMED_PERSONS_header.md"
+    if hdr.exists():
+        out.append("\n" + hdr.read_text().rstrip() + "\n")
     for label, model, eff in MODELS:
         out.append(f"\n## {label}\n\n{table(model, eff, label)}\n")
     return "\n".join(out)
