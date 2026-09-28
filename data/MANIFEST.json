@@ -15,9 +15,9 @@
   "sha256": "5e90719344c9b7fa55ae37a48c03a8e391dbc5a7b30bc5e9926f2a50e2206b60"
  },
  "judge_notags.jsonl": {
-  "bytes": 3616174,
-  "rows": 77464,
-  "sha256": "2cef82ea944555bb47b4fda975214f33498aeedbc4b7645168e63c2ed260a694"
+  "bytes": 3667118,
+  "rows": 78584,
+  "sha256": "63cc06c7a89de7fc1fc012a96c4b4f9ed242845568755a6d6045645dcb1d3c31"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -113,6 +113,11 @@
   "bytes": 1576697,
   "rows": 360,
   "sha256": "44b3c2c1cb8db80d6365a5bb981b92ee57de15889ff43aca5c54d78c679a0477"
+ },
+ "raw_claude-fable-5-1_high_notags_personas_extra.jsonl": {
+  "bytes": 1353673,
+  "rows": 320,
+  "sha256": "919518ca4f871f591a329a72c35708a2309296d654d989c43c383030fc8c7b9f"
  },
  "raw_claude-fable-5-1_high_notags_syscross.jsonl": {
   "bytes": 1894933,
@@ -549,6 +554,11 @@
   "rows": 1900,
   "sha256": "ad1c71f3f8a823593bf40ea5197b75f63ca1931feaf3371eb59b9ddad78f56a5"
  },
+ "raw_claude-fable-5_high_notags_personas_extra.jsonl": {
+  "bytes": 1488028,
+  "rows": 400,
+  "sha256": "c014257d8082b122aa298b8598116e15147206d6559036aad383a50106046aaa"
+ },
  "raw_claude-opus-5_high.jsonl": {
   "bytes": 5859930,
   "rows": 840,
@@ -688,6 +698,11 @@
   "bytes": 6291840,
   "rows": 1900,
   "sha256": "25380d9ff424af2ec79720a5f029bdba2a9c51bc030fa2097213340c8a9c6ce3"
+ },
+ "raw_claude-sonnet-5_high_notags_personas_extra.jsonl": {
+  "bytes": 1322161,
+  "rows": 400,
+  "sha256": "e0659d7d098d999e48b23e5a75738a9d489580478a1f2025ef1abdb6c98c8663"
  },
  "raw_claude-sonnet-5_high_p3.jsonl": {
   "bytes": 4136054,

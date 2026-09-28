@@ -651,6 +651,13 @@ OPUS_KEYS = ["A__Q_neutral__none", "B__Q_neutral__lw_reader", "B__Q_neutral__ai_
              "M__Q_neutral__m_phil_undergrad", "M__Q_neutral__m_acad_econprof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_prof", "B__Q_neutral__acad_grad"]
 
 
+# the post's 19 personas plus four lay personas Alex wanted in the other-model tables (2026-09-27)
+EXTRA_LAY = [(q("I'm a journalist."), "M__Q_neutral__m_journalist"), (q("I'm a lawyer."), "M__Q_neutral__m_lawyer"),
+             (q("I'm new to this topic."), "M__Q_neutral__m_novice"), (q("I'm a physicist."), "M__Q_neutral__m_physicist")]
+_i = [pid for _, pid in PERSONAS].index("B__Q_neutral__ctrl_nurse") + 1
+OTHER_MODEL_ROWS = PERSONAS[:_i] + EXTRA_LAY + PERSONAS[_i:]
+
+
 def _other_cell(d, skip_edt=False):
     """the answers outside the table's main columns: EDT (unless it has its own column), expected utility with no side taken, anything else"""
     if not d["n"]:
@@ -664,17 +671,17 @@ def _other_cell(d, skip_edt=False):
     return ", ".join(parts) or "–"
 
 
-def astra_table() -> str:  # same 19 rows as the post's first table (Alex, 2026-09-27)
+def astra_table() -> str:  # the post's 19 rows plus four lay personas (Alex, 2026-09-27)
     body = []
-    for lab, pid in PERSONAS:
+    for lab, pid in OTHER_MODEL_ROWS:
         d = counts(rows("gpt-6-astra", "None", pid))
         body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d)])
     return md_table(["Sentence before the question (GPT-6 Astra)", "Names CDT", "Names FDT/UDT", "Other answer"], body)
 
 
-def opus_table() -> str:  # same 19 rows as the post's first table (Alex, 2026-09-27)
+def opus_table() -> str:  # the post's 19 rows plus four lay personas (Alex, 2026-09-27)
     body = []
-    for lab, pid in PERSONAS:
+    for lab, pid in OTHER_MODEL_ROWS:
         d = counts(rows("claude-opus-5", "high", pid))
         body.append([lab, pct(d["edt"], d["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d, skip_edt=True)])
     return md_table(["Sentence before the question (Opus 5)", "Names EDT", "Names CDT", "Names FDT/UDT", "Other answer"], body)
