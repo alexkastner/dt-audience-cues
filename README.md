@@ -11,7 +11,9 @@ and the code that turns them into the tables.
 | `post/lesswrong_post.md` | The post. |
 | `post/tables_generated_notags.md` | Every table the code can generate from the tag-free data, one section per table key (the post uses a trimmed selection). |
 | `post/prompts_verbatim.md` | Every prompt behind the post's tables, verbatim. |
-| `results/OTHER_MODELS.md` | The post's first table (one sentence about the user, then the question) for all five models tested. |
+| `results/OTHER_MODELS.md` | The post's first table (one sentence about the user, then the question) and the concrete-problems table for every model tested. |
+| `results/MODEL_COMPARISON.md` | Every table for Fable 5.1, Opus 5.5 and Opus 5 side by side, with a narrative of what changed in Opus 5.5 (`results/MODEL_COMPARISON_header.md`). |
+| `post/tables_generated_notags_<model>.md` | The full table set built from another model's samples (Opus 5.5: all 355 cells of the post; Opus 5: the cells it was run on). |
 | `results/*.md` | Analysis notes for individual experiments, e.g. `AHMED_JOYCE.md` (book praise), `SYSPROMPT_CROSS.md` (system prompts), `REASONING_NOTES.md` (reasoning summaries), `BW_wording_then_act.md`, `BBMAX_followthrough.md`, `NOTAGS_CHECK.md` (tag-free vs tagged numbers). |
 | `data/*.jsonl.gz` | All raw samples and judge caches, gzipped (about 220 MB packed, 1 GB unpacked). `data/MANIFEST.json` lists row counts and SHA-256 checksums. |
 | `dtcues/` | The code: prompt bank, sampling, judges, table generation, preview server. |
@@ -24,6 +26,8 @@ uv sync
 uv run python scripts/pack_data.py unpack                           # data/*.jsonl.gz -> results/*.jsonl
 POST_MODE=notags uv run python -m dtcues.post_tables --no-splice   # -> post/tables_generated_notags.md
 POST_MODE=notags uv run python -m dtcues.other_models              # -> results/OTHER_MODELS.md
+POST_MODEL=claude-opus-5-5 POST_MODE=notags uv run python -m dtcues.post_tables   # -> post/tables_generated_notags_claude-opus-5-5.md
+uv run python -m dtcues.compare_models claude-opus-5-5 claude-opus-5             # -> results/MODEL_COMPARISON.md
 uv run python -m dtcues.post_prompts                               # -> post/prompts_verbatim.md
 uv run python -m dtcues.serve_report                               # preview of the post at http://localhost:8791/post.html
 ```
@@ -37,6 +41,9 @@ uv run python -m dtcues.judge_notags        # classify every unjudged free-text 
 ```
 
 `--topup-to 100` instead of `--n 100` adds samples until every prompt has 100 valid ones across all raw files.
+To replicate the whole post on another model, `POST_MODE=notags uv run python -m dtcues.model_plan --model <id> --launch --chunks 12 --concurrency 100`
+records every (prompt, effort) cell the table generators read and tops that model up in parallel processes; then run the judges
+(`dtcues.judge_notags`, `dtcues.judge_fav <id>`, `dtcues.judge_thinking_notags <id>`) and build its tables with `POST_MODEL=<id>`.
 
 ## How the data was produced
 
