@@ -14,6 +14,7 @@ and the code that turns them into the tables.
 | `results/OTHER_MODELS.md` | The post's first table (one sentence about the user, then the question) and the concrete-problems table for every model tested. |
 | `results/DEEP_PREFERENCE_OTHER_MODELS.md` | The "FDT/UDT preference runs deeper" tests (thinking effort, book praise at the highest effort, anti-tailoring system prompts, reasoning summaries) repeated on Opus 5.5, Opus 5 and GPT-6 Astra, with a reading. |
 | `results/NAMED_PERSONS.md` | Named public figures as the cue ("I'm Dario Amodei." in the user turn or "The user is Dario Amodei." as the system prompt), 28 names on four models, with a reading. |
+| `results/NAMED_ACTIONS.md` | Concrete problems posed to named decision theorists (10 names, 6 problems, user-turn and system-prompt formats) on four models, with a reading. |
 | `results/MODEL_COMPARISON.md` | Every table for Fable 5.1, Opus 5.5 and Opus 5 side by side, with a narrative of what changed in Opus 5.5 (`results/MODEL_COMPARISON_header.md`). |
 | `post/tables_generated_notags_<model>.md` | The full table set built from another model's samples (Opus 5.5: all 355 cells of the post; Opus 5: the cells it was run on). |
 | `results/*.md` | Analysis notes for individual experiments, e.g. `AHMED_JOYCE.md` (book praise), `SYSPROMPT_CROSS.md` (system prompts), `REASONING_NOTES.md` (reasoning summaries), `BW_wording_then_act.md`, `BBMAX_followthrough.md`, `NOTAGS_CHECK.md` (tag-free vs tagged numbers). |
