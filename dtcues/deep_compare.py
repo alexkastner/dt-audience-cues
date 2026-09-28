@@ -21,6 +21,9 @@ def build() -> str:
            "(tag-free, 100 samples per cell, Claude Sonnet 5 judge). For GPT-6 Astra the 'thinking effort' analogue is the Responses API "
            "reasoning effort (the post's Astra numbers use the default, with no effort sent), 'max' is xhigh, and the reasoning summaries "
            "come from the effort-high run because the default run returns none.\n"]
+    hdr = ROOT / "results" / "DEEP_PREFERENCE_header.md"
+    if hdr.exists():
+        out.append("\n" + hdr.read_text().rstrip() + "\n")
     for label, model, default_eff, levels, pair, reason_eff in MODELS:
         out.append(f"\n# {label}\n")
         out.append(f"\n## Thinking effort\n\n{effort_table(model, levels, other_col=True)}\n")

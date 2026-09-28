@@ -15,9 +15,9 @@
   "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
  },
  "judge_notags.jsonl": {
-  "bytes": 6485933,
-  "rows": 139678,
-  "sha256": "bfa1ec01c6f07aec782bc9795a64ea72a95e7c700121c96f14ba54ed619e3c3b"
+  "bytes": 6486207,
+  "rows": 139684,
+  "sha256": "d81626c315b9c62011bd2664c90a1ad01097a50dcbc60e75a75fac4178d53dea"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -658,6 +658,11 @@
   "bytes": 19478924,
   "rows": 600,
   "sha256": "6b97b3dfabcabe271ea54e642b9012ee788e88b478d98454c249eae23f2d6801"
+ },
+ "raw_claude-opus-5-5_max_notags_deep_ahfill.jsonl": {
+  "bytes": 232528,
+  "rows": 6,
+  "sha256": "9ab382ae0cec0c8862768ef793ee0dfeb26481dd6a07c48bec8a4a30b2aa0fca"
  },
  "raw_claude-opus-5-5_max_notags_plan_1.jsonl": {
   "bytes": 8095839,
