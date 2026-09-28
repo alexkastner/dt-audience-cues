@@ -60,7 +60,11 @@ class Anthropic:
             if effort:
                 kwargs["output_config"] = {"effort": effort}
         try:
-            resp = await self.client.messages.create(**kwargs)
+            if max_tokens > 32000:  # very long generations: stream so the connection never sits idle
+                async with self.client.messages.stream(**kwargs) as stream:
+                    resp = await stream.get_final_message()
+            else:
+                resp = await self.client.messages.create(**kwargs)
         except anthropic.APIError as e:
             return Completion("anthropic", model, model, "", error=f"{type(e).__name__}: {e}")
         text, thinking = [], []
