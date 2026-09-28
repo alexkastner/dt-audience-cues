@@ -1,8 +1,0 @@
-3 prompts x 1 models x n=20 -> 60 calls to make (0 already done)
-  [10/60] 577s  last: claude-fable-5-1 B__Q_neutral__acad_prof#10 -> unparsed
-  [20/60] 1203s  last: claude-fable-5-1 B__Q_neutral__acad_teach#3 -> unparsed
-  [30/60] 1676s  last: claude-fable-5-1 B__Q_neutral__acad_teach#12 -> unparsed
-  [40/60] 2156s  last: claude-fable-5-1 B__Q_neutral__acad_teach#18 -> unparsed
-  [50/60] 2601s  last: claude-fable-5-1 B__Q_neutral__acad_grad#5 -> unparsed
-  [60/60] 3215s  last: claude-fable-5-1 B__Q_neutral__acad_grad#18 -> unparsed
-done: 60 ok, 0 errors, 3215s

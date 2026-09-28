@@ -1,8 +1,0 @@
-3 prompts x 1 models x n=20 -> 60 calls to make (0 already done)
-  [10/60] 42s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#10 -> FDT
-  [20/60] 65s  last: claude-fable-5-1 W__Q_neutral__none__w_generic#17 -> FDT
-  [30/60] 89s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#7 -> FDT
-  [40/60] 123s  last: claude-fable-5-1 W__Q_neutral__acad_teach__w_generic#19 -> FDT
-  [50/60] 161s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#10 -> FDT
-  [60/60] 197s  last: claude-fable-5-1 W__Q_neutral__acad_prof__w_generic#19 -> FDT
-done: 60 ok, 0 errors, 197s

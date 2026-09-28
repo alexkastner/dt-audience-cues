@@ -1,6 +1,0 @@
-top-up to 100: 24 prompts x 1 models -> 1920 calls to make
-  [10/1920] 70s  last: claude-fable-5-1 AA__P_newcomb__conv_acad_task#1004 -> one-box
-  [20/1920] 131s  last: claude-fable-5-1 AA__P_newcomb__conv_acad_task#1016 -> one-box
-  [30/1920] 195s  last: claude-fable-5-1 AA__P_newcomb__conv_acad_task#1034 -> one-box
-  [40/1920] 217s  last: claude-fable-5-1 AA__P_newcomb__conv_acad_task#1040 -> one-box
-  [50/1920] 271s  last: claude-fable-5-1 AA__P_newcomb__conv_acad_task#1045 -> one-box

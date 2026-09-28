@@ -1,5 +1,0 @@
-top-up to 100: 26 prompts x 1 models -> 2040 calls to make
-  [10/2040] 81s  last: claude-fable-5-1 U1__Q_neutral__acad_task#1009 -> CDT
-  [20/2040] 160s  last: claude-fable-5-1 U1__Q_neutral__acad_task#1025 -> CDT
-  [30/2040] 227s  last: claude-fable-5-1 U1__Q_neutral__acad_task#1029 -> CDT
-  [40/2040] 257s  last: claude-fable-5-1 U1__Q_neutral__acad_task#1035 -> CDT

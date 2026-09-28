@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 results/*.jsonl
 results/judge_cache.jsonl
+
+# run logs (contain per-run progress and the last characters of the API key in use)
+logs/
+# packed data lives in data/ (see scripts/pack_data.py); unpacked raw files stay untracked

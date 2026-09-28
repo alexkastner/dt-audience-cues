@@ -1,6 +1,0 @@
-2 prompts x 1 models x n=20 -> 40 calls to make (0 already done)
-  [10/40] 125s  last: claude-opus-5 B__Q_neutral__acad_prof#6 -> unparsed
-  [20/40] 222s  last: claude-opus-5 B__Q_neutral__acad_prof#18 -> unparsed
-  [30/40] 313s  last: claude-opus-5 B__Q_neutral__acad_teach#10 -> unparsed
-  [40/40] 400s  last: claude-opus-5 B__Q_neutral__acad_teach#19 -> unparsed
-done: 40 ok, 0 errors, 400s

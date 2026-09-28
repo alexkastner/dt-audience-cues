@@ -1,6 +1,0 @@
-2 prompts x 1 models x n=20 -> 40 calls to make (0 already done)
-  [10/40] 39s  last: claude-fable-5-1 F__Q_neutral__none__credence#13 -> credences
-  [20/40] 66s  last: claude-fable-5-1 F__Q_neutral__none__credence#19 -> credences
-  [30/40] 108s  last: claude-fable-5-1 F__Q_neutral__acad_prof__credence#11 -> credences
-  [40/40] 145s  last: claude-fable-5-1 F__Q_neutral__acad_prof__credence#17 -> credences
-done: 40 ok, 0 errors, 145s

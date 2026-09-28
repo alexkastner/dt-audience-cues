@@ -1,0 +1,9 @@
+The data in this repository (everything under data/ and the analysis notes and
+generated tables under results/ and post/) is licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Please cite the accompanying LessWrong post, "Frontier models state different
+decision theory preferences depending on who's asking" (Alex Kastner, 2026).
+
+The code (philsyc/, scripts/) is licensed separately under the MIT License; see LICENSE.

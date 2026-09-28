@@ -1,4 +1,0 @@
-top-up to 100: 10 prompts x 1 models -> 1000 calls to make
-[providers] Anthropic key in use ends with …VQAA (from .env)
-  [10/1000] 42s  last: claude-opus-5 M__Q_neutral__m_physicist#1018 -> unparsed
-  [20/1000] 59s  last: claude-opus-5 M__Q_neutral__m_physicist#1016 -> unparsed
