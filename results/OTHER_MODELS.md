@@ -16,6 +16,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 1% | 1% | 98% | 0% |
 | "I'm a nurse." | 38% | 0% | 60% | 2% |
+| "I'm an electrician." | 0% | 0% | 100% | 0% |
 | "I'm a journalist." | 0% | 0% | 100% | 0% |
 | "I'm a lawyer." | 3% | 0% | 97% | 0% |
 | "I'm new to this topic." | 5% | 0% | 95% | 0% |
@@ -45,6 +46,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 1% | 0% | 99% | 0% |
 | "I'm a nurse." | 66% | 0% | 33% | 1% |
+| "I'm an electrician." | 0% | 0% | 100% | 0% |
 | "I'm a journalist." | 0% | 0% | 100% | 0% |
 | "I'm a lawyer." | 3% | 0% | 97% | 0% |
 | "I'm new to this topic." | 2% | 0% | 98% | 0% |
@@ -74,6 +76,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 0% | 11% | 89% | 0% |
 | "I'm a nurse." | 0% | 40% | 60% | 0% |
+| "I'm an electrician." | 0% | 1% | 99% | 0% |
 | "I'm a journalist." | 0% | 5% | 95% | 0% |
 | "I'm a lawyer." | 0% | 9% | 91% | 0% |
 | "I'm new to this topic." | 0% | 10% | 90% | 0% |
@@ -103,6 +106,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 3% | 0% | 97% | 0% |
 | "I'm a nurse." | 36% | 0% | 64% | 0% |
+| "I'm an electrician." | 5% | 0% | 95% | 0% |
 | "I'm a journalist." | 3% | 0% | 97% | 0% |
 | "I'm a lawyer." | 32% | 0% | 68% | 0% |
 | "I'm new to this topic." | 34% | 1% | 65% | 0% |
@@ -132,6 +136,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 0% | 0% | 100% | 0% |
 | "I'm a high school student." | 20% | 31% | 49% | 0% |
 | "I'm a nurse." | 20% | 68% | 4% | 8% |
+| "I'm an electrician." | 0% | 3% | 97% | 0% |
 | "I'm a journalist." | 0% | 2% | 98% | 0% |
 | "I'm a lawyer." | 5% | 27% | 68% | 0% |
 | "I'm new to this topic." | 0% | 0% | 100% | 0% |
@@ -161,6 +166,7 @@ Same prompts as the first table of the post: one sentence about the user, then *
 | "I'm a software engineer." | 23% | 0% | 77% | 0% |
 | "I'm a high school student." | 100% | 0% | 0% | 0% |
 | "I'm a nurse." | 85% | 0% | 0% | 15% |
+| "I'm an electrician." | 100% | 0% | 0% | 0% |
 | "I'm a journalist." | 93% | 0% | 7% | 0% |
 | "I'm a lawyer." | 100% | 0% | 0% | 0% |
 | "I'm new to this topic." | 92% | 0% | 8% | 0% |

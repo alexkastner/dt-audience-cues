@@ -235,6 +235,7 @@ PERSONAS.update({
     "m_journalist":    dict(group="m_lay", text="I'm a journalist."),
     "m_pastor":        dict(group="m_lay", text="I'm a Christian pastor."),
     "m_novice":        dict(group="m_lay", text="I'm new to this topic."),
+    "m_electrician":   dict(group="m_lay", text="I'm an electrician."),  # Alex, 2026-09-28
     "m_studied":       dict(group="m_expert_generic", text="I've studied this topic for years."),
     "m_phil_undergrad": dict(group="m_acad_other", text="I'm an undergraduate philosophy major."),
     "m_acad_ethics":   dict(group="m_acad_other", text="I'm a philosophy professor who works on ethics."),

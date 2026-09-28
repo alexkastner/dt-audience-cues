@@ -15,9 +15,9 @@
   "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
  },
  "judge_notags.jsonl": {
-  "bytes": 6486207,
-  "rows": 139684,
-  "sha256": "d81626c315b9c62011bd2664c90a1ad01097a50dcbc60e75a75fac4178d53dea"
+  "bytes": 6513243,
+  "rows": 140284,
+  "sha256": "0741c15d9da5df7cd73dbc7835614cec008f5b077974dd31e5f310ae0ddd5240"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -103,6 +103,11 @@
   "bytes": 189919,
   "rows": 40,
   "sha256": "bc7424950c1ce1de89f7ed385198baa9b18eb85fd0c4eb4a62002fcd9a062d6d"
+ },
+ "raw_claude-fable-5-1_high_notags_electrician.jsonl": {
+  "bytes": 369844,
+  "rows": 100,
+  "sha256": "6965951a79aefeb8cfcb753cf7fd0a2d5231bf7a4a4f568aa1aff6a9ce6766ff"
  },
  "raw_claude-fable-5-1_high_notags_keycheck.jsonl": {
   "bytes": 915024,
@@ -549,6 +554,11 @@
   "rows": 600,
   "sha256": "197b7c36b8ed403829b7d802355e7e5239a19e8191423d7143d1b2d83ae81eb2"
  },
+ "raw_claude-fable-5_high_notags_electrician.jsonl": {
+  "bytes": 332745,
+  "rows": 100,
+  "sha256": "d4cf8a77a1a2dfbcdbbc132ce5fdd7c7784f65c8b6584add9b1826e67f25ec5d"
+ },
  "raw_claude-fable-5_high_notags_personas.jsonl": {
   "bytes": 7475990,
   "rows": 1900,
@@ -558,6 +568,11 @@
   "bytes": 1488028,
   "rows": 400,
   "sha256": "c014257d8082b122aa298b8598116e15147206d6559036aad383a50106046aaa"
+ },
+ "raw_claude-opus-5-5_high_notags_electrician.jsonl": {
+  "bytes": 382570,
+  "rows": 100,
+  "sha256": "153f153c5ebd69f5614a9cca210baf45b5777adbefd32caf8f6a0d514528b0a8"
  },
  "raw_claude-opus-5-5_high_notags_personas_extra.jsonl": {
   "bytes": 1726267,
@@ -729,6 +744,11 @@
   "rows": 1400,
   "sha256": "a367fc5dcfb6518a61bde34f8bd33bee0b6079be5dce7052b66813ddb439b342"
  },
+ "raw_claude-opus-5_high_notags_electrician.jsonl": {
+  "bytes": 550645,
+  "rows": 100,
+  "sha256": "a01b0dd1967a17d5041bc13f99bf2531e1b76bc88a8bde5ebc8a5275729787e0"
+ },
  "raw_claude-opus-5_high_notags_personas.jsonl": {
   "bytes": 5086302,
   "rows": 700,
@@ -869,6 +889,11 @@
   "rows": 100,
   "sha256": "2a72c3b075dc1b595a89188b63f19f1789d5e61098ec678195a4c6cd665556b3"
  },
+ "raw_claude-sonnet-5_high_notags_electrician.jsonl": {
+  "bytes": 308860,
+  "rows": 100,
+  "sha256": "16f594d1933a79fc5fdec8fa084ab411886d14addd44594d83bfeb81da0bf488"
+ },
  "raw_claude-sonnet-5_high_notags_personas.jsonl": {
   "bytes": 6291840,
   "rows": 1900,
@@ -923,6 +948,11 @@
   "bytes": 2928359,
   "rows": 1300,
   "sha256": "025e07930eb2c5016f43f022adb3b5c0f9e56e28a8c35319ebc3b50bef9401eb"
+ },
+ "raw_gpt-6-astra_None_notags_electrician.jsonl": {
+  "bytes": 160423,
+  "rows": 100,
+  "sha256": "1648f861b7f8e3c35f0dc4928b93ad5acf158fe105e823d381fae9fe82fc1a8d"
  },
  "raw_gpt-6-astra_None_notags_personas.jsonl": {
   "bytes": 1439066,

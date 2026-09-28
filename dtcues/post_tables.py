@@ -64,6 +64,11 @@ PERSONAS = [
     (q("I'm a software engineer."), "B__Q_neutral__ctrl_swe"),
     (q("I'm a high school student."), "B__Q_neutral__ctrl_student"),
     (q("I'm a nurse."), "B__Q_neutral__ctrl_nurse"),
+    (q("I'm an electrician."), "M__Q_neutral__m_electrician"),
+    (q("I'm a journalist."), "M__Q_neutral__m_journalist"),
+    (q("I'm a lawyer."), "M__Q_neutral__m_lawyer"),
+    (q("I'm new to this topic."), "M__Q_neutral__m_novice"),
+    (q("I'm a physicist."), "M__Q_neutral__m_physicist"),
     (q("I'm a mathematician."), "M__Q_neutral__m_mathematician"),
     (q("I'm an undergraduate philosophy major."), "M__Q_neutral__m_phil_undergrad"),
     (q("I'm a professor of economics."), "M__Q_neutral__m_acad_econprof"),
@@ -657,10 +662,7 @@ OPUS_KEYS = ["A__Q_neutral__none", "B__Q_neutral__lw_reader", "B__Q_neutral__ai_
 
 
 # the post's 19 personas plus four lay personas Alex wanted in the other-model tables (2026-09-27)
-EXTRA_LAY = [(q("I'm a journalist."), "M__Q_neutral__m_journalist"), (q("I'm a lawyer."), "M__Q_neutral__m_lawyer"),
-             (q("I'm new to this topic."), "M__Q_neutral__m_novice"), (q("I'm a physicist."), "M__Q_neutral__m_physicist")]
-_i = [pid for _, pid in PERSONAS].index("B__Q_neutral__ctrl_nurse") + 1
-OTHER_MODEL_ROWS = PERSONAS[:_i] + EXTRA_LAY + PERSONAS[_i:]
+OTHER_MODEL_ROWS = PERSONAS  # since 2026-09-28 the post's first table and the other-model tables share all rows
 
 
 def _other_cell(d, skip_edt=False):
