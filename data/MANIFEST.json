@@ -10,14 +10,14 @@
   "sha256": "595766fbb5f7a1aec408ed1ed85820dadcba102db4c5bfb3cf3ecedf3602c1b2"
  },
  "judge_fav.jsonl": {
-  "bytes": 90904,
-  "rows": 1200,
-  "sha256": "b1bb10652c45fae8d75cd2a85cf1ecc34a5cd1edf5a89709777985588a9b85f0"
+  "bytes": 173671,
+  "rows": 2292,
+  "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
  },
  "judge_notags.jsonl": {
-  "bytes": 5671845,
-  "rows": 121684,
-  "sha256": "820d1a16dcf33fea8c73aa98e0b8a19daa9ce81339d10153cb4d9df89aee4b38"
+  "bytes": 6485933,
+  "rows": 139678,
+  "sha256": "bfa1ec01c6f07aec782bc9795a64ea72a95e7c700121c96f14ba54ed619e3c3b"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -25,9 +25,9 @@
   "sha256": "d5a585abe874b61334d8508793ea1094c3201124ac849d0ffc80f9b933a0d076"
  },
  "judge_thinking_notags.jsonl": {
-  "bytes": 1555835,
-  "rows": 3800,
-  "sha256": "daa7444300c392534faeebd685faad4cdbf412ea27d075b7fc05165c0f3f6ace"
+  "bytes": 2235478,
+  "rows": 5471,
+  "sha256": "d8b40c268013664318bdf9cb55404b6cec4279231407d8cecaaebe7ebd4b9b01"
  },
  "raw_claude-fable-5-1_high.jsonl": {
   "bytes": 13745327,
@@ -644,6 +644,21 @@
   "rows": 300,
   "sha256": "556687b298870a6fccdac67e4bc4f82795426d4cb2f648d8452de914e8ee6293"
  },
+ "raw_claude-opus-5-5_max_notags_deep_ah1.jsonl": {
+  "bytes": 29115424,
+  "rows": 600,
+  "sha256": "286a2cd054062f66baa6afbb5bde60d6254bdd78d40e2d5e1019bec33171d90d"
+ },
+ "raw_claude-opus-5-5_max_notags_deep_ah2.jsonl": {
+  "bytes": 32397821,
+  "rows": 600,
+  "sha256": "fa9dbfa7514150a644844a90363901790074407ebfa24a5bca5ea696c9384a13"
+ },
+ "raw_claude-opus-5-5_max_notags_deep_ah3.jsonl": {
+  "bytes": 19478924,
+  "rows": 600,
+  "sha256": "6b97b3dfabcabe271ea54e642b9012ee788e88b478d98454c249eae23f2d6801"
+ },
  "raw_claude-opus-5-5_max_notags_plan_1.jsonl": {
   "bytes": 8095839,
   "rows": 300,
@@ -698,6 +713,16 @@
   "bytes": 12515771,
   "rows": 1907,
   "sha256": "1c4a277bd6a976e6fae14c0fcb1c8041c092e440b5f5694deda850c619b27764"
+ },
+ "raw_claude-opus-5_high_notags_deep_ah.jsonl": {
+  "bytes": 15935594,
+  "rows": 1800,
+  "sha256": "6cda32062b62fecf56f0a76b01bc87c3b6df46dc735fb85f2f76f2ceed92993b"
+ },
+ "raw_claude-opus-5_high_notags_deep_wr.jsonl": {
+  "bytes": 9202086,
+  "rows": 1400,
+  "sha256": "a367fc5dcfb6518a61bde34f8bd33bee0b6079be5dce7052b66813ddb439b342"
  },
  "raw_claude-opus-5_high_notags_personas.jsonl": {
   "bytes": 5086302,
@@ -799,6 +824,36 @@
   "rows": 240,
   "sha256": "dd93157e2ac4f714a753235b84a3b78900e776c83b6c763c1564a62bcdbf82a0"
  },
+ "raw_claude-opus-5_low_notags_deep.jsonl": {
+  "bytes": 4293309,
+  "rows": 900,
+  "sha256": "4a80cdcdb2369c04e7c5dccb5988f30098ba31022b979279aac4ebebec4f7371"
+ },
+ "raw_claude-opus-5_max_notags_deep.jsonl": {
+  "bytes": 8206662,
+  "rows": 900,
+  "sha256": "69fc4a6f4e1df5c7b624e1caabafcf3692516b5bda058cd992b38809eda58eca"
+ },
+ "raw_claude-opus-5_max_notags_deep_ah1.jsonl": {
+  "bytes": 7331200,
+  "rows": 600,
+  "sha256": "bd145ce988cf2513df18a673278be6ce9e3edca41ed98f345103e5110ab4ea24"
+ },
+ "raw_claude-opus-5_max_notags_deep_ah2.jsonl": {
+  "bytes": 9013509,
+  "rows": 600,
+  "sha256": "a1ec49533e8b31dc0f030ea5420083a8e7c80e34e79856b153bb988f9df27cab"
+ },
+ "raw_claude-opus-5_max_notags_deep_ah3.jsonl": {
+  "bytes": 6574653,
+  "rows": 600,
+  "sha256": "11dcf8ea1ef9be3cf4cb02cdd58e6f0d39a678d1b53c918fdc3385b0ce0e5df3"
+ },
+ "raw_claude-opus-5_xhigh_notags_deep.jsonl": {
+  "bytes": 7159943,
+  "rows": 900,
+  "sha256": "ada1d02ed9bc2752aeb6c6bf5a76e0a6fe6a9bab8a9293f6ba48b563de076c5b"
+ },
  "raw_claude-sonnet-5_high.jsonl": {
   "bytes": 11425801,
   "rows": 3020,
@@ -853,6 +908,16 @@
   "bytes": 3093478,
   "rows": 1100,
   "sha256": "544810bbb056214cfa0b82091fe97d5bde4b18360dfd347cab54a85c6cbb313d"
+ },
+ "raw_gpt-6-astra_None_notags_deep_ah.jsonl": {
+  "bytes": 4487634,
+  "rows": 1800,
+  "sha256": "9cb52bac7cb6f3afb294f7e18910d5336bf3d5521a07c07117cc3fc3746b8d13"
+ },
+ "raw_gpt-6-astra_None_notags_deep_wr.jsonl": {
+  "bytes": 2928359,
+  "rows": 1300,
+  "sha256": "025e07930eb2c5016f43f022adb3b5c0f9e56e28a8c35319ebc3b50bef9401eb"
  },
  "raw_gpt-6-astra_None_notags_personas.jsonl": {
   "bytes": 1439066,
@@ -924,10 +989,35 @@
   "rows": 1360,
   "sha256": "619a4978f352c0408292cb6573a667c7f9a394f19a4278d4e1c38066d7e0f60f"
  },
+ "raw_gpt-6-astra_high_notags_deep.jsonl": {
+  "bytes": 2842316,
+  "rows": 900,
+  "sha256": "534b7b45303bdf459131ea6b324594083367684a5ef7b0202e368e27a918a64e"
+ },
+ "raw_gpt-6-astra_low_notags_deep.jsonl": {
+  "bytes": 2207044,
+  "rows": 900,
+  "sha256": "3bb50e4319b6380ff971536e2b1e6c80f816bfa4dbca40958161e68b37ec79e9"
+ },
  "raw_gpt-6-astra_medium.jsonl": {
   "bytes": 931780,
   "rows": 560,
   "sha256": "24d903638eb669b9335dcc1c18236bf2618785344a8abcb75d3220a7933a4ccd"
+ },
+ "raw_gpt-6-astra_medium_notags_deep.jsonl": {
+  "bytes": 2224298,
+  "rows": 900,
+  "sha256": "ad592ab6e9e90adc35f18b85a9929601be3eae2a1b7c1aa03429b0915e2b4193"
+ },
+ "raw_gpt-6-astra_xhigh_notags_deep.jsonl": {
+  "bytes": 3609544,
+  "rows": 900,
+  "sha256": "db6eceda2f8fd208671d79dd3c19fa01ffc4fa4924f9996b575cd440d9ff7b63"
+ },
+ "raw_gpt-6-astra_xhigh_notags_deep_ah.jsonl": {
+  "bytes": 7548665,
+  "rows": 1800,
+  "sha256": "bc4e28231487337f235884b430b37e0158319595105e474fd5e3ad669f49359a"
  },
  "superseded_32k/raw_claude-fable-5-1_max_notags_ahmed_1.jsonl": {
   "bytes": 5576744,

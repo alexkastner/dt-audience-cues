@@ -219,12 +219,13 @@ def bb_first_table() -> str:
     return theory_table("Cue before the first-turn question", entries)
 
 
-def effort_table() -> str:
+def effort_table(model=None, levels=None, other_col=False) -> str:
+    M = model or FB
     body = []
-    for eff, lab in [("low", "low"), ("high", "high (the default)"), ("xhigh", "xhigh"), ("max", "max")]:
-        d = counts(rows(FB, eff, ACAD))
-        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
-    return md_table(["Effort setting (professor, teacher and PhD-student personas pooled)", "Names CDT", "Names FDT/UDT"], body)
+    for eff, lab in levels or [("low", "low"), ("high", "high (the default)"), ("xhigh", "xhigh"), ("max", "max")]:
+        d = counts(rows(M, eff, ACAD))
+        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])] + ([_other_cell(d)] if other_col else []))
+    return md_table(["Effort setting (professor, teacher and PhD-student personas pooled)", "Names CDT", "Names FDT/UDT"] + (["Other answer"] if other_col else []), body)
 
 
 def sysprompt_table() -> str:
@@ -603,7 +604,8 @@ TABLES.update({
 
 
 # ============================================================================= reasoning: favourable mentions and pivots (tag-free B/A summaries)
-def reasoning_fav_table() -> str:
+def reasoning_fav_table(model=None, effort=None, include_edt=False) -> str:
+    M, E = model or FB, effort or HI
     import hashlib
     from .judge_thinking import _h as _th
     fav = {_json.loads(l)["hash"]: _json.loads(l) for l in open(ROOT / "results" / "judge_fav.jsonl")} if (ROOT / "results" / "judge_fav.jsonl").exists() else {}
@@ -613,19 +615,21 @@ def reasoning_fav_table() -> str:
              ("(b) academic persona, picks FDT/UDT", ["B__Q_neutral__acad_prof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_grad"], "FDT/UDT"),
              ("(c) nothing before the question, picks FDT/UDT", ["A__Q_neutral__none"], "FDT/UDT"),
              ("(d) LessWrong / AI-alignment persona, picks FDT/UDT", ["B__Q_neutral__lw_reader", "B__Q_neutral__ai_safety"], "FDT/UDT")]
+    if include_edt:  # for models that move to EDT rather than CDT under academic cues (Opus 5)
+        conds.insert(1, ("(a′) academic persona, picks EDT", ["B__Q_neutral__acad_prof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_grad"], "EDT"))
     body = []
     for lab, ids, grp in conds:
-        rs = [r for r in rows(FB, HI, ids) if r.get("thinking")]
+        rs = [r for r in rows(M, E, ids) if r.get("thinking")]
         sel = []
         for r in rs:
             code = main_theory(r, True)
-            g = "CDT" if code == "CDT" else "FDT/UDT" if code in FDTUDT else None
+            g = "CDT" if code == "CDT" else "EDT" if code == "EDT" else "FDT/UDT" if code in FDTUDT else None
             if g == grp:
                 sel.append((r, code))
         n = len(sel)
         f_fav = sum(bool(fav.get(hh(r["thinking"]), {}).get("fdt_favorable")) for r, _ in sel)
         c_fav = sum(bool(fav.get(hh(r["thinking"]), {}).get("cdt_favorable")) for r, _ in sel)
-        other = "LDT" if grp == "CDT" else "CDT"
+        other = "LDT" if grp in ("CDT", "EDT") else "CDT"
         piv = sum(1 for r, code in sel if (lambda t: bool(t.get("pivot")) and t.get("initial_lean") == other)(think.get(_th(r["thinking"], {"FDT only": "FDT", "UDT only": "UDT", "FDT+UDT both": "FDT+UDT"}.get(code, code)), {})))
         body.append([lab, pct(f_fav, n), pct(c_fav, n), pct(piv, n)])
     return md_table(["Condition", "Speaks favourably of FDT/UDT", "Speaks favourably of CDT", "Leans toward the other theory first, then pivots"], body)
@@ -717,16 +721,18 @@ def _fresh_rows(pid):
     return out[:CAP]
 
 
-def sysprompt_cross_table() -> str:
+def sysprompt_cross_table(model=None, effort=None) -> str:
+    M, E = model or FB, effort or HI
+    _fr = _fresh_rows if M == "claude-fable-5-1" else (lambda pid: rows(M, E, pid))
     R = P.REMEDIATION_SYSTEMS
-    spec = [("*(none)*", lambda p: rows(FB, HI, f"B__Q_neutral__{p}")),
-            (q(R["w_generic"]), lambda p: _fresh_rows(f"W__Q_neutral__{p}__w_generic")),
-            (q(R["w_minimal"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_minimal")),
-            (q(R["w_p1g2"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_p1g2")),
-            (q(R["w_para"]), lambda p: _fresh_rows(f"WR__Q_neutral__{p}__w_para")),
-            (q(R["w_g1p2"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_g1p2")),
-            (q(R["w_placebo"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_placebo")),
-            ("The first note, placed in the user turn instead of the system prompt", lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__user_generic"))]
+    spec = [("*(none)*", lambda p: rows(M, E, f"B__Q_neutral__{p}")),
+            (q(R["w_generic"]), lambda p: _fr(f"W__Q_neutral__{p}__w_generic")),
+            (q(R["w_minimal"]), lambda p: rows(M, E, f"WR__Q_neutral__{p}__w_minimal")),
+            (q(R["w_p1g2"]), lambda p: rows(M, E, f"WR__Q_neutral__{p}__w_p1g2")),
+            (q(R["w_para"]), lambda p: _fr(f"WR__Q_neutral__{p}__w_para")),
+            (q(R["w_g1p2"]), lambda p: rows(M, E, f"WR__Q_neutral__{p}__w_g1p2")),
+            (q(R["w_placebo"]), lambda p: rows(M, E, f"WR__Q_neutral__{p}__w_placebo")),
+            ("The first note, placed in the user turn instead of the system prompt", lambda p: rows(M, E, f"WR__Q_neutral__{p}__user_generic"))]
     body = []
     for lab, get in spec:  # pooled over the teacher and professor personas (Alex, 2026-09-27), like the effort table
         d = counts(list(get("acad_teach")) + list(get("acad_prof")))
@@ -786,14 +792,15 @@ def ahmed_table() -> str:
 TABLES["ahmed"] = ("Persona sentence", ahmed_table)
 
 
-def ahmed_effort_table() -> str:
+def ahmed_effort_table(model=None, pair=("high", "max")) -> str:
+    M = model or FB
     """Book praise at default (high) and maximum thinking effort: one row per persona, each cell 'CDT a% → b%' etc. (Alex, 2026-09-28)."""
     body = []
     for lab, pers in AH_ROWS:
         cells = [lab]
         for _, v in AH_COLS:
             pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
-            a, b = counts(rows(FB, "high", pid)), counts(rows(FB, "max", pid))
+            a, b = counts(rows(M, pair[0], pid)), counts(rows(M, pair[1], pid))
             if a["n"] and b["n"]:
                 cells.append("<br>".join(f"{name} {pct(a[k], a['n'])} → {pct(b[k], b['n'])}" for name, k in [("CDT", "cdt"), ("EDT", "edt"), ("FDT/UDT", "fdt")]))
             else:

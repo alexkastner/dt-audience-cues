@@ -53,6 +53,24 @@ def count_existing(results_dir: Path, notags: bool = False) -> dict[tuple, int]:
     return have
 
 
+def max_index(results_dir: Path, notags: bool = False) -> dict[tuple, int]:
+    """Highest sample_idx per (prompt_id, model, effort) across all raw files of the same kind, errors included, so a
+    top-up never reuses an index that some file already holds (reused indices would be skipped as 'done')."""
+    top: dict[tuple, int] = {}
+    for f in results_dir.glob("raw_*.jsonl"):
+        if ("notags" in f.name) != notags:
+            continue
+        with f.open() as fh:
+            for line in fh:
+                try:
+                    r = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                k = (r["prompt_id"], r["model"], str(r.get("effort")))
+                top[k] = max(top.get(k, -1), int(r.get("sample_idx", -1)))
+    return top
+
+
 async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = None,
               ids: list[str] | None = None, effort: str | None = "high",
               openai_effort: str | None = None, concurrency: int = 8,
@@ -64,11 +82,13 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
     if topup_to:
         # top up every (prompt, model, effort) to `topup_to` valid rows, counting rows in ALL tagged raw files
         have = count_existing(out.parent, notags=notags)
+        top = max_index(out.parent, notags=notags)
         for s in specs:
             for m in models:
                 eff = effort if provider_for(m) == "anthropic" else openai_effort
                 k = have.get((s.id, m, str(eff)), 0)
-                for i in range(1000, 1000 + max(0, topup_to - k)):
+                start = max(999, top.get((s.id, m, str(eff)), 999)) + 1   # fresh indices after everything already sampled
+                for i in range(start, start + max(0, topup_to - k)):
                     if _key(s.id, m, eff, i) not in done:
                         jobs.append((s, m, i))
         print(f"top-up to {topup_to}: {len(specs)} prompts x {len(models)} models -> {len(jobs)} calls to make")
