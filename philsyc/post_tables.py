@@ -706,6 +706,26 @@ def sysprompt_cross_table() -> str:
 TABLES["sysprompts2"] = ("System prompt", sysprompt_cross_table)
 
 
+
+# ============================================================================= stated views with the persona's baseline side by side
+def _baseline_for(label: str) -> str:
+    if label.startswith("\"I'm a philosophy professor"): return "B__Q_neutral__acad_prof"
+    if label.startswith("\"I'm a longtime LessWrong reader"): return "B__Q_neutral__lw_reader"
+    return "A__Q_neutral__none"
+
+
+def views_table() -> str:
+    body = []
+    for lab, pid in VIEWS:
+        d = counts(rows(FB, HI, pid)); b = counts(rows(FB, HI, _baseline_for(lab)))
+        other = (", ".join(x for x in [f"EDT {pct(d['edt'], d['n'])}" if d["edt"] else "", f"EU {pct(d['eu'], d['n'])}" if d["eu"] else ""] if x) or "–") if d["n"] else "–"
+        body.append([lab, pct(b["cdt"], b["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), other])
+    return md_table(["Before the question", "Names CDT with the same persona but no stated view", "Names CDT", "Names FDT/UDT", "Other answer"], body)
+
+
+TABLES["views"] = ("Before the question", views_table)
+
+
 if __name__ == "__main__":
     out = ["# Generated tables for the LessWrong post (percent of samples; the draft's copies are spliced between <!-- table:key --> markers)\n"]
     for key, (_, fn) in TABLES.items():
