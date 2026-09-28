@@ -651,22 +651,33 @@ OPUS_KEYS = ["A__Q_neutral__none", "B__Q_neutral__lw_reader", "B__Q_neutral__ai_
              "M__Q_neutral__m_phil_undergrad", "M__Q_neutral__m_acad_econprof", "B__Q_neutral__acad_teach", "B__Q_neutral__acad_prof", "B__Q_neutral__acad_grad"]
 
 
-def astra_table() -> str:
+def _other_cell(d, skip_edt=False):
+    """the answers outside the table's main columns: EDT (unless it has its own column), expected utility with no side taken, anything else"""
+    if not d["n"]:
+        return "–"
+    parts = [] if skip_edt else ([f"EDT {pct(d['edt'], d['n'])}"] if d["edt"] else [])
+    if d["eu"]:
+        parts.append(f"EU {pct(d['eu'], d['n'])}")
+    rest = d["n"] - d["cdt"] - d["fdt"] - d["edt"] - d["eu"]
+    if rest:
+        parts.append(f"other {pct(rest, d['n'])}")
+    return ", ".join(parts) or "–"
+
+
+def astra_table() -> str:  # same 19 rows as the post's first table (Alex, 2026-09-27)
     body = []
-    for lab, pid in [x for x in OTHER_ROWS if x[1] in ASTRA_KEYS]:
+    for lab, pid in PERSONAS:
         d = counts(rows("gpt-6-astra", "None", pid))
-        if d["n"]:
-            body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
-    return md_table(["Sentence before the question (GPT-6 Astra)", "Names CDT", "Names FDT/UDT"], body)
+        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d)])
+    return md_table(["Sentence before the question (GPT-6 Astra)", "Names CDT", "Names FDT/UDT", "Other answer"], body)
 
 
-def opus_table() -> str:
+def opus_table() -> str:  # same 19 rows as the post's first table (Alex, 2026-09-27)
     body = []
-    for lab, pid in [x for x in OTHER_ROWS if x[1] in OPUS_KEYS]:
+    for lab, pid in PERSONAS:
         d = counts(rows("claude-opus-5", "high", pid))
-        if d["n"]:
-            body.append([lab, pct(d["edt"], d["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])])
-    return md_table(["Sentence before the question (Opus 5)", "Names EDT", "Names CDT", "Names FDT/UDT"], body)
+        body.append([lab, pct(d["edt"], d["n"]), pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d, skip_edt=True)])
+    return md_table(["Sentence before the question (Opus 5)", "Names EDT", "Names CDT", "Names FDT/UDT", "Other answer"], body)
 
 
 TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
@@ -698,12 +709,10 @@ def sysprompt_cross_table() -> str:
             (q(R["w_placebo"]), lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__w_placebo")),
             ("The first note, placed in the user turn instead of the system prompt", lambda p: rows(FB, HI, f"WR__Q_neutral__{p}__user_generic"))]
     body = []
-    for lab, get in spec:
-        cells = [lab]
-        for p in ["acad_teach", "acad_prof"]:
-            d = counts(get(p)); cells += [pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"])]
-        body.append(cells)
-    return md_table(["System prompt", "Teacher: names CDT", "Teacher: names FDT/UDT", "Professor: names CDT", "Professor: names FDT/UDT"], body)
+    for lab, get in spec:  # pooled over the teacher and professor personas (Alex, 2026-09-27), like the effort table
+        d = counts(list(get("acad_teach")) + list(get("acad_prof")))
+        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d)])
+    return md_table(["System prompt (teacher and professor personas pooled)", "Names CDT", "Names FDT/UDT", "Other answer"], body)
 
 
 TABLES["sysprompts2"] = ("System prompt", sysprompt_cross_table)
