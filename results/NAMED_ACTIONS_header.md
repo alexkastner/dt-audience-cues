@@ -13,7 +13,7 @@ and 79% don't-pay with the system prompt. Opus 5 moves in both formats (Joyce: 8
 two-box, 1% → 72% don't-pay). The unknown-name control never moves in either format.
 
 **FDT names flip Schwarz's Bomb to the bomb box.** With no cue every model takes the safe right-hand box (Fable 5.1 99%, Opus 5.5 98%,
-Astra 98%, Opus 5 70%). Named for Nate Soares, Wei Dai, Eliezer Yudkowsky or Caspar Oesterheld, Fable 5.1 takes the box with the bomb
+Astra 98%, Opus 5 78%). Named for Nate Soares, Wei Dai, Eliezer Yudkowsky or Caspar Oesterheld, Fable 5.1 takes the box with the bomb
 57–96% of the time in the user turn and 93–100% with the system prompt; Opus 5 99–100% in both; Opus 5.5 only with the system prompt
 (Soares 92%, Wei Dai 87%, Yudkowsky 52%; at most 8% in the user turn). This is the one place where a name moves a choice toward FDT's
 option, because it is the one problem where the baseline choice is not FDT's.
