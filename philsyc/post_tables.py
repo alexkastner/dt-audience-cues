@@ -498,7 +498,7 @@ def _realism_id(pat, qk):
     if pat == "{HV}":
         return "H__H_realism__ctrl_swe__answer" if qk == "H_realism" else "V__V_zombie__ctrl_nurse__answer"
     if pat == "{AI}":
-        return "H__H_realism__ai_safety__answer" if qk == "H_realism" else None
+        return "H__H_realism__ai_safety__answer" if qk == "H_realism" else "V__V_zombie__ai_safety__answer"
     return pat.format(q=qk, H="H" if qk == "H_realism" else "V")
 
 
@@ -506,14 +506,14 @@ def realism_table() -> str:
     data = []
     for lab, pat in REALISM_ROWS:
         cells = []
-        for qk, want in [("H_realism", "anti-realism"), ("V_zombie", "no")]:
+        for qk, want in [("H_realism", "realism"), ("V_zombie", "yes")]:  # cells match the headers: share answering realism / zombies conceivable (Alex, 2026-09-27)
             pid = _realism_id(pat, qk)
             rs = rows(FB, HI, pid) if pid else []
             cells.append((sum(main_choice(r, FREE) == want for r in rs), len(rs)))
         data.append((lab, cells))
     ns = {n for _, cells in data for _, n in cells if n}
     uniform = len(ns) == 1
-    head = "Before the question"  # column titles as Alex set them (2026-09-24); cells = share of the LessWrong-typical answer (anti-realism / not conceivable)
+    head = "Before the question"  # column titles as Alex set them; cells = share answering realism / zombies conceivable
     return md_table([head, "Moral realism", "p-zombies conceivable"], [[lab] + _pct_cells(cells, uniform) for lab, cells in data])
 
 

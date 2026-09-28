@@ -1,0 +1,7 @@
+2 prompts x 1 models x n=100 -> 200 calls to make (0 already done)
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/200] 264s  last: claude-fable-5-1 AH__Q_neutral__acad_prof__joyce#8 -> unparsed
+  [20/200] 376s  last: claude-fable-5-1 AH__Q_neutral__acad_prof__joyce#15 -> unparsed
+  [30/200] 531s  last: claude-fable-5-1 AH__Q_neutral__acad_prof__joyce#31 -> unparsed
+  [40/200] 653s  last: claude-fable-5-1 AH__Q_neutral__acad_prof__joyce#35 -> unparsed
+  [50/200] 764s  last: claude-fable-5-1 AH__Q_neutral__acad_prof__joyce#44 -> unparsed

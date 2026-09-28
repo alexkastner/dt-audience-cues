@@ -1,0 +1,13 @@
+1 prompts x 1 models x n=100 -> 100 calls to make (0 already done)
+[providers] Anthropic key in use ends with …VQAA (from .env)
+  [10/100] 13s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#11 -> unparsed
+  [20/100] 17s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#3 -> unparsed
+  [30/100] 28s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#35 -> unparsed
+  [40/100] 33s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#38 -> unparsed
+  [50/100] 43s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#53 -> unparsed
+  [60/100] 50s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#57 -> unparsed
+  [70/100] 56s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#70 -> unparsed
+  [80/100] 63s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#78 -> unparsed
+  [90/100] 70s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#87 -> unparsed
+  [100/100] 76s  last: claude-fable-5-1 V__V_zombie__ai_safety__answer#96 -> unparsed
+done: 100 ok, 0 errors, 76s

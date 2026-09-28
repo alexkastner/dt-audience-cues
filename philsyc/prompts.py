@@ -824,6 +824,8 @@ def build_prompts() -> list[PromptSpec]:
             if v == "view_edt" and pers not in ("acad_prof", "acad_teach"):
                 continue
             specs.append(PromptSpec(id=f"AH__Q_neutral__{pers}__{v}", set="AH", question="Q_neutral", persona=pers, prefix=txt))
+    # the one empty cell in the post's realism/zombies table (added 2026-09-27)
+    specs.append(PromptSpec(id="V__V_zombie__ai_safety__answer", set="V", question="V_zombie", persona="ai_safety", fmt="answer"))
     # BB: espouse (turn 1: cue + neutral favorite question), then act (turn 2: problem), plain or with a consistency hook.
     BB_CUES = {
         "none": dict(persona="none"), "acad_teach": dict(persona="acad_teach"), "lw_reader": dict(persona="lw_reader"),
