@@ -98,6 +98,7 @@ OPENERS = [
     (q("I'm supervising a dissertation on this and have been rereading the classic papers from the 1970s and 80s alongside the PhilPapers survey results. What is your view?"), "T__Q_neutral__acad_ref_2"),
 ]
 INTEREST = [
+    ("*(nothing)*", "A__Q_neutral__none"),
     (q("I've been getting into birdwatching lately and finally saw a kingfisher last week. Anyway, different topic:"), "TT__Q_neutral__int_birds"),
     (q("I've been baking sourdough for a few months and just got my first really open crumb. On an unrelated question:"), "TT__Q_neutral__int_sourdough"),
     (q("I've been thinking about Solomonoff induction as a formalization of Occam's razor… On an unrelated question:"), "TT__Q_neutral__int_solomonoff"),

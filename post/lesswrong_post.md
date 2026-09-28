@@ -42,6 +42,7 @@ This seems to mostly have an effect in multi-turn conversations where Fable 5.1 
 
 | Before the question | Names CDT | Names FDT/UDT |
 | :---- | :---- | :---- |
+| *(nothing)* | 0% | 100% |
 | "I've been thinking about Solomonoff induction as a formalization of Occam's razor… On an unrelated question:" | 0% | 100% |
 | "I've been rereading Naming and Necessity and I find myself siding with Kripke against the descriptivists about proper names more than I used to. Anyway, on a different topic:" | 7% | 93% |
 | "I've been working through Lewis's On the Plurality of Worlds and I'm more sympathetic to modal realism than I thought I'd be…" | 12% | 82% |
