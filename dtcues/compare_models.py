@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NAMES = {"claude-fable-5-1": "Fable 5.1", "claude-opus-5-5": "Opus 5.5", "claude-opus-5": "Opus 5", "claude-sonnet-5": "Sonnet 5", "gpt-6-astra": "GPT-6 Astra"}
-SKIP = {"astra_personas", "opus_personas", "astra_bbr", "opus_bb", "models"}   # already multi-model or Fable-only bookkeeping
+SKIP = {"astra_personas", "opus_personas", "opus55_personas", "astra_bbr", "opus_bb", "models"}   # already multi-model or Fable-only bookkeeping
 HEADER_FILE = ROOT / "results" / "MODEL_COMPARISON_header.md"
 
 

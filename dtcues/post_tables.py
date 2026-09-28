@@ -688,6 +688,15 @@ def opus_table() -> str:  # the post's 19 rows plus four lay personas (Alex, 202
     return md_table(["Sentence before the question (Opus 5)", "Names EDT", "Names CDT", "Names FDT/UDT", "Other answer"], body)
 
 
+def opus55_table() -> str:  # Opus 5.5, same rows as the Opus 5 and Astra tables (Alex, 2026-09-28)
+    body = []
+    for lab, pid in OTHER_MODEL_ROWS:
+        d = counts(rows("claude-opus-5-5", "high", pid))
+        body.append([lab, pct(d["cdt"], d["n"]), pct(d["fdt"], d["n"]), _other_cell(d)])
+    return md_table(["Sentence before the question (Opus 5.5)", "Names CDT", "Names FDT/UDT", "Other answer"], body)
+
+
+TABLES["opus55_personas"] = ("Sentence before the question (Opus 5.5)", opus55_table)
 TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
 TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 
