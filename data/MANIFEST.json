@@ -10,14 +10,14 @@
   "sha256": "595766fbb5f7a1aec408ed1ed85820dadcba102db4c5bfb3cf3ecedf3602c1b2"
  },
  "judge_fav.jsonl": {
-  "bytes": 45416,
-  "rows": 600,
-  "sha256": "5e90719344c9b7fa55ae37a48c03a8e391dbc5a7b30bc5e9926f2a50e2206b60"
+  "bytes": 90904,
+  "rows": 1200,
+  "sha256": "b1bb10652c45fae8d75cd2a85cf1ecc34a5cd1edf5a89709777985588a9b85f0"
  },
  "judge_notags.jsonl": {
-  "bytes": 3667118,
-  "rows": 78584,
-  "sha256": "63cc06c7a89de7fc1fc012a96c4b4f9ed242845568755a6d6045645dcb1d3c31"
+  "bytes": 5639661,
+  "rows": 120984,
+  "sha256": "0fce62ea40697e3dd13da1a2048a7dfeee5a25d9d78bb84f47bf8bc9bce5436e"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -25,9 +25,9 @@
   "sha256": "d5a585abe874b61334d8508793ea1094c3201124ac849d0ffc80f9b933a0d076"
  },
  "judge_thinking_notags.jsonl": {
-  "bytes": 1068510,
-  "rows": 2600,
-  "sha256": "a8047e8ba7ea55a3e156f62f5d0684743f49c8c39d26afcbb872267c833c5c15"
+  "bytes": 1555835,
+  "rows": 3800,
+  "sha256": "daa7444300c392534faeebd685faad4cdbf412ea27d075b7fc05165c0f3f6ace"
  },
  "raw_claude-fable-5-1_high.jsonl": {
   "bytes": 13745327,
@@ -558,6 +558,111 @@
   "bytes": 1488028,
   "rows": 400,
   "sha256": "c014257d8082b122aa298b8598116e15147206d6559036aad383a50106046aaa"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_1.jsonl": {
+  "bytes": 15614463,
+  "rows": 2800,
+  "sha256": "5f20e6e54ac3b84441b9f7be363e3f99b3e7eca8a31a89c80bc704955d337909"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_10.jsonl": {
+  "bytes": 14631127,
+  "rows": 2700,
+  "sha256": "8eb561e5be717e1da617a231d7f806d12229d1afa45b33070cf2640535740bbd"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_11.jsonl": {
+  "bytes": 15884627,
+  "rows": 2700,
+  "sha256": "4d0054ec9056bc7def384a8a1fc0f489208e8e2a569ad3152aa8d8b1f58bc259"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_12.jsonl": {
+  "bytes": 15484967,
+  "rows": 2700,
+  "sha256": "2b01a4daa4b496d0bdbfb33e692ae8a32807f5e2fca6fa49e2e83e4fb370745f"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_2.jsonl": {
+  "bytes": 15913518,
+  "rows": 2800,
+  "sha256": "08c53f53b4ee140c1d03a688741663637d15a98520954b0de5c696b214b11e04"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_3.jsonl": {
+  "bytes": 15983965,
+  "rows": 2800,
+  "sha256": "ee939daa92ab47a00e7d45fcdccc985aaf8ed040607bf6d493cc21748a433083"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_4.jsonl": {
+  "bytes": 14264479,
+  "rows": 2800,
+  "sha256": "d20deb34281738d8d95f2abb4bd9e79d7af1478d82716186cd48b5b74d81b213"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_5.jsonl": {
+  "bytes": 14948328,
+  "rows": 2700,
+  "sha256": "f03f797a919662c77035bc4e93f99878359c36e979afef2fac8626095d7bd8d3"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_6.jsonl": {
+  "bytes": 14739426,
+  "rows": 2700,
+  "sha256": "6125b007b5491b59396b7db53cd31fd1b7d5979447f47216e84c11357dc1f447"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_7.jsonl": {
+  "bytes": 15561862,
+  "rows": 2700,
+  "sha256": "3424fa84fbfd5215c17d4f793763fae4fa2a90bbdfa0eab6d5496f801b378143"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_8.jsonl": {
+  "bytes": 15888423,
+  "rows": 2700,
+  "sha256": "c029650b22bc4e740b328a06f202e21d6ca09b321f84c4aa880cbd2eb4f1b747"
+ },
+ "raw_claude-opus-5-5_high_notags_plan_9.jsonl": {
+  "bytes": 15499972,
+  "rows": 2700,
+  "sha256": "40fbd957f0ec3c20f53927034330ea8e73d1dceb453c898fd625b898767d4888"
+ },
+ "raw_claude-opus-5-5_low_notags_plan_1.jsonl": {
+  "bytes": 1143404,
+  "rows": 300,
+  "sha256": "e851e7e7a4e5a0dd621e5db509102ab8b401aa53216ebda5338848ed7fb2c2f6"
+ },
+ "raw_claude-opus-5-5_low_notags_plan_2.jsonl": {
+  "bytes": 1184378,
+  "rows": 300,
+  "sha256": "651522b9cf94253c9487cb51e4db797039a2efc9407d1fec7235b05284f1d972"
+ },
+ "raw_claude-opus-5-5_low_notags_plan_3.jsonl": {
+  "bytes": 1125731,
+  "rows": 300,
+  "sha256": "556687b298870a6fccdac67e4bc4f82795426d4cb2f648d8452de914e8ee6293"
+ },
+ "raw_claude-opus-5-5_max_notags_plan_1.jsonl": {
+  "bytes": 8095839,
+  "rows": 300,
+  "sha256": "c8d59f5923287b7b8033b15b35890b227e4791baeacd9b4523f41bac99052cdb"
+ },
+ "raw_claude-opus-5-5_max_notags_plan_2.jsonl": {
+  "bytes": 9064735,
+  "rows": 300,
+  "sha256": "666f24d67d620757276734015057965451d2aeccb18eee6f907e42ce593664b9"
+ },
+ "raw_claude-opus-5-5_max_notags_plan_3.jsonl": {
+  "bytes": 9319349,
+  "rows": 300,
+  "sha256": "a65903d49595a44d4046562e80307de20db611af46a2cc8ac57588d362c8009c"
+ },
+ "raw_claude-opus-5-5_xhigh_notags_plan_1.jsonl": {
+  "bytes": 1396796,
+  "rows": 300,
+  "sha256": "1e7782383b769d69529681f0f277e17a3d0fb002327fb04bb690ed21efc9c8a0"
+ },
+ "raw_claude-opus-5-5_xhigh_notags_plan_2.jsonl": {
+  "bytes": 1540711,
+  "rows": 300,
+  "sha256": "cb0aee19c009ed6dbe82645183f97c27fd166cec58ee10a560cc298f1b468a70"
+ },
+ "raw_claude-opus-5-5_xhigh_notags_plan_3.jsonl": {
+  "bytes": 1458099,
+  "rows": 300,
+  "sha256": "edba42d9e3fe20bc1172dbe2b15188fa57c9595493f483e3aae567c14975c85b"
  },
  "raw_claude-opus-5_high.jsonl": {
   "bytes": 5859930,

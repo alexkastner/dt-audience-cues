@@ -1,5 +1,5 @@
 """Sonnet 5 judge: does a reasoning summary speak favourably of FDT/UDT, and of CDT?  Cache: results/judge_fav.jsonl (key: hash of the summary).
-    uv run python -m dtcues.judge_fav
+    uv run python -m dtcues.judge_fav [model-id ...]      # default: claude-fable-5-1
 """
 import asyncio, glob, json, hashlib, sys
 from pathlib import Path
@@ -22,9 +22,9 @@ def load():
     return {json.loads(l)["hash"]: json.loads(l) for l in CACHE.open()} if CACHE.exists() else {}
 
 
-async def main(concurrency=24):
+async def main(concurrency=24, models=("claude-fable-5-1",)):
     cache = load(); todo = {}
-    for f in glob.glob(str(ROOT / "raw_claude-fable-5-1_high_notags*.jsonl")):
+    for f in [f for m in models for f in glob.glob(str(ROOT / f"raw_{m}_high_notags*.jsonl"))]:
         if "keycheck" in f: continue
         for l in open(f):
             r = json.loads(l)
@@ -47,4 +47,5 @@ async def main(concurrency=24):
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    models = tuple(a for a in sys.argv[1:] if not a.startswith("--")) or ("claude-fable-5-1",)
+    asyncio.run(main(concurrency=64, models=models))

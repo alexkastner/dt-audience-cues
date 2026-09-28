@@ -23,7 +23,8 @@ T = load(FREE)
 IDX: dict[tuple, list] = defaultdict(list)
 for r in T:
     IDX[(r["model"], str(r.get("effort")), r["prompt_id"])].append(r)
-FB, HI = "claude-fable-5-1", "high"
+FB, HI = os.environ.get("POST_MODEL", "claude-fable-5-1"), "high"   # POST_MODEL=claude-opus-5-5 builds every table for another model
+OTHER_MODEL = FB != "claude-fable-5-1"
 
 
 CAP = 100  # samples per prompt shown in the post; a few cells were topped up twice by overlapping runs
@@ -695,6 +696,8 @@ TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 # ============================================================================= system prompts: full wording comparison (2026-09-27)
 def _fresh_rows(pid):
     """the fresh replication samples of the two original prompts (results/raw_..._notags_sysrep.jsonl)"""
+    if OTHER_MODEL:  # only Fable 5.1 had the two original prompts replicated in a separate file
+        return rows(FB, HI, pid)
     f = ROOT / "results" / "raw_claude-fable-5-1_high_notags_sysrep.jsonl"
     out = []
     if f.exists():
@@ -773,8 +776,11 @@ if __name__ == "__main__":
     out = ["# Generated tables for the LessWrong post (percent of samples; the draft's copies are spliced between <!-- table:key --> markers)\n"]
     for key, (_, fn) in TABLES.items():
         out.append(f"\n### {key}\n\n{fn()}\n")
-    (ROOT / "post" / ("tables_generated_notags.md" if FREE else "tables_generated.md")).write_text("\n".join(out))
-    if "--no-splice" in sys.argv:
+    suffix = f"_{FB}" if OTHER_MODEL else ""
+    (ROOT / "post" / (f"tables_generated_notags{suffix}.md" if FREE else f"tables_generated{suffix}.md")).write_text("\n".join(out))
+    if OTHER_MODEL:
+        print(f"tables for {FB} written to post/tables_generated_notags{suffix}.md; the draft is never spliced for another model")
+    elif "--no-splice" in sys.argv:
         print("tables written; draft not touched (--no-splice)")
     else:
         for line in splice(ROOT / "post" / "lesswrong_post.md"):

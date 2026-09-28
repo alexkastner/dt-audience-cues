@@ -6,7 +6,7 @@ from pathlib import Path
 from .post_tables import PERSONAS, OTHER_MODEL_ROWS, rows, counts, pct, md_table, MATRIX_CUES, MATRIX_PROBLEMS, PLABEL, _ids, _cdt_action, _col
 
 ROOT = Path(__file__).resolve().parents[1]
-MODELS = [("Claude Fable 5.1", "claude-fable-5-1", "high"), ("Claude Fable 5", "claude-fable-5", "high"), ("Claude Opus 5", "claude-opus-5", "high"),
+MODELS = [("Claude Fable 5.1", "claude-fable-5-1", "high"), ("Claude Fable 5", "claude-fable-5", "high"), ("Claude Opus 5", "claude-opus-5", "high"), ("Claude Opus 5.5", "claude-opus-5-5", "high"),
           ("Claude Sonnet 5", "claude-sonnet-5", "high"), ("GPT-6 Astra", "gpt-6-astra", "None")]
 
 
