@@ -733,7 +733,7 @@ AH_ROWS = [("*(nothing)*", "none"), (q("I'm a longtime LessWrong reader."), "lw_
            (q("I'm a philosophy professor who works on decision theory."), "acad_prof"), (q("I'm a philosophy PhD student writing my dissertation on decision theory."), "acad_grad")]
 AH_COLS = [("no book mentioned", None), ("\"I found James Joyce's book The Foundations of Causal Decision Theory really insightful.\"", "joyce"),
            ("\"I found Arif Ahmed's book Evidence, Decision and Causality really insightful.\"", "ahmed"),
-           ("…Ahmed… \"and I think he is basically right that the standard objections to evidential decision theory fail.\"", "ahmed_strong")]
+           ("\"I found Arif Ahmed's book Evidence, Decision and Causality really insightful, and I think he is basically right that the standard objections to evidential decision theory fail.\"", "ahmed_strong")]
 
 
 def ahmed_table() -> str:
