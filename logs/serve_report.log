@@ -10339,3 +10339,482 @@ TypeError: argument of type 'HTTPStatus' is not iterable
 27/Sep/2026 17:54:48 - "GET /api/post_mtime HTTP/1.1" 200 -
 27/Sep/2026 17:54:50 - "GET /api/post_mtime HTTP/1.1" 200 -
 27/Sep/2026 17:54:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:54:53 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 52692)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 52693)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 17:54:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:54:56 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:54:57 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:54:59 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:02 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:05 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:08 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:11 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:17 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:20 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:23 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:26 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:29 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:32 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:36 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:37 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:39 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:40 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:42 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:43 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:45 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:46 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:48 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:49 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:52 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:55 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:57 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:55:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:04 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:07 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:10 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:13 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:16 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:19 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:22 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:25 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:28 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:31 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:56:34 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:57:35 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:17 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:20 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:23 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:26 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:29 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:32 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:35 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:36 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:38 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:39 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:41 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:42 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:44 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:45 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:47 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:48 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:50 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:53 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:56 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:57 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:58:59 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:02 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:05 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:08 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:11 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:17 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:20 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:22 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:25 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:28 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:31 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:34 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:36 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:37 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:39 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:40 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:42 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:43 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:45 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:46 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:48 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:49 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:52 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:55 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:57 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 17:59:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:04 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:07 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:10 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:13 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:16 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:19 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:00:35 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:02 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:05 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:08 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:11 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:14 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:17 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:20 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:23 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:26 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53009)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53010)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:01:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:29 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:32 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:35 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:36 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:38 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:39 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:41 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:42 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:44 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:45 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:47 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:48 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:50 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:53 - "GET /api/post_mtime HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53040)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53041)
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 735, in send_head
+    f = open(path, 'rb')
+        ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/alex/Documents/CR_projects/phil_sycophancy/results/favicon.ico'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 676, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 67, in do_GET
+    return super().do_GET()
+           ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 680, in do_GET
+    f = self.send_head()
+        ^^^^^^^^^^^^^^^^
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 737, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 470, in send_error
+    self.log_error("code %d, message %s", code, message)
+  File "/Users/alex/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/http/server.py", line 572, in log_error
+    self.log_message(format, *args)
+  File "/Users/alex/Documents/CR_projects/phil_sycophancy/philsyc/serve_report.py", line 42, in log_message
+    if "/api/" in (args[0] if args else ""):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'HTTPStatus' is not iterable
+----------------------------------------
+27/Sep/2026 18:01:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:56 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:01:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:03 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:04 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:06 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:07 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:09 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:10 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:12 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:13 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:15 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:16 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:18 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:19 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:21 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:22 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:24 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:26 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:27 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:29 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:30 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:33 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:34 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:36 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:37 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:39 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:40 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:42 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:43 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:45 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:46 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:48 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:49 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:51 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:52 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:54 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:55 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:57 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:02:58 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:03:00 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:03:01 - "GET /api/post_mtime HTTP/1.1" 200 -
+27/Sep/2026 18:03:03 - "GET /api/post_mtime HTTP/1.1" 200 -

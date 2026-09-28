@@ -140,3 +140,34 @@
   [1380/1700] 2149s  last: claude-fable-5-1 AH__Q_neutral__acad_grad__joyce#77 -> unparsed
   [1390/1700] 2169s  last: claude-fable-5-1 AH__Q_neutral__acad_grad__joyce#89 -> unparsed
   [1400/1700] 2180s  last: claude-fable-5-1 AH__Q_neutral__acad_grad__joyce#91 -> unparsed
+  [1410/1700] 2200s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#11 -> unparsed
+  [1420/1700] 2215s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#17 -> unparsed
+  [1430/1700] 2229s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#28 -> unparsed
+  [1440/1700] 2244s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#39 -> unparsed
+  [1450/1700] 2265s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#53 -> unparsed
+  [1460/1700] 2277s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#61 -> unparsed
+  [1470/1700] 2294s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#66 -> unparsed
+  [1480/1700] 2309s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#75 -> unparsed
+  [1490/1700] 2325s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#86 -> unparsed
+  [1500/1700] 2344s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed#96 -> unparsed
+  [1510/1700] 2357s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#12 -> unparsed
+  [1520/1700] 2375s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#20 -> unparsed
+  [1530/1700] 2392s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#27 -> unparsed
+  [1540/1700] 2411s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#40 -> unparsed
+  [1550/1700] 2425s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#50 -> unparsed
+  [1560/1700] 2445s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#62 -> unparsed
+  [1570/1700] 2461s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#70 -> unparsed
+  [1580/1700] 2483s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#81 -> unparsed
+  [1590/1700] 2499s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__ahmed_strong#87 -> unparsed
+  [1600/1700] 2510s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#0 -> unparsed
+  [1610/1700] 2527s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#6 -> unparsed
+  [1620/1700] 2537s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#20 -> unparsed
+  [1630/1700] 2558s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#33 -> unparsed
+  [1640/1700] 2567s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#38 -> unparsed
+  [1650/1700] 2589s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#49 -> unparsed
+  [1660/1700] 2596s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#55 -> unparsed
+  [1670/1700] 2618s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#74 -> unparsed
+  [1680/1700] 2628s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#75 -> unparsed
+  [1690/1700] 2650s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#95 -> unparsed
+  [1700/1700] 2669s  last: claude-fable-5-1 AH__Q_neutral__lw_reader__joyce#99 -> unparsed
+done: 1700 ok, 0 errors, 2669s

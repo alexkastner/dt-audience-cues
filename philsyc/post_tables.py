@@ -265,7 +265,7 @@ TABLES: dict[str, tuple[str, callable]] = {
     "openers": ("Opener before the question", lambda: theory_table("Opener before the question", OPENERS)),
     "interest": ("Before the question", lambda: theory_table("Before the question", INTEREST)),
     "tasks": ("Task Claude helped with first (two turns)", lambda: theory_table("Task Claude helped with first (two turns)", TASKS)),
-    "wording": ("Question (each also asked for the answer in tags)", lambda: theory_table("Question (each also asked for the answer in tags)", WORDING, extra_eu=True)),
+    "wording": ("Question", lambda: theory_table("Question", WORDING, extra_eu=True)),
     "guess": ("Question", guess_table),
     "views": ("Before the question", lambda: theory_table("Before the question", VIEWS, other_col=True)),
     "bb_first": ("Cue before the first-turn question", bb_first_table),
