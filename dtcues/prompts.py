@@ -551,6 +551,10 @@ NAMED_PERSONS: dict[str, tuple[str, str]] = {
     "john_smith": ("John Smith", "control"),
 }
 
+NAMED_ACTION_KEYS = ["arif_ahmed", "james_joyce", "wolfgang_schwarz", "caspar_oesterheld", "will_macaskill", "eliezer_yudkowsky", "nate_soares", "wei_dai",
+                     "dario_amodei", "john_smith"]
+NAMED_ACTION_PROBLEMS = ["P_newcomb", "P_transparent", "P_twinpd", "P_cfmugging", "P_bomb", "P_smoking"]
+
 SYSTEM_PERSONAS: dict[str, dict] = {
     "sys_acad_prof": dict(group="acad", text="The user is a professor of philosophy who specializes in decision theory."),
     "sys_acad_teach": dict(group="acad", text="The user teaches an undergraduate decision theory course."),
@@ -935,6 +939,14 @@ def build_prompts() -> list[PromptSpec]:
     # version ("The user is <name>.") comes from SYSTEM_PERSONAS below (ids S__Q_neutral__sys_np_<key>).
     for key, (name, _group) in NAMED_PERSONS.items():
         specs.append(PromptSpec(id=f"NP__Q_neutral__{key}", set="NP", question="Q_neutral", persona="none", persona_override=f"I'm {name}."))
+
+    # NPP / NPPS: concrete problems posed to named decision theorists (Alex, 2026-09-28): "I'm <name>." in the user turn
+    # (NPP) or "The user is <name>." as the system prompt (NPPS), then the problem.
+    for key in NAMED_ACTION_KEYS:
+        name = NAMED_PERSONS[key][0]
+        for prob in NAMED_ACTION_PROBLEMS:
+            specs.append(PromptSpec(id=f"NPP__{prob}__{key}", set="NPP", question=prob, persona="none", fmt="action", persona_override=f"I'm {name}."))
+            specs.append(PromptSpec(id=f"NPPS__{prob}__{key}", set="NPPS", question=prob, persona="none", fmt="action", system=f"The user is {name}."))
 
     # S: system-prompt personas, neutral question, no user-turn persona.
     for name, sp in SYSTEM_PERSONAS.items():
