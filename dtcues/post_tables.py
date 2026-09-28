@@ -701,6 +701,26 @@ def opus55_table() -> str:  # Opus 5.5, same rows as the Opus 5 and Astra tables
 
 
 TABLES["opus55_personas"] = ("Sentence before the question (Opus 5.5)", opus55_table)
+
+
+def effort_models_table() -> str:
+    """Thinking effort for every model, academic personas pooled (Alex, 2026-09-28). Astra has no 'effort' by default; its
+    reasoning-effort setting is shown in parentheses and lined up with the Claude levels it is closest to."""
+    def cell(model, eff, key, note=None):
+        d = counts(rows(model, eff, ACAD))
+        v = pct(d[key], d["n"]) if d["n"] else "–"
+        return f"{v} ({note})" if note else v
+    spec = [("lowest", "low", [("None", "default, no reasoning effort sent")]), ("default", "high", [("low", "low"), ("medium", "medium")]),
+            ("xhigh", "xhigh", [("high", "high")]), ("max", "max", [("xhigh", "xhigh")])]
+    body = []
+    for lab, eff, astra in spec:
+        body.append([lab, cell(FB, eff, "cdt"), cell("claude-opus-5-5", eff, "cdt"), cell("claude-opus-5", eff, "edt"),
+                     " / ".join(cell("gpt-6-astra", a, "cdt", note) for a, note in astra)])
+    return md_table(["Thinking effort (professor, teacher and PhD-student personas pooled)", "Fable 5.1: names CDT", "Opus 5.5: names CDT", "Opus 5: names EDT",
+                     "GPT-6 Astra: names CDT (its reasoning-effort setting)"], body)
+
+
+TABLES["effort_models"] = ("Thinking effort (professor, teacher and PhD-student personas pooled)", effort_models_table)
 TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
 TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 

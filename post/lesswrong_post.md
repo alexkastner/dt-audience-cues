@@ -128,7 +128,7 @@ Ask for the favorite theory first, then pose a concrete problem in the next turn
 | First turn named CDT | 99% | 100% | 100% | 83% | 99% | 100% |
 | First turn named FDT/UDT | 0% | 0% | 0% | 0% | 0% | 0% |
 
-## However there are various indications that Fable 5.1's FDT/UDT preference runs deeper than its CDT preference
+## There are various indications that Fable 5.1's FDT/UDT preference runs deeper than its CDT preference
 
 ### More thinking pushes Fable 5.1 back toward FDT/UDT
 
@@ -224,7 +224,7 @@ The full data for all five models, with the same prompts and 100 samples per cel
 | "I've published on decision theory in philosophy journals." | 94% | 3% | 3% | – |
 <!-- /table -->
 
-**Opus 5.5 shows the strongest version of the effect, and unlike Opus 5 it moves to CDT.** Moreover, the interventions that suggested Fable 5.1 had a deeper preference for FDT/UDT don't have much of an effect for Opus 5.5. [Alex note to self: Need to write more here, or cut this last sentence.]
+**Opus 5.5 shows the strongest dependence on user cues, and unlike Opus 5 it moves to CDT.**
 
 <!-- table:opus55_personas -->
 | Sentence before the question (Opus 5.5) | Names CDT | Names FDT/UDT | Other answer |
@@ -285,6 +285,19 @@ The full data for all five models, with the same prompts and 100 samples per cel
 <!-- /table -->
 
 Posed the concrete problems directly, all three models mostly ignore the cues, like Fable 5.1. It turns out that GPT-6 Astra basically always one-boxes in ordinary Newcomb but two-boxes in transparent Newcomb, regardless of audience cues.
+
+### These other models also move toward FDT/UDT with more thinking, but the effect is smaller than for Fable 5.1.
+
+<!-- table:effort_models -->
+| Thinking effort (professor, teacher and PhD-student personas pooled) | Fable 5.1: names CDT | Opus 5.5: names CDT | Opus 5: names EDT | GPT-6 Astra: names CDT (its reasoning-effort setting) |
+|---|---|---|---|---|
+| lowest | 55% | 93% | 85% | 79% (default, no reasoning effort sent) |
+| default | 43% | 94% | 75% | 63% (low) / 60% (medium) |
+| xhigh | 28% | 93% | 74% | 48% (high) |
+| max | 22% | 78% | 76% | 49% (xhigh) |
+<!-- /table -->
+
+[Claude: the heading fits Astra (79% → 48%) but not the two Opus models: Opus 5.5 only moves at max effort (94% → 78%) and Opus 5's EDT share does not move at all.]
 
 ## Appendix: representative reasoning traces and responses
 
