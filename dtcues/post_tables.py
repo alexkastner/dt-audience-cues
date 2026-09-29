@@ -723,6 +723,43 @@ def effort_models_table() -> str:
 
 
 TABLES["effort_models"] = ("Thinking effort (professor, teacher and PhD-student personas pooled)", effort_models_table)
+
+
+# ============================================================================= named public figures (Alex, 2026-09-28)
+NP_MODELS = [("Fable 5.1", "claude-fable-5-1", "high"), ("Opus 5.5", "claude-opus-5-5", "high"), ("Opus 5", "claude-opus-5", "high"), ("GPT-6 Astra", "gpt-6-astra", "None")]
+NP_GROUPS = ["lab", "alignment", "lw", "acad", "power", "control"]
+
+
+def compact_cell(model, eff, pid):
+    """Stated theories in descending order until they cover at least 90% of the answers."""
+    d = counts(rows(model, eff, pid))
+    if not d["n"]:
+        return "–"
+    parts = sorted([("CDT", d["cdt"]), ("EDT", d["edt"]), ("FDT/UDT", d["fdt"]), ("other", d["n"] - d["cdt"] - d["edt"] - d["fdt"])], key=lambda kv: -kv[1])
+    out, cum = [], 0
+    for name, k in parts:
+        if cum >= 0.9 * d["n"]:
+            break
+        if k:
+            out.append(f"{name} {pct(k, d['n'])}"); cum += k
+    return ", ".join(out)
+
+
+def named_table(fmt: str) -> str:
+    """Rows: named people (plus the no-cue baseline); columns: models; cells: theories covering >= 90% of answers.
+    fmt 'system': the system prompt "The user is <name>."; fmt 'user': "I'm <name>." in the user turn."""
+    pid = (lambda k: f"S__Q_neutral__sys_np_{k}") if fmt == "system" else (lambda k: f"NP__Q_neutral__{k}")
+    body = [["*(nothing)*"] + [compact_cell(m, e, "A__Q_neutral__none") for _, m, e in NP_MODELS]]
+    for g in NP_GROUPS:
+        for key, (name, grp) in P.NAMED_PERSONS.items():
+            if grp == g:
+                body.append([name] + [compact_cell(m, e, pid(key)) for _, m, e in NP_MODELS])
+    head = "Named user, given as the system prompt \"The user is <name>.\"" if fmt == "system" else "Named user (\"I'm <name>.\" before the question)"
+    return md_table([head] + [lab for lab, _, _ in NP_MODELS], body)
+
+
+TABLES["named_system"] = ("Named user, given as the system prompt", lambda: named_table("system"))
+TABLES["named_user"] = ("Named user", lambda: named_table("user"))
 TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
 TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 

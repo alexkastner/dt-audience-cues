@@ -33,7 +33,7 @@ name the way it treats a lay persona.
 
 ### User turn
 
-| Named person ("I'm <name>." in the user turn) | Claude Fable 5.1 | Claude Opus 5.5 | Claude Opus 5 | GPT-6 Astra |
+| Named user ("I'm <name>." before the question) | Fable 5.1 | Opus 5.5 | Opus 5 | GPT-6 Astra |
 |---|---|---|---|---|
 | *(nothing)* | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 98% |
 | Dario Amodei | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 97% | FDT/UDT 97% |
@@ -67,7 +67,7 @@ name the way it treats a lay persona.
 
 ### System prompt
 
-| Named person (system prompt "The user is <name>.") | Claude Fable 5.1 | Claude Opus 5.5 | Claude Opus 5 | GPT-6 Astra |
+| Named user, given as the system prompt "The user is <name>." | Fable 5.1 | Opus 5.5 | Opus 5 | GPT-6 Astra |
 |---|---|---|---|---|
 | *(nothing)* | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 98% |
 | Dario Amodei | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 99% | FDT/UDT 100% |
