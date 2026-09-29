@@ -19,6 +19,11 @@
   "rows": 209596,
   "sha256": "57c2edeb8acbc0eec0e692403dd4ab997d00e1e0b9b35a294299572501cb3d71"
  },
+ "judge_numbers.jsonl": {
+  "bytes": 9244939,
+  "rows": 81321,
+  "sha256": "c0b4edbc6b948994de14009d7db83ab3d3ebe6959a1b2efb82b76d021b4874ff"
+ },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
   "rows": 9275,
@@ -78,6 +83,31 @@
   "bytes": 6161721,
   "rows": 1000,
   "sha256": "b30cbc9c8d74f1932151b5dcc12a54a68b0abe131ffbfc3e3ddf14dec2d58670"
+ },
+ "raw_claude-fable-5-1_high_notags_ad1.jsonl": {
+  "bytes": 22861412,
+  "rows": 5900,
+  "sha256": "39b032d3222d5a55d8f630559c90e934189e81927c39a049496c018c3f855ded"
+ },
+ "raw_claude-fable-5-1_high_notags_ad2.jsonl": {
+  "bytes": 23011230,
+  "rows": 5900,
+  "sha256": "2e0af5a0c6e55961fdf3d60d4b4edd909be91cfe10f91faebcfd16ffb89d1078"
+ },
+ "raw_claude-fable-5-1_high_notags_ad3.jsonl": {
+  "bytes": 22467185,
+  "rows": 5800,
+  "sha256": "a9aaffc3df084206574af1dbd82e015282126a03051fba09c3fb52797bcff2ec"
+ },
+ "raw_claude-fable-5-1_high_notags_adc.jsonl": {
+  "bytes": 10435203,
+  "rows": 1200,
+  "sha256": "64caba1df961c9e6cd30440157889dc6515e4c03bcf4071b8c5001ae099e6e52"
+ },
+ "raw_claude-fable-5-1_high_notags_adw.jsonl": {
+  "bytes": 7694814,
+  "rows": 2000,
+  "sha256": "c424fbf96990ef6e038edcbdf774b034167db4ba502a2f2f5e52fe6ee8638895"
  },
  "raw_claude-fable-5-1_high_notags_ahmed.jsonl": {
   "bytes": 8929579,
@@ -419,6 +449,11 @@
   "rows": 340,
   "sha256": "8aa8cd280ce7ab13648b4b4ad95a0a240302b870b39656125e52e8166e37d885"
  },
+ "raw_claude-fable-5-1_max_notags_adx.jsonl": {
+  "bytes": 9542042,
+  "rows": 1325,
+  "sha256": "fe490db9f0115740c0c5c8989335843848f4953daaf6dc38b83766ce3797e1ab"
+ },
  "raw_claude-fable-5-1_max_notags_ahmed128_1.jsonl": {
   "bytes": 5542125,
   "rows": 200,
@@ -579,6 +614,31 @@
   "rows": 400,
   "sha256": "c014257d8082b122aa298b8598116e15147206d6559036aad383a50106046aaa"
  },
+ "raw_claude-opus-5-5_high_notags_ad1.jsonl": {
+  "bytes": 23050453,
+  "rows": 5900,
+  "sha256": "e6b47ee383b17b192a3a26c2a54405ea6e64f356efaece5f25a0bc31f5190c2d"
+ },
+ "raw_claude-opus-5-5_high_notags_ad2.jsonl": {
+  "bytes": 23118400,
+  "rows": 5900,
+  "sha256": "33c49925a51b7c7240a159a9858b8a65724dd8ae6bcacc1c822a5c6040fa5e69"
+ },
+ "raw_claude-opus-5-5_high_notags_ad3.jsonl": {
+  "bytes": 22421781,
+  "rows": 5800,
+  "sha256": "b0b3c8e3364af123266263c2407da1a08afc211db8ef74a7d5064607e182ef0d"
+ },
+ "raw_claude-opus-5-5_high_notags_adc.jsonl": {
+  "bytes": 10131686,
+  "rows": 1200,
+  "sha256": "76b82487257240cc49520da91c2d58ced425d08bc3cfb316599ddfed4efb5cea"
+ },
+ "raw_claude-opus-5-5_high_notags_adw.jsonl": {
+  "bytes": 7920449,
+  "rows": 2000,
+  "sha256": "df44879200c85641809515cf9307e6b89684b2a65291e0f42b5fece1672cece3"
+ },
  "raw_claude-opus-5-5_high_notags_basebomb.jsonl": {
   "bytes": 531039,
   "rows": 200,
@@ -684,6 +744,11 @@
   "rows": 300,
   "sha256": "556687b298870a6fccdac67e4bc4f82795426d4cb2f648d8452de914e8ee6293"
  },
+ "raw_claude-opus-5-5_max_notags_adx.jsonl": {
+  "bytes": 9492912,
+  "rows": 797,
+  "sha256": "eb129c9600f7d172d68d49fb47f1f7fb6a1e5958da89e803f87eb89a29907833"
+ },
  "raw_claude-opus-5-5_max_notags_deep_ah1.jsonl": {
   "bytes": 29115424,
   "rows": 600,
@@ -743,6 +808,26 @@
   "bytes": 334015,
   "rows": 40,
   "sha256": "176f93be0d97e11656c71329d6b9ad8c7b0c9fae62b37c74d842456efa38bf80"
+ },
+ "raw_claude-opus-5_high_notags_ad1.jsonl": {
+  "bytes": 32007628,
+  "rows": 5900,
+  "sha256": "57d904180c5c9742b52cddbfd75afbb54757e0124f76f248ab66ff2692bd9f0a"
+ },
+ "raw_claude-opus-5_high_notags_ad2.jsonl": {
+  "bytes": 32143976,
+  "rows": 5900,
+  "sha256": "22bcd6167d08d6766cbc9409cb4fdf5e56636915eba5d5831f4b5eb9104dc7f2"
+ },
+ "raw_claude-opus-5_high_notags_ad3.jsonl": {
+  "bytes": 31169033,
+  "rows": 5800,
+  "sha256": "05d8427136bcce76d87d602984b416df86aa532937a6d24cb15d2cd4b4724d27"
+ },
+ "raw_claude-opus-5_high_notags_adc.jsonl": {
+  "bytes": 14754826,
+  "rows": 1200,
+  "sha256": "f9ba9575b4984be128f7a59474f6094f0f5c227229d136a0d725d4a409bb4968"
  },
  "raw_claude-opus-5_high_notags_basebomb.jsonl": {
   "bytes": 746730,
@@ -963,6 +1048,16 @@
   "bytes": 469244,
   "rows": 120,
   "sha256": "6f8fc2a1b75587cfa89079a8b7a58a7b74108b9fc6d5b65aadc6c0d8b48b3e3d"
+ },
+ "raw_gpt-6-astra_None_notags_ad.jsonl": {
+  "bytes": 37801545,
+  "rows": 17600,
+  "sha256": "36267ce57105e2ba9b04eb01d48fa0de27e8634cc3ed6781adc9d4633b7c70bd"
+ },
+ "raw_gpt-6-astra_None_notags_adc.jsonl": {
+  "bytes": 5833444,
+  "rows": 1200,
+  "sha256": "d993c9852024e7bd9e6de4e3f54a22f6785bb72d22114d05db10d8843ac479f0"
  },
  "raw_gpt-6-astra_None_notags_basebomb.jsonl": {
   "bytes": 297559,
