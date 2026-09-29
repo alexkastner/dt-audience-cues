@@ -760,6 +760,19 @@ def named_table(fmt: str) -> str:
 
 TABLES["named_system"] = ("Named user, given as the system prompt", lambda: named_table("system"))
 TABLES["named_user"] = ("Named user", lambda: named_table("user"))
+
+
+def named_actions_table(keys=("james_joyce", "wolfgang_schwarz"), problems=None) -> str:
+    """Concrete problems posed directly to named users given as the system prompt (Fable 5.1): share choosing CDT's option (Alex, 2026-09-28)."""
+    problems = problems or MATRIX_PROBLEMS   # Newcomb, transparent Newcomb, twin PD, counterfactual mugging (no Bomb, no smoking lesion)
+    body = [["*(no cue)*"] + [pct(*_cdt_action(rows(FB, HI, _ids([f"G__{qk}__", f"AA__{qk}__"], "none")))) for qk in problems]]
+    for key in keys:
+        name = P.NAMED_PERSONS[key][0]
+        body.append([f"System prompt: {q(f'The user is {name}.')}"] + [pct(*_cdt_action(rows(FB, HI, f"NPPS__{qk}__{key}"))) for qk in problems])
+    return md_table(["Cue before the problem"] + [_col(PLABEL[qk], qk) for qk in problems], body)
+
+
+TABLES["named_actions"] = ("Cue before the problem", named_actions_table)
 TABLES["astra_personas"] = ("Sentence before the question (GPT-6 Astra)", astra_table)
 TABLES["opus_personas"] = ("Sentence before the question (Opus 5)", opus_table)
 
