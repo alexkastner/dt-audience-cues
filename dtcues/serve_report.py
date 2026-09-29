@@ -97,6 +97,7 @@ class Handler(SimpleHTTPRequestHandler):
         text = re.sub(r"\[(?!\^)([^\]]{2,})\](?!\()", lambda m: f'<mark class="note">[{_h.escape(m.group(1))}]</mark>', text)
         md = markdown.Markdown(extensions=["tables", "fenced_code", "sane_lists", "footnotes", "toc"], extension_configs={"toc": {"toc_depth": "2-3"}})
         body = md.convert(text)
+        body = body.replace("https://raw.githubusercontent.com/alexkastner/dt-audience-cues/main/post/figures/", "/figures/")
         toc = md.toc  # nested <ul> of links to the h2/h3 headings (ids added by the toc extension)
         page = f"""<!doctype html><html><head><meta charset="utf-8"><title>post preview</title>
 <style>body{{font:17px/1.6 Georgia,'Times New Roman',serif;max-width:720px;margin:36px auto;padding:0 20px;color:#111;background:#fff}}
