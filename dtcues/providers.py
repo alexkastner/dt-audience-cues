@@ -65,8 +65,8 @@ class Anthropic:
                     resp = await stream.get_final_message()
             else:
                 resp = await self.client.messages.create(**kwargs)
-        except anthropic.APIError as e:
-            return Completion("anthropic", model, model, "", error=f"{type(e).__name__}: {e}")
+        except Exception as e:  # APIError, but also transport errors (e.g. httpx ReadTimeout mid-stream) that must not kill the run
+            return Completion("anthropic", model, model, "", error=f"{type(e).__name__}: {str(e)[:300]}")
         text, thinking = [], []
         for b in resp.content:
             if b.type == "text":
