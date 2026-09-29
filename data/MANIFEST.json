@@ -15,9 +15,9 @@
   "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
  },
  "judge_notags.jsonl": {
-  "bytes": 10551173,
-  "rows": 225196,
-  "sha256": "18966e39c231b449a6ec5d20acbfbe4eeb39a26fe13687369d93b542947204f0"
+  "bytes": 11344825,
+  "rows": 242785,
+  "sha256": "b5a20b701d458417c00ddd59acaa19f97db36fffa096596564c8c0d2ee03bab1"
  },
  "judge_numbers.jsonl": {
   "bytes": 9327777,
@@ -68,6 +68,11 @@
   "bytes": 1437153,
   "rows": 320,
   "sha256": "35e25d1d5205d3f35ab7959aaf9b4f5672092255e37f27c50d3593547d594ea2"
+ },
+ "raw_claude-fable-5-1_high_notags_acadnames.jsonl": {
+  "bytes": 19736481,
+  "rows": 4400,
+  "sha256": "bb2d8024fbb798c4f0ee4ca77bfc230ec60df46e7f706e3bb6e769798259d948"
  },
  "raw_claude-fable-5-1_high_notags_acausal2_Q_acausal_future.jsonl": {
   "bytes": 5535651,
@@ -634,6 +639,11 @@
   "rows": 400,
   "sha256": "c014257d8082b122aa298b8598116e15147206d6559036aad383a50106046aaa"
  },
+ "raw_claude-opus-5-5_high_notags_acadnames.jsonl": {
+  "bytes": 19092298,
+  "rows": 4400,
+  "sha256": "ba6db57ef90f0dad77ec89bcbf6da1016e16a3529953b2936b91e4226c0853a3"
+ },
  "raw_claude-opus-5-5_high_notags_ad1.jsonl": {
   "bytes": 23050453,
   "rows": 5900,
@@ -853,6 +863,11 @@
   "bytes": 334015,
   "rows": 40,
   "sha256": "176f93be0d97e11656c71329d6b9ad8c7b0c9fae62b37c74d842456efa38bf80"
+ },
+ "raw_claude-opus-5_high_notags_acadnames.jsonl": {
+  "bytes": 30336918,
+  "rows": 4400,
+  "sha256": "85a24ed2eedf85b0991815c99c72bc749da19dd03b6aac0d21c7ae40b433db06"
  },
  "raw_claude-opus-5_high_notags_ad1.jsonl": {
   "bytes": 32007628,
@@ -1093,6 +1108,11 @@
   "bytes": 469244,
   "rows": 120,
   "sha256": "6f8fc2a1b75587cfa89079a8b7a58a7b74108b9fc6d5b65aadc6c0d8b48b3e3d"
+ },
+ "raw_gpt-6-astra_None_notags_acadnames.jsonl": {
+  "bytes": 7638451,
+  "rows": 4400,
+  "sha256": "cbdb3f8d92bedadc41a1141c3c8154e39394c5ce4eab296e74804a3e4d88f289"
  },
  "raw_gpt-6-astra_None_notags_ad.jsonl": {
   "bytes": 37801545,

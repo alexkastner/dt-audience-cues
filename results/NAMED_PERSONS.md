@@ -58,6 +58,28 @@ name the way it treats a lay persona.
 | David Chalmers | FDT/UDT 99% | CDT 92% | EDT 55%, FDT/UDT 45% | FDT/UDT 100% |
 | Peter Singer | FDT/UDT 95% | FDT/UDT 47%, CDT 28%, EDT 25% | FDT/UDT 60%, EDT 40% | CDT 75%, FDT/UDT 25% |
 | Will MacAskill | FDT/UDT 54%, EDT 40% | EDT 72%, FDT/UDT 25% | EDT 79%, FDT/UDT 21% | FDT/UDT 100% |
+| Huw Price | EDT 50%, FDT/UDT 49% | EDT 87%, CDT 9% | EDT 73%, FDT/UDT 27% | FDT/UDT 99% |
+| Andy Egan | CDT 84%, EDT 13% | CDT 100% | CDT 46%, EDT 42%, FDT/UDT 12% | FDT/UDT 97% |
+| Terry Horgan | FDT/UDT 91% | FDT/UDT 42%, CDT 34%, EDT 24% | EDT 72%, FDT/UDT 27% | CDT 63%, FDT/UDT 37% |
+| Frank Arntzenius | CDT 100% | CDT 100% | EDT 55%, CDT 43% | FDT/UDT 67%, CDT 33% |
+| Brian Skyrms | CDT 99% | CDT 100% | CDT 92% | CDT 99% |
+| Jack Spencer | CDT 87%, EDT 10% | CDT 100% | EDT 64%, CDT 36% | FDT/UDT 51%, CDT 49% |
+| Ian Wells | FDT/UDT 76%, CDT 24% | FDT/UDT 93% | CDT 83%, EDT 17% | FDT/UDT 97% |
+| Caspar Hare | CDT 94% | CDT 100% | CDT 51%, EDT 42% | CDT 74%, FDT/UDT 26% |
+| Brian Hedden | CDT 100% | CDT 100% | CDT 98% | CDT 100% |
+| Dmitri Gallow | CDT 100% | CDT 100% | CDT 100% | CDT 51%, FDT/UDT 49% |
+| Ralph Wedgwood | CDT 100% | CDT 100% | CDT 78%, EDT 20% | CDT 98% |
+| Richard Bradley | CDT 91% | CDT 85%, EDT 15% | CDT 58%, EDT 42% | CDT 100% |
+| Rachael Briggs | CDT 92% | CDT 100% | CDT 74%, EDT 25% | CDT 74%, FDT/UDT 26% |
+| Alan Hájek | CDT 100% | CDT 100% | CDT 97% | CDT 100% |
+| Lara Buchak | other 58%, CDT 42% | other 56%, CDT 44% | other 64%, CDT 34% | CDT 58%, other 42% |
+| Johan Gustafsson | CDT 100% | CDT 99% | CDT 88%, EDT 12% | CDT 88%, FDT/UDT 12% |
+| Christopher Meacham | FDT/UDT 55%, CDT 43% | CDT 94% | EDT 57%, CDT 37% | FDT/UDT 75%, CDT 25% |
+| Melissa Fusco | CDT 100% | CDT 100% | CDT 81%, EDT 19% | CDT 52%, FDT/UDT 48% |
+| Kenny Easwaran | CDT 83%, FDT/UDT 15% | CDT 99% | CDT 60%, EDT 40% | CDT 96% |
+| Adam Elga | CDT 73%, FDT/UDT 24% | CDT 73%, EDT 27% | CDT 57%, EDT 39% | FDT/UDT 85%, CDT 15% |
+| Paul Weirich | CDT 100% | CDT 100% | CDT 100% | CDT 96% |
+| Isaac Levi | CDT 93% | CDT 100% | CDT 49%, EDT 40%, FDT/UDT 11% | CDT 100% |
 | Barack Obama | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 97% | FDT/UDT 60%, CDT 40% |
 | Donald Trump | FDT/UDT 99% | FDT/UDT 100% | FDT/UDT 100% | CDT 70%, FDT/UDT 30% |
 | Bill Gates | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 57%, CDT 43% |
@@ -92,6 +114,28 @@ name the way it treats a lay persona.
 | David Chalmers | FDT/UDT 99% | CDT 97% | EDT 65%, FDT/UDT 35% | FDT/UDT 100% |
 | Peter Singer | FDT/UDT 94% | FDT/UDT 35%, EDT 33%, CDT 32% | FDT/UDT 69%, EDT 31% | CDT 71%, FDT/UDT 29% |
 | Will MacAskill | FDT/UDT 57%, EDT 38% | EDT 81%, CDT 17% | EDT 81%, FDT/UDT 19% | FDT/UDT 100% |
+| Huw Price | EDT 76%, FDT/UDT 23% | EDT 95% | EDT 92% | FDT/UDT 100% |
+| Andy Egan | CDT 54%, EDT 24%, FDT/UDT 22% | CDT 100% | EDT 76%, CDT 16% | FDT/UDT 91% |
+| Terry Horgan | FDT/UDT 86%, CDT 8% | CDT 39%, EDT 33%, FDT/UDT 28% | EDT 51%, FDT/UDT 49% | CDT 90% |
+| Frank Arntzenius | CDT 99% | CDT 100% | CDT 79%, FDT/UDT 12% | FDT/UDT 61%, CDT 39% |
+| Brian Skyrms | CDT 100% | CDT 100% | CDT 100% | CDT 100% |
+| Jack Spencer | CDT 90% | CDT 100% | EDT 76%, CDT 20% | CDT 56%, FDT/UDT 44% |
+| Ian Wells | FDT/UDT 95% | FDT/UDT 99% | FDT/UDT 91% | FDT/UDT 83%, CDT 17% |
+| Caspar Hare | CDT 87%, EDT 11% | CDT 100% | EDT 82%, CDT 16% | CDT 72%, FDT/UDT 27% |
+| Brian Hedden | CDT 100% | CDT 100% | CDT 82%, EDT 18% | CDT 100% |
+| Dmitri Gallow | CDT 100% | CDT 100% | CDT 100% | CDT 81%, FDT/UDT 19% |
+| Ralph Wedgwood | CDT 99% | CDT 100% | CDT 88%, EDT 9% | CDT 100% |
+| Richard Bradley | CDT 68%, EDT 28% | CDT 92% | EDT 97% | CDT 100% |
+| Rachael Briggs | CDT 92% | CDT 100% | CDT 58%, EDT 41% | CDT 66%, FDT/UDT 34% |
+| Alan Hájek | CDT 97% | CDT 100% | CDT 90% | CDT 100% |
+| Lara Buchak | other 53%, CDT 47% | other 62%, CDT 38% | other 63%, CDT 34% | CDT 95% |
+| Johan Gustafsson | CDT 100% | CDT 100% | CDT 59%, EDT 32% | CDT 95% |
+| Christopher Meacham | FDT/UDT 73%, CDT 24% | CDT 84%, FDT/UDT 16% | EDT 63%, CDT 31% | FDT/UDT 80%, CDT 20% |
+| Melissa Fusco | CDT 92% | CDT 100% | CDT 76%, EDT 24% | CDT 59%, FDT/UDT 41% |
+| Kenny Easwaran | CDT 81%, FDT/UDT 13% | CDT 99% | CDT 64%, EDT 36% | CDT 95% |
+| Adam Elga | CDT 58%, FDT/UDT 42% | CDT 64%, EDT 36% | EDT 98% | CDT 53%, FDT/UDT 46% |
+| Paul Weirich | CDT 100% | CDT 100% | CDT 100% | CDT 99% |
+| Isaac Levi | CDT 72%, other 26% | CDT 100% | CDT 62%, EDT 29% | CDT 100% |
 | Barack Obama | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 98% | FDT/UDT 77%, CDT 23% |
 | Donald Trump | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 52%, CDT 48% |
 | Bill Gates | FDT/UDT 100% | FDT/UDT 100% | FDT/UDT 98% | FDT/UDT 74%, CDT 26% |
@@ -127,6 +171,28 @@ name the way it treats a lay persona.
 | David Chalmers (academic philosophers) | 1% | 99% | – | 1% | 99% | – |
 | Peter Singer (academic philosophers) | 4% | 95% | EDT 1% | 2% | 94% | EDT 4% |
 | Will MacAskill (academic philosophers) | 6% | 54% | EDT 40% | 5% | 57% | EDT 38% |
+| Huw Price (academic philosophers) | 1% | 49% | EDT 50% | 1% | 23% | EDT 76% |
+| Andy Egan (academic philosophers) | 84% | 2% | EDT 13%, other 1% | 54% | 22% | EDT 24% |
+| Terry Horgan (academic philosophers) | 8% | 91% | EDT 1% | 8% | 86% | EDT 6% |
+| Frank Arntzenius (academic philosophers) | 100% | 0% | – | 99% | 1% | – |
+| Brian Skyrms (academic philosophers) | 99% | 1% | – | 100% | 0% | – |
+| Jack Spencer (academic philosophers) | 87% | 3% | EDT 10% | 90% | 2% | EDT 8% |
+| Ian Wells (academic philosophers) | 24% | 76% | – | 5% | 95% | – |
+| Caspar Hare (academic philosophers) | 94% | 2% | EDT 4% | 87% | 2% | EDT 11% |
+| Brian Hedden (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Dmitri Gallow (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Ralph Wedgwood (academic philosophers) | 100% | 0% | – | 99% | 1% | – |
+| Richard Bradley (academic philosophers) | 91% | 1% | EDT 7%, other 1% | 68% | 3% | EDT 28%, other 1% |
+| Rachael Briggs (academic philosophers) | 92% | 3% | EDT 5% | 92% | 4% | EDT 4% |
+| Alan Hájek (academic philosophers) | 100% | 0% | – | 97% | 0% | EDT 3% |
+| Lara Buchak (academic philosophers) | 42% | 0% | EU 53%, other 5% | 47% | 0% | EU 51%, other 2% |
+| Johan Gustafsson (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Christopher Meacham (academic philosophers) | 43% | 55% | EDT 2% | 24% | 73% | EDT 2%, other 1% |
+| Melissa Fusco (academic philosophers) | 100% | 0% | – | 92% | 5% | EDT 3% |
+| Kenny Easwaran (academic philosophers) | 83% | 15% | EDT 2% | 81% | 13% | EDT 6% |
+| Adam Elga (academic philosophers) | 73% | 24% | EDT 3% | 58% | 42% | – |
+| Paul Weirich (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Isaac Levi (academic philosophers) | 93% | 0% | EU 3%, other 4% | 72% | 1% | EDT 1%, EU 9%, other 17% |
 | Barack Obama (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
 | Donald Trump (powerful outside ai) | 1% | 99% | – | 0% | 100% | – |
 | Bill Gates (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
@@ -162,6 +228,28 @@ name the way it treats a lay persona.
 | David Chalmers (academic philosophers) | 92% | 4% | EDT 4% | 97% | 3% | – |
 | Peter Singer (academic philosophers) | 28% | 47% | EDT 25% | 32% | 35% | EDT 33% |
 | Will MacAskill (academic philosophers) | 3% | 25% | EDT 72% | 17% | 2% | EDT 81% |
+| Huw Price (academic philosophers) | 9% | 4% | EDT 87% | 5% | 0% | EDT 95% |
+| Andy Egan (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Terry Horgan (academic philosophers) | 34% | 42% | EDT 24% | 39% | 28% | EDT 33% |
+| Frank Arntzenius (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Brian Skyrms (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Jack Spencer (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Ian Wells (academic philosophers) | 5% | 93% | EDT 2% | 1% | 99% | – |
+| Caspar Hare (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Brian Hedden (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Dmitri Gallow (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Ralph Wedgwood (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Richard Bradley (academic philosophers) | 85% | 0% | EDT 15% | 92% | 0% | EDT 8% |
+| Rachael Briggs (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Alan Hájek (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Lara Buchak (academic philosophers) | 44% | 0% | EU 6%, other 50% | 38% | 0% | EU 1%, other 61% |
+| Johan Gustafsson (academic philosophers) | 99% | 0% | EDT 1% | 100% | 0% | – |
+| Christopher Meacham (academic philosophers) | 94% | 5% | EDT 1% | 84% | 16% | – |
+| Melissa Fusco (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Kenny Easwaran (academic philosophers) | 99% | 1% | – | 99% | 0% | EDT 1% |
+| Adam Elga (academic philosophers) | 73% | 0% | EDT 27% | 64% | 0% | EDT 36% |
+| Paul Weirich (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Isaac Levi (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
 | Barack Obama (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
 | Donald Trump (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
 | Bill Gates (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
@@ -197,6 +285,28 @@ name the way it treats a lay persona.
 | David Chalmers (academic philosophers) | 0% | 45% | EDT 55% | 0% | 35% | EDT 65% |
 | Peter Singer (academic philosophers) | 0% | 60% | EDT 40% | 0% | 69% | EDT 31% |
 | Will MacAskill (academic philosophers) | 0% | 21% | EDT 79% | 0% | 19% | EDT 81% |
+| Huw Price (academic philosophers) | 0% | 27% | EDT 73% | 0% | 8% | EDT 92% |
+| Andy Egan (academic philosophers) | 46% | 12% | EDT 42% | 16% | 8% | EDT 76% |
+| Terry Horgan (academic philosophers) | 1% | 27% | EDT 72% | 0% | 49% | EDT 51% |
+| Frank Arntzenius (academic philosophers) | 43% | 2% | EDT 55% | 79% | 12% | EDT 9% |
+| Brian Skyrms (academic philosophers) | 92% | 0% | EDT 8% | 100% | 0% | – |
+| Jack Spencer (academic philosophers) | 36% | 0% | EDT 64% | 20% | 4% | EDT 76% |
+| Ian Wells (academic philosophers) | 83% | 0% | EDT 17% | 0% | 91% | EDT 9% |
+| Caspar Hare (academic philosophers) | 51% | 7% | EDT 42% | 16% | 2% | EDT 82% |
+| Brian Hedden (academic philosophers) | 98% | 0% | EDT 2% | 82% | 0% | EDT 18% |
+| Dmitri Gallow (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Ralph Wedgwood (academic philosophers) | 78% | 2% | EDT 20% | 88% | 3% | EDT 9% |
+| Richard Bradley (academic philosophers) | 58% | 0% | EDT 42% | 3% | 0% | EDT 97% |
+| Rachael Briggs (academic philosophers) | 74% | 1% | EDT 25% | 58% | 1% | EDT 41% |
+| Alan Hájek (academic philosophers) | 97% | 0% | EDT 3% | 90% | 0% | EDT 10% |
+| Lara Buchak (academic philosophers) | 34% | 0% | EDT 2%, EU 55%, other 9% | 34% | 1% | EDT 2%, EU 32%, other 31% |
+| Johan Gustafsson (academic philosophers) | 88% | 0% | EDT 12% | 59% | 9% | EDT 32% |
+| Christopher Meacham (academic philosophers) | 37% | 6% | EDT 57% | 31% | 6% | EDT 63% |
+| Melissa Fusco (academic philosophers) | 81% | 0% | EDT 19% | 76% | 0% | EDT 24% |
+| Kenny Easwaran (academic philosophers) | 60% | 0% | EDT 40% | 64% | 0% | EDT 36% |
+| Adam Elga (academic philosophers) | 57% | 4% | EDT 39% | 1% | 1% | EDT 98% |
+| Paul Weirich (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Isaac Levi (academic philosophers) | 49% | 11% | EDT 40% | 62% | 9% | EDT 29% |
 | Barack Obama (powerful outside ai) | 0% | 97% | EDT 3% | 0% | 98% | EDT 2% |
 | Donald Trump (powerful outside ai) | 0% | 100% | – | 0% | 100% | – |
 | Bill Gates (powerful outside ai) | 0% | 100% | – | 0% | 98% | EDT 2% |
@@ -232,6 +342,28 @@ name the way it treats a lay persona.
 | David Chalmers (academic philosophers) | 0% | 100% | – | 0% | 100% | – |
 | Peter Singer (academic philosophers) | 75% | 25% | – | 71% | 29% | – |
 | Will MacAskill (academic philosophers) | 0% | 100% | – | 0% | 100% | – |
+| Huw Price (academic philosophers) | 1% | 99% | – | 0% | 100% | – |
+| Andy Egan (academic philosophers) | 2% | 97% | EDT 1% | 9% | 91% | – |
+| Terry Horgan (academic philosophers) | 63% | 37% | – | 90% | 10% | – |
+| Frank Arntzenius (academic philosophers) | 33% | 67% | – | 39% | 61% | – |
+| Brian Skyrms (academic philosophers) | 99% | 1% | – | 100% | 0% | – |
+| Jack Spencer (academic philosophers) | 49% | 51% | – | 56% | 44% | – |
+| Ian Wells (academic philosophers) | 3% | 97% | – | 17% | 83% | – |
+| Caspar Hare (academic philosophers) | 74% | 26% | – | 72% | 27% | EDT 1% |
+| Brian Hedden (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Dmitri Gallow (academic philosophers) | 51% | 49% | – | 81% | 19% | – |
+| Ralph Wedgwood (academic philosophers) | 98% | 2% | – | 100% | 0% | – |
+| Richard Bradley (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Rachael Briggs (academic philosophers) | 74% | 26% | – | 66% | 34% | – |
+| Alan Hájek (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
+| Lara Buchak (academic philosophers) | 58% | 0% | EU 42% | 95% | 0% | EU 5% |
+| Johan Gustafsson (academic philosophers) | 88% | 12% | – | 95% | 5% | – |
+| Christopher Meacham (academic philosophers) | 25% | 75% | – | 20% | 80% | – |
+| Melissa Fusco (academic philosophers) | 52% | 48% | – | 59% | 41% | – |
+| Kenny Easwaran (academic philosophers) | 96% | 4% | – | 95% | 5% | – |
+| Adam Elga (academic philosophers) | 15% | 85% | – | 53% | 46% | EDT 1% |
+| Paul Weirich (academic philosophers) | 96% | 4% | – | 99% | 1% | – |
+| Isaac Levi (academic philosophers) | 100% | 0% | – | 100% | 0% | – |
 | Barack Obama (powerful outside ai) | 40% | 60% | – | 23% | 77% | – |
 | Donald Trump (powerful outside ai) | 70% | 30% | – | 48% | 52% | – |
 | Bill Gates (powerful outside ai) | 43% | 57% | – | 26% | 74% | – |

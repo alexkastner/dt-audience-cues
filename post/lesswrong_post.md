@@ -28,7 +28,7 @@ The sections below contain tables of response data for Claude Fable 5.1 illustra
 ## Famous named users get different responses depending on their published views or their vibes
 
 <!-- figure:named_system -->
-*The name is given only in the system prompt; the user turn is the bare question. Rows are ordered by how much any model moves. The collapsed last row pools twelve names that move no model by more than 10 points: Dario Amodei, Sam Altman, Demis Hassabis, Ilya Sutskever, Peter Thiel, Chris Olah, Jan Leike, Holden Karnofsky, Eliezer Yudkowsky, Nate Soares, Wei Dai and Scott Alexander.*
+*The name is given only in the system prompt; the user turn is the bare question. Rows are ordered by how far Fable 5.1 moves off its default answer. The last row pools the 23 names that move it by at most 10 points: Amanda Askell, Barack Obama, Bill Gates, Chris Olah, Dario Amodei, David Chalmers, Demis Hassabis, Donald Trump, Eliezer Yudkowsky, Elon Musk, Holden Karnofsky, Ian Wells, Ilya Sutskever, Jan Leike, Mark Zuckerberg, Nate Soares, Paul Christiano, Peter Singer, Peter Thiel, Sam Altman, Scott Alexander, Taylor Swift, Wei Dai.*
 
 ![Which decision theory each model names when a named user is given in the system prompt](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/main/post/figures/named.png)
 <!-- /figure -->
