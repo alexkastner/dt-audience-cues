@@ -22,6 +22,7 @@ and the code that turns them into the tables.
 | `results/*.md` | Analysis notes for individual experiments, e.g. `AHMED_JOYCE.md` (book praise), `SYSPROMPT_CROSS.md` (system prompts), `REASONING_NOTES.md` (reasoning summaries), `BW_wording_then_act.md`, `BBMAX_followthrough.md`, `NOTAGS_CHECK.md` (tag-free vs tagged numbers). |
 | `data/*.jsonl.gz` | All raw samples and judge caches, gzipped (about 220 MB packed, 1 GB unpacked). `data/MANIFEST.json` lists row counts and SHA-256 checksums. |
 | `dtcues/` | The code: prompt bank, sampling, judges, table generation, preview server. |
+| `post/figures/` | The figures in the post, generated from the same data as the tables by `dtcues/figures.py` (`POST_MODE=notags uv run python -m dtcues.figures [key ...]`). The post references them by their repository URL. |
 | `scripts/pack_data.py` | Packs `results/*.jsonl` into `data/` and back. |
 
 ## Reproducing the tables
