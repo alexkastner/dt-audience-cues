@@ -654,6 +654,14 @@ PROBLEMS.update({
 })
 RA_PROBLEMS = ["P_newcomb_ra", "P_transparent_ra", "P_twinpd_ra", "P_cfmugging_ra", "P_bomb_ra", "P_smoking_ra"]
 RA_CUES = ["none", "james_joyce", "wolfgang_schwarz", "arif_ahmed", "nate_soares"]   # named users as the system prompt
+# the same unnamed cues as the post's concrete-problems table, for the third-person problems (Alex, 2026-09-28)
+RA_MATRIX_CUES: dict[str, dict] = {
+    "lw_reader": dict(persona="lw_reader"), "acad_prof": dict(persona="acad_prof"), "acad_teach": dict(persona="acad_teach"), "x_published": dict(persona="x_published"),
+    "sys_acad_prof": dict(persona="none", system=SYSTEM_PERSONAS["sys_acad_prof"]["text"]),
+    "pre_acad_ref_2": dict(persona="none", prefix=STYLE_PREAMBLES["acad_ref_2"]["text"]),
+    "conv_acad_task": dict(persona="none", prior_turns=tuple(U1_TASKS["acad_task"]["turns"])),
+    "conv_dt_teacher": dict(persona="none", prior_turns=tuple(U1_TASKS["dt_teacher_task"]["turns"])),
+}
 
 SYSTEM_PERSONAS: dict[str, dict] = {
     "sys_acad_prof": dict(group="acad", text="The user is a professor of philosophy who specializes in decision theory."),
@@ -1075,6 +1083,9 @@ def build_prompts() -> list[PromptSpec]:
         for key in AD_ALT_NAMES:
             specs.append(PromptSpec(id=f"ADN__{q}__{key}", set="ADN", question=q, persona="none", fmt="number", persona_override=f"I'm {AD_NAMES[key][0]}."))
 
+    for prob in RA_PROBLEMS:   # third-person problems under the post's unnamed cues
+        for cue, kw in RA_MATRIX_CUES.items():
+            specs.append(PromptSpec(id=f"RA__{prob}__{cue}", set="RA", question=prob, fmt="action", **kw))
     # RA: third-person problems, no cue or a named user in the system prompt.
     for prob in RA_PROBLEMS:
         for cue in RA_CUES:
