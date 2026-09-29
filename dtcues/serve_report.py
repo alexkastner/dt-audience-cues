@@ -102,7 +102,7 @@ class Handler(SimpleHTTPRequestHandler):
         toc = md.toc  # nested <ul> of links to the h2/h3 headings (ids added by the toc extension)
         page = f"""<!doctype html><html><head><meta charset="utf-8"><title>post preview</title>
 <style>body{{font:17px/1.6 Georgia,'Times New Roman',serif;max-width:720px;margin:36px auto;padding:0 20px;color:#111;background:#fff}}
-img{{max-width:100%;height:auto;display:block;margin:.8em auto;cursor:zoom-in}} img.zoomed{{position:fixed;inset:0;z-index:99;max-width:none;width:auto;height:auto;max-height:100vh;margin:auto;background:#fff;box-shadow:0 0 0 100vmax rgba(0,0,0,.6);cursor:zoom-out}}
+img{{max-width:100%;height:auto;display:block;margin:.8em auto;cursor:zoom-in}} p:has(+ p > img){{font-size:14px;line-height:1.45;color:#555;margin:1.6em 0 .3em;padding-left:.8em;border-left:3px solid #ddd}} img.zoomed{{position:fixed;inset:0;z-index:99;max-width:none;width:auto;height:auto;max-height:100vh;margin:auto;background:#fff;box-shadow:0 0 0 100vmax rgba(0,0,0,.6);cursor:zoom-out}}
 h1{{font-size:30px;line-height:1.2}} body{{counter-reset:sec}} h2{{font-size:22px;margin-top:34px;counter-increment:sec}} h2::before{{content:counter(sec) '. ';color:#888}} h3{{font-size:18px}} blockquote{{border-left:3px solid #ccc;margin:14px 0;padding:6px 16px;color:#333;background:#fafaf7}}
 table{{border-collapse:collapse;font:13.5px/1.4 Arial,sans-serif;margin:14px 0;display:block;overflow-x:auto}} th,td{{border:1px solid #ddd;padding:4px 8px;text-align:left;vertical-align:top}} th{{background:#f3f3f0}}
 code{{font:14px Menlo,monospace;background:#f3f3f0;padding:1px 4px;border-radius:3px}} pre{{background:#f3f3f0;padding:10px;overflow:auto}}

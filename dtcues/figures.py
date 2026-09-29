@@ -74,7 +74,7 @@ def cdt_share(model, eff):
 
 def present(cats, share_lists):
     """the categories (in drawing order) that reach 0.5% in any of the given share dicts"""
-    return [c for c in cats if any(sh and sh.get(c, 0) >= 0.5 for sh in share_lists)]
+    return [c for c in cats if any(sh and sh.get(c, 0) >= 2.5 for sh in share_lists)]
 
 
 # ------------------------------------------------------------------ drawing primitives
@@ -119,7 +119,7 @@ def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_
 def legend_handles(cats, marks_label=None):
     hs = [Patch(color=COLOR[c], label=LEGEND[c]) for c in cats]
     if marks_label:
-        hs.append(Line2D([0], [0], color="black", linewidth=1.8, label=marks_label))
+        hs.append(Line2D([0], [0], color="black", marker="|", markersize=14, markeredgewidth=1.8, linestyle="None", label=marks_label))
     return hs
 
 
@@ -267,12 +267,14 @@ def named_rows(model=FB, eff=HI):
     return keep, pooled
 
 
+NAMED_SHOWN = ["barack_obama", "taylor_swift", "dario_amodei", "sam_altman", "elon_musk", "eliezer_yudkowsky",            # famous, do not move Fable 5.1
+               "terry_horgan", "christopher_meacham", "will_macaskill", "andy_egan", "lara_buchak", "huw_price", "caspar_oesterheld", "arif_ahmed",
+               "alan_hajek", "brian_skyrms", "james_joyce", "wolfgang_schwarz"]                                              # philosophers, in order of movement
+
+
 def fig_named():
-    keep, pooled = named_rows()
     items = [("(nothing)", shares(FB, HI, "A__Q_neutral__none")), (q("The user is John Smith.") + " (unknown-name control)", shares(FB, HI, "S__Q_neutral__sys_np_john_smith"))]
-    items += [(q(f"The user is {n}."), shares(FB, HI, p)) for n, p in keep]
-    if pooled:
-        items.append((f"{len(pooled)} other names pooled, none of which moves Fable 5.1 by more than {NO_EFFECT_MAX} points (listed in the caption)", pooled_shares(FB, HI, [p for _, p in pooled])))
+    items += [(q(f"The user is {P.NAMED_PERSONS[k][0]}."), shares(FB, HI, f"S__Q_neutral__sys_np_{k}")) for k in NAMED_SHOWN]
     title = theory_title("Fable 5.1", "when the system prompt is the sentence on the left and the user turn is only the question")
     return fig_stacked("named", items, title, label_width=40)
 
@@ -309,11 +311,46 @@ def fig_books(name="books", pair=None):
         shs = []
         for lab, pers in rws:
             pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
-            shs += [shares(FB, pair[0], pid), shares(FB, pair[1], pid)] if pair else [shares(FB, HI, pid)]
+            shs.append(shares(FB, HI, pid))
         panels.append((t, shs))
-    labels = [l.replace("*", "") for l, _ in rws] if not pair else [x for l, _ in rws for x in (l.replace("*", "") + " (default effort)", l.replace("*", "") + " (max effort)")]
-    title = theory_title("Fable 5.1", "after the sentence on the left, then the sentence in the panel title" + (", at default and at maximum thinking effort" if pair else ""))
+    labels = [l.replace("*", "") for l, _ in rws]
+    title = theory_title("Fable 5.1", "after the sentence on the left, then the sentence in the panel title")
     return fig_panels(name, labels, panels, title, ncol=4, label_width=22, title_width=24, panel_title_size=8)
+
+
+def fig_books_effort():
+    """One number per cell: the share naming the book's theory (CDT for Joyce and for no book, EDT for Ahmed).
+    Bar = default thinking effort, black tick = maximum effort (the layout of the anti-sycophancy figure)."""
+    rws = [(lab, pers) for lab, pers in AH_ROWS if "PhD" not in lab]
+    conds = [("no book mentioned: share naming CDT", None, "CDT")] + [(q(c.strip('"')) + (": share naming CDT" if v == "joyce" else ": share naming EDT"), v, "CDT" if v == "joyce" else "EDT") for c, v in AH_COLS if v is not None]
+    labels = [l.replace("*", "") for l, _ in rws]
+    n_lines = n_label_lines(labels, 22)
+    fig, axes = plt.subplots(1, 4, figsize=(W, 0.3 * n_lines + 0.36 * len(rws) + 2.4), squeeze=False)
+    for ax, (ptitle, v, theory) in zip(axes[0], conds):
+        ys = list(range(len(rws)))[::-1]
+        for y, (lab, pers) in zip(ys, rws):
+            pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
+            a, b = shares(FB, "high", pid), shares(FB, "max", pid)
+            if a:
+                ax.barh(y, a[theory], height=0.58, color=COLOR[theory])
+                if a[theory] >= 14:
+                    ax.text(a[theory] / 2, y, f"{a[theory]:.0f}%", ha="center", va="center", fontsize=8, color="white", fontweight="bold")
+            if b:
+                ax.plot([b[theory], b[theory]], [y - 0.4, y + 0.4], color="black", linewidth=2, solid_capstyle="butt", zorder=5)
+                ax.text(min(b[theory] + 2, 88), y + 0.47, f"{b[theory]:.0f}%", fontsize=7, color="black", ha="left", va="bottom")
+        ax.set_yticks(ys); ax.set_yticklabels([wrap(l, 22) for l in labels], fontsize=8.5)
+        ax.set_xlim(0, 100); ax.set_xticks([0, 50, 100]); ax.set_xticklabels(["0%", "50%", "100%"], fontsize=7.5); ax.tick_params(length=0)
+        ax.set_ylim(-0.7, len(rws) - 0.2); ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True)
+        ax.set_title(wrap(ptitle, 24), fontsize=8, loc="left", pad=6)
+        if ax is not axes[0][0]:
+            ax.tick_params(axis="y", labelleft=False)
+    fig.legend(handles=[Patch(color=COLOR["CDT"], label="share naming CDT at default effort"), Patch(color=COLOR["EDT"], label="share naming EDT at default effort"),
+                        Line2D([0], [0], color="black", marker="|", markersize=14, markeredgewidth=2, linestyle="None", label="the same share at maximum effort")],
+               loc="lower center", ncol=2, frameon=False, fontsize=8.5, bbox_to_anchor=(0.5, -0.005))
+    tl = 6
+    finish(fig, theory_title("Fable 5.1", "after the sentence on the left, then the sentence in the panel title, at the default and at the maximum thinking effort"),
+           bottom=0.7 / fig.get_size_inches()[1], extra=0.17 * tl + 0.2)
+    return save(fig, "books_effort")
 
 
 def fig_views():
@@ -322,7 +359,7 @@ def fig_views():
         items.append((lab, shares(FB, HI, pid)))
         b = shares(FB, HI, _baseline_for(lab)); marks.append(None if b is None else b["CDT"])
     return fig_stacked("views", items, theory_title("Fable 5.1", "after the sentence on the left, in which the asker states a view"), label_width=44,
-                       marks=marks, marks_label="CDT share for the same persona with no stated view")
+                       marks=marks, marks_label="CDT share for the same prompt but without the confidence claim")
 
 
 def cdt_pct(model, eff, pid):
@@ -435,25 +472,37 @@ def fig_reasoning():
 
 def fig_sysprompts():
     from .post_tables import sysprompt_cross_table
-    items = []
+    items, marks, base = [], [], None
     for l in sysprompt_cross_table().splitlines()[2:]:
         cells = [c.strip() for c in l.strip("|").split("|")]
         lab, cdt, fdt = cells[0], float(cells[1].rstrip("%")), float(cells[2].rstrip("%"))
         edt = float(cells[3].split("EDT ")[1].split("%")[0]) if "EDT" in cells[3] else 0.0
         eu = float(cells[3].split("EU ")[1].split("%")[0]) if "EU" in cells[3] else 0.0
-        lab = q(lab.strip('"')) if lab.startswith('"') else lab
+        if lab.startswith("*(none)*"):
+            base = cdt
+        if lab.strip('"').startswith("Note:"):
+            continue   # Alex (2026-09-29): the two "Note: …" variants are left out of the post
+        lab = q(lab.strip('"')) if lab.startswith('"') else lab.replace("*(none)*", "(no system prompt)")
         items.append((lab, {"CDT": cdt, "EDT": edt, "FDT/UDT": fdt, "EU": eu, "none": max(0.0, 100 - cdt - fdt - edt - eu)}))
-    return fig_stacked("sysprompts", items, theory_title("Fable 5.1", "with the system prompt on the left, after the teacher or professor sentence in the user turn", per_bar="Each bar splits 200 answers (100 per persona)."), label_width=46)
+    marks = [base] * len(items)
+    return fig_stacked("sysprompts", items, theory_title("Fable 5.1", "with the system prompt on the left, after the teacher or professor sentence in the user turn", per_bar="Each bar splits 200 answers (100 per persona)."),
+                       label_width=46, marks=marks, marks_label="CDT share with no system prompt")
+
+
+REALISM_DROP = ("Hey, random question", "compute trends", "Solomonoff", "rationalist meetup", "epistemic status")
+REALISM_ORDER = ["(nothing)", "philosophy professor", "refereeing a paper", "software engineer", "AI alignment", "LessWrong reader", "nerd-sniped", "Quick object-level", "MIRI agent", "Sequences", "Two turns"]
 
 
 def fig_realism():
     from .post_tables import realism_table
-    labels, r_vals, z_vals = [], [], []
+    rows_ = []
     for l in realism_table().splitlines()[2:]:
         cells = [c.strip() for c in l.strip("|").split("|")]
-        labels.append(cells[0])
-        r_vals.append(float(cells[1].rstrip("%")) if cells[1].endswith("%") else None)
-        z_vals.append(float(cells[2].rstrip("%")) if cells[2].endswith("%") else None)
+        if any(k in cells[0] for k in REALISM_DROP):
+            continue
+        rows_.append((cells[0].replace("*", ""), float(cells[1].rstrip("%")) if cells[1].endswith("%") else None, float(cells[2].rstrip("%")) if cells[2].endswith("%") else None))
+    rows_.sort(key=lambda r: next((i for i, k in enumerate(REALISM_ORDER) if k in r[0]), 99))
+    labels = [r[0] for r in rows_]; r_vals = [r[1] for r in rows_]; z_vals = [r[2] for r in rows_]
     lw_ = 32
     n_lines = n_label_lines(labels, lw_)
     fig, axes = plt.subplots(1, 2, figsize=(W, 0.32 * n_lines + 0.36 * len(labels) + 2.2))
@@ -471,10 +520,11 @@ def fig_realism():
 def fig_pdoom():
     from .ad_report import stats, pctl
     cache = {json.loads(l)["hash"]: json.loads(l) for l in open(ROOT / "results" / "judge_numbers.jsonl")}
-    fig, axes = plt.subplots(1, 2, figsize=(W, 0.42 * len(PDOOM_ROWS) + 1.6), sharey=True)
-    ys = list(range(len(PDOOM_ROWS)))[::-1]
+    ROWS = [r for r in PDOOM_ROWS if not r[1].startswith("ADC__")]   # Alex (2026-09-29): no two-turn rows in this figure
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.42 * len(ROWS) + 1.6), sharey=True)
+    ys = list(range(len(ROWS)))[::-1]
     for ax, qq, xlab, xlim in [(axes[0], "Q_pdoom", "P(loss of control this century)", (0, 30)), (axes[1], "Q_timeline", "year AI can do essentially all human work", (2030, 2066))]:
-        for y, (lab, pat) in zip(ys, PDOOM_ROWS):
+        for y, (lab, pat) in zip(ys, ROWS):
             st = stats(FB, HI, pat.format(q=qq), cache); v = st["vals"]
             if not v:
                 continue
@@ -484,14 +534,14 @@ def fig_pdoom():
         if qq == "Q_pdoom":
             ax.set_xticks([0, 5, 10, 15, 20, 25, 30]); ax.set_xticklabels(["0%", "5%", "10%", "15%", "20%", "25%", "30%"])
         base = pctl(stats(FB, HI, PDOOM_ROWS[0][1].format(q=qq), cache)["vals"], .5); ax.axvline(base, color="#999999", linewidth=1, linestyle=":")
-    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(q(l.strip('"')) if l.startswith('"') else l, 38) for l, _ in PDOOM_ROWS], fontsize=7.5)
+    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(q(l.strip('"')) if l.startswith('"') else l, 38) for l, _ in ROWS], fontsize=7.5)
     finish(fig, "Fable 5.1's answers to the two questions quoted above, asked right after the cue on the left: median of 100 answers (dot) and interquartile range (bar); the dotted line is the median with no cue.")
     return save(fig, "pdoom")
 
 
 ALL = {"personas": fig_personas, "named": fig_named, "openers": fig_openers, "wording": fig_wording, "books": fig_books, "views": fig_views, "matrix": fig_matrix,
        "acausal": fig_acausal, "named_actions": fig_named_actions, "second_turn": fig_second_turn, "effort": fig_effort,
-       "books_effort": lambda: fig_books("books_effort", pair=("high", "max")), "reasoning": fig_reasoning, "sysprompts": fig_sysprompts, "realism": fig_realism,
+       "books_effort": fig_books_effort, "reasoning": fig_reasoning, "sysprompts": fig_sysprompts, "realism": fig_realism,
        "pdoom": fig_pdoom, "personas_opus5": lambda: fig_personas_model("claude-opus-5", "high", "personas_opus5", "Opus 5"),
        "personas_opus55": lambda: fig_personas_model("claude-opus-5-5", "high", "personas_opus55", "Opus 5.5"),
        "personas_astra": lambda: fig_personas_model("gpt-6-astra", "None", "personas_astra", "GPT-6 Astra"), "effort_models": fig_effort_models}
