@@ -439,7 +439,7 @@ def fig_realism():
 def fig_pdoom():
     from .ad_report import stats, pctl
     cache = {json.loads(l)["hash"]: json.loads(l) for l in open(ROOT / "results" / "judge_numbers.jsonl")}
-    fig, axes = plt.subplots(1, 2, figsize=(W, 0.30 * len(PDOOM_ROWS) + 1.4), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.42 * len(PDOOM_ROWS) + 1.4), sharey=True)
     ys = list(range(len(PDOOM_ROWS)))[::-1]
     for ax, qq, xlab, xlim in [(axes[0], "Q_pdoom", "P(loss of control this century)", (0, 30)), (axes[1], "Q_timeline", "year AI can do essentially all human work", (2030, 2066))]:
         for y, (lab, pat) in zip(ys, PDOOM_ROWS):
@@ -452,7 +452,7 @@ def fig_pdoom():
         if qq == "Q_pdoom":
             ax.set_xticks([0, 5, 10, 15, 20, 25, 30]); ax.set_xticklabels(["0%", "5%", "10%", "15%", "20%", "25%", "30%"])
         base = pctl(stats(FB, HI, PDOOM_ROWS[0][1].format(q=qq), cache)["vals"], .5); ax.axvline(base, color="#999999", linewidth=1, linestyle=":")
-    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(l.replace('"', "“", 1).replace('"', "”") if l.startswith('"') else l, 34) for l, _ in PDOOM_ROWS], fontsize=7)
+    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(l.replace('"', "“", 1).replace('"', "”") if l.startswith('"') else l, 38) for l, _ in PDOOM_ROWS], fontsize=7)
     fig.suptitle("Median answer (dot) and interquartile range (bar); dotted line = median with no cue", x=0.01, ha="left", fontsize=8.5, y=0.995)
     fig.tight_layout(rect=[0, 0, 1, 0.98])
     return save(fig, "pdoom")
