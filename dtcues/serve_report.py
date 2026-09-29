@@ -64,6 +64,11 @@ class Handler(SimpleHTTPRequestHandler):
             return self._json(200, data)
         if path in ("/", ""):
             self.send_response(302); self.send_header("Location", "/report_v2.html"); self.end_headers(); return
+        if path.startswith("/figures/"):   # figures live in post/figures/, next to the draft
+            fp = ROOT.parent / "post" / "figures" / Path(path).name
+            if fp.exists():
+                data = fp.read_bytes(); self.send_response(200); self.send_header("Content-Type", "image/png" if fp.suffix == ".png" else "image/svg+xml")
+                self.send_header("Content-Length", str(len(data))); self.send_header("Cache-Control", "no-cache"); self.end_headers(); self.wfile.write(data); return
         return super().do_GET()
 
     def do_POST(self):
