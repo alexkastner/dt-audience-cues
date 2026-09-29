@@ -178,6 +178,8 @@ Interestingly, if the model knows the user is James Joyce or Wolfgang Schwarz (t
 | System prompt: "The user is Wolfgang Schwarz." | 15% | 85% | 1% | 81% |
 <!-- /table -->
 
+[Claude: with the problems reworded in the third person and the question asked as "In this situation, do you think a rational agent should …" (results/NAMED_ACTIONS.md, last section), the same two system-prompt users move Fable 5.1 further: Joyce → two-box 35% in Newcomb and 97% in the transparent case, don't pay 45%; Schwarz → two-box 25% / 99%, defect 16%, don't pay 100%. The no-cue baseline stays at 0% everywhere. I can swap that table in or add it as a second table; tell me which.]
+
 ## But Fable 5.1 stays consistent: once it has named CDT as its favorite, it chooses the CDT option in concrete problems
 
 Ask for the favorite theory first, then pose a concrete problem in the next turn. When the first turn produced CDT (resp. FDT/UDT), the second turn follows CDT (resp. FDT/UDT) almost every time. (This is not changed by increasing the thinking effort, except for the twin PD where Fable 5.1 on max effort only defects 43% of the time after saying CDT in the first turn.)

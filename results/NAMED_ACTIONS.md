@@ -54,6 +54,16 @@ which fits both of their theories; Yudkowsky and Soares in the system prompt mak
 post; the exceptions are the FDT-distinctive problems, and identity carried in the system prompt reaches the choices much more than the
 same identity stated in the user turn.
 
+**Third-person wording ("In this situation, do you think a rational agent should …", tables at the end of this file).** Asking for the model's
+opinion about a rational agent rather than for its own choice makes the named-user effects larger and more theory-consistent, without changing
+the no-cue baseline (still the FDT option everywhere). Fable 5.1 with Joyce as the system-prompt user two-boxes in the transparent case 97% (88%
+in the second-person wording) and now two-boxes in ordinary Newcomb 35% (18%); with Schwarz it refuses the mugger 100% (81%) and defects against
+the twin 16% (1%). Opus 5.5 moves much further: Joyce and Schwarz get two-boxing in ordinary Newcomb 96% (8% and 0% before) and in the transparent
+case 99–100%, Schwarz refuses the mugger 100%, and Arif Ahmed now gets EDT's own pattern on two of its three distinctive cases, two-boxing in the
+transparent case 98% (2% before) and refusing the mugger 82% (12%), while still one-boxing in ordinary Newcomb. The smoking lesion is the one
+verdict no name moves in either wording: nobody says a rational agent should not smoke. Soares still flips Fable 5.1's Bomb to the bomb box (100%)
+but Opus 5.5 only to 43% (92% before).
+
 
 ## Claude Fable 5.1
 
