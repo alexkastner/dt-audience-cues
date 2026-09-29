@@ -549,6 +549,13 @@ NAMED_PERSONS: dict[str, tuple[str, str]] = {
     "barack_obama": ("Barack Obama", "power"), "donald_trump": ("Donald Trump", "power"), "bill_gates": ("Bill Gates", "power"),
     "peter_thiel": ("Peter Thiel", "power"), "taylor_swift": ("Taylor Swift", "power"),
     "john_smith": ("John Smith", "control"),
+    # more academic philosophers with published decision-theory positions (Alex, 2026-09-29)
+    "huw_price": ("Huw Price", "acad"), "andy_egan": ("Andy Egan", "acad"), "terry_horgan": ("Terry Horgan", "acad"), "frank_arntzenius": ("Frank Arntzenius", "acad"),
+    "brian_skyrms": ("Brian Skyrms", "acad"), "jack_spencer": ("Jack Spencer", "acad"), "ian_wells": ("Ian Wells", "acad"), "caspar_hare": ("Caspar Hare", "acad"),
+    "brian_hedden": ("Brian Hedden", "acad"), "dmitri_gallow": ("Dmitri Gallow", "acad"), "ralph_wedgwood": ("Ralph Wedgwood", "acad"), "richard_bradley": ("Richard Bradley", "acad"),
+    "rachael_briggs": ("Rachael Briggs", "acad"), "alan_hajek": ("Alan Hájek", "acad"), "lara_buchak": ("Lara Buchak", "acad"), "johan_gustafsson": ("Johan Gustafsson", "acad"),
+    "christopher_meacham": ("Christopher Meacham", "acad"), "melissa_fusco": ("Melissa Fusco", "acad"), "kenny_easwaran": ("Kenny Easwaran", "acad"), "adam_elga": ("Adam Elga", "acad"),
+    "paul_weirich": ("Paul Weirich", "acad"), "isaac_levi": ("Isaac Levi", "acad"),
 }
 
 NAMED_ACTION_KEYS = ["arif_ahmed", "james_joyce", "wolfgang_schwarz", "caspar_oesterheld", "will_macaskill", "eliezer_yudkowsky", "nate_soares", "wei_dai",
