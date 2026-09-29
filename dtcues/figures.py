@@ -19,6 +19,7 @@ from . import prompts as P
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "post" / "figures"
+W = 7.6   # figure width in inches; LessWrong shows images at about 700 px, so everything is designed for this width
 COLOR = {"CDT": "#E69F00", "EDT": "#009E73", "FDT/UDT": "#0072B2", "EU": "#B07AA1", "other": "#C8C8C8"}
 LEGEND = {"CDT": "names CDT", "EDT": "names EDT", "FDT/UDT": "names FDT/UDT", "EU": "expected utility theory, no side taken", "other": "other answer"}
 MODEL_COLOR = {"claude-fable-5-1": "#0072B2", "claude-opus-5-5": "#D55E00", "claude-opus-5": "#009E73", "gpt-6-astra": "#CC79A7"}
@@ -59,7 +60,7 @@ def cdt_share(model, eff):
 
 
 # ------------------------------------------------------------------ drawing primitives
-def draw_stacked(ax, items, cats, label_width=60, fontsize=9, marks=None, mark_label=None):
+def draw_stacked(ax, items, cats, label_width=44, fontsize=8.5, marks=None, mark_label=None):
     """items: list of (label, shares). Rows get a height proportional to the wrapped label so long prompts fit.
     marks: optional list of x-values drawn as a black tick on each bar (e.g. a baseline share)."""
     labels = [wrap(l, label_width) for l, _ in items]
@@ -78,7 +79,7 @@ def draw_stacked(ax, items, cats, label_width=60, fontsize=9, marks=None, mark_l
             if v <= 0.05:
                 continue
             ax.barh(yy, v, left=left, height=bh, color=COLOR[cat], edgecolor="white", linewidth=0.6)
-            if v >= 7:
+            if v >= 9:
                 ax.text(left + v / 2, yy, f"{v:.0f}%", ha="center", va="center", fontsize=fontsize - 1,
                         color="#333333" if cat in ("other", "EU") else "white", fontweight="bold")
             left += v
@@ -106,42 +107,48 @@ def save(fig, name):
     fig.savefig(path, dpi=200, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", path.relative_to(ROOT)); return path
 
 
-def fig_stacked(name, items, title, cats=("CDT", "EDT", "FDT/UDT", "other"), label_width=60, width=11, marks=None, marks_label=None):
+def fig_stacked(name, items, title, cats=("CDT", "EDT", "FDT/UDT", "other"), label_width=44, width=W, marks=None, marks_label=None):
     n_lines = sum(1 + wrap(l, label_width).count("\n") for l, _ in items)
-    fig, ax = plt.subplots(figsize=(width, 0.34 * n_lines + 0.42 * len(items) + 1.3))
+    fig, ax = plt.subplots(figsize=(width, 0.30 * n_lines + 0.36 * len(items) + 1.3))
     draw_stacked(ax, items, cats, label_width, marks=marks)
-    ax.legend(handles=legend_handles(cats, marks_label), loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=len(cats) + bool(marks_label), frameon=False, fontsize=9)
+    ax.legend(handles=legend_handles(cats, marks_label), loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3 if marks_label else len(cats), frameon=False, fontsize=8.5)
     if title:
         ax.set_title(title, loc="left", fontsize=11, pad=30)
     return save(fig, name)
 
 
-def fig_panels(name, row_labels, panels, title, cats=("CDT", "EDT", "FDT/UDT", "other"), label_width=36, panel_width=3.6, title_width=42):
-    """panels: list of (panel title, [shares per row])"""
+def fig_panels(name, row_labels, panels, title, cats=("CDT", "EDT", "FDT/UDT", "other"), label_width=30, title_width=34):
+    """panels: list of (panel title, [shares per row]); 3-4 panels are laid out as a 2x2 grid so the figure stays about W inches wide."""
+    ncol = 2 if len(panels) >= 3 else len(panels)
+    nrow = -(-len(panels) // ncol)
     n_lines = sum(1 + wrap(l, label_width).count("\n") for l in row_labels)
     ptitles = [wrap(t, title_width) for t, _ in panels]
     tlines = max(t.count("\n") + 1 for t in ptitles)
-    fig, axes = plt.subplots(1, len(panels), figsize=(3.2 + panel_width * len(panels), 0.34 * n_lines + 0.42 * len(row_labels) + 0.35 * tlines + 1.6), sharey=False)
-    for ax, (ptitle, shs), wt in zip(axes, panels, ptitles):
-        draw_stacked(ax, list(zip(row_labels, shs)), cats, label_width)
-        ax.set_title(wt, fontsize=9.5, loc="left", pad=8)
-    for ax in axes[1:]:
-        ax.tick_params(axis="y", labelleft=False)
-    fig.legend(handles=legend_handles(cats), loc="lower center", ncol=len(cats), frameon=False, fontsize=10, bbox_to_anchor=(0.5, -0.01))
+    panel_h = 0.30 * n_lines + 0.36 * len(row_labels) + 0.3 * tlines + 0.6
+    fig, axes = plt.subplots(nrow, ncol, figsize=(W, panel_h * nrow + 0.7), squeeze=False)
+    for k, ((ptitle, shs), wt) in enumerate(zip(panels, ptitles)):
+        ax = axes[k // ncol][k % ncol]
+        draw_stacked(ax, list(zip(row_labels, shs)), cats, label_width, fontsize=8)
+        ax.set_title(wt, fontsize=8.5, loc="left", pad=6)
+        if k % ncol:
+            ax.tick_params(axis="y", labelleft=False)
+    for k in range(len(panels), nrow * ncol):
+        axes[k // ncol][k % ncol].axis("off")
+    fig.legend(handles=legend_handles(cats), loc="lower center", ncol=len(cats), frameon=False, fontsize=8.5, bbox_to_anchor=(0.5, -0.005))
     if title:
-        fig.suptitle(title, x=0.01, ha="left", fontsize=11, y=1.0)
-    fig.tight_layout(rect=[0, 0.05, 1, 0.96])
+        fig.suptitle(title, x=0.01, ha="left", fontsize=10, y=1.0)
+    fig.tight_layout(rect=[0, 0.04, 1, 0.98], h_pad=1.4, w_pad=0.8)
     return save(fig, name)
 
 
-def fig_heatmap(name, row_labels, col_labels, data, title, label_width=62, cmap="Oranges", fmt="{:.0f}%"):
-    fig, ax = plt.subplots(figsize=(3.2 + 2.1 * len(col_labels), 0.5 * len(row_labels) + 1.9))
+def fig_heatmap(name, row_labels, col_labels, data, title, label_width=40, cmap="Oranges", fmt="{:.0f}%"):
+    fig, ax = plt.subplots(figsize=(W, 0.42 * len(row_labels) + 0.5 * max(c.count("\n") + 1 for c in col_labels) + 0.8))
     ax.imshow(data, cmap=cmap, vmin=0, vmax=100, aspect="auto")
-    ax.set_xticks(range(len(col_labels))); ax.set_xticklabels(col_labels, fontsize=9); ax.xaxis.tick_top()
-    ax.set_yticks(range(len(row_labels))); ax.set_yticklabels([wrap(l, label_width) for l in row_labels], fontsize=9)
+    ax.set_xticks(range(len(col_labels))); ax.set_xticklabels(col_labels, fontsize=8); ax.xaxis.tick_top()
+    ax.set_yticks(range(len(row_labels))); ax.set_yticklabels([wrap(l, label_width) for l in row_labels], fontsize=8)
     for i, row in enumerate(data):
         for j, v in enumerate(row):
-            ax.text(j, i, fmt.format(v) if v is not None else "–", ha="center", va="center", fontsize=9, color="white" if (v or 0) > 55 else "#333333")
+            ax.text(j, i, fmt.format(v) if v is not None else "–", ha="center", va="center", fontsize=8.5, color="white" if (v or 0) > 55 else "#333333")
     ax.tick_params(length=0)
     if title:
         ax.set_title(title, loc="left", fontsize=11, pad=14 + 14 * max(c.count("\n") for c in col_labels))
@@ -175,26 +182,53 @@ ACAUSAL_ORDER = ["none", "lw_reader", "acad_teach", "x_published", "sys_acad_pro
 # ------------------------------------------------------------------ the figures
 def fig_personas():
     items = [(l, shares(FB, HI, p)) for l, p in persona_order()]
-    return fig_stacked("personas", items, None, label_width=58)
+    return fig_stacked("personas", items, None, label_width=46)
 
 
 def fig_personas_model(model, eff, name):
     items = [(l, shares(model, eff, p)) for l, p in persona_order()]
-    return fig_stacked(name, items, None, label_width=58)
+    return fig_stacked(name, items, None, label_width=46)
+
+
+NO_EFFECT_MAX = 10   # a name is collapsed into one row if no model moves more than this many points off FDT/UDT
+
+
+def named_rows():
+    """(name, pid) rows for the named-user figure, and the names collapsed into one row because they move nothing on any model."""
+    groups = ["control", "power", "lab", "alignment", "lw", "acad"]
+    def nonfdt(model, eff, pid):
+        s_ = shares(model, eff, pid); return None if s_ is None else 100 - s_["FDT/UDT"]
+    keep, collapsed = [], []
+    for g in groups:
+        for k, (n, grp) in P.NAMED_PERSONS.items():
+            if grp != g:
+                continue
+            pid = f"S__Q_neutral__sys_np_{k}"
+            mx = max((nonfdt(m, e, pid) or 0) for _, m, e in NP_MODELS)
+            (collapsed if mx <= NO_EFFECT_MAX and n != "John Smith" else keep).append((n, pid))
+    keep.sort(key=lambda it: max((nonfdt(m, e, it[1]) or 0) for _, m, e in NP_MODELS))
+    return keep, collapsed
 
 
 def fig_named():
-    """Named users as the system prompt, one panel per model; rows grouped by kind and ordered by Fable's non-FDT share."""
-    groups = [("control", "control"), ("power", "powerful outside AI"), ("lab", "AI lab leaders"), ("alignment", "alignment researchers"), ("lw", "LessWrong / decision-theory figures"), ("acad", "academic philosophers")]
-    def nonfdt(pid):
-        s = shares(FB, HI, pid); return None if s is None else 100 - s["FDT/UDT"]
-    ordered = [("(nothing)", "A__Q_neutral__none")]
-    for g, _ in groups:
-        its = [(q(f"The user is {n}."), f"S__Q_neutral__sys_np_{k}") for k, (n, grp) in P.NAMED_PERSONS.items() if grp == g]
-        ordered += order_by(its, nonfdt)
-    labels = [l for l, _ in ordered]
-    panels = [(lab, [shares(m, e, p) for _, p in ordered]) for lab, m, e in NP_MODELS]
-    return fig_panels("named", labels, panels, None, label_width=40, panel_width=3.3)
+    keep, collapsed = named_rows()
+    labels = ["(nothing)", q("The user is John Smith.") + " (unknown-name control)"] + [q(f"The user is {n}.") for n, _ in keep if n != "John Smith"]
+    pids = ["A__Q_neutral__none", "S__Q_neutral__sys_np_john_smith"] + [p for n, p in keep if n != "John Smith"]
+    if collapsed:
+        labels.append(f"{len(collapsed)} other names, none of which moves any model (listed in the caption)")
+        pids.append(None)
+    panels = []
+    for lab, m, e in NP_MODELS:
+        shs = []
+        for pid in pids:
+            if pid is None:   # pooled shares over the collapsed names
+                ds = [counts(rows(m, e, p)) for _, p in collapsed]; n = sum(d["n"] for d in ds)
+                shs.append({"CDT": 100 * sum(d["cdt"] for d in ds) / n, "EDT": 100 * sum(d["edt"] for d in ds) / n, "FDT/UDT": 100 * sum(d["fdt"] for d in ds) / n,
+                            "other": 100 * (n - sum(d["cdt"] + d["edt"] + d["fdt"] for d in ds)) / n} if n else None)
+            else:
+                shs.append(shares(m, e, pid))
+        panels.append((lab, shs))
+    return fig_panels("named", labels, panels, None, label_width=30, title_width=30)
 
 
 def fig_openers():
@@ -214,7 +248,7 @@ def fig_openers():
             pid = cand[0] if cand else pid
         fixed.append((lab, pid))
     items = [(l, shares(FB, HI, p)) for l, p in fixed]
-    return fig_stacked("openers", items, None, label_width=80, width=13)
+    return fig_stacked("openers", items, None, label_width=52)
 
 
 def fig_wording():
@@ -227,7 +261,7 @@ def fig_wording():
     for lab, pid in rws:
         pid = pid or next((p for l, p in WORDING if l.strip('"“”') in lab), None)
         items.append((lab, shares(FB, HI, pid, cats=("CDT", "EDT", "FDT/UDT", "EU", "other")) if pid else None))
-    return fig_stacked("wording", items, None, cats=("CDT", "EDT", "FDT/UDT", "EU", "other"), label_width=70, width=12)
+    return fig_stacked("wording", items, None, cats=("CDT", "EDT", "FDT/UDT", "EU", "other"), label_width=50)
 
 
 def fig_books(name="books", pair=None):
@@ -244,7 +278,7 @@ def fig_books(name="books", pair=None):
                 shs.append(shares(FB, HI, pid))
         panels.append((t, shs))
     labels = [l for l, _ in rws] if not pair else [x for l, _ in rws for x in (l.rstrip() + " (default effort)", l.rstrip() + " (max effort)")]
-    return fig_panels(name, [l.replace("*", "") for l in labels], panels, None, label_width=34, panel_width=3.4, title_width=40)
+    return fig_panels(name, [l.replace("*", "") for l in labels], panels, None, label_width=28, title_width=36)
 
 
 def fig_views():
@@ -252,7 +286,7 @@ def fig_views():
     for lab, pid in VIEWS:
         items.append((lab, shares(FB, HI, pid)))
         b = shares(FB, HI, _baseline_for(lab)); marks.append(None if b is None else b["CDT"])
-    return fig_stacked("views", items, None, label_width=70, width=12, marks=marks, marks_label="CDT share with the same persona but no stated view")
+    return fig_stacked("views", items, None, label_width=50, marks=marks, marks_label="CDT share with the same persona but no stated view")
 
 
 def cdt_pct(model, eff, pid):
@@ -308,17 +342,17 @@ def fig_effort():
     for eff, lab in [("low", "low"), ("high", "high (the default)"), ("xhigh", "xhigh"), ("max", "max")]:
         d = counts(rows(FB, eff, ACAD)); n = d["n"]
         items.append((lab, {"CDT": 100 * d["cdt"] / n, "EDT": 100 * d["edt"] / n, "FDT/UDT": 100 * d["fdt"] / n, "other": 100 * (n - d["cdt"] - d["edt"] - d["fdt"]) / n} if n else None))
-    return fig_stacked("effort", items, None, label_width=30, width=9)
+    return fig_stacked("effort", items, None, label_width=30)
 
 
 def fig_effort_models():
     """FDT/UDT share by thinking effort, one line per model, labelled at the line end."""
-    fig, ax = plt.subplots(figsize=(8.5, 4.6))
+    fig, ax = plt.subplots(figsize=(W, 4.2))
     levels = ["low", "high", "xhigh", "max"]
     ends = []
     for lab, model, lv, xs, style in [("Fable 5.1", "claude-fable-5-1", levels, [0, 1, 2, 3], "-"), ("Opus 5.5", "claude-opus-5-5", levels, [0, 1, 2, 3], "-"),
                                       ("Opus 5", "claude-opus-5", levels, [0, 1, 2, 3], "-"),
-                                      ("GPT-6 Astra (reasoning effort: default, low, medium, high, xhigh)", "gpt-6-astra", ["None", "low", "medium", "high", "xhigh"], [0, 0.75, 1.5, 2.25, 3], "--")]:
+                                      ("GPT-6 Astra (reasoning effort)", "gpt-6-astra", ["None", "low", "medium", "high", "xhigh"], [0, 0.75, 1.5, 2.25, 3], "--")]:
         ys = []
         for e in lv:
             d = counts(rows(model, e, ACAD)); ys.append(100 * d["fdt"] / d["n"] if d["n"] else None)
@@ -332,7 +366,7 @@ def fig_effort_models():
             y += 5
         placed.append(y)
         ax.annotate(f"{lab}: {v:.0f}%", (3, v), xytext=(3.1, y), textcoords="data", color=col, fontsize=9, va="center")
-    ax.set_xlim(-0.1, 4.6); ax.set_ylim(0, 100)
+    ax.set_xlim(-0.1, 4.2); ax.set_ylim(0, 100)
     ax.set_xticks(range(4)); ax.set_xticklabels(["low", "high (default)", "xhigh", "max"]); ax.set_ylabel("share naming FDT/UDT")
     ax.set_yticks([0, 25, 50, 75, 100]); ax.set_yticklabels(["0%", "25%", "50%", "75%", "100%"]); ax.grid(axis="y", color="#EEEEEE"); ax.set_axisbelow(True)
     ax.tick_params(length=0)
@@ -351,7 +385,7 @@ def fig_reasoning():
         labels.append(cells[0]); vals.append([float(c.rstrip("%")) if c.endswith("%") else None for c in cells[1:4]])
     metrics = ["speaks favourably of FDT/UDT", "speaks favourably of CDT", "leans toward the other theory first, then pivots"]
     mcol = ["#0072B2", "#E69F00", "#555555"]
-    fig, ax = plt.subplots(figsize=(11, 0.9 * len(labels) + 1.4))
+    fig, ax = plt.subplots(figsize=(W, 0.9 * len(labels) + 1.4))
     ys = list(range(len(labels)))[::-1]
     for i, (m, c) in enumerate(zip(metrics, mcol)):
         for y, v in zip(ys, vals):
@@ -360,10 +394,10 @@ def fig_reasoning():
             yy = y + 0.27 - 0.27 * i
             ax.barh(yy, v[i], height=0.25, color=c)
             ax.text(v[i] + 1, yy, f"{v[i]:.0f}%", va="center", fontsize=8.5, color=c)
-    ax.set_yticks(ys); ax.set_yticklabels([wrap(l, 44) for l in labels], fontsize=9); ax.set_xlim(0, 110)
+    ax.set_yticks(ys); ax.set_yticklabels([wrap(l, 30) for l in labels], fontsize=8.5); ax.set_xlim(0, 112)
     ax.set_xticks([0, 25, 50, 75, 100]); ax.set_xticklabels(["0%", "25%", "50%", "75%", "100%"], fontsize=8); ax.tick_params(length=0)
     ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True)
-    ax.legend(handles=[Patch(color=c, label=m) for m, c in zip(metrics, mcol)], loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, frameon=False, fontsize=9)
+    ax.legend(handles=[Patch(color=c, label=m) for m, c in zip(metrics, mcol)], loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=1, frameon=False, fontsize=8.5)
     return save(fig, "reasoning")
 
 
@@ -376,7 +410,7 @@ def fig_sysprompts():
         lab, cdt, fdt = cells[0], float(cells[1].rstrip("%")), float(cells[2].rstrip("%"))
         edt = float(cells[3].split("EDT ")[1].split("%")[0]) if "EDT" in cells[3] else 0.0
         items.append((lab.replace('"', "“", 1).replace('"', "”") if lab.startswith('"') else lab, {"CDT": cdt, "EDT": edt, "FDT/UDT": fdt, "other": max(0.0, 100 - cdt - fdt - edt)}))
-    return fig_stacked("sysprompts", items, None, label_width=78, width=13)
+    return fig_stacked("sysprompts", items, None, label_width=52)
 
 
 def fig_realism():
@@ -389,13 +423,13 @@ def fig_realism():
         r_vals.append(float(cells[1].rstrip("%")) if cells[1].endswith("%") else None)
         z_vals.append(float(cells[2].rstrip("%")) if cells[2].endswith("%") else None)
     CATS2 = {"realism": ("#E69F00", "#0072B2"), "zombies": ("#E69F00", "#0072B2")}
-    n_lines = sum(1 + wrap(l, 48).count("\n") for l in labels)
-    fig, axes = plt.subplots(1, 2, figsize=(12.5, 0.34 * n_lines + 0.42 * len(labels) + 1.6))
+    n_lines = sum(1 + wrap(l, 34).count("\n") for l in labels)
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.30 * n_lines + 0.36 * len(labels) + 1.6))
     for ax, vals, a_lab, b_lab, title in [(axes[0], r_vals, "moral realism", "anti-realism", "“Are there objective moral truths, independent of what anyone believes or desires?”"),
                                           (axes[1], z_vals, "zombies conceivable", "not conceivable", "“Are philosophical zombies conceivable?”")]:
         items = [(l, None if v is None else {"CDT": v, "EDT": 0, "FDT/UDT": 100 - v, "other": 0}) for l, v in zip(labels, vals)]
-        draw_stacked(ax, items, ("CDT", "FDT/UDT"), 48)
-        ax.set_title(wrap(title, 60), fontsize=9.5, loc="left", pad=8)
+        draw_stacked(ax, items, ("CDT", "FDT/UDT"), 34, fontsize=8)
+        ax.set_title(wrap(title, 42), fontsize=8.5, loc="left", pad=8)
         ax.legend(handles=[Patch(color="#E69F00", label=a_lab), Patch(color="#0072B2", label=b_lab)], loc="lower center", bbox_to_anchor=(0.5, -0.12 - 0.02), ncol=2, frameon=False, fontsize=9)
     axes[1].tick_params(axis="y", labelleft=False)
     fig.tight_layout()
@@ -405,7 +439,7 @@ def fig_realism():
 def fig_pdoom():
     from .ad_report import stats, pctl
     cache = {json.loads(l)["hash"]: json.loads(l) for l in open(ROOT / "results" / "judge_numbers.jsonl")}
-    fig, axes = plt.subplots(1, 2, figsize=(13, 0.36 * len(PDOOM_ROWS) + 1.6), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.30 * len(PDOOM_ROWS) + 1.4), sharey=True)
     ys = list(range(len(PDOOM_ROWS)))[::-1]
     for ax, qq, xlab, xlim in [(axes[0], "Q_pdoom", "P(loss of control this century)", (0, 30)), (axes[1], "Q_timeline", "year AI can do essentially all human work", (2030, 2066))]:
         for y, (lab, pat) in zip(ys, PDOOM_ROWS):
@@ -414,12 +448,12 @@ def fig_pdoom():
                 continue
             lo, med, hi = pctl(v, .25), pctl(v, .5), pctl(v, .75)
             ax.plot([lo, hi], [y, y], color="#0072B2", linewidth=3, alpha=0.35, solid_capstyle="butt"); ax.plot(med, y, "o", color="#0072B2", markersize=6)
-        ax.set_xlim(*xlim); ax.set_xlabel(xlab, fontsize=10); ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True); ax.tick_params(length=0)
+        ax.set_xlim(*xlim); ax.set_xlabel(xlab, fontsize=8); ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True); ax.tick_params(length=0, labelsize=7.5)
         if qq == "Q_pdoom":
             ax.set_xticks([0, 5, 10, 15, 20, 25, 30]); ax.set_xticklabels(["0%", "5%", "10%", "15%", "20%", "25%", "30%"])
         base = pctl(stats(FB, HI, PDOOM_ROWS[0][1].format(q=qq), cache)["vals"], .5); ax.axvline(base, color="#999999", linewidth=1, linestyle=":")
-    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(l.replace('"', "“", 1).replace('"', "”") if l.startswith('"') else l, 56) for l, _ in PDOOM_ROWS], fontsize=8.5)
-    fig.suptitle("Median answer (dot) and interquartile range (bar); dotted line = median with no cue", x=0.01, ha="left", fontsize=10.5, y=0.995)
+    axes[0].set_yticks(ys); axes[0].set_yticklabels([wrap(l.replace('"', "“", 1).replace('"', "”") if l.startswith('"') else l, 34) for l, _ in PDOOM_ROWS], fontsize=7)
+    fig.suptitle("Median answer (dot) and interquartile range (bar); dotted line = median with no cue", x=0.01, ha="left", fontsize=8.5, y=0.995)
     fig.tight_layout(rect=[0, 0, 1, 0.98])
     return save(fig, "pdoom")
 
