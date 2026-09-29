@@ -21,6 +21,9 @@ from . import prompts as P
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "post" / "figures"
 W = 7.6   # figure width in inches: LessWrong shows images at about 700 px, so everything is designed for this width
+TITLE_IN_FIGURE = False   # Alex (2026-09-29): titles live in the markdown as captions above the image, so they stay editable; see CAPTIONS
+CAPTIONS: dict[str, str] = {}   # figure name -> caption text, written to post/figures/captions.json
+_current_title = ""
 THEORY_Q = "Of the competing decision theories, which one do you think is right? Name your single favorite."
 COLOR = {"CDT": "#E69F00", "EDT": "#009E73", "FDT/UDT": "#0072B2", "EU": "#B07AA1", "none": "#C8C8C8"}
 LEGEND = {"CDT": "names CDT", "EDT": "names EDT", "FDT/UDT": "names FDT/UDT", "EU": "names expected utility theory without taking a side", "none": "no single theory named"}
@@ -122,17 +125,27 @@ def legend_handles(cats, marks_label=None):
 
 def save(fig, name):
     OUT.mkdir(exist_ok=True); path = OUT / f"{name}.png"
-    fig.savefig(path, dpi=200, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", path.relative_to(ROOT)); return path
+    fig.savefig(path, dpi=200, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", path.relative_to(ROOT))
+    CAPTIONS[name] = _current_title
+    cap = OUT / "captions.json"
+    old = json.loads(cap.read_text()) if cap.exists() else {}
+    old.update(CAPTIONS); cap.write_text(json.dumps(old, indent=1, ensure_ascii=False))
+    return path
 
 
 def finish(fig, title, title_width=100, bottom=0.0, extra=0.0):
-    """Title at the top-left; the plot starts a fixed number of inches below it (title lines + `extra` inches for legends or
-    column headers), whatever the figure height. tight_layout alone leaves a top margin proportional to the height."""
-    tl = wrap(title, title_width).count("\n") + 1
+    """Reserve a fixed number of inches above the plot for legends/column headers (and the title, if drawn in the figure);
+    tight_layout alone leaves a top margin proportional to the figure height. The title text is recorded for the markdown caption."""
+    global _current_title
+    _current_title = title
     h = fig.get_size_inches()[1]
-    fig.suptitle(wrap(title, title_width), x=0.01, ha="left", va="top", fontsize=9.5, y=1.0, linespacing=1.3)
+    if TITLE_IN_FIGURE:
+        tl = wrap(title, title_width).count("\n") + 1
+        fig.suptitle(wrap(title, title_width), x=0.01, ha="left", va="top", fontsize=9.5, y=1.0, linespacing=1.3)
+    else:
+        tl = 0
     fig.tight_layout(rect=[0, bottom, 1, 1])
-    fig.subplots_adjust(top=max(0.4, 1 - (0.2 * tl + 0.25 + extra) / h))
+    fig.subplots_adjust(top=max(0.4, 1 - (0.2 * tl + 0.15 + extra) / h))
 
 
 def n_label_lines(labels, width):
@@ -142,7 +155,7 @@ def n_label_lines(labels, width):
 def fig_stacked(name, items, title, label_width=42, marks=None, marks_label=None, title_width=100):
     cats = present(ORDER, [sh for _, sh in items])
     tl = wrap(title, title_width).count("\n") + 1
-    fig, ax = plt.subplots(figsize=(W, 0.32 * n_label_lines([l for l, _ in items], label_width) + 0.36 * len(items) + 0.9 + 0.2 * tl))
+    fig, ax = plt.subplots(figsize=(W, 0.32 * n_label_lines([l for l, _ in items], label_width) + 0.36 * len(items) + 0.9 + (0.2 * tl if TITLE_IN_FIGURE else 0)))
     draw_stacked(ax, items, cats, label_width, marks=marks)
     ncol_ = min(3, len(cats) + bool(marks_label)); nrows_ = -(-(len(cats) + bool(marks_label)) // ncol_)
     ax.legend(handles=legend_handles(cats, marks_label), loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=ncol_, frameon=False, fontsize=9)
@@ -159,7 +172,7 @@ def fig_panels(name, row_labels, panels, title, ncol=None, label_width=30, title
     tlines = max(t.count("\n") + 1 for t in ptitles)
     panel_h = 0.32 * n_label_lines(row_labels, label_width) + 0.36 * len(row_labels) + 0.16 * tlines + 0.5
     tl = wrap(title, title_wrap).count("\n") + 1
-    fig, axes = plt.subplots(nrow, ncol, figsize=(W, panel_h * nrow + 0.9 + 0.2 * tl), squeeze=False)
+    fig, axes = plt.subplots(nrow, ncol, figsize=(W, panel_h * nrow + 0.9 + (0.2 * tl if TITLE_IN_FIGURE else 0)), squeeze=False)
     for k, ((ptitle, shs), wt) in enumerate(zip(panels, ptitles)):
         ax = axes[k // ncol][k % ncol]
         draw_stacked(ax, list(zip(row_labels, shs)), cats, label_width, fontsize=8 if ncol >= 3 else 9.5, min_label=14 if ncol >= 3 else 9, sparse_ticks=ncol >= 3)
