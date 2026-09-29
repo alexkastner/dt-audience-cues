@@ -5,7 +5,7 @@ named theory? Rows: name x format; columns: problems; cells: distribution of the
 """
 from collections import Counter
 from pathlib import Path
-from .prompts import NAMED_PERSONS, NAMED_ACTION_KEYS, NAMED_ACTION_PROBLEMS, PROBLEMS
+from .prompts import NAMED_PERSONS, NAMED_ACTION_KEYS, NAMED_ACTION_PROBLEMS, PROBLEMS, RA_PROBLEMS, RA_CUES
 from .post_tables import rows, pct, md_table, _ids, FREE
 from .notags_report import main_choice
 from .parse import strip_tag_instructions
@@ -38,6 +38,16 @@ def table(model, eff, label):
     return md_table(head, body)
 
 
+def ra_table(model, eff, label):
+    """Third-person wording ("In this situation, do you think a rational agent should…"), named users as the system prompt."""
+    head = [f"Cue ({label}, third-person wording)"] + [f"{PLABEL[p[:-3]]} ({VERDICT[p[:-3]]})" for p in RA_PROBLEMS]
+    body = []
+    for cue in RA_CUES:
+        lab = "*(no cue)*" if cue == "none" else f"System prompt: \"The user is {NAMED_PERSONS[cue][0]}.\""
+        body.append([lab] + [dist(model, eff, f"RA__{p}__{cue}") for p in RA_PROBLEMS])
+    return md_table(head, body)
+
+
 def build():
     out = ["# Concrete problems posed to named decision theorists\n",
            "The problem is posed directly (no theory named first), preceded by \"I'm <name>.\" in the user turn or by the system prompt "
@@ -52,6 +62,13 @@ def build():
         out.append("\n" + hdr.read_text().rstrip() + "\n")
     for label, model, eff in MODELS:
         out.append(f"\n## {label}\n\n{table(model, eff, label)}\n")
+    out.append("\n# Third-person wording: \"In this situation, do you think a rational agent should …\"\n\nThe same six problems rewritten with \"an agent\" in place "
+               "of \"you\" and the question asked as the model's own opinion about what is rational (Alex, 2026-09-28). Named users given as the system prompt. "
+               "Verbatim texts follow the tables.\n")
+    for label, model, eff in MODELS[:2]:
+        out.append(f"\n## {label}\n\n{ra_table(model, eff, label)}\n")
+    for pk in RA_PROBLEMS:
+        out.append(f"\n**{PLABEL[pk[:-3]]}, third person:** {strip_tag_instructions(PROBLEMS[pk]['text'])}\n")
     return "\n".join(out)
 
 
