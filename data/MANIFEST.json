@@ -20,9 +20,9 @@
   "sha256": "57c2edeb8acbc0eec0e692403dd4ab997d00e1e0b9b35a294299572501cb3d71"
  },
  "judge_numbers.jsonl": {
-  "bytes": 9244939,
-  "rows": 81321,
-  "sha256": "c0b4edbc6b948994de14009d7db83ab3d3ebe6959a1b2efb82b76d021b4874ff"
+  "bytes": 9327777,
+  "rows": 82000,
+  "sha256": "2938f647e8a1b782e7f63d40e516c28827115b3f998d50fa26ce156001c6ef94"
  },
  "judge_thinking.jsonl": {
   "bytes": 4143356,
@@ -454,6 +454,11 @@
   "rows": 1325,
   "sha256": "fe490db9f0115740c0c5c8989335843848f4953daaf6dc38b83766ce3797e1ab"
  },
+ "raw_claude-fable-5-1_max_notags_adx2.jsonl": {
+  "bytes": 596992,
+  "rows": 75,
+  "sha256": "16e0dba5802516f69092b33573cd22649ca76328a9cee5e820192ec09adf3fe1"
+ },
  "raw_claude-fable-5-1_max_notags_ahmed128_1.jsonl": {
   "bytes": 5542125,
   "rows": 200,
@@ -639,6 +644,11 @@
   "rows": 2000,
   "sha256": "df44879200c85641809515cf9307e6b89684b2a65291e0f42b5fece1672cece3"
  },
+ "raw_claude-opus-5-5_high_notags_adw2.jsonl": {
+  "bytes": 4282,
+  "rows": 1,
+  "sha256": "0389b39e003657d1b435fecedc7c1d4eea07f64068ed5407e19d10bf361fe85e"
+ },
  "raw_claude-opus-5-5_high_notags_basebomb.jsonl": {
   "bytes": 531039,
   "rows": 200,
@@ -748,6 +758,11 @@
   "bytes": 9492912,
   "rows": 797,
   "sha256": "eb129c9600f7d172d68d49fb47f1f7fb6a1e5958da89e803f87eb89a29907833"
+ },
+ "raw_claude-opus-5-5_max_notags_adx2.jsonl": {
+  "bytes": 12587146,
+  "rows": 603,
+  "sha256": "208b289f888207a138a4dccc115acce80ea1fde4741855b2ec3a4fb00db134e1"
  },
  "raw_claude-opus-5-5_max_notags_deep_ah1.jsonl": {
   "bytes": 29115424,
