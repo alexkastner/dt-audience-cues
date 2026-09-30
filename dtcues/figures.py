@@ -6,8 +6,9 @@ Conventions (Alex, 2026-09-29): every figure carries its own explanatory title (
 labels show the exact prompt text and may run several lines (rows grow to fit); the legend lists only categories that occur;
 rows are grouped by kind and, within a group, ordered by Fable 5.1's CDT share, with the same order wherever the same rows recur.
 """
-import json, textwrap
+import json, os, textwrap
 from pathlib import Path
+os.environ["POST_MODE"] = "notags"   # figures always show the tag-free primary data; set before post_tables is imported (it reads the variable at import)
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -353,9 +354,14 @@ def fig_books_effort():
     return save(fig, "books_effort")
 
 
+# Alex (2026-09-29): rows cut from the anti-sycophancy figure (rows 1, 3, 5, 7 and the last row of VIEWS)
+VIEWS_DROP = {"D__Q_neutral__none__view-cdt", "N__Q_neutral__want_cdt", "D__Q_neutral__none__view-fdt", "N__Q_neutral__third_fdt", "K__Q_neutral__lw_proFDT"}
+
+
 def fig_views():
     items, marks = [], []
     for lab, pid in VIEWS:
+        if pid in VIEWS_DROP: continue
         items.append((lab, shares(FB, HI, pid)))
         b = shares(FB, HI, _baseline_for(lab)); marks.append(None if b is None else b["CDT"])
     return fig_stacked("views", items, theory_title("Fable 5.1", "after the sentence on the left, in which the asker states a view"), label_width=44,
