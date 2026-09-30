@@ -1,8 +1,10 @@
 # Frontier models state different decision theory preferences depending on who's asking
 
-Companion repository for the LessWrong post of that title (Alex Kastner, 2026). It holds everything behind the
-post's tables: the exact prompts, every raw sample from every model, the judge's classification of each answer,
-and the code that turns them into the tables.
+Companion repository for the LessWrong post of that title (Alex Kastner, 2026):
+**https://www.lesswrong.com/posts/SPt3TjcxS8oxftTH6/frontier-models-state-different-decision-theory-preferences**
+
+It holds everything behind the post's figures: the exact prompts, every raw sample from every model, the judge's
+classification of each answer, and the code that turns them into the figures and tables.
 
 ## What is here
 
