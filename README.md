@@ -110,4 +110,6 @@ Code: MIT (`LICENSE`). Data, notes and generated tables: CC BY 4.0 (`LICENSE-DAT
 
 ## Exporting the post to LessWrong
 
-`uv run python scripts/export_lw.py` writes `post/lesswrong_post.lw.md`, the paste-ready version of the draft: no title line or byline (LessWrong has fields for those), no figure markers, and bare dollar signs escaped so LessWrong's markdown editor does not read them as LaTeX. It refuses to run while the draft still contains a to-do, a review comment or a placeholder.
+`uv run python scripts/export_lw.py` writes `post/lesswrong_post.lw.md`, the paste-ready version of the draft: no title line or byline (LessWrong has fields for those), no figure markers, no caption paragraphs, and bare dollar signs escaped so LessWrong's markdown editor does not read them as LaTeX. It refuses to run while the draft still contains a to-do, a review comment or a placeholder.
+
+Figure captions are written once, as the *italic* line inside each `<!-- figure:key -->` block of the draft. `dtcues/figures.py` reads them from there and draws them into the images (LessWrong cannot style a caption paragraph), so after editing a caption, regenerate the figure with `uv run python -m dtcues.figures <key>` and re-export. The preview server and the export both hide the caption paragraphs, exactly as LessWrong will show the post.

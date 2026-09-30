@@ -91,6 +91,8 @@ class Handler(SimpleHTTPRequestHandler):
         import markdown, re, html as _h
         f = ROOT.parent / "post" / "lesswrong_post.md"
         text = f.read_text() if f.exists() else "# (post/lesswrong_post.md not found)"
+        from .lw_export import strip_figure_captions
+        text = strip_figure_captions(text)   # captions are drawn into the images, as on LessWrong
         words = len(re.findall(r"\w+", re.sub(r"\[[^\]]*\](?!\()", "", text)))
         notes = re.findall(r"\[(?!\^)([^\]]{2,})\](?!\()", text)
         # protect real links, mark notes

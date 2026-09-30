@@ -6,7 +6,7 @@ Conventions (Alex, 2026-09-29): every figure carries its own explanatory title (
 labels show the exact prompt text and may run several lines (rows grow to fit); the legend lists only categories that occur;
 rows are grouped by kind and, within a group, ordered by Fable 5.1's CDT share, with the same order wherever the same rows recur.
 """
-import json, os, textwrap
+import json, os, re, textwrap
 from pathlib import Path
 os.environ["POST_MODE"] = "notags"   # figures always show the tag-free primary data; set before post_tables is imported (it reads the variable at import)
 import matplotlib
@@ -22,7 +22,11 @@ from . import prompts as P
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "post" / "figures"
 W = 7.6   # figure width in inches: LessWrong shows images at about 700 px, so everything is designed for this width
-TITLE_IN_FIGURE = False   # Alex (2026-09-29): titles live in the markdown as captions above the image, so they stay editable; see CAPTIONS
+TITLE_IN_FIGURE = True   # Alex (2026-09-29): the caption is drawn into the image (LessWrong cannot style a caption paragraph), but it is *read from the
+                         # draft's figure block*, so editing the caption line in post/lesswrong_post.md and regenerating updates the image; see caption_for()
+IN_PER_UNIT = 0.30       # inches per row unit in stacked-bar figures: a one-line row is one unit tall (bar 0.62 units, the rest is gap)
+LINE_UNITS = 0.5         # each further label line adds half a unit (0.15 in, one 9 pt text line)
+DRAFT = ROOT / "post" / "lesswrong_post.md"
 CAPTIONS: dict[str, str] = {}   # figure name -> caption text, written to post/figures/captions.json
 _current_title = ""
 THEORY_Q = "Of the competing decision theories, which one do you think is right? Name your single favorite."
@@ -58,6 +62,35 @@ def q(s):
     return f"“{s}”"
 
 
+def draft_captions():
+    """png file name -> caption text, from the draft's figure blocks (the *italic* line between <!-- figure:key --> and the image).
+    A block whose caption line was deleted maps to ''. Footnote markers are dropped and escaped dollars unescaped."""
+    out = {}
+    if not DRAFT.exists():
+        return out
+    for m in re.finditer(r"<!-- figure:\w+ -->\n(?:\*(.*?)\*\n\n)?!\[[^\]]*\]\(([^)]*)\)", DRAFT.read_text(), flags=re.S):
+        out[m.group(2).rsplit("/", 1)[-1]] = re.sub(r"\[\^\d+\]", "", m.group(1) or "").replace("\\$", "$").strip()
+    return out
+
+
+DRAFT_CAPTIONS = draft_captions()
+
+
+def caption_for(name, fallback):
+    """the caption drawn into post/figures/<name>.png: the draft's caption line if the figure appears in the draft, else the code's title"""
+    return DRAFT_CAPTIONS.get(f"{name}.png", fallback)
+
+
+def caption_lines(name, fallback="", width=100):
+    t = caption_for(name, fallback)
+    return wrap(t, width).count("\n") + 1 if (TITLE_IN_FIGURE and t) else 0
+
+
+def stacked_units(labels, label_width):
+    """height of a stacked-bar block in row units (see IN_PER_UNIT)"""
+    return sum(1.0 + LINE_UNITS * wrap(l, label_width).count("\n") for l in labels)
+
+
 def wrap(label, width):
     label = label.replace("*", "")
     return "\n".join(textwrap.wrap(label, width, break_long_words=False)) or label
@@ -83,12 +116,12 @@ def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_
     """items: list of (label, shares). Rows are as tall as their wrapped label needs, so full prompts fit.
     marks: optional per-row x values drawn as a black tick (e.g. a baseline share)."""
     labels = [wrap(l, label_width) for l, _ in items]
-    heights = [0.62 + 0.34 * lab.count("\n") for lab in labels]
+    heights = [1.0 + LINE_UNITS * lab.count("\n") for lab in labels]   # row height in units, gap included; IN_PER_UNIT inches per unit
     ys, y = [], 0.0
     for h in heights:
-        ys.append(-(y + h / 2)); y += h + 0.18
+        ys.append(-(y + h / 2)); y += h
     for (lab, sh), yy, h in zip(items, ys, heights):
-        bh = min(0.6, h - 0.05)
+        bh = 0.62
         if sh is None:
             ax.text(50, yy, "no data", ha="center", va="center", color="#888888", fontsize=fontsize); continue
         left = 0
@@ -107,7 +140,7 @@ def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_
     if marks:
         for yy, m in zip(ys, marks):
             if m is not None:
-                ax.plot([m, m], [yy - 0.36, yy + 0.36], color="black", linewidth=1.8, solid_capstyle="butt", zorder=5)
+                ax.plot([m, m], [yy - 0.4, yy + 0.4], color="black", linewidth=1.8, solid_capstyle="butt", zorder=5)
     ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=fontsize)
     ax.set_xlim(0, 100)
     if sparse_ticks:
@@ -115,7 +148,7 @@ def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_
     else:
         ax.set_xticks([0, 25, 50, 75, 100]); ax.set_xticklabels(["0%", "25%", "50%", "75%", "100%"], fontsize=fontsize - 1)
     ax.tick_params(axis="y", length=0); ax.tick_params(axis="x", length=0, colors="#666666")
-    ax.set_ylim(-(y + 0.1), 0.3)
+    ax.set_ylim(-y, 0)
     ax.grid(axis="x", color="#EEEEEE", linewidth=0.8, zorder=0); ax.set_axisbelow(True)
     return y
 
@@ -128,9 +161,18 @@ def legend_handles(cats, marks_label=None):
 
 
 def save(fig, name):
+    """Draw the caption (the draft's caption line for this figure, else the title passed to finish()) in a fixed-inch band above the plot, then write the PNG."""
+    global _current_title
+    title, title_width, extra = getattr(fig, "_finish", ("", 100, 0.0))
+    title = caption_for(name, title); _current_title = title
+    tl = 0
+    if TITLE_IN_FIGURE and title:
+        tl = wrap(title, title_width).count("\n") + 1
+        fig.suptitle(wrap(title, title_width), x=0.01, ha="left", va="top", fontsize=9, y=1.0, linespacing=1.3, color="#333333")
+    fig.subplots_adjust(top=max(0.4, 1 - (0.17 * tl + 0.05 + extra) / fig.get_size_inches()[1]))
     OUT.mkdir(exist_ok=True); path = OUT / f"{name}.png"
     fig.savefig(path, dpi=200, bbox_inches="tight", facecolor="white"); plt.close(fig); print("wrote", path.relative_to(ROOT))
-    CAPTIONS[name] = _current_title
+    CAPTIONS[name] = title
     cap = OUT / "captions.json"
     old = json.loads(cap.read_text()) if cap.exists() else {}
     old.update(CAPTIONS); cap.write_text(json.dumps(old, indent=1, ensure_ascii=False))
@@ -138,18 +180,10 @@ def save(fig, name):
 
 
 def finish(fig, title, title_width=100, bottom=0.0, extra=0.0):
-    """Reserve a fixed number of inches above the plot for legends/column headers (and the title, if drawn in the figure);
-    tight_layout alone leaves a top margin proportional to the figure height. The title text is recorded for the markdown caption."""
-    global _current_title
-    _current_title = title
-    h = fig.get_size_inches()[1]
-    if TITLE_IN_FIGURE:
-        tl = wrap(title, title_width).count("\n") + 1
-        fig.suptitle(wrap(title, title_width), x=0.01, ha="left", va="top", fontsize=9.5, y=1.0, linespacing=1.3)
-    else:
-        tl = 0
+    """tight_layout for the label margins; the caption band above the plot (a fixed number of inches for the caption and the legend or
+    column headers, `extra`) is applied in save(), which knows the figure's name and therefore its caption in the draft."""
+    fig._finish = (title, title_width, extra)
     fig.tight_layout(rect=[0, bottom, 1, 1])
-    fig.subplots_adjust(top=max(0.4, 1 - (0.2 * tl + 0.15 + extra) / h))
 
 
 def n_label_lines(labels, width):
@@ -158,12 +192,12 @@ def n_label_lines(labels, width):
 
 def fig_stacked(name, items, title, label_width=42, marks=None, marks_label=None, title_width=100):
     cats = present(ORDER, [sh for _, sh in items])
-    tl = wrap(title, title_width).count("\n") + 1
-    fig, ax = plt.subplots(figsize=(W, 0.32 * n_label_lines([l for l, _ in items], label_width) + 0.36 * len(items) + 0.9 + (0.2 * tl if TITLE_IN_FIGURE else 0)))
-    draw_stacked(ax, items, cats, label_width, marks=marks)
     ncol_ = min(3, len(cats) + bool(marks_label)); nrows_ = -(-(len(cats) + bool(marks_label)) // ncol_)
+    tl = caption_lines(name, title, title_width)
+    fig, ax = plt.subplots(figsize=(W, IN_PER_UNIT * stacked_units([l for l, _ in items], label_width) + 0.45 + 0.24 * nrows_ + 0.08 + 0.17 * tl + 0.05))
+    draw_stacked(ax, items, cats, label_width, marks=marks)
     ax.legend(handles=legend_handles(cats, marks_label), loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=ncol_, frameon=False, fontsize=9)
-    finish(fig, title, title_width, extra=0.27 * nrows_ + 0.1)
+    finish(fig, title, title_width, extra=0.24 * nrows_ + 0.08)
     return save(fig, name)
 
 
@@ -174,8 +208,8 @@ def fig_panels(name, row_labels, panels, title, ncol=None, label_width=30, title
     cats = present(ORDER, [sh for _, shs in panels for sh in shs])
     ptitles = [wrap(t, title_width) for t, _ in panels]
     tlines = max(t.count("\n") + 1 for t in ptitles)
-    panel_h = 0.32 * n_label_lines(row_labels, label_width) + 0.36 * len(row_labels) + 0.16 * tlines + 0.5
-    tl = wrap(title, title_wrap).count("\n") + 1
+    panel_h = IN_PER_UNIT * stacked_units(row_labels, label_width) + 0.16 * tlines + 0.5
+    tl = caption_lines(name, title, title_wrap)
     fig, axes = plt.subplots(nrow, ncol, figsize=(W, panel_h * nrow + 0.9 + (0.2 * tl if TITLE_IN_FIGURE else 0)), squeeze=False)
     for k, ((ptitle, shs), wt) in enumerate(zip(panels, ptitles)):
         ax = axes[k // ncol][k % ncol]
@@ -201,7 +235,7 @@ def fig_heatmap(name, row_labels, col_labels, data, title, label_width=40, cmap=
         ys.append(-(y + h / 2)); y += h
     cols = ["\n".join(textwrap.fill(part, col_width, break_on_hyphens=False, break_long_words=False) for part in c.split("\n")) for c in col_labels]   # keep "one-box" whole
     clines = max(c.count("\n") + 1 for c in cols)
-    fig, ax = plt.subplots(figsize=(W, 0.42 * y + 0.9 + 0.17 * clines))
+    fig, ax = plt.subplots(figsize=(W, 0.42 * y + 0.9 + 0.17 * clines + 0.2 * caption_lines(name, title, title_width)))
     for i, (row, yy, h) in enumerate(zip(data, ys, heights)):
         for j, v in enumerate(row):
             ax.add_patch(Rectangle((j, yy - h / 2), 1, h, facecolor=cm(0.08 + 0.9 * (v or 0) / 100), edgecolor="white", linewidth=1.2))
@@ -328,30 +362,30 @@ def fig_books_effort():
     rws = [(lab, pers) for lab, pers in AH_ROWS if "PhD" not in lab]
     conds = [("no book mentioned: share naming CDT", None, "CDT")] + [(q(c.strip('"')) + (": share naming CDT" if v == "joyce" else ": share naming EDT"), v, "CDT" if v == "joyce" else "EDT") for c, v in AH_COLS if v is not None]
     labels = [l.replace("*", "") for l, _ in rws]
-    n_lines = n_label_lines(labels, 22)
-    fig, axes = plt.subplots(1, 4, figsize=(W, 0.3 * n_lines + 0.36 * len(rws) + 2.4), squeeze=False)
+    rh = 1 + LINE_UNITS * (max(wrap(l, 22).count("\n") for l in labels))   # row units per (integer-spaced) row, as in draw_stacked
+    tl = 6
+    fig, axes = plt.subplots(1, 4, figsize=(W, IN_PER_UNIT * rh * len(rws) + 1.15 + 0.17 * tl + 0.2 + 0.17 * caption_lines("books_effort") + 0.05), squeeze=False)
     for ax, (ptitle, v, theory) in zip(axes[0], conds):
         ys = list(range(len(rws)))[::-1]
         for y, (lab, pers) in zip(ys, rws):
             pid = ("A__Q_neutral__none" if pers == "none" else f"B__Q_neutral__{pers}") if v is None else f"AH__Q_neutral__{pers}__{v}"
             a, b = shares(FB, "high", pid), shares(FB, "max", pid)
             if a:
-                ax.barh(y, a[theory], height=0.58, color=COLOR[theory])
+                ax.barh(y, a[theory], height=0.62 / rh, color=COLOR[theory])
                 if a[theory] >= 14:
                     ax.text(a[theory] / 2, y, f"{a[theory]:.0f}%", ha="center", va="center", fontsize=8, color="white", fontweight="bold")
             if b:
-                ax.plot([b[theory], b[theory]], [y - 0.4, y + 0.4], color="black", linewidth=2, solid_capstyle="butt", zorder=5)
-                ax.text(min(b[theory] + 2, 88), y + 0.47, f"{b[theory]:.0f}%", fontsize=7, color="black", ha="left", va="bottom")
+                ax.plot([b[theory], b[theory]], [y - 0.4 / rh, y + 0.4 / rh], color="black", linewidth=2, solid_capstyle="butt", zorder=5)
+                ax.text(min(b[theory] + 2, 88), y + 0.38 / rh, f"{b[theory]:.0f}%", fontsize=7, color="black", ha="left", va="bottom")
         ax.set_yticks(ys); ax.set_yticklabels([wrap(l, 22) for l in labels], fontsize=8.5)
         ax.set_xlim(0, 100); ax.set_xticks([0, 50, 100]); ax.set_xticklabels(["0%", "50%", "100%"], fontsize=7.5); ax.tick_params(length=0)
-        ax.set_ylim(-0.7, len(rws) - 0.2); ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True)
+        ax.set_ylim(-0.5, len(rws) - 0.5); ax.grid(axis="x", color="#EEEEEE"); ax.set_axisbelow(True)
         ax.set_title(wrap(ptitle, 24), fontsize=8, loc="left", pad=6)
         if ax is not axes[0][0]:
             ax.tick_params(axis="y", labelleft=False)
     fig.legend(handles=[Patch(color=COLOR["CDT"], label="share naming CDT at default effort"), Patch(color=COLOR["EDT"], label="share naming EDT at default effort"),
                         Line2D([0], [0], color="black", marker="|", markersize=14, markeredgewidth=2, linestyle="None", label="the same share at maximum effort")],
                loc="lower center", ncol=2, frameon=False, fontsize=8.5, bbox_to_anchor=(0.5, -0.005))
-    tl = 6
     finish(fig, theory_title("Fable 5.1", "after the sentence on the left, then the sentence in the panel title, at the default and at the maximum thinking effort"),
            bottom=0.7 / fig.get_size_inches()[1], extra=0.17 * tl + 0.2)
     return save(fig, "books_effort")
@@ -444,7 +478,7 @@ def fig_effort():
 
 
 def fig_effort_models():
-    fig, ax = plt.subplots(figsize=(W, 4.4))
+    fig, ax = plt.subplots(figsize=(W, 4.4 + 0.2 * caption_lines("effort_models")))
     levels = ["low", "high", "xhigh", "max"]
     ends = []
     for lab, model, lv, xs, style in [("Fable 5.1", "claude-fable-5-1", levels, [0, 1, 2, 3], "-"), ("Opus 5.5", "claude-opus-5-5", levels, [0, 1, 2, 3], "-"),
@@ -480,7 +514,7 @@ def fig_reasoning():
         labels.append(cells[0]); vals.append([float(c.rstrip("%")) if c.endswith("%") else None for c in cells[1:4]])
     metrics = ["speaks favourably of FDT/UDT", "speaks favourably of CDT", "leans toward the other theory first, then pivots"]
     mcol = ["#0072B2", "#E69F00", "#555555"]
-    fig, ax = plt.subplots(figsize=(W, 0.9 * len(labels) + 1.9))
+    fig, ax = plt.subplots(figsize=(W, 0.9 * len(labels) + 1.9 + 0.2 * caption_lines("reasoning")))
     ys = list(range(len(labels)))[::-1]
     for i, (m, c) in enumerate(zip(metrics, mcol)):
         for y, v in zip(ys, vals):
@@ -532,7 +566,7 @@ def fig_realism():
     labels = [r[0] for r in rows_]; r_vals = [r[1] for r in rows_]; z_vals = [r[2] for r in rows_]
     lw_ = 38
     n_lines = n_label_lines(labels, lw_)
-    fig, axes = plt.subplots(1, 2, figsize=(W, 0.30 * n_lines + 0.30 * len(labels) + 1.7))
+    fig, axes = plt.subplots(1, 2, figsize=(W, IN_PER_UNIT * stacked_units(labels, lw_) + 1.1 + 0.2 * caption_lines("realism")))
     # Alex (2026-09-29): one bar per cell, the share of yes answers, with "(Yes answers)" in the column headers
     for ax, vals, title in [(axes[0], r_vals, q("Are there objective moral truths, independent of what anyone believes or desires?") + " (Yes answers)"),
                             (axes[1], z_vals, q("Are philosophical zombies conceivable?") + " (Yes answers)")]:
@@ -540,7 +574,7 @@ def fig_realism():
         draw_stacked(ax, items, ("CDT",), lw_, fontsize=8.5, outside_small=True, min_label=13)
         ax.set_title(wrap(title, 40), fontsize=8.5, loc="left", pad=8)
     axes[1].tick_params(axis="y", labelleft=False)
-    finish(fig, "Fable 5.1's answers to two other questions on which the typical academic and LessWrong opinions differ, asked right after the cue on the left. Each bar is the share of the 100 answers to one prompt that say yes (for the first question, “realism”).", extra=0.25)
+    finish(fig, "Fable 5.1's answers to two other questions on which the typical academic and LessWrong opinions differ, asked right after the cue on the left. Each bar is the share of the 100 answers to one prompt that say yes (for the first question, “realism”).", extra=0.55)
     return save(fig, "realism")
 
 
@@ -548,7 +582,7 @@ def fig_pdoom():
     from .ad_report import stats, pctl
     cache = {json.loads(l)["hash"]: json.loads(l) for l in open(ROOT / "results" / "judge_numbers.jsonl")}
     ROWS = [r for r in PDOOM_ROWS if not r[1].startswith("ADC__")]   # Alex (2026-09-29): no two-turn rows in this figure
-    fig, axes = plt.subplots(1, 2, figsize=(W, 0.42 * len(ROWS) + 1.6), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.32 * len(ROWS) + 1.6 + 0.2 * caption_lines("pdoom")), sharey=True)
     ys = list(range(len(ROWS)))[::-1]
     for ax, qq, xlab, xlim in [(axes[0], "Q_pdoom", "P(loss of control this century)", (0, 30)), (axes[1], "Q_timeline", "year AI can do essentially all human work", (2030, 2066))]:
         for y, (lab, pat) in zip(ys, ROWS):
