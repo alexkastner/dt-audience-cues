@@ -234,7 +234,7 @@ CUE_TEXT = {
     "conv_dt_teacher": "Two turns of help with an undergraduate decision theory syllabus, then the question",
     "conv_lw_task": "Two turns of help tightening a LessWrong post on AI timelines, then the question",
 }
-MATRIX_ORDER = ["none", "lw_reader", "acad_prof", "acad_teach", "x_published", "sys_acad_prof", "pre_acad_ref_2", "conv_acad_task", "conv_dt_teacher"]
+MATRIX_ORDER = ["none", "lw_reader", "acad_prof", "acad_teach", "pre_acad_ref_2", "conv_acad_task", "conv_dt_teacher"]   # Alex (2026-09-29): "I've published on…" and the professor system prompt cut from this figure
 ACAUSAL_ORDER = ["none", "lw_reader", "acad_teach", "x_published", "sys_acad_prof", "pre_acad_style_2", "pre_acad_ref_2", "conv_lw_task", "conv_acad_task", "conv_dt_teacher"]
 
 
