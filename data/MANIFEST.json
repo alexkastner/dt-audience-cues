@@ -15,9 +15,9 @@
   "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
  },
  "judge_notags.jsonl": {
-  "bytes": 11344825,
-  "rows": 242785,
-  "sha256": "b5a20b701d458417c00ddd59acaa19f97db36fffa096596564c8c0d2ee03bab1"
+  "bytes": 11345320,
+  "rows": 242796,
+  "sha256": "989ce304f9f3c69b00fff87de0844eab7e56a24b03d2284ee6148553e4f21c3d"
  },
  "judge_numbers.jsonl": {
   "bytes": 9327777,
@@ -73,6 +73,11 @@
   "bytes": 19736481,
   "rows": 4400,
   "sha256": "bb2d8024fbb798c4f0ee4ca77bfc230ec60df46e7f706e3bb6e769798259d948"
+ },
+ "raw_claude-fable-5-1_high_notags_acadnames2.jsonl": {
+  "bytes": 50052,
+  "rows": 11,
+  "sha256": "99ae74945cfe01e8931b2ed565fd58a0884fdd083b640d38a2439a62f52983fe"
  },
  "raw_claude-fable-5-1_high_notags_acausal2_Q_acausal_future.jsonl": {
   "bytes": 5535651,

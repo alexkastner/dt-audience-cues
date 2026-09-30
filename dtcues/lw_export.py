@@ -24,7 +24,7 @@ def pinned_figure_url(root) -> str:
     run = lambda *a: subprocess.run(["git", *a], cwd=root, capture_output=True, text=True).stdout.strip()
     if run("status", "--porcelain", "--", "post/figures"):
         raise SystemExit("not exported: post/figures has uncommitted changes; commit and push the figures first")
-    sha = run("rev-parse", "HEAD")
+    sha = run("log", "-1", "--format=%H", "--", "post/figures")   # the last commit that changed a figure, so unrelated commits do not re-pin
     if "origin/main" not in run("branch", "-r", "--contains", sha):
         raise SystemExit(f"not exported: commit {sha[:7]} is not on origin/main yet; push first so LessWrong can fetch the figures")
     return FIGURE_URL.replace("/main/", f"/{sha}/")
