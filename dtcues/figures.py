@@ -79,7 +79,7 @@ def present(cats, share_lists):
 
 
 # ------------------------------------------------------------------ drawing primitives
-def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_label=9, sparse_ticks=False):
+def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_label=9, sparse_ticks=False, outside_small=False):
     """items: list of (label, shares). Rows are as tall as their wrapped label needs, so full prompts fit.
     marks: optional per-row x values drawn as a black tick (e.g. a baseline share)."""
     labels = [wrap(l, label_width) for l, _ in items]
@@ -94,12 +94,15 @@ def draw_stacked(ax, items, cats, label_width=42, fontsize=9.5, marks=None, min_
         left = 0
         for cat in cats:
             v = sh.get(cat, 0)
-            if v <= 0.05:
+            if v <= 0.05 and not (outside_small and len(cats) == 1):
                 continue
-            ax.barh(yy, v, left=left, height=bh, color=COLOR[cat], edgecolor="white", linewidth=0.6)
+            if v > 0.05:
+                ax.barh(yy, v, left=left, height=bh, color=COLOR[cat], edgecolor="white", linewidth=0.6)
             if v >= min_label:
                 ax.text(left + v / 2, yy, f"{v:.0f}%", ha="center", va="center", fontsize=fontsize - 0.5,
                         color="#333333" if cat in ("none", "EU") else "white", fontweight="bold")
+            elif outside_small:   # single-value bars: a small share gets its number just right of the bar
+                ax.text(left + v + 1.5, yy, f"{v:.0f}%", ha="left", va="center", fontsize=fontsize - 0.5, color="#333333", fontweight="bold")
             left += v
     if marks:
         for yy, m in zip(ys, marks):
@@ -512,7 +515,8 @@ def fig_sysprompts():
                        label_width=46, marks=marks, marks_label="CDT share with no system prompt")
 
 
-REALISM_DROP = ("Hey, random question", "compute trends", "Solomonoff", "rationalist meetup", "epistemic status")
+REALISM_DROP = ("Hey, random question", "compute trends", "Solomonoff", "rationalist meetup", "epistemic status",
+                "In the course of refereeing", "Two turns of help tightening", "MIRI agent foundations", "I'm a longtime LessWrong reader")   # Alex (2026-09-29): four more rows cut
 REALISM_ORDER = ["(nothing)", "philosophy professor", "refereeing a paper", "software engineer", "AI alignment", "LessWrong reader", "nerd-sniped", "Quick object-level", "MIRI agent", "Sequences", "Two turns"]
 
 
@@ -526,17 +530,17 @@ def fig_realism():
         rows_.append((cells[0].replace("*", ""), float(cells[1].rstrip("%")) if cells[1].endswith("%") else None, float(cells[2].rstrip("%")) if cells[2].endswith("%") else None))
     rows_.sort(key=lambda r: next((i for i, k in enumerate(REALISM_ORDER) if k in r[0]), 99))
     labels = [r[0] for r in rows_]; r_vals = [r[1] for r in rows_]; z_vals = [r[2] for r in rows_]
-    lw_ = 32
+    lw_ = 38
     n_lines = n_label_lines(labels, lw_)
-    fig, axes = plt.subplots(1, 2, figsize=(W, 0.32 * n_lines + 0.36 * len(labels) + 2.2))
-    for ax, vals, a_lab, b_lab, title in [(axes[0], r_vals, "realism", "anti-realism", q("Are there objective moral truths, independent of what anyone believes or desires?")),
-                                          (axes[1], z_vals, "conceivable", "not conceivable", q("Are philosophical zombies conceivable?"))]:
-        items = [(l, None if v is None else {"CDT": v, "FDT/UDT": 100 - v}) for l, v in zip(labels, vals)]
-        draw_stacked(ax, items, ("CDT", "FDT/UDT"), lw_, fontsize=8.5)
+    fig, axes = plt.subplots(1, 2, figsize=(W, 0.30 * n_lines + 0.30 * len(labels) + 1.7))
+    # Alex (2026-09-29): one bar per cell, the share of yes answers, with "(Yes answers)" in the column headers
+    for ax, vals, title in [(axes[0], r_vals, q("Are there objective moral truths, independent of what anyone believes or desires?") + " (Yes answers)"),
+                            (axes[1], z_vals, q("Are philosophical zombies conceivable?") + " (Yes answers)")]:
+        items = [(l, None if v is None else {"CDT": v}) for l, v in zip(labels, vals)]
+        draw_stacked(ax, items, ("CDT",), lw_, fontsize=8.5, outside_small=True, min_label=13)
         ax.set_title(wrap(title, 40), fontsize=8.5, loc="left", pad=8)
-        ax.legend(handles=[Patch(color="#E69F00", label=a_lab), Patch(color="#0072B2", label=b_lab)], loc="lower center", bbox_to_anchor=(0.5, -0.06), ncol=2, frameon=False, fontsize=9)
     axes[1].tick_params(axis="y", labelleft=False)
-    finish(fig, "Fable 5.1's answers to two other questions on which academic and LessWrong opinion differ, asked right after the cue on the left. Each bar splits the 100 answers to one prompt.", extra=0.17 * 2 + 0.25)
+    finish(fig, "Fable 5.1's answers to two other questions on which the typical academic and LessWrong opinions differ, asked right after the cue on the left. Each bar is the share of the 100 answers to one prompt that say yes (for the first question, “realism”).", extra=0.25)
     return save(fig, "realism")
 
 
