@@ -107,3 +107,7 @@ The judge caches (`judge_notags.jsonl`, `judge_thinking*.jsonl`, `judge_fav.json
 ## Licenses
 
 Code: MIT (`LICENSE`). Data, notes and generated tables: CC BY 4.0 (`LICENSE-DATA`).
+
+## Exporting the post to LessWrong
+
+`uv run python scripts/export_lw.py` writes `post/lesswrong_post.lw.md`, the paste-ready version of the draft: no title line or byline (LessWrong has fields for those), no figure markers, and bare dollar signs escaped so LessWrong's markdown editor does not read them as LaTeX. It refuses to run while the draft still contains a to-do, a review comment or a placeholder.
