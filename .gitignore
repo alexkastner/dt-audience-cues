@@ -10,3 +10,4 @@ logs/
 # packed data lives in data/ (see scripts/pack_data.py); unpacked raw files stay untracked
 # 32k-output-cap max-effort samples superseded by 128k reruns (kept for the truncation-rate table in AHMED_JOYCE.md)
 results/superseded_32k/*.jsonl
+results/superseded_truncated/
