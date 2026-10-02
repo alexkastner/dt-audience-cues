@@ -94,15 +94,17 @@ class OpenAI:
 
     async def complete(self, model: str, user_text: str, *, system: str | None = None,
                        effort: str | None = None, max_tokens: int = 16000,
-                       previous_response_id: str | None = None) -> Completion:
+                       previous_response_id: str | None = None, summary: str | None = None) -> Completion:
+        """summary: request a reasoning summary ("auto" | "concise" | "detailed") even when no effort is sent; by default a summary
+        ("auto") is requested only together with an explicit effort, which is how every run before 2026-10-02 was made."""
         kwargs: dict = dict(model=model, input=[{"role": "user", "content": user_text}],
                             max_output_tokens=max_tokens)
         if previous_response_id:
             kwargs["previous_response_id"] = previous_response_id
         if system:
             kwargs["instructions"] = system
-        if effort:
-            kwargs["reasoning"] = {"effort": effort, "summary": "auto"}
+        if effort or summary:
+            kwargs["reasoning"] = {**({"effort": effort} if effort else {}), "summary": summary or "auto"}
         try:
             resp = await self.client.responses.create(**kwargs)
         except openai.OpenAIError as e:

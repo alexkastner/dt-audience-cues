@@ -30,6 +30,8 @@ def main() -> None:
     p.add_argument("--ids", nargs="*", help="specific prompt ids")
     p.add_argument("--effort", default="high", help="Claude effort: low|medium|high|xhigh|max (or 'none')")
     p.add_argument("--openai-effort", default=None, help="OpenAI reasoning effort (omit to not send)")
+    p.add_argument("--openai-summary", default=None, choices=["auto", "concise", "detailed"],
+                   help="request an OpenAI reasoning summary even without --openai-effort; rows are labelled effort '<effort>+<summary>'")
     p.add_argument("--concurrency", type=int, default=8)
     p.add_argument("--max-tokens", type=int, default=16000)
     p.add_argument("--notags", action="store_true", help="strip every '<tag></tag> tags' instruction from the prompts (free-text answers; classify with judge-notags)")
@@ -90,14 +92,16 @@ def main() -> None:
         if a.out:
             asyncio.run(run(a.models, a.n, Path(a.out), sets=a.sets, ids=a.ids, effort=eff,
                             openai_effort=a.openai_effort, concurrency=a.concurrency,
-                            system=a.system, dry=a.dry, max_tokens=a.max_tokens, notags=a.notags, topup_to=a.topup_to))
+                            system=a.system, dry=a.dry, max_tokens=a.max_tokens, notags=a.notags, topup_to=a.topup_to,
+                            openai_summary=a.openai_summary))
         else:
             for m in a.models:
                 e = eff if provider_for(m) == "anthropic" else a.openai_effort
                 out = RESULTS / f"raw_{m}_{e or 'default'}.jsonl"
                 asyncio.run(run([m], a.n, out, sets=a.sets, ids=a.ids, effort=eff,
                                 openai_effort=a.openai_effort, concurrency=a.concurrency,
-                                system=a.system, dry=a.dry, max_tokens=a.max_tokens, notags=a.notags, topup_to=a.topup_to))
+                                system=a.system, dry=a.dry, max_tokens=a.max_tokens, notags=a.notags, topup_to=a.topup_to,
+                            openai_summary=a.openai_summary))
         return
 
     if a.cmd == "judge":

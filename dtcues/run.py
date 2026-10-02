@@ -75,9 +75,18 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
               ids: list[str] | None = None, effort: str | None = "high",
               openai_effort: str | None = None, concurrency: int = 8,
               system: str | None = None, dry: bool = False, max_tokens: int = 16000, notags: bool = False,
-              topup_to: int | None = None) -> None:
+              topup_to: int | None = None, openai_summary: str | None = None) -> None:
+    """openai_summary: ask OpenAI models for a reasoning summary of this kind. Such rows are recorded with effort
+    "<effort>+<summary>" (e.g. "None+detailed"), so they are never pooled with the earlier runs that requested none or "auto"."""
     specs = select(build_prompts(), sets=sets, ids=ids)
     done = load_done(out)
+
+    def eff_api(m: str):
+        return effort if provider_for(m) == "anthropic" else openai_effort
+
+    def eff_label(m: str):
+        e = eff_api(m)
+        return f"{e}+{openai_summary}" if (provider_for(m) == "openai" and openai_summary) else e
     jobs: list[tuple[PromptSpec, str, int]] = []
     if topup_to:
         # top up every (prompt, model, effort) to `topup_to` valid rows, counting rows in ALL tagged raw files
@@ -85,7 +94,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
         top = max_index(out.parent, notags=notags)
         for s in specs:
             for m in models:
-                eff = effort if provider_for(m) == "anthropic" else openai_effort
+                eff = eff_label(m)
                 k = have.get((s.id, m, str(eff)), 0)
                 start = max(999, top.get((s.id, m, str(eff)), 999)) + 1   # fresh indices after everything already sampled
                 for i in range(start, start + max(0, topup_to - k)):
@@ -95,7 +104,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
     else:
         for s in specs:
             for m in models:
-                eff = effort if provider_for(m) == "anthropic" else openai_effort
+                eff = eff_label(m)
                 for i in range(n):
                     if _key(s.id, m, eff, i) not in done:
                         jobs.append((s, m, i))
@@ -122,7 +131,8 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
     async def one(s: PromptSpec, model: str, idx: int):
         nonlocal n_ok, n_err
         prov = provider_for(model)
-        eff = effort if prov == "anthropic" else openai_effort
+        eff = eff_api(model)
+        xkw = {"summary": openai_summary} if (prov == "openai" and openai_summary) else {}
         text = s.render()
         sys_prompt = s.system or system
         t1: dict = {}
@@ -146,7 +156,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
                     history.append({"role": "assistant", "content": c.content_blocks})
                 else:
                     c = await clients[prov].complete(model, u, system=sys_prompt, effort=eff, max_tokens=max_tokens,
-                                                     previous_response_id=prev_id)
+                                                     previous_response_id=prev_id, **xkw)
                     if c.error:
                         break
                     prev_id = c.response_id
@@ -160,7 +170,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
                         history.append({"role": "assistant", "content": c.content_blocks})
                 else:
                     c = await clients[prov].complete(model, text, system=sys_prompt, effort=eff, max_tokens=max_tokens,
-                                                     previous_response_id=prev_id)
+                                                     previous_response_id=prev_id, **xkw)
                     prev_id = c.response_id
             if followups and not c.error:
                 t1 = dict(t1_response_text=c.text, t1_thinking=c.thinking, t1_stop_reason=c.stop_reason)
@@ -175,7 +185,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
                         history.append({"role": "assistant", "content": c.content_blocks})
                     else:
                         c = await clients[prov].complete(model, f, system=sys_prompt, effort=eff, max_tokens=max_tokens,
-                                                         previous_response_id=prev_id)
+                                                         previous_response_id=prev_id, **xkw)
                         if c.error:
                             break
                         prev_id = c.response_id
@@ -187,7 +197,7 @@ async def run(models: list[str], n: int, out: Path, *, sets: list[str] | None = 
                                            same=parse_yesno(c.text, "same")))
         rec = dict(
             prompt_id=s.id, **{k: v for k, v in s.meta().items() if k != "id"},
-            model=model, effort=eff, sample_idx=idx, prompt_text=text,
+            model=model, effort=eff_label(model), sample_idx=idx, prompt_text=text,
             provider=c.provider, served_model=c.served_model,
             response_text=c.text, thinking=c.thinking, stop_reason=c.stop_reason,
             stop_details=c.stop_details, usage=c.usage, request_id=c.request_id,
