@@ -307,7 +307,7 @@ def examples(rows, per=4, seed=7):
 READING = """## Reading
 
 **Does the FDT/UDT preference look deeper in the reasoning?** For Fable 5.1, academic-persona answers that name CDT speak favourably of FDT/UDT in 73% of
-summaries and start from FDT/UDT before pivoting in 44%; its FDT/UDT answers start from CDT in 2%. Fable 5 shows the same asymmetry, weaker (58% and 28%
+summaries and start from FDT/UDT before pivoting in 44%; its FDT/UDT answers start from CDT in 2%. Fable 5 shows the same asymmetry, weaker (59% and 28%
 against 4%). Opus 5 shows it in EDT form: its EDT answers speak favourably of FDT/UDT in 98% and start from it in 45%, while its FDT/UDT answers start from
 EDT in 13% (though they also speak favourably of EDT in 99%). Opus 5.5's CDT answers mostly go straight to CDT (favourable to FDT/UDT 37%, pivot 11%).
 GPT-6 Astra shows no asymmetry, if anything the reverse: at its default setting its CDT answers to academics speak favourably of FDT/UDT in 14% and pivot from
@@ -321,19 +321,25 @@ mentions the instruction (4% at default, 14% at high effort) yet its first lean 
 
 **Audience reasoning.** With a persona sentence, every model's summaries mention who the user is (80–100%). Claude models often reason about what suits
 the user (Fable 5.1 about half of academic answers, Opus 5 about 90%); Astra much less (17–19% of academic answers at default), and Astra rarely says what an
-audience would expect (3–8%). For lay personas Astra names CDT and justifies it as simpler or more practical in 65–90% of summaries ("practical for
+audience would expect (3–15%). For lay personas Astra names CDT and justifies it as simpler or more practical in 65–90% of summaries ("practical for
 troubleshooting in real-world scenarios" for the electrician); the Claude models give lay users FDT/UDT, often with the same practicality framing.
 
-**Sonnet 5** uses no thinking on this question at its default effort (2 of 720 answers) or at xhigh (2%), so it has no summaries there. At max effort it
-thinks at length (median about 17,500 output tokens) and its summaries run to thousands of words; see its tables below.
+**Sonnet 5** uses no thinking on this question at its default effort (2 of 720 answers) or at xhigh (2%), so it has no summaries there, and without
+thinking it gives the teacher persona CDT 98% of the time. At max effort it thinks at length (median about 23,000 reasoning tokens; summaries of thousands
+of words) and names FDT/UDT in 99–100% of answers for every academic persona, the teacher included. Its summaries weigh CDT seriously (favourable to CDT in
+97% of academic answers) and note what this audience would expect (97%), then commit to FDT/UDT. The anti-tailoring prompts have nothing left to move.
+(Sonnet 5's max-effort run covers the six core personas and three system prompts in full, plus 5–67 answers each for four other personas; 295 answers first cut off at a 40,000-token cap were
+re-run at 128,000 tokens, with the truncated rows kept in results/superseded_truncated/.)
 
 **GPT-6 Astra has changed since the post's runs.** The same default-setting call now gives the professor and PhD-student personas CDT far less often
 (64% → 31%, 72% → 25%) and the no-cue prompt CDT more often (2% → 17%); most other prompts are unchanged, and so is high-effort behaviour. Requesting a
 summary makes little further difference. The post's Astra numbers describe the model as served in September.
 
 **Caveats.** Reasoning summaries are written by a summarizer, not the raw chain of thought. Astra's summaries are short (median 83 words at default) and a
-quarter are missing at default (30% of academic CDT answers, 42% of academic FDT/UDT answers). All flags are LLM-judge verdicts; spot checks of Astra's
-flagged summaries agreed with the judge.
+quarter are missing at default (30% of academic CDT answers, 42% of academic FDT/UDT answers). All flags are verdicts of one LLM judge (Claude Sonnet 5),
+the same for every model, so comparisons across models are like for like but absolute levels depend on the judge; reading samples by hand, the judge
+looks somewhat generous in calling borderline cases pivots. A second Claude judge was not possible: Opus 5.5, Opus 5 and Fable 5.1 decline this annotation
+task (the API returns a refusal in its "reasoning_extraction" category), so there is no inter-judge agreement figure.
 """
 
 

@@ -9,15 +9,25 @@
   "rows": 44,
   "sha256": "595766fbb5f7a1aec408ed1ed85820dadcba102db4c5bfb3cf3ecedf3602c1b2"
  },
+ "judge_cot_audience.jsonl": {
+  "bytes": 9058181,
+  "rows": 24683,
+  "sha256": "76284d3b40919d0c17933ffe6cce1a23f2c0ac97c3db238a545dc4d30a9ff0d0"
+ },
+ "judge_cot_edtfav.jsonl": {
+  "bytes": 134625,
+  "rows": 2556,
+  "sha256": "2a8af08578dbe97bae0ef3804fb05aba422878c56e3b1c63a34325dc1753ee03"
+ },
  "judge_fav.jsonl": {
-  "bytes": 173671,
-  "rows": 2292,
-  "sha256": "cd8a64868dcf3625e18522af218c536e35916713edaf96973265d0dd7b642d24"
+  "bytes": 1868775,
+  "rows": 24683,
+  "sha256": "b3603b952824bf9caeb23f87728e1fa3a1cb329d3ed44a580a7951c2a1d3b6d6"
  },
  "judge_notags.jsonl": {
-  "bytes": 11345320,
-  "rows": 242796,
-  "sha256": "989ce304f9f3c69b00fff87de0844eab7e56a24b03d2284ee6148553e4f21c3d"
+  "bytes": 12263719,
+  "rows": 263160,
+  "sha256": "dfbe8235539f76bd3dbd8a294cbf8babcb4e65aac1dc04272fa9cbba2de59a62"
  },
  "judge_numbers.jsonl": {
   "bytes": 9327777,
@@ -30,9 +40,9 @@
   "sha256": "d5a585abe874b61334d8508793ea1094c3201124ac849d0ffc80f9b933a0d076"
  },
  "judge_thinking_notags.jsonl": {
-  "bytes": 2235478,
-  "rows": 5471,
-  "sha256": "d8b40c268013664318bdf9cb55404b6cec4279231407d8cecaaebe7ebd4b9b01"
+  "bytes": 10708549,
+  "rows": 25983,
+  "sha256": "c2fe92e48e3fbc2b6b5a8db02576dc8263bc675d2027c2f527e2fd3bc2d609a7"
  },
  "raw_claude-fable-5-1_high.jsonl": {
   "bytes": 13745327,
@@ -629,6 +639,11 @@
   "rows": 600,
   "sha256": "197b7c36b8ed403829b7d802355e7e5239a19e8191423d7143d1b2d83ae81eb2"
  },
+ "raw_claude-fable-5_high_notags_cot_sys.jsonl": {
+  "bytes": 5662195,
+  "rows": 1400,
+  "sha256": "ab4a0324b87958ec43adf439dd03254e8d32c17cb6bdc2490b8628c64e86dd56"
+ },
  "raw_claude-fable-5_high_notags_electrician.jsonl": {
   "bytes": 332745,
   "rows": 100,
@@ -1114,6 +1129,21 @@
   "rows": 120,
   "sha256": "6f8fc2a1b75587cfa89079a8b7a58a7b74108b9fc6d5b65aadc6c0d8b48b3e3d"
  },
+ "raw_claude-sonnet-5_max_notags_cot.jsonl": {
+  "bytes": 53102497,
+  "rows": 1364,
+  "sha256": "3efdfc4b58fe44cf8842c818445c190836364006a6b4767e7b9f8dd1f39ea76d"
+ },
+ "raw_claude-sonnet-5_xhigh_notags_cot.jsonl": {
+  "bytes": 14479004,
+  "rows": 3800,
+  "sha256": "cb4b330e13ed7241b3d57e035da826f5713d9e6abb53f01c0fc900474e1bf464"
+ },
+ "raw_gpt-6-astra_None+detailed_notags_cot.jsonl": {
+  "bytes": 9811549,
+  "rows": 3800,
+  "sha256": "78ea5e9bbd55da3d5f696a5ad4b4c12121ccbc1486dc714ad585a8701bb11ab1"
+ },
  "raw_gpt-6-astra_None_notags_acadnames.jsonl": {
   "bytes": 7638451,
   "rows": 4400,
@@ -1194,6 +1224,16 @@
   "rows": 80,
   "sha256": "3b87d3e48d268ba1eec4fcbf30ee91e8c29d79fb8d7ec85e30fcec729ed46271"
  },
+ "raw_gpt-6-astra_default_notags_recheck.jsonl": {
+  "bytes": 1629280,
+  "rows": 800,
+  "sha256": "f2395223153b0ca69fa5df5939146582b34c7f8e443781aac279e9ea360cd087"
+ },
+ "raw_gpt-6-astra_default_notags_recheck2.jsonl": {
+  "bytes": 6331839,
+  "rows": 3000,
+  "sha256": "80808bd99d40a1bb56c176f008bd419892cb424cc7516b047f0b72df5a1ab254"
+ },
  "raw_gpt-6-astra_default_notags_topup_astra.jsonl": {
   "bytes": 3915779,
   "rows": 1540,
@@ -1244,15 +1284,30 @@
   "rows": 1360,
   "sha256": "619a4978f352c0408292cb6573a667c7f9a394f19a4278d4e1c38066d7e0f60f"
  },
+ "raw_gpt-6-astra_high+detailed_notags_cot.jsonl": {
+  "bytes": 12577084,
+  "rows": 3800,
+  "sha256": "a5612562721929b25386e62dec7ca85b351ab22d0f0ed521edeaefce6d55852d"
+ },
  "raw_gpt-6-astra_high_notags_deep.jsonl": {
   "bytes": 2842316,
   "rows": 900,
   "sha256": "534b7b45303bdf459131ea6b324594083367684a5ef7b0202e368e27a918a64e"
  },
+ "raw_gpt-6-astra_high_notags_recheck.jsonl": {
+  "bytes": 2566516,
+  "rows": 800,
+  "sha256": "35fd7e12f2b7a33046cd2b4de419efdf91ea18e249b3e3bbd0b6f6e08ee393ed"
+ },
  "raw_gpt-6-astra_low_notags_deep.jsonl": {
   "bytes": 2207044,
   "rows": 900,
   "sha256": "3bb50e4319b6380ff971536e2b1e6c80f816bfa4dbca40958161e68b37ec79e9"
+ },
+ "raw_gpt-6-astra_low_notags_recheck.jsonl": {
+  "bytes": 1994160,
+  "rows": 800,
+  "sha256": "1a3aca54484a5baee3fafa6b8aa4907158638952b9cdb6e6a61728ca1db26292"
  },
  "raw_gpt-6-astra_medium.jsonl": {
   "bytes": 931780,
@@ -1263,6 +1318,11 @@
   "bytes": 2224298,
   "rows": 900,
   "sha256": "ad592ab6e9e90adc35f18b85a9929601be3eae2a1b7c1aa03429b0915e2b4193"
+ },
+ "raw_gpt-6-astra_medium_notags_recheck.jsonl": {
+  "bytes": 2040138,
+  "rows": 800,
+  "sha256": "a6baa6b233387de16dce0159fda22d247d8fe9d86e89ec3bb8cda685c893e9af"
  },
  "raw_gpt-6-astra_xhigh_notags_deep.jsonl": {
   "bytes": 3609544,
@@ -1323,6 +1383,11 @@
   "bytes": 8949813,
   "rows": 317,
   "sha256": "fdf533985be0ab908a8cd4fb4e66a1eec3b3fbc66f33d91b222467434d03d91e"
+ },
+ "superseded_truncated/raw_claude-sonnet-5_max_notags_cot_truncated40k.jsonl": {
+  "bytes": 15425949,
+  "rows": 295,
+  "sha256": "d73773b98ee47cd0a793fc42909dfec3b3e59f7af7e0746da6db47defe2eb2f5"
  },
  "tmp_notags_B_for_thinking.jsonl": {
   "bytes": 3479254,
