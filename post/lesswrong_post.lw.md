@@ -97,15 +97,15 @@ I asked the following questions separately:
 
 The full data for all five models is in the repository ([results/OTHER_MODELS.md](https://github.com/alexkastner/dt-audience-cues/blob/main/results/OTHER_MODELS.md)). The story is broadly the same. I collect some of the main differences from Fable 5.1 in this section.
 
-**Opus 5 (but not Opus 5.5) moves to EDT, not CDT.**
+### Opus 5 (but not Opus 5.5) moves to EDT, not CDT
 
 ![Which decision theory Opus 5 names, by the sentence before the question](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/6d6453160f568ce7ccc145601c13788f9720f0fe/post/figures/personas_opus5.png)
 
-**Opus 5.5 shows the strongest dependence on user cues, and unlike Opus 5 it moves to CDT.**
+### Opus 5.5 shows the strongest dependence on user cues, and unlike Opus 5 it moves to CDT
 
 ![Which decision theory Opus 5.5 names, by the sentence before the question](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/6d6453160f568ce7ccc145601c13788f9720f0fe/post/figures/personas_opus55.png)
 
-**GPT-6 Astra names CDT for almost anyone who says who they are, unless they sound like a rationalist or a scientist.**
+### GPT-6 Astra names CDT for almost every user, except if they sound LW-adjacent or somewhat mathy
 
 ![Which decision theory GPT-6 Astra names, by the sentence before the question](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/6d6453160f568ce7ccc145601c13788f9720f0fe/post/figures/personas_astra.png)
 

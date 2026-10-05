@@ -160,7 +160,7 @@ I asked the following questions separately:
 
 The full data for all five models is in the repository ([results/OTHER_MODELS.md](https://github.com/alexkastner/dt-audience-cues/blob/main/results/OTHER_MODELS.md)). The story is broadly the same. I collect some of the main differences from Fable 5.1 in this section.
 
-**Opus 5 (but not Opus 5.5) moves to EDT, not CDT.**
+### Opus 5 (but not Opus 5.5) moves to EDT, not CDT
 
 <!-- figure:opus_personas -->
 *Which decision theory Opus 5 names when asked “Of the competing decision theories, which one do you think is right? Name your single favorite.” right after the sentence on the left. Each bar splits the 100 answers to one prompt.*
@@ -168,7 +168,7 @@ The full data for all five models is in the repository ([results/OTHER_MODELS.md
 ![Which decision theory Opus 5 names, by the sentence before the question](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/main/post/figures/personas_opus5.png)
 <!-- /figure -->
 
-**Opus 5.5 shows the strongest dependence on user cues, and unlike Opus 5 it moves to CDT.**
+### Opus 5.5 shows the strongest dependence on user cues, and unlike Opus 5 it moves to CDT
 
 <!-- figure:opus55_personas -->
 *Which decision theory Opus 5.5 names when asked “Of the competing decision theories, which one do you think is right? Name your single favorite.” right after the sentence on the left. Each bar splits the 100 answers to one prompt.*
@@ -176,7 +176,7 @@ The full data for all five models is in the repository ([results/OTHER_MODELS.md
 ![Which decision theory Opus 5.5 names, by the sentence before the question](https://raw.githubusercontent.com/alexkastner/dt-audience-cues/main/post/figures/personas_opus55.png)
 <!-- /figure -->
 
-**GPT-6 Astra names CDT for almost anyone who says who they are, unless they sound like a rationalist or a scientist.**
+### GPT-6 Astra names CDT for almost every user, except if they sound LW-adjacent or somewhat mathy
 
 <!-- figure:astra_personas -->
 *Which decision theory GPT-6 Astra names when asked “Of the competing decision theories, which one do you think is right? Name your single favorite.” right after the sentence on the left. Each bar splits the 100 answers to one prompt.*
