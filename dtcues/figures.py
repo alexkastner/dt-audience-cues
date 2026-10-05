@@ -600,7 +600,43 @@ def fig_pdoom():
     return save(fig, "pdoom")
 
 
-ALL = {"personas": fig_personas, "named": fig_named, "openers": fig_openers, "wording": fig_wording, "books": fig_books, "views": fig_views, "matrix": fig_matrix,
+def fig_thumbnail():
+    """Social-preview image for the Redwood Substack (2026-10-05): 2400x1260 px (the 1.91:1 social-card shape), large type so it reads at
+    thumbnail size, labels above full-width bars, the post's colours. Dark text on the orange CDT segments (white on orange is 2.25:1)."""
+    from matplotlib.patches import Rectangle
+    rows = [("No sentence before the question", "A__Q_neutral__none"), (q("I'm a longtime LessWrong reader."), "B__Q_neutral__lw_reader"),
+            (q("I teach an undergraduate decision theory course."), "B__Q_neutral__acad_teach"),
+            (q("I'm an assistant professor of philosophy working on rational choice."), "X__Q_neutral__x_asst")]
+    fig = plt.figure(figsize=(12, 6.3), dpi=200)
+    ink, muted = "#1A1A1A", "#555555"
+    fig.text(0.06, 0.915, "Which decision theory does Claude Fable 5.1 say is right?", fontsize=22.5, color=ink, fontweight="semibold", va="center")
+    fig.text(0.06, 0.845, "Share of 100 answers naming each theory, by what the user says before asking", fontsize=15.5, color=muted, va="center")
+    x0, x1 = 0.06, 0.94
+    for k, (cat, lab) in enumerate([("CDT", "names CDT"), ("EDT", "names EDT"), ("FDT/UDT", "names FDT/UDT")]):
+        lx = x0 + k * 0.215
+        fig.patches.append(Rectangle((lx, 0.741), 0.022, 0.034, transform=fig.transFigure, color=COLOR[cat]))
+        fig.text(lx + 0.03, 0.758, lab, fontsize=15, color=ink, va="center")
+    top, step, bh = 0.595, 0.147, 0.066
+    for i, (lab, pid) in enumerate(rows):
+        y = top - i * step
+        fig.text(x0, y + bh / 2 + 0.035, lab, fontsize=16.5, color=ink, va="center", style="italic" if i == 0 else "normal")
+        sh = shares(FB, HI, pid); left = 0.0
+        for cat in ("CDT", "EDT", "FDT/UDT"):
+            v = sh.get(cat, 0)
+            if v < 0.5:
+                continue
+            w = (x1 - x0) * v / 100
+            fig.patches.append(Rectangle((x0 + (x1 - x0) * left / 100, y - bh / 2), w, bh, transform=fig.transFigure, color=COLOR[cat], ec="white", lw=1.5))
+            if v >= 8:
+                fig.text(x0 + (x1 - x0) * (left + v / 2) / 100, y, f"{v:.0f}%", fontsize=17, fontweight="bold", ha="center", va="center",
+                         color=ink if cat == "CDT" else "white")
+            left += v
+    OUT.mkdir(exist_ok=True); path = OUT / "thumbnail.png"
+    fig.savefig(path, dpi=200, facecolor="white"); plt.close(fig); print("wrote", path.relative_to(ROOT))
+    return path
+
+
+ALL = {"thumbnail": fig_thumbnail, "personas": fig_personas, "named": fig_named, "openers": fig_openers, "wording": fig_wording, "books": fig_books, "views": fig_views, "matrix": fig_matrix,
        "acausal": fig_acausal, "named_actions": fig_named_actions, "second_turn": fig_second_turn, "effort": fig_effort,
        "books_effort": fig_books_effort, "reasoning": fig_reasoning, "sysprompts": fig_sysprompts, "realism": fig_realism,
        "pdoom": fig_pdoom, "personas_opus5": lambda: fig_personas_model("claude-opus-5", "high", "personas_opus5", "Opus 5"),
